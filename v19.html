@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BananaBread v19</title>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { height: 10px; width: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 5px; border: 2px solid #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        html, body { height: 100%; margin: 0; padding: 0; background-color: #f8fafc; font-family: sans-serif; overflow-x: hidden; }
+        
+        .suggestions-anim { animation: fadeIn 0.1s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+        .suggestion-selected { background-color: #e0e7ff; border-right: 4px solid #4f46e5; }
+        
+        .connections-layer { 
+            pointer-events: none; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 20; 
+            overflow: visible; 
+        }
+        path.connection-line { 
+            fill: none; 
+            stroke-width: 4px; 
+            stroke-linecap: round;
+            transition: all 0.2s; 
+        }
+
+        .tooltip-container:hover .tooltip-content { display: block; }
+    </style>
+</head>
+<body>
+
+<div id="root" class="h-full"></div>
+
+<script type="text/babel">
+    const { useState, useMemo, useEffect, useRef } = React;
+
+    // --- FULL DATA MAPPING ---
+    const FACULTY_DATA = {
+        "הנדסת חשמל ומחשבים": [
+            { id: "electricalEngTracks.csv:EE_GEN", name: "הנדסת חשמל" },
+            { id: "electricalEngTracks.csv:CE_GEN", name: "הנדסת מחשבים" },
+            { id: "electricalEngTracks.csv:EE_PHYS", name: "הנדסת חשמל ופיזיקה" },
+            { id: "electricalEngTracks.csv:EE_MATH", name: "הנדסת חשמל ומתמטיקה" },
+            { id: "electricalEngTracks.csv:ECE_QUANTUM", name: "הנדסת חשמל/מחשבים (קוונטים)" }
+        ],
+        "מדעי המחשב": [
+            { id: "csTracks.csv:CS_GENERAL_4Y", name: "מדעי המחשב (4 שנתי)" },
+            { id: "csTracks.csv:CS_GENERAL_3Y", name: "מדעי המחשב (3 שנתי)" },
+            { id: "csTracks.csv:CS_SOFT_ENG", name: "הנדסת תוכנה" },
+            { id: "csTracks.csv:CS_DATA_LEARNING", name: "מדע הנתונים ולמידת מכונה" },
+            { id: "csTracks.csv:CS_CYBER", name: "סייבר ואבטחת מידע" },
+            { id: "csTracks.csv:CS_COMP_ENG", name: "הנדסת מחשבים (תוכנה)" },
+            { id: "csTracks.csv:CS_BIOINFO", name: "ביואינפורמטיקה" },
+            { id: "csTracks.csv:CS_MATH", name: "מדעי המחשב ומתמטיקה" },
+            { id: "csTracks.csv:CS_MEDICINE", name: "מדעי המחשב ורפואה" }
+        ],
+        "הנדסת מכונות": [
+            { id: "mechEngTracks.csv:MECH_GEN", name: "הנדסת מכונות" },
+            { id: "mechEngTracks.csv:MECH_BRAKIM", name: "תכנית ברקים (מצוינות)" }
+        ],
+        "הנדסה אזרחית וסביבתית": [
+            { id: "civilEngTracks.csv:CIVIL_WATER_TRANS", name: "הנדסה אזרחית (מים/תחבורה)" },
+            { id: "civilEngTracks.csv:CIVIL_STRUCT", name: "הנדסה אזרחית (מבנים)" },
+            { id: "civilEngTracks.csv:CIVIL_MGMT", name: "ניהול ובנייה" },
+            { id: "civilEngTracks.csv:ENV_ENG", name: "הנדסת סביבה" },
+            { id: "civilEngTracks.csv:GEO_INFO", name: "מיפוי וגיאו-אינפורמציה" }
+        ],
+        "הנדסת תעשייה וניהול": [
+            { id: "dataDecisionTracks.csv:IND_ENG_MGMT", name: "הנדסת תעשייה וניהול" },
+            { id: "dataDecisionTracks.csv:INFO_SYS", name: "מערכות מידע" },
+            { id: "dataDecisionTracks.csv:DATA_INFO", name: "הנדסת נתונים ומידע" }
+        ],
+        "הנדסת אווירונאוטיקה וחלל": [
+            { id: "aerospaceTracks.csv:AERO_GEN", name: "הנדסת אווירונאוטיקה" },
+            { id: "aerospaceTracks.csv:AERO_PHYS", name: "אווירונאוטיקה ופיזיקה" }
+        ],
+        "הנדסה כימית": [
+            { id: "chemicalEngTracks.csv:CHEM_ENG", name: "הנדסה כימית" },
+            { id: "chemicalEngTracks.csv:BIOCHEM_ENG", name: "הנדסה ביוכימית" }
+        ],
+        "הנדסת ביוטכנולוגיה ומזון": [
+            { id: "biotechFoodTracks.csv:BIOTECH_FOOD", name: "הנדסת ביוטכנולוגיה ומזון" }
+        ],
+        "הנדסה ביו-רפואית": [
+            { id: "biomedicalTracks.csv:BIOMED_GEN", name: "הנדסה ביו-רפואית" },
+            { id: "biomedicalTracks.csv:BIOMED_PHYS", name: "ביו-רפואה ופיזיקה" },
+            { id: "biomedicalTracks.csv:BIOMED_MD", name: "ביו-רפואה לרפואנים" }
+        ],
+        "הנדסת חומרים": [
+            { id: "materialsTracks.csv:MATERIALS_SINGLE", name: "הנדסת חומרים" },
+            { id: "materialsTracks.csv:MATERIALS_PHYSICS", name: "הנדסת חומרים ופיזיקה" },
+            { id: "materialsTracks.csv:MATERIALS_CHEM", name: "הנדסת חומרים וכימיה" },
+            { id: "materialsTracks.csv:MATERIALS_BIO", name: "הנדסת חומרים וביולוגיה" }
+        ],
+        "ארכיטקטורה ובינוי ערים": [
+            { id: "architectureTracks.csv:ARCHITECTURE", name: "ארכיטקטורה" },
+            { id: "architectureTracks.csv:LANDSCAPE_ARCH", name: "אדריכלות נוף" }
+        ],
+        "מתמטיקה": [
+            { id: "mathTracks.csv:MATH_3Y", name: "מתמטיקה (3 שנתי)" },
+            { id: "mathTracks.csv:MATH_PHYS", name: "מתמטיקה ופיזיקה" },
+            { id: "mathTracks.csv:MATH_CS", name: "מתמטיקה ומדעי המחשב" },
+            { id: "mathTracks.csv:MATH_APP", name: "מתמטיקה שימושית" },
+            { id: "mathTracks.csv:CS_MATH_JOINT", name: "מדעי המחשב ומתמטיקה (משולב)" }
+        ],
+        "פיזיקה": [
+            { id: "physicsTracks.csv:PHYS_3Y", name: "פיזיקה (3 שנתי)" },
+            { id: "physicsTracks.csv:PHYS_EE", name: "פיזיקה והנדסת חשמל" },
+            { id: "physicsTracks.csv:PHYS_CS", name: "פיזיקה ומדעי המחשב" },
+            { id: "physicsTracks.csv:PHYS_MATH", name: "פיזיקה ומתמטיקה" },
+            { id: "physicsTracks.csv:PHYS_MATERIALS", name: "פיזיקה והנדסת חומרים" },
+            { id: "physicsTracks.csv:PHYS_AERO", name: "פיזיקה ואווירונאוטיקה" },
+            { id: "physicsTracks.csv:PHYS_BIOMED", name: "פיזיקה והנדסה ביו-רפואית" },
+            { id: "physicsTracks.csv:PHYS_OPTICS", name: "פיזיקה ואופטיקה" }
+        ],
+        "כימיה": [
+            { id: "chemistryTracks.csv:CHEM_3Y", name: "כימיה (3 שנתי)" },
+            { id: "chemistryTracks.csv:MOL_BIOCHEM", name: "ביוכימיה מולקולרית" },
+            { id: "chemistryTracks.csv:CHEM_BIO_DOUBLE", name: "כימיה וביולוגיה" },
+            { id: "chemistryTracks.csv:CHEM_MATERIALS", name: "כימיה והנדסת חומרים" }
+        ],
+        "ביולוגיה": [
+            { id: "biologyTracks.csv:BIOL_GENERAL", name: "ביולוגיה" },
+            { id: "biologyTracks.csv:BIOL_RESEARCH_HUMAN_EVO", name: "ביולוגיה - אבולוציה" },
+            { id: "biologyTracks.csv:BIOL_RESEARCH_MICRO_ECO", name: "ביולוגיה - מיקרו/אקו" },
+            { id: "biologyTracks.csv:BIOL_RESEARCH_BIOCHEM", name: "ביולוגיה - ביוכימיה" },
+            { id: "biologyTracks.csv:BIOL_CHEM_DOUBLE", name: "ביולוגיה וכימיה" }
+        ],
+        "רפואה": [
+            { id: "medicineTracks.csv:MEDICINE_MD", name: "רפואה (MD)" },
+            { id: "medicineTracks.csv:MED_BIOMED_DOUBLE", name: "רפואה והנדסה ביו-רפואית" },
+            { id: "medicineTracks.csv:MED_CS_DOUBLE", name: "רפואה ומדעי המחשב" }
+        ],
+        "חינוך למדע וטכנולוגיה": [
+            { id: "educationTracks.csv:EDU_MATH", name: "הוראת המתמטיקה" },
+            { id: "educationTracks.csv:EDU_PHYS", name: "הוראת הפיזיקה" },
+            { id: "educationTracks.csv:EDU_BIOL", name: "הוראת הביולוגיה" },
+            { id: "educationTracks.csv:EDU_TECH", name: "הוראת טכנולוגיה ומדעים" }
+        ]
+    };
+
+    // --- Icons ---
+    const Icons = {
+        GraduationCap: ({size=32}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+        Plus: ({size=20}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>,
+        Trash2: ({size=14}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>,
+        Pencil: ({size=14}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>,
+        AlertCircle: ({size=12, className}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>,
+        Save: ({size=18}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>,
+        GripVertical: ({size=14, className}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg>,
+        Check: ({size=14, className}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={className || "text-white"}><polyline points="20 6 9 17 4 12"/></svg>,
+        Loader: ({size=24}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>,
+        BookOpen: ({size=20}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>,
+        PlusCircle: ({size=20}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/></svg>,
+        Refresh: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>,
+        GitBranch: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>,
+        Info: ({size=12}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>,
+        Eye: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8-11-8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>,
+        EyeOff: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>,
+        ChevronDown: ({size=16, className}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="6 9 12 15 18 9"></polyline></svg>,
+        ChevronUp: ({size=16, className}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="18 15 12 9 6 15"></polyline></svg>
+    };
+
+    // --- Helper Functions ---
+    const normalizeId = (id) => String(id).trim();
+
+    const getAllAncestors = (courseId, allCourses) => {
+        const ancestors = new Set();
+        try {
+            const find = (cId, depth = 0) => {
+                if (depth > 20) return; 
+                const course = allCourses.find(c => c.id === cId);
+                if (!course || !course.prereqs) return;
+                course.prereqs.forEach(pId => {
+                    if (!ancestors.has(pId)) { ancestors.add(pId); find(pId, depth + 1); }
+                });
+            };
+            find(courseId);
+        } catch (e) { console.warn("Ancestor finding error", e); }
+        return ancestors;
+    };
+
+    const checkPrerequisiteLogic = (prereqString, targetSemester, currentCourses) => {
+        if (!prereqString || typeof prereqString !== 'string' || !prereqString.trim()) return true;
+        try {
+            const courseIds = prereqString.match(/\d{6,8}/g);
+            if (!courseIds) return true;
+
+            const completionMap = {};
+            courseIds.forEach(id => {
+                const normalizedId = normalizeId(id);
+                const courseInBoard = currentCourses.find(c => c.id === normalizedId);
+                // IF COMPLETED: Treat as passed regardless of semester
+                const isCompleted = (courseInBoard && courseInBoard.completed) || (courseInBoard && courseInBoard.semester < targetSemester);
+                completionMap[id] = isCompleted;
+            });
+
+            let cleanStr = prereqString
+                .replace(/א[וֹ]/g, "||")
+                .replace(/\sOR\s/gi, "||")
+                .replace(/וגם/g, "&&")
+                .replace(/\sAND\s/gi, "&&")
+                .replace(/[\[\{]/g, "(")
+                .replace(/[\]\}]/g, ")");
+
+            const ids = Object.keys(completionMap).sort((a,b) => b.length - a.length);
+            ids.forEach(id => {
+                 cleanStr = cleanStr.split(id).join(completionMap[id].toString());
+            });
+
+            const safeEvalStr = cleanStr.replace(/[^truefalse\(\)\&\|!\s]/gi, "");
+            const result = new Function(`return (${safeEvalStr});`)();
+            return !!result;
+
+        } catch (e) {
+            const values = Object.values(completionMap || {});
+            const completedCount = values.filter(v => v === true).length;
+            const requiredCount = values.length;
+            if (requiredCount > 1 && completedCount > 0) return true; 
+            return false;
+        }
+    };
+
+    const checkPrerequisiteError = (course, allCourses) => {
+        try {
+            if (course.prereqString) {
+                if (checkPrerequisiteLogic(course.prereqString, course.semester, allCourses)) return null;
+                return "דרישות הקדם לא הושלמו";
+            }
+            if (!course.prereqs || !Array.isArray(course.prereqs)) return null;
+            const missing = course.prereqs.filter(pid => {
+                const pre = allCourses.find(c => c.id === pid);
+                return !pre || (!pre.completed && pre.semester >= course.semester);
+            });
+            return missing.length > 0 ? "חסרים קדמים" : null;
+        } catch (e) { return null; }
+    };
+
+    const getMissingDetails = (course, allCourses) => {
+        const missingList = [];
+        try {
+             if (course.prereqs && Array.isArray(course.prereqs)) {
+                 course.prereqs.forEach(pid => {
+                     const pre = allCourses.find(c => c.id === pid);
+                     if (!pre) missingList.push({ id: pid, reason: 'חסר בלוח' });
+                     else if (!pre.completed && pre.semester >= course.semester) missingList.push({ id: pid, name: pre.name, reason: `סמסטר ${pre.semester} (חייב להיות לפני)` });
+                 });
+             }
+             if (course.prereqString && missingList.length === 0) {
+                 const courseIds = course.prereqString.match(/\d{6,8}/g) || [];
+                 courseIds.forEach(id => {
+                     const pre = allCourses.find(c => c.id === normalizeId(id));
+                     if (!pre || (!pre.completed && pre.semester >= course.semester)) {
+                         if (!missingList.find(x => x.id === id)) {
+                             missingList.push({ id: id, name: pre ? pre.name : 'קורס', reason: pre ? `סמסטר ${pre.semester}` : 'חסר' });
+                         }
+                     }
+                 });
+             }
+        } catch(e) {}
+        return missingList;
+    };
+
+    // --- COMPONENT: Track Selection Modal ---
+    const TrackSelectionModal = ({ isOpen, onClose, onSelectTrack }) => {
+        if (!isOpen) return null;
+        const [expandedFaculty, setExpandedFaculty] = React.useState(null);
+        const toggleFaculty = (faculty) => setExpandedFaculty(expandedFaculty === faculty ? null : faculty);
+
+        return (
+            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[80] backdrop-blur-sm p-4">
+                <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full h-[80vh] flex flex-col animate-in fade-in zoom-in-95 border border-slate-200 overflow-hidden">
+                    <div className="p-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center shrink-0">
+                        <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                             <Icons.BookOpen size={24} className="text-indigo-600"/>
+                             בחר מסלול לימודים
+                        </h2>
+                        <button onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold p-2">✕</button>
+                    </div>
+                    <div className="flex-1 overflow-y-auto custom-scrollbar p-2 bg-slate-100">
+                        <div className="space-y-2">
+                        {Object.entries(FACULTY_DATA).map(([facultyName, tracks]) => {
+                            const isOpen = expandedFaculty === facultyName;
+                            return (
+                                <div key={facultyName} className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+                                    <button onClick={() => toggleFaculty(facultyName)} className={`w-full px-5 py-4 flex items-center justify-between transition-colors ${isOpen ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700 hover:bg-slate-50'}`}>
+                                        <span className="font-bold text-base">{facultyName}</span>
+                                        {isOpen ? <Icons.ChevronUp size={20} /> : <Icons.ChevronDown size={20} className="text-slate-400" />}
+                                    </button>
+                                    {isOpen && (
+                                        <div className="bg-slate-50 px-4 py-3 border-t border-indigo-100 shadow-inner">
+                                            {tracks.length > 0 ? (
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                                    {tracks.map((track) => (
+                                                        <button key={track.id} onClick={() => onSelectTrack(track.id)} className="text-right px-4 py-3 rounded-lg text-sm text-slate-600 hover:text-indigo-700 hover:bg-white hover:shadow-md transition-all border border-slate-200 hover:border-indigo-200 flex items-center gap-3 bg-white">
+                                                            <div className="w-2 h-2 rounded-full bg-indigo-400 shrink-0"></div><span className="font-medium">{track.name}</span>
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            ) : <div className="text-center text-slate-400 text-sm py-2">(אין מסלולים זמינים)</div>}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    function DegreePlanner() {
+        const [catalog, setCatalog] = useState([]); 
+        const [loadingStatus, setLoadingStatus] = useState("loading");
+        const [statusMessage, setStatusMessage] = useState("טוען קטלוג קורסים...");
+        const [courses, setCourses] = useState([]);
+        const [semesterCount, setSemesterCount] = useState(8);
+        const [draggedCourse, setDraggedCourse] = useState(null);
+        const [hoveredCourse, setHoveredCourse] = useState(null);
+        const [isEditing, setIsEditing] = useState(false);
+        const [editingId, setEditingId] = useState(null);
+        
+        // Modal State
+        const [newCourseName, setNewCourseName] = useState('');
+        const [newCourseCredits, setNewCourseCredits] = useState(3);
+        const [newCourseSem, setNewCourseSem] = useState(1);
+        const [newCoursePrereqs, setNewCoursePrereqs] = useState([]);
+        const [newCourseId, setNewCourseId] = useState(null);
+        const [newCourseFaculty, setNewCourseFaculty] = useState('');
+        const [suggestions, setSuggestions] = useState([]);
+        const [showSuggestions, setShowSuggestions] = useState(false);
+        const [selectedIndex, setSelectedIndex] = useState(-1);
+        
+        const [showPrereqSelector, setShowPrereqSelector] = useState(false);
+        const [pendingCourse, setPendingCourse] = useState(null);
+        const [missingPrereqOptions, setMissingPrereqOptions] = useState([]);
+        const [selectedPrereqsToAdd, setSelectedPrereqsToAdd] = useState([]);
+        
+        const [showAllConnections, setShowAllConnections] = useState(false);
+        const [showTrackModal, setShowTrackModal] = useState(false);
+
+        const wrapperRef = useRef(null);
+        const suggestionsListRef = useRef(null);
+        const courseRefs = useRef({});
+        const containerRef = useRef(null);
+        
+        const [courseToDelete, setCourseToDelete] = useState(null);
+        const [connections, setConnections] = useState([]);
+
+        // --- Effects ---
+        useEffect(() => {
+            const savedCourses = localStorage.getItem("technion_planner_courses_v5");
+            const savedSemesters = localStorage.getItem("technion_planner_semesters_v5");
+            if (savedCourses) { try { setCourses(JSON.parse(savedCourses)); } catch(e) {} }
+            if (savedSemesters) setSemesterCount(parseInt(savedSemesters));
+        }, []);
+
+        useEffect(() => {
+            if (courses.length > 0 || semesterCount !== 8) {
+                localStorage.setItem("technion_planner_courses_v5", JSON.stringify(courses));
+                localStorage.setItem("technion_planner_semesters_v5", semesterCount.toString());
+            }
+        }, [courses, semesterCount]);
+
+        useEffect(() => {
+            const loadData = async () => {
+                const fetchCsv = (file) => new Promise((resolve, reject) => {
+                    Papa.parse(file, {
+                        download: true, header: true, skipEmptyLines: true,
+                        complete: (res) => resolve(res.data),
+                        error: (err) => reject(err)
+                    });
+                });
+                try {
+                    const coursesRaw = await fetchCsv('courses.csv');
+                    if (!coursesRaw || coursesRaw.length === 0) throw new Error("קובץ courses.csv ריק");
+                    const processedCatalog = coursesRaw.map(row => {
+                        if (!row.id) return null;
+                        return {
+                            id: normalizeId(row.id), name: row.name || "ללא שם", credits: parseFloat(row.points || row.credits || 0),
+                            faculty: row.faculty || "", recSem: 1, 
+                            prereqs: (row.prerequisites || "").match(/\d{6,8}/g)?.map(n => normalizeId(n)) || [], 
+                            prereqString: row.prerequisites || "" 
+                        };
+                    }).filter(Boolean);
+                    setCatalog(processedCatalog);
+                    setLoadingStatus("success");
+                    setStatusMessage(`נטענו ${processedCatalog.length} קורסים`);
+                } catch (err) {
+                    setLoadingStatus("error");
+                    setStatusMessage(`שגיאה בטעינת הקטלוג: ${err.message}`);
+                }
+            };
+            loadData();
+        }, []);
+
+        // --- VISUALIZATION UPDATE ---
+        const updateConnections = () => {
+            if (!containerRef.current) { setConnections([]); return; }
+            if (!showAllConnections && !hoveredCourse) { setConnections([]); return; }
+            try {
+                const newConnections = [];
+                const containerRect = containerRef.current.getBoundingClientRect();
+                const getCoords = (id) => {
+                    const el = courseRefs.current[id];
+                    if (!el) return null;
+                    const rect = el.getBoundingClientRect();
+                    return {
+                        left: rect.left - containerRect.left + containerRef.current.scrollLeft, 
+                        right: rect.right - containerRect.left + containerRef.current.scrollLeft,
+                        centerY: (rect.top + rect.bottom) / 2 - containerRect.top + containerRef.current.scrollTop
+                    };
+                };
+
+                const createPath = (src, tgt) => {
+                    const startX = tgt.left; const startY = tgt.centerY;
+                    const endX = src.right; const endY = src.centerY;
+                    const dist = Math.abs(startX - endX);
+                    const controlOffset = Math.min(dist * 0.5, 100); 
+                    return `M ${startX} ${startY} C ${startX - controlOffset} ${startY}, ${endX + controlOffset} ${endY}, ${endX} ${endY}`;
+                };
+
+                if (showAllConnections) {
+                    courses.forEach(c => {
+                        if (!c.prereqs || c.prereqs.length === 0) return;
+                        const sourceCoords = getCoords(c.id);
+                        if (!sourceCoords) return;
+                        c.prereqs.forEach(pid => {
+                            const prereqCourse = courses.find(pc => pc.id === pid);
+                            if (prereqCourse) {
+                                const targetCoords = getCoords(pid);
+                                if (targetCoords) newConnections.push({ id: `${c.id}-${pid}`, path: createPath(sourceCoords, targetCoords), color: "#94a3b8", opacity: 0.4 });
+                            }
+                        });
+                    });
+                } 
+                if (hoveredCourse) {
+                    const ancestors = getAllAncestors(hoveredCourse.id, courses);
+                    const chainSet = new Set([...ancestors, hoveredCourse.id]);
+                    courses.forEach(c => {
+                        if (chainSet.has(c.id) && c.prereqs) {
+                            c.prereqs.forEach(pid => {
+                                if (chainSet.has(pid)) {
+                                    const src = getCoords(c.id); const tgt = getCoords(pid);
+                                    if (src && tgt) newConnections.push({ id: `chain-${c.id}-${pid}`, path: createPath(src, tgt), color: "#0f172a", opacity: 1 });
+                                }
+                            });
+                        }
+                    });
+                    courses.filter(c => c.prereqs && c.prereqs.includes(hoveredCourse.id)).forEach(post => {
+                        const src = getCoords(post.id); const tgt = getCoords(hoveredCourse.id);
+                        if (src && tgt) newConnections.push({ id: `post-${post.id}`, path: createPath(src, tgt), color: "#4f46e5", opacity: 1 });
+                    });
+                }
+                setConnections(newConnections);
+            } catch(e) { setConnections([]); }
+        };
+        useEffect(() => { updateConnections(); }, [hoveredCourse, courses, showAllConnections]);
+
+        // --- Handlers ---
+        const resetAllData = () => {
+            if(confirm("בטוח שברצונך למחוק הכל ולהתחיל מחדש?")) {
+                setCourses([]); setSemesterCount(8);
+                localStorage.removeItem("technion_planner_courses_v5");
+                localStorage.removeItem("technion_planner_semesters_v5");
+            }
+        };
+
+        const handleTrackSelect = async (selectionId) => {
+            if (!selectionId) return;
+            const [fileName, trackName] = selectionId.split(':');
+            if (courses.length > 0 && !window.confirm("טעינת מסלול תמחק את הקורסים הקיימים. להמשיך?")) return; 
+            
+            setLoadingStatus("loading"); setStatusMessage(`טוען מסלול ${trackName}...`); setShowTrackModal(false);
+            try {
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error(`הקובץ ${fileName} לא נמצא בשרת`);
+                Papa.parse(await response.text(), {
+                    header: true, skipEmptyLines: true,
+                    complete: (results) => {
+                        const trackRows = results.data.filter(row => row.track_name === trackName);
+                        if (trackRows.length === 0) throw new Error(`המסלול ${trackName} לא נמצא בקובץ ${fileName}`);
+                        const newBoard = []; let maxSem = semesterCount;
+                        trackRows.forEach(row => {
+                            const cId = normalizeId(row.course_id || row.id); 
+                            const semester = parseInt(row.semester || row.recommended_semester);
+                            if (semester > maxSem) maxSem = semester;
+                            const fullDetails = catalog.find(c => c.id === cId);
+                            if (fullDetails) newBoard.push({ ...fullDetails, semester: semester, completed: false });
+                        });
+                        if (maxSem > semesterCount) setSemesterCount(maxSem);
+                        setCourses(newBoard); setLoadingStatus("success"); setStatusMessage("המסלול נטען בהצלחה");
+                    },
+                    error: (err) => { throw new Error("שגיאה בפענוח קובץ המסלול"); }
+                });
+            } catch (err) { setLoadingStatus("error"); setStatusMessage(`שגיאה: ${err.message}`); alert(`שגיאה בטעינת המסלול:\n${err.message}`); }
+        };
+
+        // --- NEW: Toggle Completion ---
+        const toggleCourseCompletion = (courseId) => {
+            setCourses(prev => prev.map(c => c.id === courseId ? { ...c, completed: !c.completed } : c));
+        };
+
+        const handleNameChange = (e) => {
+            const val = e.target.value; setNewCourseName(val);
+            if (val.length > 1) { 
+                const searchVal = normalizeId(val); 
+                const filtered = catalog.filter(c => c.name.includes(val) || c.id.includes(searchVal)); 
+                setSuggestions(filtered); setShowSuggestions(true); 
+            } else { setShowSuggestions(false); }
+        };
+
+        const selectSuggestion = (course) => {
+            setNewCourseName(course.name); setNewCourseCredits(course.credits); setNewCourseId(course.id); setNewCourseFaculty(course.faculty);
+            setNewCoursePrereqs(courses.filter(c => course.prereqs.includes(c.id)).map(c => c.id)); setShowSuggestions(false);
+        };
+
+        const handleSaveCourse = () => {
+            if (!newCourseName) return;
+            const targetSem = parseInt(newCourseSem);
+            const catalogCourse = catalog.find(c => c.id === newCourseId);
+            const prereqStr = catalogCourse ? catalogCourse.prereqString : "";
+            
+            const courseData = {
+                id: newCourseId || Math.random().toString(36).substr(2, 9),
+                name: newCourseName, semester: targetSem, credits: parseFloat(newCourseCredits) || 0,
+                prereqs: newCoursePrereqs || [], faculty: newCourseFaculty || '', prereqString: prereqStr, completed: false
+            };
+
+            if (editingId) {
+                setCourses(prev => [...prev.filter(c => c.id !== editingId), courseData]); setIsEditing(false); return;
+            }
+
+            let missingIds = [];
+            if (prereqStr) {
+                missingIds = (prereqStr.match(/\d{6,8}/g) || []).filter(pid => !courses.find(c => c.id === pid));
+            }
+
+            if (missingIds.length > 0) {
+                const options = missingIds.map(mid => {
+                    const catInfo = catalog.find(c => c.id === mid);
+                    return { id: mid, name: catInfo ? catInfo.name : mid };
+                }).filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i);
+
+                setPendingCourse(courseData); setMissingPrereqOptions(options); setSelectedPrereqsToAdd([]); 
+                setIsEditing(false); setShowPrereqSelector(true); return;
+            }
+
+            setCourses([...courses, courseData]); setIsEditing(false);
+        };
+
+        const confirmPrereqSelection = () => {
+            if (!pendingCourse) return;
+            let targetCourse = { ...pendingCourse };
+            let prereqSemester = Math.max(1, targetCourse.semester - 1);
+            if (selectedPrereqsToAdd.length > 0 && targetCourse.semester <= 1) { targetCourse.semester = 2; prereqSemester = 1; }
+            const extras = selectedPrereqsToAdd.map(pid => {
+                const catInfo = catalog.find(c => c.id === pid);
+                return {
+                    id: pid, name: catInfo ? catInfo.name : pid, credits: catInfo ? catInfo.credits : 0,
+                    faculty: catInfo ? catInfo.faculty : '', semester: prereqSemester, 
+                    prereqs: catInfo ? catInfo.prereqs : [], prereqString: catInfo ? catInfo.prereqString : "", completed: false
+                };
+            });
+            setCourses([...courses, ...extras, targetCourse]); setShowPrereqSelector(false); setPendingCourse(null);
+        };
+
+        const togglePrereqOption = (id) => setSelectedPrereqsToAdd(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
+
+        const addSemester = () => setSemesterCount(prev => prev + 1);
+        const removeSemester = (semNum) => { if (courses.some(c => c.semester === semNum)) { alert("לא ניתן למחוק סמסטר שיש בו קורסים."); return; } setSemesterCount(prev => prev - 1); };
+        const handleDragStart = (e, course) => setDraggedCourse(course);
+        const handleDragOver = (e) => e.preventDefault();
+        const handleDrop = (e, targetSemester) => { e.preventDefault(); if (!draggedCourse) return; setCourses(prev => prev.map(c => c.id === draggedCourse.id ? { ...c, semester: targetSemester } : c)); setDraggedCourse(null); };
+        
+        const openAddModal = (targetSemester = 1) => { setEditingId(null); setNewCourseName(''); setNewCourseCredits(3); setNewCourseSem(targetSemester); setNewCoursePrereqs([]); setNewCourseId(null); setNewCourseFaculty(''); setSuggestions([]); setIsEditing(true); };
+        const openEditModal = (course) => { setEditingId(course.id); setNewCourseName(course.name); setNewCourseCredits(course.credits); setNewCourseSem(course.semester); setNewCoursePrereqs(course.prereqs ? [...course.prereqs] : []); setNewCourseId(course.id); setNewCourseFaculty(course.faculty || ''); setIsEditing(true); };
+        const deleteCourse = (id) => setCourseToDelete(id);
+        const confirmDelete = () => { if (!courseToDelete) return; setCourses(prev => prev.filter(c => c.id !== courseToDelete).map(c => ({ ...c, prereqs: c.prereqs.filter(pid => pid !== courseToDelete) }))); setCourseToDelete(null); };
+
+        const handleKeyDown = (e) => { 
+             if (!showSuggestions || suggestions.length === 0) return;
+            if (e.key === "ArrowDown") { e.preventDefault(); setSelectedIndex(prev => (prev < suggestions.length - 1 ? prev + 1 : prev)); } 
+            else if (e.key === "ArrowUp") { e.preventDefault(); setSelectedIndex(prev => (prev > 0 ? prev - 1 : prev)); } 
+            else if (e.key === "Enter") { e.preventDefault(); if (selectedIndex >= 0 && suggestions[selectedIndex]) selectSuggestion(suggestions[selectedIndex]); } 
+            else if (e.key === "Escape") setShowSuggestions(false);
+        };
+        useEffect(() => { function handleClickOutside(event) { if (wrapperRef.current && !wrapperRef.current.contains(event.target)) setShowSuggestions(false); } document.addEventListener("mousedown", handleClickOutside); return () => document.removeEventListener("mousedown", handleClickOutside); }, [wrapperRef]);
+
+        const getHighlightClass = (courseId) => {
+            if (hoveredCourse) {
+                if (hoveredCourse.id === courseId) return "bg-slate-50 border-slate-500 ring-2 ring-slate-200 scale-[1.02] shadow-md z-30";
+                const ancestors = getAllAncestors(hoveredCourse.id, courses);
+                if (ancestors.has(courseId)) return "bg-slate-100 border-slate-600 ring-1 ring-slate-300 z-20";
+                if (courses.find(c => c.id === courseId)?.prereqs?.includes(hoveredCourse.id)) return "bg-slate-100 border-slate-400 ring-1 ring-slate-200 z-20";
+                if (!showAllConnections) return "bg-white border-slate-100 opacity-40 blur-[0.5px] z-10";
+            }
+            return "bg-white border-slate-200 hover:border-indigo-400";
+        };
+
+        const semestersArray = Array.from({ length: semesterCount }, (_, i) => i + 1);
+
+        return (
+            <div className="min-h-screen bg-slate-100 text-slate-800 font-sans p-4 md:p-8 flex flex-col h-full">
+                <div className="mx-auto mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative z-50 w-full max-w-[95%]">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div className="w-full md:w-auto">
+                            
+                            {/* --- HEADER & LOGO (Watermark Style) --- */}
+                            <div className="relative mb-2">
+                                <h1 className="text-5xl md:text-6xl font-extrabold text-slate-800 relative z-10 py-2">
+                                    {/* THE LOGO (Background Layer) */}
+                                    <div className="absolute -right-4 -top-6 w-48 h-48 opacity-20 z-[-1] pointer-events-none select-none rotate-12">
+                                        <img 
+                                            src="./bananaBreadLogo.png" 
+                                            alt="BananaBread Logo" 
+                                            className="w-full h-full object-contain mix-blend-multiply"
+                                            onError={(e) => {e.target.style.display='none';}}
+                                        />
+                                    </div>
+
+                                    {/* THE TEXT (Foreground Layer) */}
+                                    <span className="bg-gradient-to-r from-yellow-600 to-amber-700 bg-clip-text text-transparent drop-shadow-sm">
+                                        BananaBread
+                                    </span>
+                                    
+                                    {/* VERSION BADGE */}
+                                    <span className="absolute -bottom-2 right-1 text-sm font-medium text-slate-400 bg-slate-50/80 px-2 py-0.5 rounded-full border border-slate-100">
+                                        v19
+                                    </span>
+                                </h1>
+                            </div>
+
+                            <div className="flex items-center gap-2 mt-2">
+                                {loadingStatus === "loading" && <span className="flex items-center gap-1 text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full"><Icons.Loader size={12} /> {statusMessage}</span>}
+                                {loadingStatus === "success" && <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">{statusMessage}</span>}
+                                {loadingStatus === "error" && <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full font-bold">{statusMessage}</span>}
+                            </div>
+                            <div className="mt-4 flex flex-col md:flex-row items-start md:items-center gap-4">
+                                <div className="flex items-center gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200 max-w-lg w-full">
+                                    <div className="flex-1">
+                                        <label className="block text-xs font-bold text-slate-500 mb-1">מסלול לימודים:</label>
+                                        <button onClick={() => setShowTrackModal(true)} disabled={loadingStatus === "error"} className="w-full text-right bg-white border border-slate-300 hover:border-indigo-500 text-slate-700 hover:text-indigo-600 font-medium py-2 px-3 rounded-md transition-colors flex justify-between items-center">
+                                            <span>בחר מסלול מהרשימה...</span>
+                                            <Icons.ChevronDown size={16} className="text-slate-400"/>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button onClick={() => setShowAllConnections(!showAllConnections)} className={`flex items-center gap-2 px-4 py-3 rounded-lg border transition-all ${showAllConnections ? 'bg-indigo-600 text-white border-indigo-600 shadow-md' : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'}`}>
+                                    {showAllConnections ? <Icons.EyeOff size={18}/> : <Icons.Eye size={18}/>}
+                                    <span className="text-sm font-bold">הצג הכל</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="flex gap-4 items-center w-full md:w-auto mt-4 md:mt-0">
+                             <button onClick={resetAllData} className="text-slate-400 hover:text-red-500 transition-colors" title="איפוס מלא ומחיקת שמירה"><Icons.Refresh /></button>
+                             <div className="flex-1 md:flex-none text-center px-4 py-2 bg-slate-100 rounded-lg border border-slate-200">
+                               <div className="text-xs text-slate-500 uppercase tracking-wider font-bold">נקודות מצטברות</div>
+                               <div className="text-2xl font-bold text-indigo-600">{courses.reduce((acc, c) => acc + (c.completed ? (c.credits || 0) : 0), 0)} <span className="text-sm text-slate-400 font-normal">/ {courses.reduce((acc, c) => acc + (c.credits || 0), 0)}</span></div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <TrackSelectionModal isOpen={showTrackModal} onClose={() => setShowTrackModal(false)} onSelectTrack={handleTrackSelect} />
+
+                {showPrereqSelector && (
+                    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[70] backdrop-blur-sm">
+                        <div className="bg-white p-6 rounded-2xl shadow-2xl max-w-lg w-full mx-4 animate-in fade-in zoom-in-95 border border-slate-200">
+                            <div className="flex items-start gap-3 mb-4">
+                                <div className="bg-indigo-100 p-2 rounded-full text-indigo-600"><Icons.GitBranch size={24}/></div>
+                                <div>
+                                    <h3 className="font-bold text-lg text-slate-800">בחירת קדמים חסרים</h3>
+                                    <p className="text-sm text-slate-500 mt-1">הקורס <strong>{pendingCourse?.name}</strong> דורש קדמים שאינם בלוח.<br/>אנא סמן אילו מהאפשרויות ברצונך להוסיף:</p>
+                                </div>
+                            </div>
+                            <div className="max-h-60 overflow-y-auto custom-scrollbar border rounded-xl border-slate-200 bg-slate-50 p-2 mb-6">
+                                {missingPrereqOptions.map(opt => (
+                                    <label key={opt.id} className="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 mb-2 cursor-pointer hover:border-indigo-400 transition-colors shadow-sm">
+                                        <input type="checkbox" className="w-5 h-5 text-indigo-600 rounded focus:ring-indigo-500 border-gray-300" checked={selectedPrereqsToAdd.includes(opt.id)} onChange={() => togglePrereqOption(opt.id)} />
+                                        <div><div className="font-bold text-slate-700 text-sm">{opt.name}</div><div className="text-xs text-slate-400">{opt.id}</div></div>
+                                    </label>
+                                ))}
+                            </div>
+                            <div className="flex justify-end gap-3">
+                                <button onClick={() => { setShowPrereqSelector(false); setPendingCourse(null); }} className="px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 font-medium text-sm">בטל הוספה</button>
+                                <button onClick={confirmPrereqSelection} className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-md text-sm flex items-center gap-2"><Icons.PlusCircle size={16}/> הוסף</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {courseToDelete && (
+                    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-[60] backdrop-blur-sm">
+                        <div className="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full mx-4 animate-in fade-in zoom-in-95">
+                            <h3 className="font-bold text-lg mb-2 text-slate-800">מחיקה</h3>
+                            <p className="text-slate-600 mb-6">למחוק את הקורס?</p>
+                            <div className="flex justify-end gap-3">
+                                <button onClick={() => setCourseToDelete(null)} className="px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 font-medium">ביטול</button>
+                                <button onClick={confirmDelete} className="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white font-medium shadow-md">מחק</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {isEditing && (
+                    <div className="fixed inset-0 bg-black/20 flex items-start justify-center pt-20 z-[60] backdrop-blur-sm">
+                        <div className="w-full max-w-3xl bg-white p-6 rounded-2xl shadow-2xl border border-slate-100 animate-in fade-in slide-in-from-bottom-4">
+                            <div className="flex justify-between items-center mb-6 border-b pb-4">
+                                <h3 className="font-bold text-xl text-slate-800">{editingId ? 'עריכת קורס' : 'הוספת קורס'}</h3>
+                                <button onClick={() => setIsEditing(false)} className="text-slate-400 hover:text-slate-600">סגור</button>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
+                                <div className="md:col-span-6 relative" ref={wrapperRef}>
+                                    <label className="block text-sm font-medium text-slate-700 mb-1">שם הקורס / מספר</label>
+                                    <input placeholder="הקלד שם או מספר קורס..." className="w-full border border-slate-300 p-2.5 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" value={newCourseName} onChange={handleNameChange} onKeyDown={handleKeyDown} autoComplete="off" />
+                                    {showSuggestions && suggestions.length > 0 && (
+                                        <div className="absolute z-50 w-full bg-white border border-slate-200 rounded-lg shadow-xl mt-1 max-h-60 overflow-y-auto suggestions-anim" ref={suggestionsListRef}>
+                                            {suggestions.map((s, idx) => (
+                                                <button key={s.id} onClick={() => selectSuggestion(s)} className={`w-full text-right px-4 py-2 flex justify-between items-center border-b border-slate-50 last:border-0 ${idx === selectedIndex ? 'suggestion-selected' : 'hover:bg-indigo-50'}`}>
+                                                    <div className="max-w-[70%]"><div className="font-bold text-slate-700">{s.name}</div><div className="text-xs text-slate-400">{s.id}</div></div>
+                                                    <div className="text-xs font-bold bg-slate-100 px-2 py-1 rounded text-slate-600 shrink-0">{s.credits} נק'</div>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                                <div className="md:col-span-3"><label className="block text-sm font-medium text-slate-700 mb-1">נקודות</label><input type="number" className="w-full border border-slate-300 p-2.5 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" value={newCourseCredits} onChange={(e) => setNewCourseCredits(Number(e.target.value))} min="0" step="0.5" /></div>
+                                <div className="md:col-span-3"><label className="block text-sm font-medium text-slate-700 mb-1">סמסטר</label><select className="w-full border border-slate-300 p-2.5 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none bg-white" value={newCourseSem} onChange={(e) => setNewCourseSem(Number(e.target.value))}>{semestersArray.map(s => <option key={s} value={s}>סמסטר {s}</option>)}</select></div>
+                            </div>
+                            <div className="flex justify-end gap-3 pt-2">
+                                <button onClick={() => setIsEditing(false)} className="px-5 py-2.5 text-slate-600 hover:bg-slate-100 rounded-lg font-medium">ביטול</button>
+                                <button onClick={handleSaveCourse} className="px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 flex items-center gap-2 font-medium shadow-sm"><Icons.Save size={18} /> שמור קורס</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                <div className="overflow-x-auto pb-12 custom-scrollbar relative flex-1" ref={containerRef}>
+                    <svg className="connections-layer" style={{minWidth: 'max-content'}}>
+                        <defs></defs>
+                        {connections.map((conn, i) => (
+                            <path key={conn.id + i} d={conn.path} stroke={conn.color} strokeOpacity={conn.opacity || 1} className="connection-line" />
+                        ))}
+                    </svg>
+                    <div className="flex gap-5 min-w-max items-start h-full">
+                      {semestersArray.map((semNum) => {
+                        const semCourses = courses.filter(c => c.semester === semNum);
+                        const semCredits = semCourses.reduce((sum, c) => sum + (c.credits || 0), 0);
+                        const isLastSemester = semNum === semesterCount;
+                        
+                        return (
+                          /* CHANGED: Slimmer columns (w-22rem instead of w-28rem) */
+                          <div key={semNum} onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, semNum)} className="w-[22rem] xl:w-[24rem] bg-white rounded-2xl shadow-md border border-slate-200 flex flex-col transition-colors hover:border-indigo-300 z-10 max-h-full">
+                            <div className={`p-4 border-b border-slate-100 rounded-t-2xl relative ${semCredits > 27 ? 'bg-red-50' : 'bg-slate-50'}`}>
+                              <div className="flex justify-between items-center">
+                                <h2 className="font-bold text-lg text-slate-700">סמסטר {semNum}</h2>
+                                {isLastSemester && semCourses.length === 0 && semesterCount > 1 && (
+                                    <button onClick={() => removeSemester(semNum)} className="text-slate-400 hover:text-red-500 p-1 rounded hover:bg-red-50" title="מחק סמסטר ריק"><Icons.Trash2 size={16} /></button>
+                                )}
+                              </div>
+                              <div className={`text-xs font-bold mt-2 flex items-center gap-1 ${semCredits > 27 ? 'text-red-600' : 'text-slate-500'}`}>
+                                  {semCredits} נ"ז / {semCourses.length} קורסים
+                                  {semCredits > 27 && <Icons.AlertCircle size={12} />}
+                              </div>
+                            </div>
+
+                            <div className="p-3 flex-1 min-h-[300px] flex flex-col gap-3 bg-slate-50/30 overflow-y-auto custom-scrollbar">
+                              {semCourses.map((course) => {
+                                const error = checkPrerequisiteError(course, courses);
+                                const missingDetails = error ? getMissingDetails(course, courses) : [];
+                                const isCompleted = course.completed;
+
+                                return (
+                                  <div 
+                                    key={course.id}
+                                    ref={el => courseRefs.current[course.id] = el}
+                                    draggable 
+                                    onDragStart={(e) => handleDragStart(e, course)} 
+                                    onMouseEnter={() => setHoveredCourse(course)} 
+                                    onMouseLeave={() => setHoveredCourse(null)} 
+                                    className={`relative p-3.5 rounded-xl border shadow-sm transition-all cursor-grab active:cursor-grabbing group select-none 
+                                        ${getHighlightClass(course.id)} 
+                                        ${error && !isCompleted ? 'border-red-400 bg-red-50 ring-2 ring-red-100' : ''}
+                                        ${isCompleted ? '!bg-green-50 !border-green-400' : ''} 
+                                    `}
+                                  >
+                                    <div className="flex justify-between items-start mb-2">
+                                      <div className="pl-4 w-full">
+                                          <h4 className={`font-bold text-sm text-slate-800 leading-tight ${isCompleted ? 'line-through opacity-70' : ''}`}>
+                                              {course.name}
+                                          </h4>
+                                          {course.faculty && (<div className="text-[10px] text-slate-400 truncate mt-0.5 max-w-[90%]" title={course.faculty}>{course.faculty}</div>)}
+                                          <div className="text-xs font-bold text-slate-500 font-mono mt-1 flex items-center gap-2">
+                                              <span className="bg-slate-100 px-1.5 py-0.5 rounded text-slate-600">{course.id}</span>
+                                              <span className="text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">{course.credits} נק'</span>
+                                          </div>
+                                      </div>
+                                      <div className="flex flex-col items-end gap-1 shrink-0">
+                                        <button onClick={() => toggleCourseCompletion(course.id)} className={`w-6 h-6 rounded-full flex items-center justify-center border transition-all ${isCompleted ? 'bg-green-500 border-green-600 text-white' : 'bg-white border-slate-300 text-slate-300 hover:border-indigo-400'}`} title={isCompleted ? "סמן כלא הושלם" : "סמן כהושלם"}>
+                                            <Icons.Check size={14} className={isCompleted ? "text-white" : "opacity-0 hover:opacity-50"} />
+                                        </button>
+                                        <div className="flex items-center gap-1 mt-1">
+                                            <button onClick={() => openEditModal(course)} className="text-slate-400 hover:text-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-indigo-50 rounded"><Icons.Pencil size={14} /></button>
+                                            <button onClick={() => deleteCourse(course.id)} className="text-slate-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-red-50 rounded"><Icons.Trash2 size={14} /></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                                    {error && !isCompleted && (
+                                        <div className="mt-2 flex items-center gap-2">
+                                            <div className="text-[10px] text-red-600 bg-red-100 px-2 py-1 rounded border border-red-200 flex items-start gap-1 font-bold shadow-sm">
+                                                <Icons.AlertCircle size={10} className="mt-0.5 shrink-0" /> 
+                                                <span>{error}</span>
+                                            </div>
+                                            <div className="relative tooltip-container">
+                                                <div className="text-blue-500 cursor-help hover:text-blue-700 bg-blue-50 p-1 rounded-full"><Icons.Info size={12} /></div>
+                                                <div className="tooltip-content hidden absolute z-50 w-64 p-3 text-xs bg-slate-800 text-white rounded-lg shadow-xl -top-2 right-8 pointer-events-none">
+                                                    <div className="font-bold mb-1 border-b border-slate-600 pb-1">פירוט חוסרים:</div>
+                                                    <ul className="list-disc list-inside space-y-1 text-slate-300">
+                                                        {missingDetails.map((m, i) => (
+                                                            <li key={i}><span className="text-white font-medium">{m.name}</span> <span className="text-[10px] opacity-70">({m.id})</span><br/><span className="text-red-300 mr-3 block">⚠️ {m.reason}</span></li>
+                                                        ))}
+                                                        {missingDetails.length === 0 && <li>שגיאת לוגיקה (אבל חסר משהו)</li>}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                            <button onClick={() => openAddModal(semNum)} className="m-2 p-2 rounded-lg border border-dashed border-slate-300 text-slate-400 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50 flex items-center justify-center gap-2 transition-colors text-sm font-medium"><Icons.PlusCircle size={16} /> הוסף קורס לסמסטר {semNum}</button>
+                          </div>
+                        );
+                      })}
+                      <button onClick={addSemester} className="shrink-0 h-[300px] w-16 rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center text-slate-400 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all gap-2">
+                          <Icons.Plus size={24} /><span className="text-xs font-bold rotate-90 whitespace-nowrap">הוסף סמסטר</span>
+                      </button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<DegreePlanner />);
+</script>
+</body>
+</html>
