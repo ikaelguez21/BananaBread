@@ -1,64 +1,67 @@
 track_name,semester,course_id
-AERO_GEN,1,01040041
-AERO_GEN,1,01040064
-AERO_GEN,1,01140051
-AERO_GEN,1,02340128
-AERO_GEN,1,01250001
-AERO_GEN,1,03240033
-AERO_GEN,2,01040043
-AERO_GEN,2,01040131
-AERO_GEN,2,01140052
-AERO_GEN,2,00840506
-AERO_GEN,2,00840001
-AERO_GEN,3,01040228
-AERO_GEN,3,00840507
-AERO_GEN,3,00840302
-AERO_GEN,3,00840102
-AERO_GEN,3,03940901
-AERO_GEN,4,00840303
-AERO_GEN,4,00840103
-AERO_GEN,4,00840202
-AERO_GEN,4,00840603
-AERO_GEN,4,00840508
-AERO_GEN,4,03940901
-AERO_GEN,5,00840304
-AERO_GEN,5,00840203
-AERO_GEN,5,00840604
-AERO_GEN,5,00840402
-AERO_GEN,5,00840509
-AERO_GEN,5,00840306
-AERO_GEN,5,00840607
-AERO_PHYS,1,00440102
-AERO_PHYS,1,01040000
-AERO_PHYS,1,06401040
-AERO_PHYS,1,01040012
-AERO_PHYS,1,01140074
-AERO_PHYS,1,01140020
-AERO_PHYS,1,02340128
-AERO_PHYS,1,03240033
-AERO_PHYS,2,01040013
-AERO_PHYS,2,01040038
-AERO_PHYS,2,01040136
-AERO_PHYS,2,01140021
-AERO_PHYS,2,01140076
-AERO_PHYS,2,01140023
-AERO_PHYS,3,01040211
-AERO_PHYS,3,01040215
-AERO_PHYS,3,01140022
-AERO_PHYS,3,01140036
-AERO_PHYS,3,01140043
-AERO_PHYS,3,08440001
-AERO_PHYS,3,03940901
-AERO_PHYS,4,01140024
-AERO_PHYS,4,01140037
-AERO_PHYS,4,01140205
-AERO_PHYS,4,08440002
-AERO_PHYS,4,08440003
-AERO_PHYS,4,03940901
-AERO_PHYS,5,01140206
-AERO_PHYS,5,01140044
-AERO_PHYS,5,08440004
-AERO_PHYS,5,08440005
-AERO_PHYS,5,08440006
-AERO_PHYS,5,08440009
-AERO_PHYS,5,08440036
+Aeronautics and Astronautics,1,01040041
+Aeronautics and Astronautics,1,01040064
+Aeronautics and Astronautics,1,01140051
+Aeronautics and Astronautics,1,02340128
+Aeronautics and Astronautics,1,01250001
+Aeronautics and Astronautics,1,03240033
+Aeronautics and Astronautics,2,01040043
+Aeronautics and Astronautics,2,01040131
+Aeronautics and Astronautics,2,01140052
+Aeronautics and Astronautics,2,00840506
+Aeronautics and Astronautics,2,03140200
+Aeronautics and Astronautics,3,01040215
+Aeronautics and Astronautics,3,01040228
+Aeronautics and Astronautics,3,00840213
+Aeronautics and Astronautics,3,00840225
+Aeronautics and Astronautics,3,00940411
+Aeronautics and Astronautics,4,00840135
+Aeronautics and Astronautics,4,00840311
+Aeronautics and Astronautics,4,00840515
+Aeronautics and Astronautics,4,00840630
+Aeronautics and Astronautics,4,00840737
+Aeronautics and Astronautics,4,01140054
+Aeronautics and Astronautics,5,00440102
+Aeronautics and Astronautics,5,00840312
+Aeronautics and Astronautics,5,00840314
+Aeronautics and Astronautics,5,00840641
+Aeronautics and Astronautics,5,00840738
+Aeronautics and Astronautics,5,00840154
+Aeronautics and Astronautics,6,00440098
+Aeronautics and Physics,1,00440102
+Aeronautics and Physics,1,01040000
+Aeronautics and Physics,1,01040064
+Aeronautics and Physics,1,01040012
+Aeronautics and Physics,1,01140074
+Aeronautics and Physics,1,01140020
+Aeronautics and Physics,1,02340128
+Aeronautics and Physics,1,03240033
+Aeronautics and Physics,2,01040013
+Aeronautics and Physics,2,01040038
+Aeronautics and Physics,2,01040136
+Aeronautics and Physics,2,01140076
+Aeronautics and Physics,2,00840506
+Aeronautics and Physics,2,01140021
+Aeronautics and Physics,3,01040034
+Aeronautics and Physics,3,01040220
+Aeronautics and Physics,3,01040214
+Aeronautics and Physics,3,01040215
+Aeronautics and Physics,3,01140086
+Aeronautics and Physics,3,01140101
+Aeronautics and Physics,3,01140035
+Aeronautics and Physics,4,00840311
+Aeronautics and Physics,4,00840737
+Aeronautics and Physics,4,00840515
+Aeronautics and Physics,4,01150203
+Aeronautics and Physics,4,01140036
+Aeronautics and Physics,4,01140037
+Aeronautics and Physics,5,00840154
+Aeronautics and Physics,5,00840312
+Aeronautics and Physics,5,00840314
+Aeronautics and Physics,5,00840738
+Aeronautics and Physics,5,01150204
+Aeronautics and Physics,5,01140250
+Aeronautics and Physics,6,00840135
+Aeronautics and Physics,6,00440098
+Aeronautics and Physics,6,01140246
+Aeronautics and Physics,8,00840630

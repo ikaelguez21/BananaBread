@@ -1,156 +1,147 @@
 track_name,semester,course_id
-BIOMED_GEN,1,00440102
-BIOMED_GEN,1,01040042
-BIOMED_GEN,1,01040065
-BIOMED_GEN,1,01140071
-BIOMED_GEN,1,01250001
-BIOMED_GEN,1,01340058
-BIOMED_GEN,1,03340021
-BIOMED_GEN,1,01040000
-BIOMED_GEN,1,01040018
-BIOMED_GEN,1,01040016
-BIOMED_GEN,2,01040013
-BIOMED_GEN,2,01040038
-BIOMED_GEN,2,01040136
-BIOMED_GEN,2,01140052
-BIOMED_GEN,2,01240801
-BIOMED_GEN,2,02340128
-BIOMED_GEN,2,01140075
-BIOMED_GEN,3,00440105
-BIOMED_GEN,3,01040223
-BIOMED_GEN,3,01140032
-BIOMED_GEN,3,01340222
-BIOMED_GEN,3,03340221
-BIOMED_GEN,3,03342111
-BIOMED_GEN,3,03940901
-BIOMED_GEN,4,00440131
-BIOMED_GEN,4,01040034
-BIOMED_GEN,4,03340124
-BIOMED_GEN,4,03340224
-BIOMED_GEN,4,03940901
-BIOMED_GEN,5,00340035
-BIOMED_GEN,5,00440127
-BIOMED_GEN,5,03340235
-BIOMED_GEN,5,03342125
-BIOMED_GEN,5,00340055
-BIOMED_GEN,5,03340325
-BIOMED_GEN,5,03342135
-BIOMED_GEN,5,03940901
-BIOMED_GEN,6,03340162
-BIOMED_GEN,6,03340226
-BIOMED_GEN,6,03342126
-BIOMED_GEN,7,03340337
-BIOMED_GEN,7,03340137
-BIOMED_GEN,8,03340238
-BIOMED_GEN,8,03340138
-BIOMED_PHYS,1,00440102
-BIOMED_PHYS,1,01040042
-BIOMED_PHYS,1,01040065
-BIOMED_PHYS,1,01140020
-BIOMED_PHYS,1,01140074
-BIOMED_PHYS,1,01250001
-BIOMED_PHYS,1,01340058
-BIOMED_PHYS,1,03340021
-BIOMED_PHYS,1,01040000
-BIOMED_PHYS,1,01040018
-BIOMED_PHYS,1,01040016
-BIOMED_PHYS,2,01040013
-BIOMED_PHYS,2,01040038
-BIOMED_PHYS,2,01040136
-BIOMED_PHYS,2,01140076
-BIOMED_PHYS,2,01240801
-BIOMED_PHYS,2,02340128
-BIOMED_PHYS,3,00440105
-BIOMED_PHYS,3,01040223
-BIOMED_PHYS,3,01140023
-BIOMED_PHYS,3,01340222
-BIOMED_PHYS,3,03340221
-BIOMED_PHYS,3,03342111
-BIOMED_PHYS,3,03940901
-BIOMED_PHYS,3,01140022
-BIOMED_PHYS,4,00440131
-BIOMED_PHYS,4,01140036
-BIOMED_PHYS,4,03340124
-BIOMED_PHYS,4,03340224
-BIOMED_PHYS,4,03940901
-BIOMED_PHYS,5,00340035
-BIOMED_PHYS,5,00440127
-BIOMED_PHYS,5,01140035
-BIOMED_PHYS,5,03340235
-BIOMED_PHYS,5,03342125
-BIOMED_PHYS,5,03340325
-BIOMED_PHYS,5,03342135
-BIOMED_PHYS,5,03940901
-BIOMED_PHYS,6,01140024
-BIOMED_PHYS,6,01140205
-BIOMED_PHYS,6,01140206
-BIOMED_PHYS,6,03340226
-BIOMED_PHYS,6,03342126
-BIOMED_PHYS,6,01140233
-BIOMED_PHYS,6,01140037
-BIOMED_PHYS,7,03340337
-BIOMED_PHYS,7,01140033
-BIOMED_PHYS,7,01140207
-BIOMED_PHYS,7,03340137
-BIOMED_PHYS,8,03340238
-BIOMED_PHYS,8,03340138
-BIOMED_MD,1,00440102
-BIOMED_MD,1,01040042
-BIOMED_MD,1,01040065
-BIOMED_MD,1,01140071
-BIOMED_MD,1,01240507
-BIOMED_MD,1,02740167
-BIOMED_MD,1,03340021
-BIOMED_MD,1,01040000
-BIOMED_MD,1,01040018
-BIOMED_MD,1,01040016
-BIOMED_MD,2,01040013
-BIOMED_MD,2,01040038
-BIOMED_MD,2,01040136
-BIOMED_MD,2,01140052
-BIOMED_MD,2,01250803
-BIOMED_MD,2,02340128
-BIOMED_MD,2,01140075
-BIOMED_MD,3,00440105
-BIOMED_MD,3,01040223
-BIOMED_MD,3,01140032
-BIOMED_MD,3,02740122
-BIOMED_MD,3,03340221
-BIOMED_MD,3,03342111
-BIOMED_MD,4,00440131
-BIOMED_MD,4,01040034
-BIOMED_MD,4,02740213
-BIOMED_MD,4,03340224
-BIOMED_MD,4,03340124
-BIOMED_MD,5,00340035
-BIOMED_MD,5,00440127
-BIOMED_MD,5,02740127
-BIOMED_MD,5,03340235
-BIOMED_MD,5,03342125
-BIOMED_MD,5,03340325
-BIOMED_MD,5,03342135
-BIOMED_MD,5,03940901
-BIOMED_MD,6,02740216
-BIOMED_MD,6,02740241
-BIOMED_MD,6,02740242
-BIOMED_MD,6,02740243
-BIOMED_MD,6,03340226
-BIOMED_MD,6,03342126
-BIOMED_MD,6,03940901
-BIOMED_MD,7,02740212
-BIOMED_MD,7,02740227
-BIOMED_MD,7,02740239
-BIOMED_MD,7,02740325
-BIOMED_MD,7,03340337
-BIOMED_MD,7,03340137
-BIOMED_MD,8,02740219
-BIOMED_MD,8,02740223
-BIOMED_MD,8,02740312
-BIOMED_MD,8,03340238
-BIOMED_MD,8,03340138
-BIOMED_MD,9,02740222
-BIOMED_MD,9,02740229
-BIOMED_MD,9,02740336
-BIOMED_MD,9,02740372
-BIOMED_MD,9,02740375
-BIOMED_MD,9,03240397
+Biomedical Engineering,1,0440102
+Biomedical Engineering,1,1040042
+Biomedical Engineering,1,1040065
+Biomedical Engineering,1,1140071
+Biomedical Engineering,1,1250001
+Biomedical Engineering,1,1340058
+Biomedical Engineering,2,1040013
+Biomedical Engineering,2,1040038
+Biomedical Engineering,2,1040136
+Biomedical Engineering,2,1140052
+Biomedical Engineering,2,1240801
+Biomedical Engineering,2,2340128
+Biomedical Engineering,3,0440105
+Biomedical Engineering,3,1040214
+Biomedical Engineering,3,1040215
+Biomedical Engineering,3,1040220
+Biomedical Engineering,3,1240503
+Biomedical Engineering,3,1340019
+Biomedical Engineering,3,3340274
+Biomedical Engineering,4,0440131
+Biomedical Engineering,4,1040034
+Biomedical Engineering,4,3340221
+Biomedical Engineering,4,3340222
+Biomedical Engineering,4,3360537
+Biomedical Engineering,5,1340113
+Biomedical Engineering,5,3340009
+Biomedical Engineering,5,3340023
+Biomedical Engineering,5,3350010
+Biomedical Engineering,5,3360022
+Biomedical Engineering,5,3360100
+Biomedical Engineering,6,3340011
+Biomedical Engineering,6,3350001
+Biomedical Engineering,7,3340014
+Biomedical Engineering,7,3350002
+Biomedical Engineering,8,3350015
+Biomedical Engineering,8,3350003
+Biomedical Engineering and Physics,1,00440102
+Biomedical Engineering and Physics,1,01040042
+Biomedical Engineering and Physics,1,01040065
+Biomedical Engineering and Physics,1,01140020
+Biomedical Engineering and Physics,1,01140074
+Biomedical Engineering and Physics,1,01250001
+Biomedical Engineering and Physics,1,01340058
+Biomedical Engineering and Physics,2,01040013
+Biomedical Engineering and Physics,2,01040038
+Biomedical Engineering and Physics,2,01040136
+Biomedical Engineering and Physics,2,01140076
+Biomedical Engineering and Physics,2,01240801
+Biomedical Engineering and Physics,2,02340128
+Biomedical Engineering and Physics,3,00440105
+Biomedical Engineering and Physics,3,01040214
+Biomedical Engineering and Physics,3,01040215
+Biomedical Engineering and Physics,3,01040220
+Biomedical Engineering and Physics,3,01140021
+Biomedical Engineering and Physics,3,01140086
+Biomedical Engineering and Physics,3,01340019
+Biomedical Engineering and Physics,3,03340274
+Biomedical Engineering and Physics,4,00440131
+Biomedical Engineering and Physics,4,01040034
+Biomedical Engineering and Physics,4,01140035
+Biomedical Engineering and Physics,4,03340222
+Biomedical Engineering and Physics,4,03360537
+Biomedical Engineering and Physics,5,01140101
+Biomedical Engineering and Physics,5,03340009
+Biomedical Engineering and Physics,5,03340023
+Biomedical Engineering and Physics,5,03350010
+Biomedical Engineering and Physics,5,03360100
+Biomedical Engineering and Physics,6,01140036
+Biomedical Engineering and Physics,6,01150203
+Biomedical Engineering and Physics,6,03340011
+Biomedical Engineering and Physics,6,03350005
+Biomedical Engineering and Physics,6,03360533
+Biomedical Engineering and Physics,7,01140037
+Biomedical Engineering and Physics,7,01150204
+Biomedical Engineering and Physics,7,03340014
+Biomedical Engineering and Physics,7,03350003
+Biomedical Engineering and Physics,8,01140246
+Biomedical Engineering and Physics,8,03350015
+Medicine and Biomedical Engineering,1,00440102
+Medicine and Biomedical Engineering,1,01040042
+Medicine and Biomedical Engineering,1,01040065
+Medicine and Biomedical Engineering,1,01140071
+Medicine and Biomedical Engineering,1,01250001
+Medicine and Biomedical Engineering,1,01340058
+Medicine and Biomedical Engineering,2,01040013
+Medicine and Biomedical Engineering,2,01040038
+Medicine and Biomedical Engineering,2,01040136
+Medicine and Biomedical Engineering,2,01140052
+Medicine and Biomedical Engineering,2,01240801
+Medicine and Biomedical Engineering,2,02340128
+Medicine and Biomedical Engineering,3,00440105
+Medicine and Biomedical Engineering,3,01040214
+Medicine and Biomedical Engineering,3,01040215
+Medicine and Biomedical Engineering,3,01040220
+Medicine and Biomedical Engineering,3,01240503
+Medicine and Biomedical Engineering,3,01340019
+Medicine and Biomedical Engineering,3,03340274
+Medicine and Biomedical Engineering,4,00440131
+Medicine and Biomedical Engineering,4,01040034
+Medicine and Biomedical Engineering,4,03340221
+Medicine and Biomedical Engineering,4,03340222
+Medicine and Biomedical Engineering,4,03360537
+Medicine and Biomedical Engineering,5,01340113
+Medicine and Biomedical Engineering,5,03340009
+Medicine and Biomedical Engineering,5,03340023
+Medicine and Biomedical Engineering,5,03350010
+Medicine and Biomedical Engineering,5,03360022
+Medicine and Biomedical Engineering,5,03360100
+Medicine and Biomedical Engineering,6,03340011
+Medicine and Biomedical Engineering,6,03340221
+Medicine and Biomedical Engineering,6,03350001
+Medicine and Biomedical Engineering,6,02740143
+Medicine and Biomedical Engineering,6,02740165
+Medicine and Biomedical Engineering,6,02740262
+Medicine and Biomedical Engineering,6,02740268
+Medicine and Biomedical Engineering,7,03340014
+Medicine and Biomedical Engineering,7,03350003
+Medicine and Biomedical Engineering,7,02740234
+Medicine and Biomedical Engineering,7,02740242
+Medicine and Biomedical Engineering,7,02740243
+Medicine and Biomedical Engineering,7,02740260
+Medicine and Biomedical Engineering,7,02740320
+Medicine and Biomedical Engineering,8,03350015
+Medicine and Biomedical Engineering,8,02740235
+Medicine and Biomedical Engineering,8,02740246
+Medicine and Biomedical Engineering,8,02740261
+Medicine and Biomedical Engineering,8,02740265
+Medicine and Biomedical Engineering,8,02740267
+Medicine and Biomedical Engineering,9,03240397
+Medicine and Biomedical Engineering,9,02740231
+Medicine and Biomedical Engineering,9,02740258
+Medicine and Biomedical Engineering,9,02740322
+Medicine and Biomedical Engineering,9,02740326
+Medicine and Biomedical Engineering,9,02740336
+Medicine and Biomedical Engineering,9,02740372
+Medicine and Biomedical Engineering,9,02740375
+Medicine and Biomedical Engineering,10,02740251
+Medicine and Biomedical Engineering,10,02740252
+Medicine and Biomedical Engineering,10,02740318
+Medicine and Biomedical Engineering,10,02740319
+Medicine and Biomedical Engineering,10,02740327
+Medicine and Biomedical Engineering,10,02740328
+Medicine and Biomedical Engineering,10,02740352
+Medicine and Biomedical Engineering,10,02740367
+Medicine and Biomedical Engineering,10,02740369
+Medicine and Biomedical Engineering,10,02740376

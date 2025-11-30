@@ -1,143 +1,283 @@
 track_name,semester,course_id
-EDU_MATH,1,21400110
-EDU_MATH,1,11402140
-EDU_MATH,1,10400310
-EDU_MATH,1,01040195
-EDU_MATH,1,10400410
-EDU_MATH,1,10400420
-EDU_MATH,1,10400180
-EDU_MATH,1,10401660
-EDU_MATH,1,10400160
-EDU_MATH,1,10400650
-EDU_MATH,1,23401140
-EDU_MATH,1,03240033
-EDU_MATH,2,21402180
-EDU_MATH,2,10400320
-EDU_MATH,2,10400430
-EDU_MATH,2,10400440
-EDU_MATH,2,10400220
-EDU_MATH,2,10401670
-EDU_MATH,2,10400380
-EDU_MATH,2,10400130
-EDU_MATH,2,23401240
-EDU_MATH,2,23401280
-EDU_MATH,3,21401240
-EDU_MATH,3,21403020
-EDU_MATH,3,21402050
-EDU_MATH,3,10401730
-EDU_MATH,3,10402950
-EDU_MATH,3,10402790
-EDU_MATH,4,21402150
-EDU_MATH,4,21402170
-EDU_MATH,4,21403070
-EDU_MATH,4,21600260
-EDU_MATH,4,10402930
-EDU_MATH,4,10402830
-EDU_MATH,4,10401420
-EDU_MATH,4,10401340
-EDU_MATH,4,10403420
-EDU_MATH,4,10401920
-EDU_MATH,4,10401580
-EDU_PHYS,1,02140011
-EDU_PHYS,1,21401140
-EDU_PHYS,1,21600260
-EDU_PHYS,1,01040012
-EDU_PHYS,1,01040064
-EDU_PHYS,1,01140074
-EDU_PHYS,1,01140020
-EDU_PHYS,2,21402180
-EDU_PHYS,2,01040013
-EDU_PHYS,2,01040038
-EDU_PHYS,2,01040136
-EDU_PHYS,2,01140076
-EDU_PHYS,2,01140021
-EDU_PHYS,3,21403020
-EDU_PHYS,3,01040211
-EDU_PHYS,3,01040215
-EDU_PHYS,3,01140060
-EDU_PHYS,3,01140043
-EDU_PHYS,3,01140036
-EDU_PHYS,4,21402170
-EDU_PHYS,4,21403070
-EDU_PHYS,4,01140024
-EDU_PHYS,4,01140044
-EDU_PHYS,4,01140037
-EDU_PHYS,4,02340128
-EDU_PHYS,4,01140205
-EDU_PHYS,4,01140246
-EDU_BIOL,1,00110214
-EDU_BIOL,1,01200124
-EDU_BIOL,1,00580134
-EDU_BIOL,1,00030104
-EDU_BIOL,1,09010394
-EDU_BIOL,1,02430033
-EDU_BIOL,2,21402180
-EDU_BIOL,2,01040004
-EDU_BIOL,2,01250101
-EDU_BIOL,2,01250801
-EDU_BIOL,2,01340133
-EDU_BIOL,3,02140302
-EDU_BIOL,3,01140051
-EDU_BIOL,3,01340112
-EDU_BIOL,3,01340134
-EDU_BIOL,3,01250341
-EDU_BIOL,3,01250202
-EDU_BIOL,4,02140307
-EDU_BIOL,4,02140217
-EDU_BIOL,4,01140052
-EDU_BIOL,4,01340119
-EDU_BIOL,4,01340142
-EDU_BIOL,4,01340312
-EDU_BIOL,4,01340223
-EDU_BIOL,4,01340224
-EDU_BIOL,4,02160026
-EDU_BIOL,4,01250342
-EDU_BIOL,4,01250507
-EDU_BIOL,4,01340161
-EDU_TECH,1,00300420
-EDU_TECH,1,01040018
-EDU_TECH,1,01040016
-EDU_TECH,1,01250001
-EDU_TECH,1,03240033
-EDU_TECH,1,03940800
-EDU_TECH,1,00350026
-EDU_TECH,1,02340128
-EDU_TECH,1,21400110
-EDU_TECH,1,21600260
-EDU_TECH,1,21402140
-EDU_TECH,2,01040013
-EDU_TECH,2,01040038
-EDU_TECH,2,01040131
-EDU_TECH,2,01140051
-EDU_TECH,2,00340028
-EDU_TECH,2,03140533
-EDU_TECH,2,00340061
-EDU_TECH,2,21402180
-EDU_TECH,2,01040043
-EDU_TECH,2,01040044
-EDU_TECH,2,01040022
-EDU_TECH,2,01140071
-EDU_TECH,3,01140052
-EDU_TECH,3,00340035
-EDU_TECH,3,00340056
-EDU_TECH,3,00340053
-EDU_TECH,3,01040228
-EDU_TECH,3,21403020
-EDU_TECH,3,21402050
-EDU_TECH,3,01140075
-EDU_TECH,3,00340055
-EDU_TECH,3,00340030
-EDU_TECH,3,00340032
-EDU_TECH,3,00340010
-EDU_TECH,3,01250013
-EDU_TECH,3,01140032
-EDU_TECH,3,00340051
-EDU_TECH,4,00340041
-EDU_TECH,4,00340040
-EDU_TECH,4,00340054
-EDU_TECH,4,00340058
-EDU_TECH,4,21403070
-EDU_TECH,4,21402170
-EDU_TECH,4,00340060
-EDU_TECH,4,00340057
-EDU_TECH,4,00340371
+Mathematics Education,1,02140011
+Mathematics Education,1,02140114
+Mathematics Education,1,01040031
+Mathematics Education,1,01040195
+Mathematics Education,1,01040041
+Mathematics Education,1,01040042
+Mathematics Education,1,01040018
+Mathematics Education,1,01040166
+Mathematics Education,1,01040016
+Mathematics Education,1,01040065
+Mathematics Education,1,02340114
+Mathematics Education,1,03940901
+Mathematics Education,2,02140012
+Mathematics Education,2,02160014
+Mathematics Education,2,01040032
+Mathematics Education,2,01040281
+Mathematics Education,2,01040043
+Mathematics Education,2,01040044
+Mathematics Education,2,01040022
+Mathematics Education,2,00940345
+Mathematics Education,2,03240033
+Mathematics Education,2,03940901
+Mathematics Education,2,00940314
+Mathematics Education,2,00940202
+Mathematics Education,3,02140132
+Mathematics Education,3,02160135
+Mathematics Education,3,01040215
+Mathematics Education,3,01040214
+Mathematics Education,3,01040134
+Mathematics Education,3,00440268
+Mathematics Education,4,02140137
+Mathematics Education,4,02160133
+Mathematics Education,4,01040034
+Mathematics Education,4,01040222
+Mathematics Education,4,01040285
+Mathematics Education,5,02140092
+Mathematics Education,5,02140213
+Mathematics Education,5,01060397
+Mathematics Education,5,00940313
+Mathematics Education,6,02140093
+Mathematics Education,6,00940423
+Mathematics Education,6,01140051
+Mathematics Education,7,02160013
+Mathematics Education,8,02160112
+Mathematics Education,8,02160125
+Physics Education,1,02140011
+Physics Education,1,02140114
+Physics Education,1,02160026
+Physics Education,1,01040018
+Physics Education,1,01040016
+Physics Education,1,02340128
+Physics Education,1,03940901
+Physics Education,2,02140012
+Physics Education,2,01040022
+Physics Education,2,01040135
+Physics Education,2,03940900
+Physics Education,2,03240033
+Physics Education,2,01140071
+Physics Education,3,02140301
+Physics Education,3,00440102
+Physics Education,3,01040215
+Physics Education,3,01040223
+Physics Education,3,01140076
+Physics Education,3,01140075
+Physics Education,3,01140020
+Physics Education,4,02140607
+Physics Education,4,02140302
+Physics Education,4,01040034
+Physics Education,4,01140021
+Physics Education,4,01140073
+Physics Education,5,02160005
+Physics Education,5,02140609
+Physics Education,5,01240120
+Physics Education,5,01340058
+Physics Education,5,01140086
+Physics Education,6,02160034
+Physics Education,6,02160128
+Physics Education,6,01140035
+Physics Education,7,02140092
+Physics Education,7,02160004
+Physics Education,7,01240415
+Physics Education,8,02140093
+track_name,semester,course_id
+Chemistry Education,1,02140011/2
+Chemistry Education,1,01240117
+Chemistry Education,1,01340058
+Chemistry Education,1,01040003
+Chemistry Education,2,0214011/2
+Chemistry Education,2,01240118
+Chemistry Education,2,01250801
+Chemistry Education,2,01240708
+Chemistry Education,2,01040004
+Chemistry Education,2,03940901
+Chemistry Education,3,02140401
+Chemistry Education,3,01140051
+Chemistry Education,3,03240033
+Chemistry Education,3,01040019
+Chemistry Education,4,02140114
+Chemistry Education,4,01240220
+Chemistry Education,4,01140052
+Chemistry Education,5,02140402
+Chemistry Education,5,02140607
+Chemistry Education,5,0134019
+Chemistry Education,5,00140968
+Chemistry Education,5,01340153
+Chemistry Education,5,00140978
+Chemistry Education,5,01240415
+Chemistry Education,5,00540350
+Chemistry Education,5,01240212
+Chemistry Education,6,02160128
+Chemistry Education,6,00640322
+Chemistry Education,6,01240911
+Chemistry Education,6,00940481
+Chemistry Education,6,01340143
+Chemistry Education,7,02140092
+Chemistry Education,7,01140054
+Chemistry Education,8,02140093
+Chemistry Education,8,02160126
+Biology-Environmental Sciences Education,1,02140011
+Biology-Environmental Sciences Education,1,02140012
+Biology-Environmental Sciences Education,1,01240120
+Biology-Environmental Sciences Education,1,01340058
+Biology-Environmental Sciences Education,1,01040003
+Biology-Environmental Sciences Education,1,03940901
+Biology-Environmental Sciences Education,2,02140114
+Biology-Environmental Sciences Education,2,01340019
+Biology-Environmental Sciences Education,2,01340020
+Biology-Environmental Sciences Education,2,01250801
+Biology-Environmental Sciences Education,2,03240033
+Biology-Environmental Sciences Education,2,03940901
+Biology-Environmental Sciences Education,3,02140011
+Biology-Environmental Sciences Education,3,02140012
+Biology-Environmental Sciences Education,3,01340082
+Biology-Environmental Sciences Education,3,01340113
+Biology-Environmental Sciences Education,3,01140051
+Biology-Environmental Sciences Education,3,01340154
+Biology-Environmental Sciences Education,4,02140607
+Biology-Environmental Sciences Education,4,01340128
+Biology-Environmental Sciences Education,4,01340121
+Biology-Environmental Sciences Education,4,01340133
+Biology-Environmental Sciences Education,4,01140052
+Biology-Environmental Sciences Education,5,02140501
+Biology-Environmental Sciences Education,5,01340163
+Biology-Environmental Sciences Education,5,01340111
+Biology-Environmental Sciences Education,5,02340128
+Biology-Environmental Sciences Education,6,02140502
+Biology-Environmental Sciences Education,6,01340117
+Biology-Environmental Sciences Education,6,01340040
+Biology-Environmental Sciences Education,6,01340153
+Biology-Environmental Sciences Education,6,00160302
+Biology-Environmental Sciences Education,7,02140092
+Biology-Environmental Sciences Education,7,02160128
+Biology-Environmental Sciences Education,7,01140054
+Biology-Environmental Sciences Education,8,02160136
+Biology-Environmental Sciences Education,8,02140093
+Computer Science Education,1,02140011
+Computer Science Education,1,02140012
+Computer Science Education,1,01040031
+Computer Science Education,1,01040195
+Computer Science Education,1,01040041
+Computer Science Education,1,01040042
+Computer Science Education,1,01040018
+Computer Science Education,1,01040166
+Computer Science Education,1,01040016
+Computer Science Education,1,03240033
+Computer Science Education,1,03940901
+Computer Science Education,2,02140011
+Computer Science Education,2,02140012
+Computer Science Education,2,02340114
+Computer Science Education,2,01040032
+Computer Science Education,2,01040281
+Computer Science Education,2,01040043
+Computer Science Education,2,01040044
+Computer Science Education,2,01040022
+Computer Science Education,2,00940345
+Computer Science Education,2,03940901
+Computer Science Education,3,02140114
+Computer Science Education,3,02340141
+Computer Science Education,3,00940344
+Computer Science Education,3,02340122
+Computer Science Education,3,00940219
+Computer Science Education,3,02340118
+Computer Science Education,4,02340218
+Computer Science Education,4,02340129
+Computer Science Education,4,01040131
+Computer Science Education,4,00940412
+Computer Science Education,4,00940431
+Computer Science Education,4,01040034
+Computer Science Education,5,02140901
+Computer Science Education,5,02340247
+Computer Science Education,5,02340252
+Computer Science Education,5,00440252
+Computer Science Education,5,01040134
+Computer Science Education,6,02140902
+Computer Science Education,6,00940222
+Computer Science Education,6,00940240
+Computer Science Education,7,02140092
+Computer Science Education,7,02360319
+Computer Science Education,8,02140093
+Computer Science Education,8,02160126
+Technology-Mechanical Education,1,0030042
+Technology-Mechanical Education,1,01040018
+Technology-Mechanical Education,1,01040016
+Technology-Mechanical Education,1,01250001
+Technology-Mechanical Education,1,03240033
+Technology-Mechanical Education,1,03940800
+Technology-Mechanical Education,2,00340028
+Technology-Mechanical Education,2,03140533
+Technology-Mechanical Education,2,01250013
+Technology-Mechanical Education,2,01040022
+Technology-Mechanical Education,2,02340128
+Technology-Mechanical Education,2,03940800
+Technology-Mechanical Education,3,02140011
+Technology-Mechanical Education,3,02140012
+Technology-Mechanical Education,3,00340029
+Technology-Mechanical Education,3,00340030
+Technology-Mechanical Education,3,00340033
+Technology-Mechanical Education,3,00140006
+Technology-Mechanical Education,3,00340043
+Technology-Mechanical Education,3,01040131
+Technology-Mechanical Education,4,02140011
+Technology-Mechanical Education,4,02140012
+Technology-Mechanical Education,4,02140114
+Technology-Mechanical Education,4,00340035
+Technology-Mechanical Education,4,00340022
+Technology-Mechanical Education,4,00940481
+Technology-Mechanical Education,4,01140051
+Technology-Mechanical Education,5,02140807
+Technology-Mechanical Education,5,00340015
+Technology-Mechanical Education,5,00340032
+Technology-Mechanical Education,5,00340013
+Technology-Mechanical Education,5,01140052
+Technology-Mechanical Education,5,01140032
+Technology-Mechanical Education,6,02140806
+Technology-Mechanical Education,6,02160031
+Technology-Mechanical Education,6,01140054
+Technology-Mechanical Education,7,02140608
+Technology-Mechanical Education,7,02140092
+Technology-Mechanical Education,8,02160032
+Technology-Mechanical Education,8,02140093
+Technology-Mechanical Education,8,00340371
+Electronics-Electricity Education,1,02140011
+Electronics-Electricity Education,1,02140012
+Electronics-Electricity Education,1,01040012
+Electronics-Electricity Education,1,01040016
+Electronics-Electricity Education,1,02340117
+Electronics-Electricity Education,1,03940901
+Electronics-Electricity Education,2,02140011
+Electronics-Electricity Education,2,02140012
+Electronics-Electricity Education,2,01040038
+Electronics-Electricity Education,2,01040013
+Electronics-Electricity Education,2,01040136
+Electronics-Electricity Education,2,01140071
+Electronics-Electricity Education,2,03240033
+Electronics-Electricity Education,3,02140114
+Electronics-Electricity Education,3,00440268
+Electronics-Electricity Education,3,00440252
+Electronics-Electricity Education,3,00440102
+Electronics-Electricity Education,3,01040220
+Electronics-Electricity Education,3,01140075
+Electronics-Electricity Education,3,01140032
+Electronics-Electricity Education,3,03940901
+Electronics-Electricity Education,4,02160031
+Electronics-Electricity Education,4,00440105
+Electronics-Electricity Education,4,01040034
+Electronics-Electricity Education,4,01040214
+Electronics-Electricity Education,4,01040215
+Electronics-Electricity Education,4,01140073
+Electronics-Electricity Education,5,02140807
+Electronics-Electricity Education,5,00440127
+Electronics-Electricity Education,5,00440131
+Electronics-Electricity Education,6,02140806
+Electronics-Electricity Education,6,02140607
+Electronics-Electricity Education,6,00440137
+Electronics-Electricity Education,7,02140092
+Electronics-Electricity Education,7,02160032
+Electronics-Electricity Education,7,00440157
+Electronics-Electricity Education,8,02140093
+Electronics-Electricity Education,8,02160126
+Electronics-Electricity Education,8,02160128
+Electronics-Electricity Education,8,00440167
+Electronics-Electricity Education,8,00440198

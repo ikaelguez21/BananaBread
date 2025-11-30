@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BananaBread v19</title>
+    <title>BananaBread v22.1</title>
     
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -50,112 +50,119 @@
 <script type="text/babel">
     const { useState, useMemo, useEffect, useRef } = React;
 
-    // --- FULL DATA MAPPING ---
+    // --- FACULTY DATA MAPPING (External Files) ---
     const FACULTY_DATA = {
         "הנדסת חשמל ומחשבים": [
-            { id: "electricalEngTracks.csv:EE_GEN", name: "הנדסת חשמל" },
-            { id: "electricalEngTracks.csv:CE_GEN", name: "הנדסת מחשבים" },
-            { id: "electricalEngTracks.csv:EE_PHYS", name: "הנדסת חשמל ופיזיקה" },
-            { id: "electricalEngTracks.csv:EE_MATH", name: "הנדסת חשמל ומתמטיקה" },
-            { id: "electricalEngTracks.csv:ECE_QUANTUM", name: "הנדסת חשמל/מחשבים (קוונטים)" }
+            { id: "electricalEngTracks.csv:Electrical Engineering", name: "הנדסת חשמל" },
+            { id: "electricalEngTracks.csv:Electrical Engineering and Mathematics", name: "הנדסת חשמל ומתמטיקה" },
+            { id: "electricalEngTracks.csv:Electrical and Computer Engineering", name: "הנדסת חשמל ומחשבים" },
+            { id: "electricalEngTracks.csv:Electrical Engineering and Physics", name: "הנדסת חשמל ופיזיקה" },
+            { id: "electricalEngTracks.csv:Combined Electrical Engineering and Physics", name: "הנדסת חשמל ופיזיקה (משולב)" },
+            { id: "electricalEngTracks.csv:Computer Engineering", name: "הנדסת מחשבים" }
         ],
         "מדעי המחשב": [
-            { id: "csTracks.csv:CS_GENERAL_4Y", name: "מדעי המחשב (4 שנתי)" },
-            { id: "csTracks.csv:CS_GENERAL_3Y", name: "מדעי המחשב (3 שנתי)" },
-            { id: "csTracks.csv:CS_SOFT_ENG", name: "הנדסת תוכנה" },
-            { id: "csTracks.csv:CS_DATA_LEARNING", name: "מדע הנתונים ולמידת מכונה" },
-            { id: "csTracks.csv:CS_CYBER", name: "סייבר ואבטחת מידע" },
-            { id: "csTracks.csv:CS_COMP_ENG", name: "הנדסת מחשבים (תוכנה)" },
-            { id: "csTracks.csv:CS_BIOINFO", name: "ביואינפורמטיקה" },
-            { id: "csTracks.csv:CS_MATH", name: "מדעי המחשב ומתמטיקה" },
-            { id: "csTracks.csv:CS_MEDICINE", name: "מדעי המחשב ורפואה" }
+            { id: "csTracks.csv:Computer Science - General Four-Year Track", name: "מדעי המחשב (כללי 4 שנתי)" },
+            { id: "csTracks.csv:Computer Science and Computer Systems - Cyber Security Track", name: "סייבר ואבטחת מידע" },
+            { id: "csTracks.csv:Computer Science - General Three-Year Track", name: "מדעי המחשב (כללי 3 שנתי)" },
+            { id: "csTracks.csv:Computer Science - Learning and Data Analysis Track", name: "למידה וניתוח מידע" },
+            { id: "csTracks.csv:Computer Science - Bioinformatics Track", name: "ביואינפורמטיקה" },
+            { id: "csTracks.csv:Software Engineering Track", name: "הנדסת תוכנה" },
+            { id: "csTracks.csv:Computer Engineering Track", name: "הנדסת מחשבים (מדמ\"ח)" },
+            { id: "csTracks.csv:Computer Science and Mathematics - Combined Track", name: "מדעי המחשב ומתמטיקה" },
+            { id: "csTracks.csv:Computer Science and Physics - Combined Track", name: "מדעי המחשב ופיזיקה" },
+            { id: "csTracks.csv:Medicine and Computer Science - Double Degree Track", name: "רפואה ומדעי המחשב" }
         ],
         "הנדסת מכונות": [
-            { id: "mechEngTracks.csv:MECH_GEN", name: "הנדסת מכונות" },
-            { id: "mechEngTracks.csv:MECH_BRAKIM", name: "תכנית ברקים (מצוינות)" }
+            { id: "mechEngTracks.csv:Mechanical Engineering", name: "הנדסת מכונות" },
+            { id: "mechEngTracks.csv:BRAKIM", name: "ברקים (מצוינות)" }
         ],
         "הנדסה אזרחית וסביבתית": [
-            { id: "civilEngTracks.csv:CIVIL_WATER_TRANS", name: "הנדסה אזרחית (מים/תחבורה)" },
-            { id: "civilEngTracks.csv:CIVIL_STRUCT", name: "הנדסה אזרחית (מבנים)" },
-            { id: "civilEngTracks.csv:CIVIL_MGMT", name: "ניהול ובנייה" },
-            { id: "civilEngTracks.csv:ENV_ENG", name: "הנדסת סביבה" },
-            { id: "civilEngTracks.csv:GEO_INFO", name: "מיפוי וגיאו-אינפורמציה" }
+            { id: "civilEngTracks.csv:Civil Engineering - Water & Environment", name: "הנדסה אזרחית - מים וסביבה" },
+            { id: "civilEngTracks.csv:Civil Engineering - Transportation", name: "הנדסה אזרחית - תחבורה" },
+            { id: "civilEngTracks.csv:Civil Engineering", name: "הנדסה אזרחית (כללי/מבנים)" },
+            { id: "civilEngTracks.csv:Civil Engineering - Management and Construction", name: "ניהול ובנייה" },
+            { id: "civilEngTracks.csv:Environmental Engineering", name: "הנדסת סביבה" },
+            { id: "civilEngTracks.csv:Mapping and Geo-Information Engineering", name: "מיפוי וגיאו-אינפורמציה" },
+            { id: "civilEngTracks.csv:Mapping and Geo-Information 3Y Engineering", name: "מיפוי וגיאו-אינפורמציה (3 שנתי)" }
         ],
         "הנדסת תעשייה וניהול": [
-            { id: "dataDecisionTracks.csv:IND_ENG_MGMT", name: "הנדסת תעשייה וניהול" },
-            { id: "dataDecisionTracks.csv:INFO_SYS", name: "מערכות מידע" },
-            { id: "dataDecisionTracks.csv:DATA_INFO", name: "הנדסת נתונים ומידע" }
+            { id: "dataDecisionTracks.csv:Data and Information Engineering", name: "הנדסת נתונים ומידע" },
+            { id: "dataDecisionTracks.csv:Industrial Engineering and Management", name: "הנדסת תעשייה וניהול" },
+            { id: "dataDecisionTracks.csv:Information Systems Engineering", name: "מערכות מידע" },
+            { id: "dataDecisionTracks.csv:Medicine and Data Engineering", name: "רפואה והנדסת נתונים" }
         ],
         "הנדסת אווירונאוטיקה וחלל": [
-            { id: "aerospaceTracks.csv:AERO_GEN", name: "הנדסת אווירונאוטיקה" },
-            { id: "aerospaceTracks.csv:AERO_PHYS", name: "אווירונאוטיקה ופיזיקה" }
+            { id: "aerospaceTracks.csv:Aeronautics and Astronautics", name: "הנדסת אווירונאוטיקה" },
+            { id: "aerospaceTracks.csv:Aeronautics and Physics", name: "אווירונאוטיקה ופיזיקה" }
         ],
         "הנדסה כימית": [
-            { id: "chemicalEngTracks.csv:CHEM_ENG", name: "הנדסה כימית" },
-            { id: "chemicalEngTracks.csv:BIOCHEM_ENG", name: "הנדסה ביוכימית" }
+            { id: "chemicalEngTracks.csv:Chemical Engineering", name: "הנדסה כימית" },
+            { id: "chemicalEngTracks.csv:Biochemical Engineering", name: "הנדסה ביוכימית" }
         ],
         "הנדסת ביוטכנולוגיה ומזון": [
-            { id: "biotechFoodTracks.csv:BIOTECH_FOOD", name: "הנדסת ביוטכנולוגיה ומזון" }
+            { id: "biotechFoodTracks.csv:Biotechnology and Food Engineering", name: "הנדסת ביוטכנולוגיה ומזון" }
         ],
         "הנדסה ביו-רפואית": [
-            { id: "biomedicalTracks.csv:BIOMED_GEN", name: "הנדסה ביו-רפואית" },
-            { id: "biomedicalTracks.csv:BIOMED_PHYS", name: "ביו-רפואה ופיזיקה" },
-            { id: "biomedicalTracks.csv:BIOMED_MD", name: "ביו-רפואה לרפואנים" }
+            { id: "biomedicalTracks.csv:Biomedical Engineering", name: "הנדסה ביו-רפואית" },
+            { id: "biomedicalTracks.csv:Biomedical Engineering and Physics", name: "ביו-רפואה ופיזיקה" },
+            { id: "biomedicalTracks.csv:Medicine and Biomedical Engineering", name: "רפואה והנדסה ביו-רפואית" }
         ],
         "הנדסת חומרים": [
-            { id: "materialsTracks.csv:MATERIALS_SINGLE", name: "הנדסת חומרים" },
-            { id: "materialsTracks.csv:MATERIALS_PHYSICS", name: "הנדסת חומרים ופיזיקה" },
-            { id: "materialsTracks.csv:MATERIALS_CHEM", name: "הנדסת חומרים וכימיה" },
-            { id: "materialsTracks.csv:MATERIALS_BIO", name: "הנדסת חומרים וביולוגיה" }
+            { id: "materialsTracks.csv:Materials Engineering", name: "הנדסת חומרים" },
+            { id: "materialsTracks.csv:Materials Engineering and Physics", name: "הנדסת חומרים ופיזיקה" },
+            { id: "materialsTracks.csv:Materials Engineering and Chemistry", name: "הנדסת חומרים וכימיה" },
+            { id: "materialsTracks.csv:Materials Engineering and Biology", name: "הנדסת חומרים וביולוגיה" }
         ],
         "ארכיטקטורה ובינוי ערים": [
-            { id: "architectureTracks.csv:ARCHITECTURE", name: "ארכיטקטורה" },
-            { id: "architectureTracks.csv:LANDSCAPE_ARCH", name: "אדריכלות נוף" }
+            { id: "architectureTracks.csv:Architecture and Town Planning", name: "ארכיטקטורה" }
         ],
         "מתמטיקה": [
-            { id: "mathTracks.csv:MATH_3Y", name: "מתמטיקה (3 שנתי)" },
-            { id: "mathTracks.csv:MATH_PHYS", name: "מתמטיקה ופיזיקה" },
-            { id: "mathTracks.csv:MATH_CS", name: "מתמטיקה ומדעי המחשב" },
-            { id: "mathTracks.csv:MATH_APP", name: "מתמטיקה שימושית" },
-            { id: "mathTracks.csv:CS_MATH_JOINT", name: "מדעי המחשב ומתמטיקה (משולב)" }
+            { id: "mathTracks.csv:Three-year program in Mathematics", name: "מתמטיקה (3 שנתי)" },
+            { id: "mathTracks.csv:Combined Mathematics-Physics", name: "מתמטיקה ופיזיקה (משולב)" },
+            { id: "mathTracks.csv:Mathematics with Computer Science", name: "מתמטיקה עם מדעי המחשב" },
+            { id: "mathTracks.csv:Applied Mathematics", name: "מתמטיקה שימושית" },
+            { id: "mathTracks.csv:Computer Science and Mathematics", name: "מדעי המחשב ומתמטיקה" }
         ],
         "פיזיקה": [
-            { id: "physicsTracks.csv:PHYS_3Y", name: "פיזיקה (3 שנתי)" },
-            { id: "physicsTracks.csv:PHYS_EE", name: "פיזיקה והנדסת חשמל" },
-            { id: "physicsTracks.csv:PHYS_CS", name: "פיזיקה ומדעי המחשב" },
-            { id: "physicsTracks.csv:PHYS_MATH", name: "פיזיקה ומתמטיקה" },
-            { id: "physicsTracks.csv:PHYS_MATERIALS", name: "פיזיקה והנדסת חומרים" },
-            { id: "physicsTracks.csv:PHYS_AERO", name: "פיזיקה ואווירונאוטיקה" },
-            { id: "physicsTracks.csv:PHYS_BIOMED", name: "פיזיקה והנדסה ביו-רפואית" },
-            { id: "physicsTracks.csv:PHYS_OPTICS", name: "פיזיקה ואופטיקה" }
+            { id: "physicsTracks.csv:Physics - Three-Year Track", name: "פיזיקה (3 שנתי)" },
+            { id: "physicsTracks.csv:Physics - Four-Year Track", name: "פיזיקה (4 שנתי)" },
+            { id: "physicsTracks.csv:Mathematics and Physics - Combined Three-Year Track", name: "מתמטיקה ופיזיקה (3 שנתי)" },
+            { id: "physicsTracks.csv:Physics - Electrical and Computer Engineering Track", name: "פיזיקה - מגמת הנדסת חשמל" },
+            { id: "physicsTracks.csv:Physics and Electrical Engineering - Combined Track", name: "פיזיקה והנדסת חשמל (משולב)" },
+            { id: "physicsTracks.csv:Computer Science and Physics - Combined Degree Track", name: "מדעי המחשב ופיזיקה (משולב)" },
+            { id: "physicsTracks.csv:Biomedical Engineering and Physics - Combined Degree Track", name: "הנדסה ביו-רפואית ופיזיקה" },
+            { id: "physicsTracks.csv:Aerospace Engineering and Physics - Combined Degree Track", name: "אווירונאוטיקה ופיזיקה" }
         ],
         "כימיה": [
-            { id: "chemistryTracks.csv:CHEM_3Y", name: "כימיה (3 שנתי)" },
-            { id: "chemistryTracks.csv:MOL_BIOCHEM", name: "ביוכימיה מולקולרית" },
-            { id: "chemistryTracks.csv:CHEM_BIO_DOUBLE", name: "כימיה וביולוגיה" },
-            { id: "chemistryTracks.csv:CHEM_MATERIALS", name: "כימיה והנדסת חומרים" }
+            { id: "chemistryTracks.csv:Chemistry", name: "כימיה" },
+            { id: "chemistryTracks.csv:Haznek Chemistry - Medicinal", name: "כימיה - מזנק (רפואית)" },
+            { id: "chemistryTracks.csv:Haznek Chemistry - Technologies", name: "כימיה - מזנק (טכנולוגיות)" },
+            { id: "chemistryTracks.csv:Haznek Chemistry - Quantum", name: "כימיה - מזנק (קוונטים)" },
+            { id: "chemistryTracks.csv:Molecular Biochemistry", name: "ביוכימיה מולקולרית" }
         ],
         "ביולוגיה": [
-            { id: "biologyTracks.csv:BIOL_GENERAL", name: "ביולוגיה" },
-            { id: "biologyTracks.csv:BIOL_RESEARCH_HUMAN_EVO", name: "ביולוגיה - אבולוציה" },
-            { id: "biologyTracks.csv:BIOL_RESEARCH_MICRO_ECO", name: "ביולוגיה - מיקרו/אקו" },
-            { id: "biologyTracks.csv:BIOL_RESEARCH_BIOCHEM", name: "ביולוגיה - ביוכימיה" },
-            { id: "biologyTracks.csv:BIOL_CHEM_DOUBLE", name: "ביולוגיה וכימיה" }
+            { id: "biologyTracks.csv:Biology", name: "ביולוגיה" },
+            { id: "biologyTracks.csv:Biology - Research and Human Development", name: "ביולוגיה - מחקר והתפתחות האדם" },
+            { id: "biologyTracks.csv:Biology - Microbiology Ecology and Environment", name: "ביולוגיה - מיקרוביולוגיה ואקולוגיה" },
+            { id: "biologyTracks.csv:Biology - Research in Biology and Molecular Biochemistry", name: "ביולוגיה - ביוכימיה מולקולרית" },
+            { id: "biologyTracks.csv:Double Major in Biology and Chemistry", name: "ביולוגיה וכימיה (דו-חוגי)" }
         ],
         "רפואה": [
-            { id: "medicineTracks.csv:MEDICINE_MD", name: "רפואה (MD)" },
-            { id: "medicineTracks.csv:MED_BIOMED_DOUBLE", name: "רפואה והנדסה ביו-רפואית" },
-            { id: "medicineTracks.csv:MED_CS_DOUBLE", name: "רפואה ומדעי המחשב" }
+            { id: "medicineTracks.csv:Medical Sciences", name: "מדעי הרפואה" },
+            { id: "medicineTracks.csv:Medicine and Biomedical Engineering", name: "רפואה והנדסה ביו-רפואית" },
+            { id: "medicineTracks.csv:Medicine and Computer Science - Double Degree Track", name: "רפואה ומדעי המחשב" }
         ],
         "חינוך למדע וטכנולוגיה": [
-            { id: "educationTracks.csv:EDU_MATH", name: "הוראת המתמטיקה" },
-            { id: "educationTracks.csv:EDU_PHYS", name: "הוראת הפיזיקה" },
-            { id: "educationTracks.csv:EDU_BIOL", name: "הוראת הביולוגיה" },
-            { id: "educationTracks.csv:EDU_TECH", name: "הוראת טכנולוגיה ומדעים" }
+            { id: "educationTracks.csv:Mathematics Education", name: "הוראת המתמטיקה" },
+            { id: "educationTracks.csv:Physics Education", name: "הוראת הפיזיקה" },
+            { id: "educationTracks.csv:Chemistry Education", name: "הוראת הכימיה" },
+            { id: "educationTracks.csv:Biology-Environmental Sciences Education", name: "הוראת הביולוגיה ומדעי הסביבה" },
+            { id: "educationTracks.csv:Computer Science Education", name: "הוראת מדעי המחשב" },
+            { id: "educationTracks.csv:Technology-Mechanical Education", name: "הוראת טכנולוגיה-מכונות" },
+            { id: "educationTracks.csv:Electronics-Electricity Education", name: "הוראת חשמל ואלקטרוניקה" }
         ]
     };
 
-    // --- Icons ---
     const Icons = {
         GraduationCap: ({size=32}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
         Plus: ({size=20}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>,
@@ -177,7 +184,6 @@
         ChevronUp: ({size=16, className}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="18 15 12 9 6 15"></polyline></svg>
     };
 
-    // --- Helper Functions ---
     const normalizeId = (id) => String(id).trim();
 
     const getAllAncestors = (courseId, allCourses) => {
@@ -206,7 +212,6 @@
             courseIds.forEach(id => {
                 const normalizedId = normalizeId(id);
                 const courseInBoard = currentCourses.find(c => c.id === normalizedId);
-                // IF COMPLETED: Treat as passed regardless of semester
                 const isCompleted = (courseInBoard && courseInBoard.completed) || (courseInBoard && courseInBoard.semester < targetSemester);
                 completionMap[id] = isCompleted;
             });
@@ -277,7 +282,45 @@
         return missingList;
     };
 
-    // --- COMPONENT: Track Selection Modal ---
+    // --- FACULTY COLORS ---
+    const getFacultyColor = (id) => {
+        // Strip leading zeros
+        const cleanId = String(id).replace(/^0+/, ''); 
+        const prefix = cleanId.substring(0, 2);
+        
+        // Base style for all cards: thick left border, distinct background
+        const baseStyle = "border-l-[6px] shadow-sm hover:shadow-md";
+
+        switch(prefix) {
+            case '23': // CS - Emerald
+                return `${baseStyle} bg-emerald-100 border-emerald-200 border-l-emerald-600`; 
+            case '10': // Math - Blue
+                return `${baseStyle} bg-blue-100 border-blue-200 border-l-blue-600`; 
+            case '11': // Physics - Violet
+                return `${baseStyle} bg-violet-100 border-violet-200 border-l-violet-600`; 
+            case '04': // EE - Amber
+                return `${baseStyle} bg-amber-100 border-amber-200 border-l-amber-600`; 
+            case '09': // Data/Indus - Fuchsia
+                return `${baseStyle} bg-fuchsia-100 border-fuchsia-200 border-l-fuchsia-600`; 
+            case '01': // Civil - Orange
+                return `${baseStyle} bg-orange-100 border-orange-200 border-l-orange-600`; 
+            case '08': // Aero - Sky
+                return `${baseStyle} bg-sky-100 border-sky-200 border-l-sky-600`; 
+            case '12': // Chem
+            case '13': // Bio - Rose
+                return `${baseStyle} bg-rose-100 border-rose-200 border-l-rose-600`; 
+            case '27': // Med
+            case '33': // Med - Red
+                return `${baseStyle} bg-red-100 border-red-200 border-l-red-600`; 
+            case '20': // Arch - Lime
+                return `${baseStyle} bg-lime-100 border-lime-200 border-l-lime-600`; 
+            case '03': // Mech - Stone
+                return `${baseStyle} bg-stone-200 border-stone-300 border-l-stone-600`; 
+            default: // General
+                return `${baseStyle} bg-white border-slate-200 border-l-slate-400`;
+        }
+    };
+
     const TrackSelectionModal = ({ isOpen, onClose, onSelectTrack }) => {
         if (!isOpen) return null;
         const [expandedFaculty, setExpandedFaculty] = React.useState(null);
@@ -337,7 +380,6 @@
         const [isEditing, setIsEditing] = useState(false);
         const [editingId, setEditingId] = useState(null);
         
-        // Modal State
         const [newCourseName, setNewCourseName] = useState('');
         const [newCourseCredits, setNewCourseCredits] = useState(3);
         const [newCourseSem, setNewCourseSem] = useState(1);
@@ -364,7 +406,6 @@
         const [courseToDelete, setCourseToDelete] = useState(null);
         const [connections, setConnections] = useState([]);
 
-        // --- Effects ---
         useEffect(() => {
             const savedCourses = localStorage.getItem("technion_planner_courses_v5");
             const savedSemesters = localStorage.getItem("technion_planner_semesters_v5");
@@ -411,7 +452,6 @@
             loadData();
         }, []);
 
-        // --- VISUALIZATION UPDATE ---
         const updateConnections = () => {
             if (!containerRef.current) { setConnections([]); return; }
             if (!showAllConnections && !hoveredCourse) { setConnections([]); return; }
@@ -474,7 +514,6 @@
         };
         useEffect(() => { updateConnections(); }, [hoveredCourse, courses, showAllConnections]);
 
-        // --- Handlers ---
         const resetAllData = () => {
             if(confirm("בטוח שברצונך למחוק הכל ולהתחיל מחדש?")) {
                 setCourses([]); setSemesterCount(8);
@@ -504,6 +543,7 @@
                             if (semester > maxSem) maxSem = semester;
                             const fullDetails = catalog.find(c => c.id === cId);
                             if (fullDetails) newBoard.push({ ...fullDetails, semester: semester, completed: false });
+                            else newBoard.push({ id: cId, name: cId, credits: 0, semester: semester, completed: false });
                         });
                         if (maxSem > semesterCount) setSemesterCount(maxSem);
                         setCourses(newBoard); setLoadingStatus("success"); setStatusMessage("המסלול נטען בהצלחה");
@@ -513,7 +553,6 @@
             } catch (err) { setLoadingStatus("error"); setStatusMessage(`שגיאה: ${err.message}`); alert(`שגיאה בטעינת המסלול:\n${err.message}`); }
         };
 
-        // --- NEW: Toggle Completion ---
         const toggleCourseCompletion = (courseId) => {
             setCourses(prev => prev.map(c => c.id === courseId ? { ...c, completed: !c.completed } : c));
         };
@@ -605,14 +644,15 @@
         useEffect(() => { function handleClickOutside(event) { if (wrapperRef.current && !wrapperRef.current.contains(event.target)) setShowSuggestions(false); } document.addEventListener("mousedown", handleClickOutside); return () => document.removeEventListener("mousedown", handleClickOutside); }, [wrapperRef]);
 
         const getHighlightClass = (courseId) => {
+            const baseColor = getFacultyColor(courseId);
             if (hoveredCourse) {
-                if (hoveredCourse.id === courseId) return "bg-slate-50 border-slate-500 ring-2 ring-slate-200 scale-[1.02] shadow-md z-30";
+                if (hoveredCourse.id === courseId) return `scale-[1.02] shadow-md z-30 ${baseColor} ring-2 ring-slate-400`;
                 const ancestors = getAllAncestors(hoveredCourse.id, courses);
                 if (ancestors.has(courseId)) return "bg-slate-100 border-slate-600 ring-1 ring-slate-300 z-20";
                 if (courses.find(c => c.id === courseId)?.prereqs?.includes(hoveredCourse.id)) return "bg-slate-100 border-slate-400 ring-1 ring-slate-200 z-20";
                 if (!showAllConnections) return "bg-white border-slate-100 opacity-40 blur-[0.5px] z-10";
             }
-            return "bg-white border-slate-200 hover:border-indigo-400";
+            return baseColor;
         };
 
         const semestersArray = Array.from({ length: semesterCount }, (_, i) => i + 1);
@@ -622,29 +662,13 @@
                 <div className="mx-auto mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative z-50 w-full max-w-[95%]">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                         <div className="w-full md:w-auto">
-                            
-                            {/* --- HEADER & LOGO (Watermark Style) --- */}
                             <div className="relative mb-2">
                                 <h1 className="text-5xl md:text-6xl font-extrabold text-slate-800 relative z-10 py-2">
-                                    {/* THE LOGO (Background Layer) */}
                                     <div className="absolute -right-4 -top-6 w-48 h-48 opacity-20 z-[-1] pointer-events-none select-none rotate-12">
-                                        <img 
-                                            src="./bananaBreadLogo.png" 
-                                            alt="BananaBread Logo" 
-                                            className="w-full h-full object-contain mix-blend-multiply"
-                                            onError={(e) => {e.target.style.display='none';}}
-                                        />
+                                        <img src="./bananaBreadLogo.png" alt="BananaBread Logo" className="w-full h-full object-contain mix-blend-multiply" onError={(e) => {e.target.style.display='none';}} />
                                     </div>
-
-                                    {/* THE TEXT (Foreground Layer) */}
-                                    <span className="bg-gradient-to-r from-yellow-600 to-amber-700 bg-clip-text text-transparent drop-shadow-sm">
-                                        BananaBread
-                                    </span>
-                                    
-                                    {/* VERSION BADGE */}
-                                    <span className="absolute -bottom-2 right-1 text-sm font-medium text-slate-400 bg-slate-50/80 px-2 py-0.5 rounded-full border border-slate-100">
-                                        v19
-                                    </span>
+                                    <span className="bg-gradient-to-r from-yellow-600 to-amber-700 bg-clip-text text-transparent drop-shadow-sm">BananaBread</span>
+                                    <span className="absolute -bottom-2 right-1 text-sm font-medium text-slate-400 bg-slate-50/80 px-2 py-0.5 rounded-full border border-slate-100">v22.1</span>
                                 </h1>
                             </div>
 
@@ -767,7 +791,6 @@
                         const isLastSemester = semNum === semesterCount;
                         
                         return (
-                          /* CHANGED: Slimmer columns (w-22rem instead of w-28rem) */
                           <div key={semNum} onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, semNum)} className="w-[22rem] xl:w-[24rem] bg-white rounded-2xl shadow-md border border-slate-200 flex flex-col transition-colors hover:border-indigo-300 z-10 max-h-full">
                             <div className={`p-4 border-b border-slate-100 rounded-t-2xl relative ${semCredits > 27 ? 'bg-red-50' : 'bg-slate-50'}`}>
                               <div className="flex justify-between items-center">
@@ -798,8 +821,8 @@
                                     onMouseLeave={() => setHoveredCourse(null)} 
                                     className={`relative p-3.5 rounded-xl border shadow-sm transition-all cursor-grab active:cursor-grabbing group select-none 
                                         ${getHighlightClass(course.id)} 
-                                        ${error && !isCompleted ? 'border-red-400 bg-red-50 ring-2 ring-red-100' : ''}
-                                        ${isCompleted ? '!bg-green-50 !border-green-400' : ''} 
+                                        ${error && !isCompleted ? '!border-red-400 !bg-red-50 ring-2 ring-red-100' : ''}
+                                        ${isCompleted ? '!bg-green-50 !border-green-400 !ring-0' : ''} 
                                     `}
                                   >
                                     <div className="flex justify-between items-start mb-2">
@@ -825,24 +848,24 @@
                                     </div>
                                     
                                     {error && !isCompleted && (
-                                        <div className="mt-2 flex items-center gap-2">
-                                            <div className="text-[10px] text-red-600 bg-red-100 px-2 py-1 rounded border border-red-200 flex items-start gap-1 font-bold shadow-sm">
-                                                <Icons.AlertCircle size={10} className="mt-0.5 shrink-0" /> 
-                                                <span>{error}</span>
-                                            </div>
-                                            <div className="relative tooltip-container">
-                                                <div className="text-blue-500 cursor-help hover:text-blue-700 bg-blue-50 p-1 rounded-full"><Icons.Info size={12} /></div>
-                                                <div className="tooltip-content hidden absolute z-50 w-64 p-3 text-xs bg-slate-800 text-white rounded-lg shadow-xl -top-2 right-8 pointer-events-none">
-                                                    <div className="font-bold mb-1 border-b border-slate-600 pb-1">פירוט חוסרים:</div>
-                                                    <ul className="list-disc list-inside space-y-1 text-slate-300">
-                                                        {missingDetails.map((m, i) => (
-                                                            <li key={i}><span className="text-white font-medium">{m.name}</span> <span className="text-[10px] opacity-70">({m.id})</span><br/><span className="text-red-300 mr-3 block">⚠️ {m.reason}</span></li>
-                                                        ))}
-                                                        {missingDetails.length === 0 && <li>שגיאת לוגיקה (אבל חסר משהו)</li>}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                      <div className="mt-2 flex items-center gap-2">
+                                          <div className="text-[10px] text-red-600 bg-red-100 px-2 py-1 rounded border border-red-200 flex items-start gap-1 font-bold shadow-sm">
+                                              <Icons.AlertCircle size={10} className="mt-0.5 shrink-0" /> 
+                                              <span>{error}</span>
+                                          </div>
+                                          <div className="relative tooltip-container">
+                                              <div className="text-blue-500 cursor-help hover:text-blue-700 bg-blue-50 p-1 rounded-full"><Icons.Info size={12} /></div>
+                                              <div className="tooltip-content hidden absolute z-50 w-64 p-3 text-xs bg-slate-800 text-white rounded-lg shadow-xl -top-2 right-8 pointer-events-none">
+                                                  <div className="font-bold mb-1 border-b border-slate-600 pb-1">פירוט חוסרים:</div>
+                                                  <ul className="list-disc list-inside space-y-1 text-slate-300">
+                                                      {missingDetails.map((m, i) => (
+                                                          <li key={i}><span className="text-white font-medium">{m.name}</span> <span className="text-[10px] opacity-70">({m.id})</span><br/><span className="text-red-300 mr-3 block">⚠️ {m.reason}</span></li>
+                                                      ))}
+                                                      {missingDetails.length === 0 && <li>שגיאת לוגיקה (אבל חסר משהו)</li>}
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
                                     )}
                                   </div>
                                 );

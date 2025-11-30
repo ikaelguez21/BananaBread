@@ -1,260 +1,324 @@
 track_name,semester,course_id
-CS_GENERAL_4Y,1,01040031
-CS_GENERAL_4Y,1,01040166
-CS_GENERAL_4Y,1,02340114
-CS_GENERAL_4Y,1,02340129
-CS_GENERAL_4Y,1,03240033
-CS_GENERAL_4Y,1,01340058
-CS_GENERAL_4Y,1,01340020
-CS_GENERAL_4Y,2,01040032
-CS_GENERAL_4Y,2,01140071
-CS_GENERAL_4Y,2,02340124
-CS_GENERAL_4Y,2,02340125
-CS_GENERAL_4Y,2,02340141
-CS_GENERAL_4Y,3,00940412
-CS_GENERAL_4Y,3,01040134
-CS_GENERAL_4Y,3,02340218
-CS_GENERAL_4Y,3,00440252
-CS_GENERAL_4Y,3,02340252
-CS_GENERAL_4Y,3,02340292
-CS_GENERAL_4Y,3,02360491
-CS_GENERAL_4Y,3,01040158
-CS_GENERAL_4Y,4,02340118
-CS_GENERAL_4Y,4,02340123
-CS_GENERAL_4Y,4,02340222
-CS_GENERAL_4Y,4,02340247
-CS_GENERAL_4Y,4,01040279
-CS_GENERAL_4Y,4,01040280
-CS_GENERAL_4Y,4,01040283
-CS_GENERAL_4Y,4,01040293
-CS_GENERAL_4Y,4,01040295
-CS_GENERAL_4Y,4,01040307
-CS_GENERAL_4Y,4,01040313
-CS_GENERAL_4Y,4,01040315
-CS_GENERAL_4Y,4,01040342
-CS_GENERAL_4Y,4,01040355
-CS_GENERAL_4Y,5,01340128
-CS_GENERAL_4Y,5,01340119
-CS_GENERAL_4Y,5,01340142
-CS_GENERAL_4Y,5,02140909
-CS_CYBER,1,01040031
-CS_CYBER,1,01040166
-CS_CYBER,1,02340114
-CS_CYBER,1,02340129
-CS_CYBER,1,03240033
-CS_CYBER,2,01040032
-CS_CYBER,2,01140071
-CS_CYBER,2,02340124
-CS_CYBER,2,02340125
-CS_CYBER,2,02340141
-CS_CYBER,2,02340493
-CS_CYBER,3,00940412
-CS_CYBER,3,01040158
-CS_CYBER,3,01040279
-CS_CYBER,3,01040292
-CS_CYBER,3,02340218
-CS_CYBER,3,02340292
-CS_CYBER,3,02360491
-CS_CYBER,3,00440252
-CS_CYBER,3,02340252
-CS_CYBER,4,02340118
-CS_CYBER,4,02340123
-CS_CYBER,4,02340247
-CS_CYBER,5,02360343
-CS_CYBER,5,02360465
-CS_CYBER,5,02360426
-CS_CYBER,5,02360270
-CS_CYBER,5,02360349
-CS_CYBER,6,02360376
-CS_CYBER,6,02340311
-CS_CYBER,6,02360501
-CS_CYBER,6,02360342
-CS_CYBER,6,02360500
-CS_CYBER,6,02360508
-CS_CYBER,6,02360990
-CS_CYBER,6,34102360
-CS_GENERAL_3Y,5,02360343
-CS_GENERAL_3Y,5,02360267
-CS_DATA_LEARNING,1,01040031
-CS_DATA_LEARNING,1,01040166
-CS_DATA_LEARNING,1,02340114
-CS_DATA_LEARNING,1,02340129
-CS_DATA_LEARNING,1,03240033
-CS_DATA_LEARNING,2,01040032
-CS_DATA_LEARNING,2,01140071
-CS_DATA_LEARNING,2,02340124
-CS_DATA_LEARNING,2,02340141
-CS_DATA_LEARNING,2,01040174
-CS_DATA_LEARNING,2,13401040
-CS_DATA_LEARNING,3,00440252
-CS_DATA_LEARNING,3,02340252
-CS_DATA_LEARNING,3,00940412
-CS_DATA_LEARNING,3,02340125
-CS_DATA_LEARNING,3,02340218
-CS_DATA_LEARNING,3,02340292
-CS_DATA_LEARNING,4,02340123
-CS_DATA_LEARNING,4,02340247
-CS_DATA_LEARNING,4,01040315
-CS_DATA_LEARNING,4,02340118
-CS_DATA_LEARNING,5,02360267
-CS_DATA_LEARNING,5,02360343
-CS_DATA_LEARNING,5,02360201
-CS_DATA_LEARNING,5,02360281
-CS_DATA_LEARNING,5,00940226
-CS_DATA_LEARNING,5,00940340
-CS_DATA_LEARNING,5,00960326
-CS_DATA_LEARNING,5,02360270
-CS_DATA_LEARNING,5,02360287
-CS_DATA_LEARNING,5,02360369
-CS_DATA_LEARNING,5,02360372
-CS_DATA_LEARNING,5,02360501
-CS_DATA_LEARNING,5,02360507
-CS_DATA_LEARNING,5,02360523
-CS_DATA_LEARNING,5,04620200
-CS_BIOINFO,1,01040031
-CS_BIOINFO,1,01040166
-CS_BIOINFO,1,02340114
-CS_BIOINFO,1,02340129
-CS_BIOINFO,1,01340058
-CS_BIOINFO,2,01040032
-CS_BIOINFO,2,01140071
-CS_BIOINFO,2,01340020
-CS_BIOINFO,2,02340124
-CS_BIOINFO,2,02340141
-CS_BIOINFO,3,00940412
-CS_BIOINFO,3,00440252
-CS_BIOINFO,3,02340252
-CS_BIOINFO,3,02340218
-CS_BIOINFO,3,02340292
-CS_BIOINFO,3,01250001
-CS_BIOINFO,3,01040158
-CS_BIOINFO,3,01240801
-CS_BIOINFO,4,02340125
-CS_BIOINFO,4,02340247
-CS_BIOINFO,4,01250507
-CS_BIOINFO,4,01340238
-CS_BIOINFO,5,02340123
-CS_BIOINFO,5,02360201
-CS_BIOINFO,5,02360523
-CS_BIOINFO,6,01340128
-CS_BIOINFO,6,02340118
-CS_BIOINFO,6,02360267
-CS_BIOINFO,6,02360343
-CS_BIOINFO,6,01340142
-CS_BIOINFO,6,02360507
-CS_BIOINFO,6,02360512
-CS_BIOINFO,6,02360513
-CS_BIOINFO,6,02360514
-CS_BIOINFO,6,02360515
-CS_BIOINFO,6,02360516
-CS_BIOINFO,6,02360520
-CS_BIOINFO,6,02360522
-CS_BIOINFO,6,02360524
-CS_SOFT_ENG,1,01040031
-CS_SOFT_ENG,1,01040166
-CS_SOFT_ENG,1,02340114
-CS_SOFT_ENG,1,02340129
-CS_SOFT_ENG,1,03240033
-CS_SOFT_ENG,2,01040032
-CS_SOFT_ENG,2,01140071
-CS_SOFT_ENG,2,02340124
-CS_SOFT_ENG,2,02340141
-CS_SOFT_ENG,2,02340125
-CS_SOFT_ENG,3,00940412
-CS_SOFT_ENG,3,02340218
-CS_SOFT_ENG,3,02340292
-CS_SOFT_ENG,3,02360491
-CS_SOFT_ENG,4,02340118
-CS_SOFT_ENG,4,02340122
-CS_SOFT_ENG,4,02340222
-CS_SOFT_ENG,4,02340247
-CS_SOFT_ENG,5,00440252
-CS_SOFT_ENG,5,02340252
-CS_SOFT_ENG,5,02340123
-CS_SOFT_ENG,5,02340311
-CS_SOFT_ENG,5,02360267
-CS_SOFT_ENG,5,02360343
-CS_SOFT_ENG,5,02360201
-CS_SOFT_ENG,5,02360339
-CS_SOFT_ENG,6,02340234
-CS_SOFT_ENG,6,02360281
-CS_SOFT_ENG,6,02360426
-CS_SOFT_ENG,6,02360298
-CS_SOFT_ENG,6,02360376
-CS_SOFT_ENG,6,02360403
-CS_SOFT_ENG,7,02360503
-CS_SOFT_ENG,7,02360504
-CS_COMP_ENG,1,00440102
-CS_COMP_ENG,1,01040012
-CS_COMP_ENG,1,01040064
-CS_COMP_ENG,1,01040016
-CS_COMP_ENG,1,02340129
-CS_COMP_ENG,1,01140071
-CS_COMP_ENG,1,02340114
-CS_COMP_ENG,2,00440252
-CS_COMP_ENG,2,01040013
-CS_COMP_ENG,2,01040038
-CS_COMP_ENG,2,01040136
-CS_COMP_ENG,2,02340124
-CS_COMP_ENG,3,00440105
-CS_COMP_ENG,3,00440268
-CS_COMP_ENG,3,00440157
-CS_COMP_ENG,3,02340218
-CS_COMP_ENG,3,03240033
-CS_COMP_ENG,3,01140073
-CS_COMP_ENG,3,03940901
-CS_COMP_ENG,4,00440127
-CS_COMP_ENG,4,00440131
-CS_COMP_ENG,4,00440140
-CS_COMP_ENG,4,01040034
-CS_COMP_ENG,4,02340222
-CS_COMP_ENG,4,03940901
-CS_COMP_ENG,5,00440137
-CS_COMP_ENG,5,00440202
-CS_COMP_ENG,5,00440158
-CS_COMP_ENG,5,02340234
-CS_COMP_ENG,5,01040214
-CS_COMP_ENG,5,01040215
-CS_COMP_ENG,5,01040220
-CS_COMP_ENG,5,01140033
-CS_COMP_ENG,5,02340122
-CS_COMP_ENG,6,00440162
-CS_MATH,1,01040195
-CS_MATH,1,01040066
-CS_MATH,1,02340114
-CS_MATH,1,02340129
-CS_MATH,1,03240033
-CS_MATH,2,01040281
-CS_MATH,2,01040168
-CS_MATH,2,02340124
-CS_MATH,2,02340141
-CS_MATH,2,01140071
-CS_MATH,3,01040295
-CS_MATH,3,01040293
-CS_MATH,3,01040222
-CS_MATH,3,02340218
-CS_MATH,3,00440252
-CS_MATH,3,02340252
-CS_MATH,4,01040142
-CS_MATH,4,01040279
-CS_MATH,4,01040280
-CS_MATH,4,01040283
-CS_MATH,4,01040293
-CS_MATH,4,01040295
-CS_MATH,4,01040307
-CS_MATH,4,01040313
-CS_MATH,4,01040315
-CS_MEDICINE,4,01140249
-CS_MEDICINE,4,02340118
-CS_MEDICINE,4,02340123
-CS_MEDICINE,4,02340247
-CS_MEDICINE,4,02360201
-CS_MEDICINE,5,01240507
-CS_MEDICINE,5,02360501
-CS_MEDICINE,5,02360523
-CS_MEDICINE,5,02740167
-CS_MEDICINE,5,02740142
-CS_MEDICINE,5,02740257
-CS_MEDICINE,6,02360343
-CS_MEDICINE,6,02360267
-CS_MEDICINE,6,02360503
+Computer Science - General Four-Year Track,1,01040031
+Computer Science - General Four-Year Track,1,01040166
+Computer Science - General Four-Year Track,1,02340114
+Computer Science - General Four-Year Track,1,02340129
+Computer Science - General Four-Year Track,1,03240033
+Computer Science - General Four-Year Track,2,01040032
+Computer Science - General Four-Year Track,2,01140071
+Computer Science - General Four-Year Track,2,02340124
+Computer Science - General Four-Year Track,2,02340125
+Computer Science - General Four-Year Track,2,02340141
+Computer Science - General Four-Year Track,3,00940412
+Computer Science - General Four-Year Track,3,01040134
+Computer Science - General Four-Year Track,3,02340218
+Computer Science - General Four-Year Track,3,00440252
+Computer Science - General Four-Year Track,3,02340252
+Computer Science - General Four-Year Track,3,02340292
+Computer Science - General Four-Year Track,4,02340118
+Computer Science - General Four-Year Track,4,02340123
+Computer Science - General Four-Year Track,4,02340247
+Computer Science - General Four-Year Track,5,02360267
+Computer Science - General Four-Year Track,5,02360343
+Computer Science - General Four-Year Track,5,02360360
+Computer Science and Computer Systems - Cyber Security Track,1,01040031
+Computer Science and Computer Systems - Cyber Security Track,1,01040166
+Computer Science and Computer Systems - Cyber Security Track,1,02340114
+Computer Science and Computer Systems - Cyber Security Track,1,02340129
+Computer Science and Computer Systems - Cyber Security Track,1,03240033
+Computer Science and Computer Systems - Cyber Security Track,2,01040032
+Computer Science and Computer Systems - Cyber Security Track,2,01140071
+Computer Science and Computer Systems - Cyber Security Track,2,02340124
+Computer Science and Computer Systems - Cyber Security Track,2,02340125
+Computer Science and Computer Systems - Cyber Security Track,2,02340141
+Computer Science and Computer Systems - Cyber Security Track,2,02340493
+Computer Science and Computer Systems - Cyber Security Track,3,00940412
+Computer Science and Computer Systems - Cyber Security Track,3,01040134
+Computer Science and Computer Systems - Cyber Security Track,3,02340218
+Computer Science and Computer Systems - Cyber Security Track,3,00440252
+Computer Science and Computer Systems - Cyber Security Track,3,02340252
+Computer Science and Computer Systems - Cyber Security Track,3,02340292
+Computer Science and Computer Systems - Cyber Security Track,3,02360491
+Computer Science and Computer Systems - Cyber Security Track,4,02340118
+Computer Science and Computer Systems - Cyber Security Track,4,02340123
+Computer Science and Computer Systems - Cyber Security Track,4,02340247
+Computer Science and Computer Systems - Cyber Security Track,5,02360267
+Computer Science and Computer Systems - Cyber Security Track,5,02360343
+Computer Science and Computer Systems - Cyber Security Track,5,02360360
+Computer Science and Computer Systems - Cyber Security Track,5,02360334
+Computer Science and Computer Systems - Cyber Security Track,5,02360350
+Computer Science and Computer Systems - Cyber Security Track,6,02360506
+Computer Science and Computer Systems - Cyber Security Track,6,02360490
+Computer Science and Computer Systems - Cyber Security Track,6,02360496
+Computer Science - General Three-Year Track,1,01040031
+Computer Science - General Three-Year Track,1,01040166
+Computer Science - General Three-Year Track,1,02340114
+Computer Science - General Three-Year Track,1,02340129
+Computer Science - General Three-Year Track,1,03240033
+Computer Science - General Three-Year Track,2,01040032
+Computer Science - General Three-Year Track,2,01140071
+Computer Science - General Three-Year Track,2,02340124
+Computer Science - General Three-Year Track,2,02340125
+Computer Science - General Three-Year Track,2,02340141
+Computer Science - General Three-Year Track,3,00940412
+Computer Science - General Three-Year Track,3,01040134
+Computer Science - General Three-Year Track,3,02340218
+Computer Science - General Three-Year Track,3,00440252
+Computer Science - General Three-Year Track,3,02340252
+Computer Science - General Three-Year Track,3,02340292
+Computer Science - General Three-Year Track,4,02340118
+Computer Science - General Three-Year Track,4,02340123
+Computer Science - General Three-Year Track,4,02340247
+Computer Science - General Three-Year Track,5,02360343
+Computer Science - General Three-Year Track,5,02360267
+Computer Science - Learning and Data Analysis Track,1,01040031
+Computer Science - Learning and Data Analysis Track,1,01040166
+Computer Science - Learning and Data Analysis Track,1,02340114
+Computer Science - Learning and Data Analysis Track,1,02340129
+Computer Science - Learning and Data Analysis Track,1,03240033
+Computer Science - Learning and Data Analysis Track,2,01040032
+Computer Science - Learning and Data Analysis Track,2,01140071
+Computer Science - Learning and Data Analysis Track,2,02340124
+Computer Science - Learning and Data Analysis Track,2,02340141
+Computer Science - Learning and Data Analysis Track,2,01040174
+Computer Science - Learning and Data Analysis Track,3,00440252
+Computer Science - Learning and Data Analysis Track,3,02340252
+Computer Science - Learning and Data Analysis Track,3,00940412
+Computer Science - Learning and Data Analysis Track,3,02340125
+Computer Science - Learning and Data Analysis Track,3,02340218
+Computer Science - Learning and Data Analysis Track,3,02340292
+Computer Science - Learning and Data Analysis Track,4,02340247
+Computer Science - Learning and Data Analysis Track,4,02340118
+Computer Science - Learning and Data Analysis Track,4,02340123
+Computer Science - Learning and Data Analysis Track,4,02360766
+Computer Science - Learning and Data Analysis Track,5,02360343
+Computer Science - Learning and Data Analysis Track,5,02360201
+Computer Science - Bioinformatics Track,1,01040031
+Computer Science - Bioinformatics Track,1,01040166
+Computer Science - Bioinformatics Track,1,02340114
+Computer Science - Bioinformatics Track,1,02340129
+Computer Science - Bioinformatics Track,1,01340058
+Computer Science - Bioinformatics Track,2,01040032
+Computer Science - Bioinformatics Track,2,01140071
+Computer Science - Bioinformatics Track,2,01340020
+Computer Science - Bioinformatics Track,2,02340124
+Computer Science - Bioinformatics Track,2,02340141
+Computer Science - Bioinformatics Track,3,00940412
+Computer Science - Bioinformatics Track,3,00440252
+Computer Science - Bioinformatics Track,3,02340252
+Computer Science - Bioinformatics Track,3,02340218
+Computer Science - Bioinformatics Track,3,02340292
+Computer Science - Bioinformatics Track,3,01250001
+Computer Science - Bioinformatics Track,3,03240033
+Computer Science - Bioinformatics Track,4,00940423
+Computer Science - Bioinformatics Track,4,02340118
+Computer Science - Bioinformatics Track,4,02340247
+Computer Science - Bioinformatics Track,4,01340019
+Computer Science - Bioinformatics Track,5,01040134
+Computer Science - Bioinformatics Track,5,02340123
+Computer Science - Bioinformatics Track,5,02360523
+Computer Science - Bioinformatics Track,6,02360343
+Computer Science - Bioinformatics Track,6,02360522
+Computer Science - Bioinformatics Track,6,02360524
+Software Engineering Track,1,01040031
+Software Engineering Track,1,01040166
+Software Engineering Track,1,02340114
+Software Engineering Track,1,02340129
+Software Engineering Track,1,03240033
+Software Engineering Track,2,01040032
+Software Engineering Track,2,01040134
+Software Engineering Track,2,01140071
+Software Engineering Track,2,02340124
+Software Engineering Track,2,02340141
+Software Engineering Track,3,00440252
+Software Engineering Track,3,02340252
+Software Engineering Track,3,00940412
+Software Engineering Track,3,02340218
+Software Engineering Track,3,02340292
+Software Engineering Track,3,02360319
+Software Engineering Track,4,02340118
+Software Engineering Track,4,02340247
+Software Engineering Track,4,02340123
+Software Engineering Track,4,02360703
+Software Engineering Track,5,02360267
+Software Engineering Track,5,02360322
+Software Engineering Track,5,02360342
+Software Engineering Track,5,02360343
+Software Engineering Track,5,02360360
+Software Engineering Track,5,02360370
+Software Engineering Track,6,02340125
+Software Engineering Track,6,02360334
+Software Engineering Track,7,02340311
+Software Engineering Track,8,02340312
+Computer Engineering Track,1,00440102
+Computer Engineering Track,1,01040012
+Computer Engineering Track,1,01040064
+Computer Engineering Track,1,01040016
+Computer Engineering Track,1,02340129
+Computer Engineering Track,1,01140071
+Computer Engineering Track,1,02340114
+Computer Engineering Track,2,01040013
+Computer Engineering Track,2,02340125
+Computer Engineering Track,2,01040136
+Computer Engineering Track,2,01140075
+Computer Engineering Track,2,00440252
+Computer Engineering Track,3,02340124
+Computer Engineering Track,3,02340141
+Computer Engineering Track,3,00440105
+Computer Engineering Track,3,01040220
+Computer Engineering Track,3,01040215
+Computer Engineering Track,3,01040214
+Computer Engineering Track,3,03240033
+Computer Engineering Track,4,00440131
+Computer Engineering Track,4,01040034
+Computer Engineering Track,4,00440127
+Computer Engineering Track,4,02340218
+Computer Engineering Track,4,02340118
+Computer Engineering Track,4,01140073
+Computer Engineering Track,5,00440137
+Computer Engineering Track,5,00440157
+Computer Engineering Track,5,02340123
+Computer Engineering Track,5,00460209
+Computer Engineering Track,5,00460210
+Computer Engineering Track,5,01040134
+Computer Engineering Track,5,02340247
+Computer Engineering Track,5,00460267
+Computer Engineering Track,5,02360267
+Computer Engineering Track,6,00440167
+Computer Engineering Track,7,00440169
+Computer Science and Mathematics - Combined Track,1,01040195
+Computer Science and Mathematics - Combined Track,1,01040066
+Computer Science and Mathematics - Combined Track,1,02340114
+Computer Science and Mathematics - Combined Track,1,02340129
+Computer Science and Mathematics - Combined Track,1,03240033
+Computer Science and Mathematics - Combined Track,2,01040281
+Computer Science and Mathematics - Combined Track,2,01040168
+Computer Science and Mathematics - Combined Track,2,02340124
+Computer Science and Mathematics - Combined Track,2,02340141
+Computer Science and Mathematics - Combined Track,2,01140071
+Computer Science and Mathematics - Combined Track,3,01040295
+Computer Science and Mathematics - Combined Track,3,01040293
+Computer Science and Mathematics - Combined Track,3,01040222
+Computer Science and Mathematics - Combined Track,3,02340218
+Computer Science and Mathematics - Combined Track,3,00440252
+Computer Science and Mathematics - Combined Track,3,02340252
+Computer Science and Mathematics - Combined Track,4,01040142
+Computer Science and Mathematics - Combined Track,4,01040285
+Computer Science and Mathematics - Combined Track,4,01040158
+Computer Science and Mathematics - Combined Track,4,02340118
+Computer Science and Mathematics - Combined Track,4,02340247
+Computer Science and Mathematics - Combined Track,5,01040122
+Computer Science and Mathematics - Combined Track,5,01040279
+Computer Science and Mathematics - Combined Track,5,01040294
+Computer Science and Mathematics - Combined Track,5,02340125
+Computer Science and Mathematics - Combined Track,5,02360343
+Computer Science and Mathematics - Combined Track,6,01040192
+Computer Science and Mathematics - Combined Track,6,01060156
+Computer Science and Mathematics - Combined Track,6,02340123
+Computer Science and Mathematics - Combined Track,6,02360267
+Computer Science and Physics - Combined Track,1,00440102
+Computer Science and Physics - Combined Track,1,01040031
+Computer Science and Physics - Combined Track,1,01040166
+Computer Science and Physics - Combined Track,1,02340114
+Computer Science and Physics - Combined Track,1,02340129
+Computer Science and Physics - Combined Track,1,03240033
+Computer Science and Physics - Combined Track,2,00440252
+Computer Science and Physics - Combined Track,2,02340252
+Computer Science and Physics - Combined Track,2,01040032
+Computer Science and Physics - Combined Track,2,02340124
+Computer Science and Physics - Combined Track,2,02340141
+Computer Science and Physics - Combined Track,3,00940412
+Computer Science and Physics - Combined Track,3,01040134
+Computer Science and Physics - Combined Track,3,01040033
+Computer Science and Physics - Combined Track,3,01140020
+Computer Science and Physics - Combined Track,3,01140074
+Computer Science and Physics - Combined Track,3,02340218
+Computer Science and Physics - Combined Track,3,02340292
+Computer Science and Physics - Combined Track,4,01040285
+Computer Science and Physics - Combined Track,4,01140021
+Computer Science and Physics - Combined Track,4,01140076
+Computer Science and Physics - Combined Track,4,02340118
+Computer Science and Physics - Combined Track,4,02340123
+Computer Science and Physics - Combined Track,4,02340247
+Computer Science and Physics - Combined Track,5,01040214
+Computer Science and Physics - Combined Track,5,01040220
+Computer Science and Physics - Combined Track,5,01040215
+Computer Science and Physics - Combined Track,5,01140101
+Computer Science and Physics - Combined Track,5,01140086
+Computer Science and Physics - Combined Track,6,01140035
+Computer Science and Physics - Combined Track,6,01150203
+Computer Science and Physics - Combined Track,6,01140246
+Computer Science and Physics - Combined Track,6,01140036
+Computer Science and Physics - Combined Track,7,02340125
+Computer Science and Physics - Combined Track,7,01150204
+Computer Science and Physics - Combined Track,7,02360343
+Computer Science and Physics - Combined Track,7,01240108
+Computer Science and Physics - Combined Track,8,01140037
+Medicine and Computer Science - Double Degree Track,1,01040031
+Medicine and Computer Science - Double Degree Track,1,01040166
+Medicine and Computer Science - Double Degree Track,1,02340114
+Medicine and Computer Science - Double Degree Track,1,02340129
+Medicine and Computer Science - Double Degree Track,1,03240033
+Medicine and Computer Science - Double Degree Track,2,01040032
+Medicine and Computer Science - Double Degree Track,2,01140071
+Medicine and Computer Science - Double Degree Track,2,02340124
+Medicine and Computer Science - Double Degree Track,2,02340125
+Medicine and Computer Science - Double Degree Track,2,02340141
+Medicine and Computer Science - Double Degree Track,3,00940412
+Medicine and Computer Science - Double Degree Track,3,01040134
+Medicine and Computer Science - Double Degree Track,3,02340218
+Medicine and Computer Science - Double Degree Track,3,00440252
+Medicine and Computer Science - Double Degree Track,3,02340252
+Medicine and Computer Science - Double Degree Track,3,02340292
+Medicine and Computer Science - Double Degree Track,4,01140249
+Medicine and Computer Science - Double Degree Track,4,02340118
+Medicine and Computer Science - Double Degree Track,4,02340123
+Medicine and Computer Science - Double Degree Track,4,02340247
+Medicine and Computer Science - Double Degree Track,4,02360201
+Medicine and Computer Science - Double Degree Track,5,01240507
+Medicine and Computer Science - Double Degree Track,5,02360501
+Medicine and Computer Science - Double Degree Track,5,02360523
+Medicine and Computer Science - Double Degree Track,5,02740167
+Medicine and Computer Science - Double Degree Track,5,02740142
+Medicine and Computer Science - Double Degree Track,5,02740257
+Medicine and Computer Science - Double Degree Track,6,02360343
+Medicine and Computer Science - Double Degree Track,6,02360267
+Medicine and Computer Science - Double Degree Track,6,02360503
+Medicine and Computer Science - Double Degree Track,6,01250803
+Medicine and Computer Science - Double Degree Track,6,02740143
+Medicine and Computer Science - Double Degree Track,6,02740165
+Medicine and Computer Science - Double Degree Track,6,02740266
+Medicine and Computer Science - Double Degree Track,7,02740182
+Medicine and Computer Science - Double Degree Track,7,02740241
+Medicine and Computer Science - Double Degree Track,7,02740242
+Medicine and Computer Science - Double Degree Track,7,02740243
+Medicine and Computer Science - Double Degree Track,7,02740234
+Medicine and Computer Science - Double Degree Track,7,02740258
+Medicine and Computer Science - Double Degree Track,7,02740260
+Medicine and Computer Science - Double Degree Track,7,02740320
+Medicine and Computer Science - Double Degree Track,7,03240397
+Medicine and Computer Science - Double Degree Track,8,02740235
+Medicine and Computer Science - Double Degree Track,8,02740246
+Medicine and Computer Science - Double Degree Track,8,02740253
+Medicine and Computer Science - Double Degree Track,8,02740261
+Medicine and Computer Science - Double Degree Track,8,02740262
+Medicine and Computer Science - Double Degree Track,8,02740265
+Medicine and Computer Science - Double Degree Track,8,02740267
+Medicine and Computer Science - Double Degree Track,8,02740268
+Medicine and Computer Science - Double Degree Track,9,02740322
+Medicine and Computer Science - Double Degree Track,9,02740323
+Medicine and Computer Science - Double Degree Track,9,02740326
+Medicine and Computer Science - Double Degree Track,9,02740336
+Medicine and Computer Science - Double Degree Track,9,02740348
+Medicine and Computer Science - Double Degree Track,9,02740372
+Medicine and Computer Science - Double Degree Track,9,02740375
+Medicine and Computer Science - Double Degree Track,10,02740251
+Medicine and Computer Science - Double Degree Track,10,02740252
+Medicine and Computer Science - Double Degree Track,10,02740318
+Medicine and Computer Science - Double Degree Track,10,02740319
+Medicine and Computer Science - Double Degree Track,10,02740327
+Medicine and Computer Science - Double Degree Track,10,02740328
+Medicine and Computer Science - Double Degree Track,10,02740352
+Medicine and Computer Science - Double Degree Track,10,02740367
+Medicine and Computer Science - Double Degree Track,10,02740369
+Medicine and Computer Science - Double Degree Track,10,02740376

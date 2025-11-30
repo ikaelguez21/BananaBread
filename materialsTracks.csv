@@ -1,168 +1,170 @@
 track_name,semester,course_id
-MATERIALS_SINGLE,1,10400190
-MATERIALS_SINGLE,1,10400410
-MATERIALS_SINGLE,1,01140051
-MATERIALS_SINGLE,1,12401170
-MATERIALS_SINGLE,1,23401280
-MATERIALS_SINGLE,1,32400330
-MATERIALS_SINGLE,2,01040043
-MATERIALS_SINGLE,2,10401310
-MATERIALS_SINGLE,2,11400520
-MATERIALS_SINGLE,2,12500010
-MATERIALS_SINGLE,2,31405330
-MATERIALS_SINGLE,2,03940800
-MATERIALS_SINGLE,3,10402280
-MATERIALS_SINGLE,3,31400030
-MATERIALS_SINGLE,3,31403330
-MATERIALS_SINGLE,3,31402020
-MATERIALS_SINGLE,3,03140224
-MATERIALS_SINGLE,4,31400040
-MATERIALS_SINGLE,4,31402320
-MATERIALS_SINGLE,4,31402340
-MATERIALS_SINGLE,4,31403340
-MATERIALS_SINGLE,4,31404250
-MATERIALS_SINGLE,4,00394080
-MATERIALS_SINGLE,5,31401500
-MATERIALS_SINGLE,5,31400060
-MATERIALS_SINGLE,5,31402350
-MATERIALS_SINGLE,5,31403350
-MATERIALS_SINGLE,5,03140012
-MATERIALS_SINGLE,6,31402090
-MATERIALS_SINGLE,6,31403160
-MATERIALS_SINGLE,6,31403360
-MATERIALS_SINGLE,6,31403370
-MATERIALS_SINGLE,6,31403390
-MATERIALS_SINGLE,7,31403110
-MATERIALS_SINGLE,7,31400130
-MATERIALS_SINGLE,7,03140241
-MATERIALS_PHYSICS,1,01040064
-MATERIALS_PHYSICS,1,01040012
-MATERIALS_PHYSICS,1,11400740
-MATERIALS_PHYSICS,1,12500010
-MATERIALS_PHYSICS,1,23401280
-MATERIALS_PHYSICS,1,04401020
-MATERIALS_PHYSICS,1,03940901
-MATERIALS_PHYSICS,2,01040013
-MATERIALS_PHYSICS,2,01040038
-MATERIALS_PHYSICS,2,01040136
-MATERIALS_PHYSICS,2,11400230
-MATERIALS_PHYSICS,2,11400760
-MATERIALS_PHYSICS,2,31405330
-MATERIALS_PHYSICS,3,01040211
-MATERIALS_PHYSICS,3,01040215
-MATERIALS_PHYSICS,3,01140021
-MATERIALS_PHYSICS,3,01140022
-MATERIALS_PHYSICS,3,01140036
-MATERIALS_PHYSICS,3,01140043
-MATERIALS_PHYSICS,3,31403330
-MATERIALS_PHYSICS,3,03240033
-MATERIALS_PHYSICS,4,01140024
-MATERIALS_PHYSICS,4,01140035
-MATERIALS_PHYSICS,4,01140037
-MATERIALS_PHYSICS,4,31402320
-MATERIALS_PHYSICS,4,31402340
-MATERIALS_PHYSICS,4,31403340
-MATERIALS_PHYSICS,4,03940901
-MATERIALS_PHYSICS,5,01140206
-MATERIALS_PHYSICS,5,01140233
-MATERIALS_PHYSICS,5,01140044
-MATERIALS_PHYSICS,5,31402350
-MATERIALS_PHYSICS,5,31403350
-MATERIALS_PHYSICS,6,01140205
-MATERIALS_PHYSICS,6,31403160
-MATERIALS_PHYSICS,6,31403360
-MATERIALS_PHYSICS,6,31403370
-MATERIALS_PHYSICS,6,31403390
-MATERIALS_PHYSICS,7,31403110
-MATERIALS_PHYSICS,7,31402410
-MATERIALS_PHYSICS,7,31402420
-MATERIALS_CHEM,1,10400190
-MATERIALS_CHEM,1,10400410
-MATERIALS_CHEM,1,11400510
-MATERIALS_CHEM,1,12401170
-MATERIALS_CHEM,1,23401280
-MATERIALS_CHEM,1,32400330
-MATERIALS_CHEM,1,00394080
-MATERIALS_CHEM,2,10400430
-MATERIALS_CHEM,2,10401310
-MATERIALS_CHEM,2,11400520
-MATERIALS_CHEM,2,12501010
-MATERIALS_CHEM,2,12508010
-MATERIALS_CHEM,2,31405330
-MATERIALS_CHEM,2,00394080
-MATERIALS_CHEM,3,12503410
-MATERIALS_CHEM,3,12503420
-MATERIALS_CHEM,3,12502020
-MATERIALS_CHEM,3,12505070
-MATERIALS_CHEM,3,31403330
-MATERIALS_CHEM,3,00394080
-MATERIALS_CHEM,4,12501120
-MATERIALS_CHEM,4,12502030
-MATERIALS_CHEM,4,12502200
-MATERIALS_CHEM,4,12503430
-MATERIALS_CHEM,4,12505080
-MATERIALS_CHEM,4,31402340
-MATERIALS_CHEM,5,12501130
-MATERIALS_CHEM,5,31402350
-MATERIALS_CHEM,5,31403350
-MATERIALS_CHEM,5,31402320
-MATERIALS_CHEM,5,31403340
-MATERIALS_CHEM,5,00394080
-MATERIALS_CHEM,6,12503130
-MATERIALS_CHEM,6,31403160
-MATERIALS_CHEM,6,31403360
-MATERIALS_CHEM,6,31403370
-MATERIALS_CHEM,6,31403390
-MATERIALS_CHEM,6,03140233
-MATERIALS_CHEM,6,03140333
-MATERIALS_CHEM,7,12501180
-MATERIALS_CHEM,7,12502040
-MATERIALS_CHEM,7,12502120
-MATERIALS_CHEM,7,12502130
-MATERIALS_CHEM,7,31403110
-MATERIALS_CHEM,8,31402410
-MATERIALS_CHEM,8,31402420
-MATERIALS_BIO,1,01040019
-MATERIALS_BIO,1,10400410
-MATERIALS_BIO,1,11400510
-MATERIALS_BIO,1,12401200
-MATERIALS_BIO,1,13400580
-MATERIALS_BIO,1,03240033
-MATERIALS_BIO,2,01040043
-MATERIALS_BIO,2,10401310
-MATERIALS_BIO,2,11400520
-MATERIALS_BIO,2,12508010
-MATERIALS_BIO,2,13400190
-MATERIALS_BIO,2,31405330
-MATERIALS_BIO,3,31403330
-MATERIALS_BIO,3,13401340
-MATERIALS_BIO,3,13401120
-MATERIALS_BIO,3,13402220
-MATERIALS_BIO,3,23401280
-MATERIALS_BIO,3,01250341
-MATERIALS_BIO,3,03940800
-MATERIALS_BIO,4,31402320
-MATERIALS_BIO,4,31402340
-MATERIALS_BIO,4,31403340
-MATERIALS_BIO,4,13401190
-MATERIALS_BIO,4,13401420
-MATERIALS_BIO,4,13403120
-MATERIALS_BIO,4,03940800
-MATERIALS_BIO,5,31402350
-MATERIALS_BIO,5,31403350
-MATERIALS_BIO,5,13401280
-MATERIALS_BIO,5,13402130
-MATERIALS_BIO,5,13403330
-MATERIALS_BIO,5,03940800
-MATERIALS_BIO,6,31403160
-MATERIALS_BIO,6,31403360
-MATERIALS_BIO,6,31403370
-MATERIALS_BIO,6,31403390
-MATERIALS_BIO,6,13403340
-MATERIALS_BIO,6,03140224
-MATERIALS_BIO,6,03140233
-MATERIALS_BIO,7,31403110
-MATERIALS_BIO,7,13401630
-MATERIALS_BIO,7,31402410
-MATERIALS_BIO,7,31402420
-MATERIALS_BIO,8,31403120
+Materials Engineering,1,01040019
+Materials Engineering,1,01040041
+Materials Engineering,1,01140051
+Materials Engineering,1,01240117
+Materials Engineering,1,02340128
+Materials Engineering,1,03240033
+Materials Engineering,2,01040043
+Materials Engineering,2,01040131
+Materials Engineering,2,01140052
+Materials Engineering,2,03140011
+Materials Engineering,2,01240118
+Materials Engineering,2,01140081
+Materials Engineering,3,01040228
+Materials Engineering,3,01240400
+Materials Engineering,3,03150058
+Materials Engineering,3,03140009
+Materials Engineering,3,00940481
+Materials Engineering,4,01240413
+Materials Engineering,4,01240414
+Materials Engineering,4,01240801
+Materials Engineering,4,03150003
+Materials Engineering,4,03150051
+Materials Engineering,4,03140016
+Materials Engineering,5,03140150
+Materials Engineering,5,03140006
+Materials Engineering,5,03150052
+Materials Engineering,5,03140309
+Materials Engineering,5,03140003
+Materials Engineering,6,03140311
+Materials Engineering,6,03140312
+Materials Engineering,6,03150030
+Materials Engineering,6,03150039
+Materials Engineering,6,03150008
+Materials Engineering,7,03150242
+Materials Engineering,7,03150059
+Materials Engineering,7,03140532
+Materials Engineering,7,03150001
+Materials Engineering,7,03150037
+Materials Engineering,8,03150002
+Materials Engineering,8,03150012
+Materials Engineering,8,03150014
+Materials Engineering and Physics,1,01040019
+Materials Engineering and Physics,1,01040041
+Materials Engineering and Physics,1,01140051
+Materials Engineering and Physics,1,01240117
+Materials Engineering and Physics,1,02340128
+Materials Engineering and Physics,1,03240033
+Materials Engineering and Physics,2,01040043
+Materials Engineering and Physics,2,01040131
+Materials Engineering and Physics,2,01140052
+Materials Engineering and Physics,2,03140011
+Materials Engineering and Physics,2,01240118
+Materials Engineering and Physics,2,01140081
+Materials Engineering and Physics,3,01040228
+Materials Engineering and Physics,3,01240400
+Materials Engineering and Physics,3,03150058
+Materials Engineering and Physics,3,03140009
+Materials Engineering and Physics,3,00940481
+Materials Engineering and Physics,4,01240413
+Materials Engineering and Physics,4,01240414
+Materials Engineering and Physics,4,01240801
+Materials Engineering and Physics,4,03150003
+Materials Engineering and Physics,4,03150051
+Materials Engineering and Physics,4,03140016
+Materials Engineering and Physics,5,03140150
+Materials Engineering and Physics,5,03140006
+Materials Engineering and Physics,5,03150052
+Materials Engineering and Physics,5,03140309
+Materials Engineering and Physics,5,03140003
+Materials Engineering and Physics,6,03140311
+Materials Engineering and Physics,6,03140312
+Materials Engineering and Physics,6,03150030
+Materials Engineering and Physics,6,03150039
+Materials Engineering and Physics,6,03150008
+Materials Engineering and Physics,7,03150242
+Materials Engineering and Physics,7,03150059
+Materials Engineering and Physics,7,03140532
+Materials Engineering and Physics,7,03150001
+Materials Engineering and Physics,7,03150037
+Materials Engineering and Physics,8,03150002
+Materials Engineering and Physics,8,03150012
+Materials Engineering and Physics,8,03150014
+Materials Engineering and Chemistry,1,01040019
+Materials Engineering and Chemistry,1,01040041
+Materials Engineering and Chemistry,1,01140051
+Materials Engineering and Chemistry,1,01240117
+Materials Engineering and Chemistry,1,02340128
+Materials Engineering and Chemistry,1,03240033
+Materials Engineering and Chemistry,2,01040043
+Materials Engineering and Chemistry,2,01040131
+Materials Engineering and Chemistry,2,01140052
+Materials Engineering and Chemistry,2,01140081
+Materials Engineering and Chemistry,2,01240118
+Materials Engineering and Chemistry,2,01240220
+Materials Engineering and Chemistry,2,03140011
+Materials Engineering and Chemistry,3,00940481
+Materials Engineering and Chemistry,3,01040228
+Materials Engineering and Chemistry,3,01240212
+Materials Engineering and Chemistry,3,01240708
+Materials Engineering and Chemistry,3,01240400
+Materials Engineering and Chemistry,3,03140009
+Materials Engineering and Chemistry,4,01240413
+Materials Engineering and Chemistry,4,01240414
+Materials Engineering and Chemistry,4,01240711
+Materials Engineering and Chemistry,4,01240911
+Materials Engineering and Chemistry,4,03150003
+Materials Engineering and Chemistry,4,03150051
+Materials Engineering and Chemistry,5,01240305
+Materials Engineering and Chemistry,5,01240416
+Materials Engineering and Chemistry,5,01270427
+Materials Engineering and Chemistry,5,03140003
+Materials Engineering and Chemistry,5,03140006
+Materials Engineering and Chemistry,5,03150052
+Materials Engineering and Chemistry,6,01240213
+Materials Engineering and Chemistry,6,01240417
+Materials Engineering and Chemistry,6,03140311
+Materials Engineering and Chemistry,6,03140312
+Materials Engineering and Chemistry,6,03150008
+Materials Engineering and Chemistry,6,03150030
+Materials Engineering and Chemistry,6,03150039
+Materials Engineering and Chemistry,7,01240618
+Materials Engineering and Chemistry,7,01340127
+Materials Engineering and Chemistry,7,03140532
+Materials Engineering and Chemistry,7,03150001
+Materials Engineering and Chemistry,7,03150037
+Materials Engineering and Chemistry,8,01240214
+Materials Engineering and Chemistry,8,03150002
+Materials Engineering and Chemistry,9,03150014
+Materials Engineering and Biology,1,01040019
+Materials Engineering and Biology,1,01040041
+Materials Engineering and Biology,1,01140051
+Materials Engineering and Biology,1,01240117
+Materials Engineering and Biology,1,02340128
+Materials Engineering and Biology,1,03240033
+Materials Engineering and Biology,2,01040043
+Materials Engineering and Biology,2,01040131
+Materials Engineering and Biology,2,01140052
+Materials Engineering and Biology,2,03140011
+Materials Engineering and Biology,2,01240118
+Materials Engineering and Biology,2,01140081
+Materials Engineering and Biology,3,01040228
+Materials Engineering and Biology,3,01240400
+Materials Engineering and Biology,3,03150058
+Materials Engineering and Biology,3,03140009
+Materials Engineering and Biology,3,00940481
+Materials Engineering and Biology,4,01240413
+Materials Engineering and Biology,4,01240414
+Materials Engineering and Biology,4,01240801
+Materials Engineering and Biology,4,03150003
+Materials Engineering and Biology,4,03150051
+Materials Engineering and Biology,4,03140016
+Materials Engineering and Biology,5,03140150
+Materials Engineering and Biology,5,03140006
+Materials Engineering and Biology,5,03140014
+Materials Engineering and Biology,5,03150052
+Materials Engineering and Biology,6,01340121
+Materials Engineering and Biology,6,01340143
+Materials Engineering and Biology,6,03140311
+Materials Engineering and Biology,6,03140312
+Materials Engineering and Biology,6,03150008
+Materials Engineering and Biology,6,03150030
+Materials Engineering and Biology,6,03150039
+Materials Engineering and Biology,7,01340111
+Materials Engineering and Biology,7,03140532
+Materials Engineering and Biology,7,03150001
+Materials Engineering and Biology,7,03150037
+Materials Engineering and Biology,7,02760413
+Materials Engineering and Biology,8,03150002
+Materials Engineering and Biology,9,03150014
