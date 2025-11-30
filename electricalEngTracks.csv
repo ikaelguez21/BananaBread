@@ -1,226 +1,224 @@
 track_name,semester,course_id
-EE_GEN,1,00440102
-EE_GEN,1,01040012
-EE_GEN,1,01040064
-EE_GEN,1,01040016
-EE_GEN,1,01140071
-EE_GEN,1,01140032
-EE_GEN,1,02340117
-EE_GEN,1,03240033
-EE_GEN,1,01140081
-EE_GEN,1,00450001
-EE_GEN,1,00450002
-EE_GEN,2,00440252
-EE_GEN,2,01040013
-EE_GEN,2,01040038
-EE_GEN,2,01040136
-EE_GEN,2,01140075
-EE_GEN,2,00450001
-EE_GEN,2,00450002
-EE_GEN,3,00440105
-EE_GEN,3,00440268
-EE_GEN,3,00440157
-EE_GEN,3,01040214
-EE_GEN,3,01040215
-EE_GEN,3,01040220
-EE_GEN,3,01140073
-EE_GEN,3,03940901
-EE_GEN,4,00440127
-EE_GEN,4,00440131
-EE_GEN,4,00440140
-EE_GEN,4,01040034
-EE_GEN,4,03940901
-EE_GEN,5,00440137
-EE_GEN,5,00440148
-EE_GEN,5,00440202
-EE_GEN,5,00440158
-EE_GEN,5,00440124
-EE_GEN,6,00440162
-EE_MATH,1,00440102
-EE_MATH,1,01040000
-EE_MATH,1,01040002
-EE_MATH,1,01040195
-EE_MATH,1,01040066
-EE_MATH,1,01140071
-EE_MATH,1,01140032
-EE_MATH,1,02340117
-EE_MATH,1,00450001
-EE_MATH,2,00440252
-EE_MATH,2,01040196
-EE_MATH,2,01040067
-EE_MATH,2,01040136
-EE_MATH,2,01140075
-EE_MATH,2,00450001
-EE_MATH,3,00440105
-EE_MATH,3,00440268
-EE_MATH,3,00440157
-EE_MATH,3,01040220
-EE_MATH,3,01140073
-EE_MATH,3,01040177
-EE_MATH,3,03940901
-EE_MATH,4,00440127
-EE_MATH,4,00440131
-EE_MATH,4,00440140
-EE_MATH,4,01040211
-EE_MATH,4,01040215
-EE_MATH,4,01040214
-EE_MATH,4,03940901
-EE_MATH,5,00440137
-EE_MATH,5,00440148
-EE_MATH,5,00440202
-EE_MATH,5,00440158
-EE_MATH,5,00440124
-EE_MATH,5,01040293
-EE_MATH,6,00440162
-CE_GEN,1,00440102
-CE_GEN,1,01040012
-CE_GEN,1,01040064
-CE_GEN,1,01040016
-CE_GEN,1,01140071
-CE_GEN,1,02340117
-CE_GEN,1,03240033
-CE_GEN,1,00450001
-CE_GEN,1,00450002
-CE_GEN,2,00440252
-CE_GEN,2,01040013
-CE_GEN,2,01040038
-CE_GEN,2,01040136
-CE_GEN,2,01140075
-CE_GEN,2,00450001
-CE_GEN,2,00450002
-CE_GEN,3,00440105
-CE_GEN,3,00440268
-CE_GEN,3,00440157
-CE_GEN,3,01040220
-CE_GEN,3,01140073
-CE_GEN,3,02340218
-CE_GEN,3,03940901
-CE_GEN,3,01040214
-CE_GEN,4,00440127
-CE_GEN,4,00440131
-CE_GEN,4,00440140
-CE_GEN,4,01040034
-CE_GEN,4,02340124
-CE_GEN,4,02340122
-CE_GEN,4,03940901
-CE_GEN,5,00440137
-CE_GEN,5,00440202
-CE_GEN,5,00440158
-CE_GEN,5,02340234
-CE_GEN,5,02340222
-CE_GEN,6,00440162
-EE_PHYS,1,00440102
-EE_PHYS,1,01040012
-EE_PHYS,1,01040064
-EE_PHYS,1,01040016
-EE_PHYS,1,01140020
-EE_PHYS,1,01140074
-EE_PHYS,1,02340117
-EE_PHYS,1,03240033
-EE_PHYS,1,00450001
-EE_PHYS,2,00440252
-EE_PHYS,2,01040013
-EE_PHYS,2,01040038
-EE_PHYS,2,01040136
-EE_PHYS,2,01140023
-EE_PHYS,2,01140076
-EE_PHYS,2,00450001
-EE_PHYS,3,00440105
-EE_PHYS,3,00440268
-EE_PHYS,3,00440157
-EE_PHYS,3,01040214
-EE_PHYS,3,01040215
-EE_PHYS,3,01040220
-EE_PHYS,3,01140036
-EE_PHYS,3,03940901
-EE_PHYS,4,00440131
-EE_PHYS,4,00440140
-EE_PHYS,4,01040034
-EE_PHYS,4,01140024
-EE_PHYS,4,01140205
-EE_PHYS,4,01140035
-EE_PHYS,4,03940901
-EE_PHYS,5,00440127
-EE_PHYS,5,00440137
-EE_PHYS,5,00440148
-EE_PHYS,5,00440202
-EE_PHYS,5,00440158
-EE_PHYS,5,00440124
-EE_PHYS,5,01140037
-EE_PHYS,6,00440162
-EE_PHYS,6,01140206
-EE_PHYS_2,1,00440102
-EE_PHYS_2,1,01040012
-EE_PHYS_2,1,01040064
-EE_PHYS_2,1,01040016
-EE_PHYS_2,1,01140020
-EE_PHYS_2,1,01140074
-EE_PHYS_2,1,02340117
-EE_PHYS_2,1,03240033
-EE_PHYS_2,1,01140020
-EE_PHYS_2,2,00440252
-EE_PHYS_2,2,01040013
-EE_PHYS_2,2,01040038
-EE_PHYS_2,2,01040136
-EE_PHYS_2,2,01140023
-EE_PHYS_2,2,01140076
-EE_PHYS_2,2,00450001
-EE_PHYS_2,3,00440105
-EE_PHYS_2,3,00440268
-EE_PHYS_2,3,00440157
-EE_PHYS_2,3,01040214
-EE_PHYS_2,3,01040215
-EE_PHYS_2,3,01040220
-EE_PHYS_2,3,01140036
-EE_PHYS_2,3,03940901
-EE_PHYS_2,4,00440131
-EE_PHYS_2,4,00440140
-EE_PHYS_2,4,01040034
-EE_PHYS_2,4,01140024
-EE_PHYS_2,4,01140205
-EE_PHYS_2,4,01140035
-EE_PHYS_2,4,03940901
-EE_PHYS_2,5,00440127
-EE_PHYS_2,5,00440137
-EE_PHYS_2,5,00440148
-EE_PHYS_2,5,00440202
-EE_PHYS_2,5,00440158
-EE_PHYS_2,5,00440124
-EE_PHYS_2,6,00440162
-EE_PHYS_2,6,01140037
-EE_PHYS_2,6,01140206
-ECE_QUANTUM,1,00440102
-ECE_QUANTUM,1,01040012
-ECE_QUANTUM,1,01040064
-ECE_QUANTUM,1,01040016
-ECE_QUANTUM,1,02340129
-ECE_QUANTUM,1,01140071
-ECE_QUANTUM,1,02340114
-ECE_QUANTUM,2,00440252
-ECE_QUANTUM,2,01040013
-ECE_QUANTUM,2,01040038
-ECE_QUANTUM,2,01040136
-ECE_QUANTUM,2,02340124
-ECE_QUANTUM,3,00440105
-ECE_QUANTUM,3,00440268
-ECE_QUANTUM,3,00440157
-ECE_QUANTUM,3,02340218
-ECE_QUANTUM,3,03240033
-ECE_QUANTUM,3,01140073
-ECE_QUANTUM,3,03940901
-ECE_QUANTUM,4,00440127
-ECE_QUANTUM,4,00440131
-ECE_QUANTUM,4,00440140
-ECE_QUANTUM,4,01040034
-ECE_QUANTUM,4,02340222
-ECE_QUANTUM,4,03940901
-ECE_QUANTUM,5,00440137
-ECE_QUANTUM,5,00440202
-ECE_QUANTUM,5,00440158
-ECE_QUANTUM,5,02340234
-ECE_QUANTUM,5,01040214
-ECE_QUANTUM,5,01040215
-ECE_QUANTUM,5,01040220
-ECE_QUANTUM,5,01140033
-ECE_QUANTUM,5,02340122
-ECE_QUANTUM,6,00440162
+Electrical Engineering,1,00440102
+Electrical Engineering,1,01040012
+Electrical Engineering,1,01040064
+Electrical Engineering,1,01040016
+Electrical Engineering,1,01140071
+Electrical Engineering,1,01140032
+Electrical Engineering,1,02340117
+Electrical Engineering,1,03240033
+Electrical Engineering,2,00440252
+Electrical Engineering,2,01040013
+Electrical Engineering,2,01040038
+Electrical Engineering,2,01040136
+Electrical Engineering,2,01140075
+Electrical Engineering,3,00440105
+Electrical Engineering,3,00440268
+Electrical Engineering,3,00440157
+Electrical Engineering,3,01040214
+Electrical Engineering,3,01040215
+Electrical Engineering,3,01040220
+Electrical Engineering,3,01140073
+Electrical Engineering,3,03940901
+Electrical Engineering,4,00440127
+Electrical Engineering,4,00440131
+Electrical Engineering,4,00440140
+Electrical Engineering,4,01040034
+Electrical Engineering,4,03940901
+Electrical Engineering,5,00440137
+Electrical Engineering,5,00440148
+Electrical Engineering,5,00440202
+Electrical Engineering,5,00440158
+Electrical Engineering,5,00440124
+Electrical Engineering,6,00440167
+Electrical Engineering,7,00440169
+Electrical Engineering and Mathematics,1,00440102
+Electrical Engineering and Mathematics,1,01040000
+Electrical Engineering and Mathematics,1,01040002
+Electrical Engineering and Mathematics,1,01040195
+Electrical Engineering and Mathematics,1,01040066
+Electrical Engineering and Mathematics,1,01140071
+Electrical Engineering and Mathematics,1,01140032
+Electrical Engineering and Mathematics,1,02340117
+Electrical Engineering and Mathematics,2,00440252
+Electrical Engineering and Mathematics,2,01040281
+Electrical Engineering and Mathematics,2,01040168
+Electrical Engineering and Mathematics,2,01140075
+Electrical Engineering and Mathematics,2,03240033
+Electrical Engineering and Mathematics,3,00440105
+Electrical Engineering and Mathematics,3,00440268
+Electrical Engineering and Mathematics,3,01040286
+Electrical Engineering and Mathematics,3,01040214
+Electrical Engineering and Mathematics,3,01040295
+Electrical Engineering and Mathematics,3,01040285
+Electrical Engineering and Mathematics,3,01040122
+Electrical Engineering and Mathematics,4,00440131
+Electrical Engineering and Mathematics,4,00440127
+Electrical Engineering and Mathematics,4,00440157
+Electrical Engineering and Mathematics,4,00440140
+Electrical Engineering and Mathematics,4,01040222
+Electrical Engineering and Mathematics,4,01040030
+Electrical Engineering and Mathematics,4,03940800
+Electrical Engineering and Mathematics,5,00440137
+Electrical Engineering and Mathematics,5,00440202
+Electrical Engineering and Mathematics,5,00440158
+Electrical Engineering and Mathematics,5,01040142
+Electrical Engineering and Mathematics,5,01040158
+Electrical Engineering and Mathematics,5,03940800
+Electrical Engineering and Mathematics,6,0044167
+Electrical Engineering and Mathematics,6,00440148
+Electrical Engineering and Mathematics,7,00440169
+Electrical Engineering and Mathematics,7,01040165
+Electrical and Computer Engineering,1,00440102
+Electrical and Computer Engineering,1,01040012
+Electrical and Computer Engineering,1,01040064
+Electrical and Computer Engineering,1,01040016
+Electrical and Computer Engineering,1,01140071
+Electrical and Computer Engineering,1,02340117
+Electrical and Computer Engineering,1,03240033
+Electrical and Computer Engineering,2,00440252
+Electrical and Computer Engineering,2,01040013
+Electrical and Computer Engineering,2,01040038
+Electrical and Computer Engineering,2,01040136
+Electrical and Computer Engineering,2,01140075
+Electrical and Computer Engineering,3,00440105
+Electrical and Computer Engineering,3,00440114
+Electrical and Computer Engineering,3,00440268
+Electrical and Computer Engineering,3,01040134
+Electrical and Computer Engineering,3,01040214
+Electrical and Computer Engineering,3,01040215
+Electrical and Computer Engineering,3,01040220
+Electrical and Computer Engineering,3,03940901
+Electrical and Computer Engineering,4,00440101
+Electrical and Computer Engineering,4,00440127
+Electrical and Computer Engineering,4,00440131
+Electrical and Computer Engineering,4,00440157
+Electrical and Computer Engineering,4,00460002
+Electrical and Computer Engineering,4,01040034
+Electrical and Computer Engineering,4,03940901
+Electrical and Computer Engineering,5,00440137
+Electrical and Computer Engineering,5,00460209
+Electrical and Computer Engineering,5,00460210
+Electrical and Computer Engineering,5,00440334
+Electrical and Computer Engineering,5,00460267
+Electrical and Computer Engineering,6,00440167
+Electrical and Computer Engineering,7,00440169
+Electrical Engineering and Physics,1,00440102
+Electrical Engineering and Physics,1,01040012
+Electrical Engineering and Physics,1,01040064
+Electrical Engineering and Physics,1,01040016
+Electrical Engineering and Physics,1,01140020
+Electrical Engineering and Physics,1,01140074
+Electrical Engineering and Physics,1,02340117
+Electrical Engineering and Physics,1,03240033
+Electrical Engineering and Physics,2,00440252
+Electrical Engineering and Physics,2,01040013
+Electrical Engineering and Physics,2,01040038
+Electrical Engineering and Physics,2,01040136
+Electrical Engineering and Physics,2,01140030
+Electrical Engineering and Physics,2,01140076
+Electrical Engineering and Physics,3,00440105
+Electrical Engineering and Physics,3,00440268
+Electrical Engineering and Physics,3,01040034
+Electrical Engineering and Physics,3,01040214
+Electrical Engineering and Physics,3,01040215
+Electrical Engineering and Physics,3,01040220
+Electrical Engineering and Physics,3,01140101
+Electrical Engineering and Physics,3,03940901
+Electrical Engineering and Physics,4,00440127
+Electrical Engineering and Physics,4,00440131
+Electrical Engineering and Physics,4,00440157
+Electrical Engineering and Physics,4,01150203
+Electrical Engineering and Physics,4,01140246
+Electrical Engineering and Physics,4,00440140
+Electrical Engineering and Physics,4,01140036
+Electrical Engineering and Physics,5,00440137
+Electrical Engineering and Physics,5,00440148
+Electrical Engineering and Physics,5,00440202
+Electrical Engineering and Physics,5,01150204
+Electrical Engineering and Physics,5,01160217
+Electrical Engineering and Physics,5,00440158
+Electrical Engineering and Physics,5,03940901
+Electrical Engineering and Physics,6,01140035
+Electrical Engineering and Physics,6,00440167
+Electrical Engineering and Physics,7,00440169
+Electrical Engineering and Physics,7,01140252
+Combined Electrical Engineering and Physics,1,00440102
+Combined Electrical Engineering and Physics,1,01040012
+Combined Electrical Engineering and Physics,1,01040064
+Combined Electrical Engineering and Physics,1,01040016
+Combined Electrical Engineering and Physics,1,01140020
+Combined Electrical Engineering and Physics,1,01140074
+Combined Electrical Engineering and Physics,1,02340117
+Combined Electrical Engineering and Physics,1,03240033
+Combined Electrical Engineering and Physics,2,00440252
+Combined Electrical Engineering and Physics,2,01040013
+Combined Electrical Engineering and Physics,2,01040038
+Combined Electrical Engineering and Physics,2,01040136
+Combined Electrical Engineering and Physics,2,01140030
+Combined Electrical Engineering and Physics,2,01140076
+Combined Electrical Engineering and Physics,3,00440105
+Combined Electrical Engineering and Physics,3,00440268
+Combined Electrical Engineering and Physics,3,01040034
+Combined Electrical Engineering and Physics,3,01040214
+Combined Electrical Engineering and Physics,3,01040215
+Combined Electrical Engineering and Physics,3,01040220
+Combined Electrical Engineering and Physics,3,01140101
+Combined Electrical Engineering and Physics,3,03940901
+Combined Electrical Engineering and Physics,4,00440127
+Combined Electrical Engineering and Physics,4,00440131
+Combined Electrical Engineering and Physics,4,00440157
+Combined Electrical Engineering and Physics,4,01150203
+Combined Electrical Engineering and Physics,4,01140246
+Combined Electrical Engineering and Physics,4,00440140
+Combined Electrical Engineering and Physics,4,01140036
+Combined Electrical Engineering and Physics,5,00440137
+Combined Electrical Engineering and Physics,5,00440148
+Combined Electrical Engineering and Physics,5,00440202
+Combined Electrical Engineering and Physics,5,01150204
+Combined Electrical Engineering and Physics,5,01160217
+Combined Electrical Engineering and Physics,5,03940901
+Combined Electrical Engineering and Physics,6,00440158
+Combined Electrical Engineering and Physics,6,00440167
+Combined Electrical Engineering and Physics,6,01140035
+Combined Electrical Engineering and Physics,7,00440169
+Combined Electrical Engineering and Physics,7,01140037
+Combined Electrical Engineering and Physics,7,01240108
+Combined Electrical Engineering and Physics,8,01140250
+Combined Electrical Engineering and Physics,8,01140252
+Computer Engineering,1,00440102
+Computer Engineering,1,01040012
+Computer Engineering,1,01040064
+Computer Engineering,1,01040016
+Computer Engineering,1,02340129
+Computer Engineering,1,01140071
+Computer Engineering,1,02340114
+Computer Engineering,2,01040013
+Computer Engineering,2,02340125
+Computer Engineering,2,01040136
+Computer Engineering,2,01140075
+Computer Engineering,2,00440252
+Computer Engineering,3,02340124
+Computer Engineering,3,02340141
+Computer Engineering,3,00440105
+Computer Engineering,3,01040220
+Computer Engineering,3,01040215
+Computer Engineering,3,01040214
+Computer Engineering,3,03240033
+Computer Engineering,4,00440131
+Computer Engineering,4,01040034
+Computer Engineering,4,00440127
+Computer Engineering,4,02340218
+Computer Engineering,4,02340118
+Computer Engineering,4,01140073
+Computer Engineering,5,00440137
+Computer Engineering,5,00440157
+Computer Engineering,5,02340123
+Computer Engineering,5,00460209
+Computer Engineering,5,00460210
+Computer Engineering,5,01040134
+Computer Engineering,5,02340247
+Computer Engineering,5,00460267
+Computer Engineering,5,02360267
+Computer Engineering,6,00440167
+Computer Engineering,7,00440169

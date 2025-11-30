@@ -1,172 +1,208 @@
 track_name,semester,course_id
-CHEM_3Y,1,01040003
-CHEM_3Y,1,01040019
-CHEM_3Y,1,01140077
-CHEM_3Y,1,01340127
-CHEM_3Y,1,01240117
-CHEM_3Y,1,00114051
-CHEM_3Y,1,00114071
-CHEM_3Y,1,00134058
-CHEM_3Y,2,01040004
-CHEM_3Y,2,01040131
-CHEM_3Y,2,01140078
-CHEM_3Y,2,01250101
-CHEM_3Y,2,01250801
-CHEM_3Y,2,00114052
-CHEM_3Y,2,00124801
-CHEM_3Y,2,00125101
-CHEM_3Y,3,01250341
-CHEM_3Y,3,01250342
-CHEM_3Y,3,01250202
-CHEM_3Y,3,01250507
-CHEM_3Y,3,01250118
-CHEM_3Y,3,03940800
-CHEM_3Y,3,00125341
-CHEM_3Y,3,00125342
-CHEM_3Y,4,01250112
-CHEM_3Y,4,01250203
-CHEM_3Y,4,01250220
-CHEM_3Y,4,01250343
-CHEM_3Y,4,01250508
-CHEM_3Y,4,00125112
-CHEM_3Y,4,00125203
-CHEM_3Y,5,01250113
-CHEM_3Y,5,01250204
-CHEM_3Y,5,01250212
-CHEM_3Y,5,01250213
-CHEM_3Y,5,01250313
-CHEM_3Y,5,00125113
-CHEM_3Y,5,00125204
-MOL_BIOCHEM,1,01040018
-MOL_BIOCHEM,1,01040019
-MOL_BIOCHEM,1,01140051
-MOL_BIOCHEM,1,01340058
-MOL_BIOCHEM,1,01240117
-MOL_BIOCHEM,1,03940800
-MOL_BIOCHEM,1,00114077
-MOL_BIOCHEM,1,00134127
-MOL_BIOCHEM,2,01040043
-MOL_BIOCHEM,2,01040131
-MOL_BIOCHEM,2,01140052
-MOL_BIOCHEM,2,01340020
-MOL_BIOCHEM,2,01250101
-MOL_BIOCHEM,2,01250801
-MOL_BIOCHEM,2,00114078
-MOL_BIOCHEM,2,00124801
-MOL_BIOCHEM,3,01250341
-MOL_BIOCHEM,3,01250342
-MOL_BIOCHEM,3,01250202
-MOL_BIOCHEM,3,01340019
-MOL_BIOCHEM,3,01250507
-MOL_BIOCHEM,3,00125341
-MOL_BIOCHEM,3,00125342
-MOL_BIOCHEM,4,01250112
-MOL_BIOCHEM,4,01250203
-MOL_BIOCHEM,4,01250220
-MOL_BIOCHEM,4,01250343
-MOL_BIOCHEM,4,01340238
-MOL_BIOCHEM,4,00125112
-MOL_BIOCHEM,4,00125203
-MOL_BIOCHEM,5,01250113
-MOL_BIOCHEM,5,01250204
-MOL_BIOCHEM,5,01340128
-MOL_BIOCHEM,5,01340119
-MOL_BIOCHEM,5,01250213
-MOL_BIOCHEM,5,01250508
-MOL_BIOCHEM,5,00125113
-MOL_BIOCHEM,5,00125204
-MOL_BIOCHEM,6,01250118
-MOL_BIOCHEM,6,01250313
-MOL_BIOCHEM,6,01340142
-MOL_BIOCHEM,6,01340224
-MOL_BIOCHEM,6,01340222
-MOL_BIOCHEM,6,00125118
-MOL_BIOCHEM,6,00125313
-MOL_BIOCHEM,6,00134142
-CHEM_BIO_DOUBLE,1,01040003
-CHEM_BIO_DOUBLE,1,01040019
-CHEM_BIO_DOUBLE,1,01240117
-CHEM_BIO_DOUBLE,1,01340058
-CHEM_BIO_DOUBLE,1,03240033
-CHEM_BIO_DOUBLE,1,01140077
-CHEM_BIO_DOUBLE,1,03940800
-CHEM_BIO_DOUBLE,1,00114051
-CHEM_BIO_DOUBLE,1,00134127
-CHEM_BIO_DOUBLE,2,01040004
-CHEM_BIO_DOUBLE,2,01040131
-CHEM_BIO_DOUBLE,2,01250101
-CHEM_BIO_DOUBLE,2,01250801
-CHEM_BIO_DOUBLE,2,01140078
-CHEM_BIO_DOUBLE,2,01340020
-CHEM_BIO_DOUBLE,2,00114052
-CHEM_BIO_DOUBLE,2,00124801
-CHEM_BIO_DOUBLE,3,01250341
-CHEM_BIO_DOUBLE,3,01250342
-CHEM_BIO_DOUBLE,3,01250202
-CHEM_BIO_DOUBLE,3,01340019
-CHEM_BIO_DOUBLE,3,00125341
-CHEM_BIO_DOUBLE,3,00125342
-CHEM_BIO_DOUBLE,4,01250112
-CHEM_BIO_DOUBLE,4,01250203
-CHEM_BIO_DOUBLE,4,01250220
-CHEM_BIO_DOUBLE,4,01250343
-CHEM_BIO_DOUBLE,4,01250507
-CHEM_BIO_DOUBLE,4,01340238
-CHEM_BIO_DOUBLE,4,00125112
-CHEM_BIO_DOUBLE,5,01250113
-CHEM_BIO_DOUBLE,5,01340128
-CHEM_BIO_DOUBLE,6,01250118
-CHEM_BIO_DOUBLE,6,01250313
-CHEM_BIO_DOUBLE,6,01250508
-CHEM_BIO_DOUBLE,6,01250204
-CHEM_BIO_DOUBLE,6,01250213
-CHEM_BIO_DOUBLE,6,01340119
-CHEM_BIO_DOUBLE,6,01340142
-CHEM_BIO_DOUBLE,6,01340224
-CHEM_BIO_DOUBLE,6,01340222
-CHEM_MATERIALS,1,10400190
-CHEM_MATERIALS,1,10400410
-CHEM_MATERIALS,1,11400510
-CHEM_MATERIALS,1,12401170
-CHEM_MATERIALS,1,23401280
-CHEM_MATERIALS,1,32400330
-CHEM_MATERIALS,1,00394080
-CHEM_MATERIALS,2,10400430
-CHEM_MATERIALS,2,10401310
-CHEM_MATERIALS,2,11400520
-CHEM_MATERIALS,2,12501010
-CHEM_MATERIALS,2,12508010
-CHEM_MATERIALS,2,31405330
-CHEM_MATERIALS,2,00394080
-CHEM_MATERIALS,3,12503410
-CHEM_MATERIALS,3,12503420
-CHEM_MATERIALS,3,12502020
-CHEM_MATERIALS,3,12505070
-CHEM_MATERIALS,3,31403330
-CHEM_MATERIALS,3,00394080
-CHEM_MATERIALS,4,12501120
-CHEM_MATERIALS,4,12502030
-CHEM_MATERIALS,4,12502200
-CHEM_MATERIALS,4,12503430
-CHEM_MATERIALS,4,12505080
-CHEM_MATERIALS,4,31402340
-CHEM_MATERIALS,5,12501130
-CHEM_MATERIALS,5,31402350
-CHEM_MATERIALS,5,31403350
-CHEM_MATERIALS,5,31402320
-CHEM_MATERIALS,5,31403340
-CHEM_MATERIALS,5,00394080
-CHEM_MATERIALS,6,12503130
-CHEM_MATERIALS,6,31403160
-CHEM_MATERIALS,6,31403360
-CHEM_MATERIALS,6,31403370
-CHEM_MATERIALS,6,31403390
-CHEM_MATERIALS,6,00314023
-CHEM_MATERIALS,6,00314033
-CHEM_MATERIALS,7,12501180
-CHEM_MATERIALS,7,12502040
-CHEM_MATERIALS,7,12502120
-CHEM_MATERIALS,7,12502130
-CHEM_MATERIALS,7,31403110
-CHEM_MATERIALS,8,31402410
-CHEM_MATERIALS,8,31402420
+Chemistry,1,01040003
+Chemistry,1,01040019
+Chemistry,1,01140077
+Chemistry,1,01340127
+Chemistry,1,01240117
+Chemistry,2,01040004
+Chemistry,2,01040131
+Chemistry,2,01140052
+Chemistry,2,01140058
+Chemistry,2,01240118
+Chemistry,2,02340128
+Chemistry,2,01240220
+Chemistry,3,01240408
+Chemistry,3,01240415
+Chemistry,3,01240708
+Chemistry,3,01240305
+Chemistry,3,01240212
+Chemistry,3,01240611
+Chemistry,3,03240033
+Chemistry,4,01240213
+Chemistry,4,01240417
+Chemistry,4,01240413
+Chemistry,4,01240414
+Chemistry,4,01240610
+Chemistry,4,01240711
+Chemistry,4,01240911
+Chemistry,5,01240214
+Chemistry,5,01240210
+Chemistry,5,01240416
+Chemistry,5,01240703
+Chemistry,5,01240613
+Chemistry,5,01340019
+Haznek Chemistry - Medicinal,1,01040018
+Haznek Chemistry - Medicinal,1,01040019
+Haznek Chemistry - Medicinal,1,01140051
+Haznek Chemistry - Medicinal,1,01340058
+Haznek Chemistry - Medicinal,1,01240117
+Haznek Chemistry - Medicinal,1,03940800
+Haznek Chemistry - Medicinal,2,01040122
+Haznek Chemistry - Medicinal,2,01040131
+Haznek Chemistry - Medicinal,2,01140052
+Haznek Chemistry - Medicinal,2,01240118
+Haznek Chemistry - Medicinal,2,02340128
+Haznek Chemistry - Medicinal,2,01240220
+Haznek Chemistry - Medicinal,2,03940800
+Haznek Chemistry - Medicinal,3,01240440
+Haznek Chemistry - Medicinal,3,01240415
+Haznek Chemistry - Medicinal,3,01240708
+Haznek Chemistry - Medicinal,3,01230305
+Haznek Chemistry - Medicinal,3,01240212
+Haznek Chemistry - Medicinal,3,01240611
+Haznek Chemistry - Medicinal,3,03240033
+Haznek Chemistry - Medicinal,4,01240213
+Haznek Chemistry - Medicinal,4,01240417
+Haznek Chemistry - Medicinal,4,01240413
+Haznek Chemistry - Medicinal,4,01240610
+Haznek Chemistry - Medicinal,4,01240711
+Haznek Chemistry - Medicinal,4,01240911
+Haznek Chemistry - Medicinal,4,01240356
+Haznek Chemistry - Medicinal,5,01240214
+Haznek Chemistry - Medicinal,5,01240210
+Haznek Chemistry - Medicinal,5,01240416
+Haznek Chemistry - Medicinal,5,01240703
+Haznek Chemistry - Medicinal,5,01240912
+Haznek Chemistry - Medicinal,5,01340019
+Haznek Chemistry - Medicinal,5,01240353
+Haznek Chemistry - Medicinal,5,01240602
+Haznek Chemistry - Medicinal,6,01260200
+Haznek Chemistry - Medicinal,6,01240355
+Haznek Chemistry - Medicinal,6,01260601
+Haznek Chemistry - Medicinal,6,01260700
+Haznek Chemistry - Medicinal,6,01260901
+Haznek Chemistry - Medicinal,6,01260303
+Haznek Chemistry - Medicinal,7,01340113
+Haznek Chemistry - Medicinal,7,01270100
+Haznek Chemistry - Medicinal,7,01340020
+Haznek Chemistry - Medicinal,7,01270741
+Haznek Chemistry - Medicinal,7,01270742
+Haznek Chemistry - Medicinal,7,01340134
+Haznek Chemistry - Technologies,1,01040018
+Haznek Chemistry - Technologies,1,01040019
+Haznek Chemistry - Technologies,1,01140051
+Haznek Chemistry - Technologies,1,01340058
+Haznek Chemistry - Technologies,1,01240117
+Haznek Chemistry - Technologies,1,03940800
+Haznek Chemistry - Technologies,2,01040122
+Haznek Chemistry - Technologies,2,01040131
+Haznek Chemistry - Technologies,2,01140052
+Haznek Chemistry - Technologies,2,01240118
+Haznek Chemistry - Technologies,2,02340128
+Haznek Chemistry - Technologies,2,01240220
+Haznek Chemistry - Technologies,2,03940800
+Haznek Chemistry - Technologies,3,01240440
+Haznek Chemistry - Technologies,3,01240415
+Haznek Chemistry - Technologies,3,01240708
+Haznek Chemistry - Technologies,3,01230305
+Haznek Chemistry - Technologies,3,01240212
+Haznek Chemistry - Technologies,3,01240611
+Haznek Chemistry - Technologies,3,03240033
+Haznek Chemistry - Technologies,4,01240213
+Haznek Chemistry - Technologies,4,01240417
+Haznek Chemistry - Technologies,4,01240413
+Haznek Chemistry - Technologies,4,01240610
+Haznek Chemistry - Technologies,4,01240711
+Haznek Chemistry - Technologies,4,01240911
+Haznek Chemistry - Technologies,4,01240356
+Haznek Chemistry - Technologies,5,01240214
+Haznek Chemistry - Technologies,5,01240210
+Haznek Chemistry - Technologies,5,01240416
+Haznek Chemistry - Technologies,5,01240703
+Haznek Chemistry - Technologies,5,01240912
+Haznek Chemistry - Technologies,5,01340019
+Haznek Chemistry - Technologies,5,01240353
+Haznek Chemistry - Technologies,5,01240602
+Haznek Chemistry - Technologies,6,01260200
+Haznek Chemistry - Technologies,6,01240355
+Haznek Chemistry - Technologies,6,01260601
+Haznek Chemistry - Technologies,6,01260700
+Haznek Chemistry - Technologies,6,01260901
+Haznek Chemistry - Technologies,6,01260303
+Haznek Chemistry - Technologies,7,01240228
+Haznek Chemistry - Technologies,7,00940481
+Haznek Chemistry - Technologies,7,00540135
+Haznek Chemistry - Technologies,7,05400522
+Haznek Chemistry - Technologies,7,01260126
+Haznek Chemistry - Quantum,1,01040018
+Haznek Chemistry - Quantum,1,01040019
+Haznek Chemistry - Quantum,1,01140051
+Haznek Chemistry - Quantum,1,01340058
+Haznek Chemistry - Quantum,1,01240117
+Haznek Chemistry - Quantum,1,03940800
+Haznek Chemistry - Quantum,2,01040122
+Haznek Chemistry - Quantum,2,01040131
+Haznek Chemistry - Quantum,2,01140052
+Haznek Chemistry - Quantum,2,01240118
+Haznek Chemistry - Quantum,2,02340128
+Haznek Chemistry - Quantum,2,01240220
+Haznek Chemistry - Quantum,2,03940800
+Haznek Chemistry - Quantum,3,01240440
+Haznek Chemistry - Quantum,3,01240415
+Haznek Chemistry - Quantum,3,01240708
+Haznek Chemistry - Quantum,3,01230305
+Haznek Chemistry - Quantum,3,01240212
+Haznek Chemistry - Quantum,3,01240611
+Haznek Chemistry - Quantum,3,03240033
+Haznek Chemistry - Quantum,4,01240213
+Haznek Chemistry - Quantum,4,01240417
+Haznek Chemistry - Quantum,4,01240413
+Haznek Chemistry - Quantum,4,01240610
+Haznek Chemistry - Quantum,4,01240711
+Haznek Chemistry - Quantum,4,01240911
+Haznek Chemistry - Quantum,4,01240356
+Haznek Chemistry - Quantum,5,01240214
+Haznek Chemistry - Quantum,5,01240210
+Haznek Chemistry - Quantum,5,01240416
+Haznek Chemistry - Quantum,5,01240703
+Haznek Chemistry - Quantum,5,01240912
+Haznek Chemistry - Quantum,5,01340019
+Haznek Chemistry - Quantum,5,01240353
+Haznek Chemistry - Quantum,5,01240602
+Haznek Chemistry - Quantum,6,01260200
+Haznek Chemistry - Quantum,6,01240355
+Haznek Chemistry - Quantum,6,01260601
+Haznek Chemistry - Quantum,6,01260700
+Haznek Chemistry - Quantum,6,01260901
+Haznek Chemistry - Quantum,6,01260303
+Haznek Chemistry - Quantum,7,01270446
+Haznek Chemistry - Quantum,7,01270447
+Haznek Chemistry - Quantum,7,01260604
+Haznek Chemistry - Quantum,7,01260605
+Haznek Chemistry - Quantum,7,01270450
+Haznek Chemistry - Quantum,7,01270451
+Haznek Chemistry - Quantum,7,01280429
+Haznek Chemistry - Quantum,7,01160037
+Haznek Chemistry - Quantum,7,01160040
+Haznek Chemistry - Quantum,7,01180137
+Molecular Biochemistry,1,01040003
+Molecular Biochemistry,1,01040019
+Molecular Biochemistry,1,01240117
+Molecular Biochemistry,1,01340058
+Molecular Biochemistry,1,03240033
+Molecular Biochemistry,1,01140077
+Molecular Biochemistry,1,03940800
+Molecular Biochemistry,2,01040004
+Molecular Biochemistry,2,01140078
+Molecular Biochemistry,2,01240118
+Molecular Biochemistry,2,00940481
+Molecular Biochemistry,2,01340019
+Molecular Biochemistry,2,01340020
+Molecular Biochemistry,3,01240408
+Molecular Biochemistry,3,01240415
+Molecular Biochemistry,3,01240708
+Molecular Biochemistry,3,01340082
+Molecular Biochemistry,3,01340113
+Molecular Biochemistry,3,01340142
+Molecular Biochemistry,4,01240911
+Molecular Biochemistry,4,01240414
+Molecular Biochemistry,4,01240711
+Molecular Biochemistry,4,01340128
+Molecular Biochemistry,4,01340119
+Molecular Biochemistry,4,01240220
+Molecular Biochemistry,4,03940800
+Molecular Biochemistry,5,01240212
+Molecular Biochemistry,5,02340128
+Molecular Biochemistry,6,01340143
+Molecular Biochemistry,6,01340117
+Molecular Biochemistry,6,01340121

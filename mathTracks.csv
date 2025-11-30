@@ -1,112 +1,128 @@
 track_name,semester,course_id
-MATH_3Y,1,01040195
-MATH_3Y,1,01040066
-MATH_3Y,1,01040002
-MATH_3Y,1,02340128
-MATH_3Y,2,01040281
-MATH_3Y,2,01040168
-MATH_3Y,2,01040286
-MATH_3Y,2,01140071
-MATH_3Y,3,01040295
-MATH_3Y,3,01040285
-MATH_3Y,3,01040158
-MATH_3Y,3,01040142
-MATH_3Y,3,01040293
-MATH_3Y,4,01040165
-MATH_3Y,4,01040279
-MATH_3Y,4,01040192
-MATH_3Y,4,01040177
-MATH_3Y,5,01040273
-MATH_3Y,5,01040274
-MATH_3Y,6,01040294
-MATH_PHYS,1,01040195
-MATH_PHYS,1,01040066
-MATH_PHYS,1,01140074
-MATH_PHYS,1,01140020
-MATH_PHYS,2,01040281
-MATH_PHYS,2,01040168
-MATH_PHYS,2,01140076
-MATH_PHYS,2,01140021
-MATH_PHYS,3,01040295
-MATH_PHYS,3,01040285
-MATH_PHYS,3,01140086
-MATH_PHYS,3,01040222
-MATH_PHYS,3,01140101
-MATH_PHYS,4,01040142
-MATH_PHYS,4,01040030
-MATH_PHYS,4,01040158
-MATH_PHYS,4,01150203
-MATH_PHYS,4,01140035
-MATH_PHYS,4,01140036
-MATH_PHYS,5,01040122
-MATH_PHYS,5,01150204
-MATH_PHYS,6,01140246
-MATH_CS,1,01040195
-MATH_CS,1,01040066
-MATH_CS,1,01040002
-MATH_CS,1,02340114
-MATH_CS,2,01040281
-MATH_CS,2,01040168
-MATH_CS,2,01140071
-MATH_CS,2,01040286
-MATH_CS,2,02340124
-MATH_CS,3,01040295
-MATH_CS,3,01040293
-MATH_CS,3,02340218
-MATH_CS,3,01040222
-MATH_CS,3,04402520
-MATH_CS,4,01040158
-MATH_CS,4,01040285
-MATH_CS,4,01040291
-MATH_CS,4,02340118
-MATH_CS,5,01040122
-MATH_CS,5,01040294
-MATH_CS,5,02340123
-MATH_CS,6,01040192
-MATH_APP,1,01040195
-MATH_APP,1,01040066
-MATH_APP,1,01040002
-MATH_APP,1,02340128
-MATH_APP,2,01040281
-MATH_APP,2,01040168
-MATH_APP,2,01040286
-MATH_APP,2,01140071
-MATH_APP,3,01040295
-MATH_APP,3,01040285
-MATH_APP,3,01040158
-MATH_APP,3,01040222
-MATH_APP,3,01040142
-MATH_APP,4,01040122
-MATH_APP,4,01040273
-MATH_APP,4,01040193
-MATH_APP,4,01040291
-MATH_APP,5,01040030
-MATH_APP,6,01040192
-MATH_APP,6,01040294
-CS_MATH_JOINT,1,01040195
-CS_MATH_JOINT,1,01040066
-CS_MATH_JOINT,1,02340114
-CS_MATH_JOINT,1,02340129
-CS_MATH_JOINT,2,01040281
-CS_MATH_JOINT,2,01040168
-CS_MATH_JOINT,2,01140071
-CS_MATH_JOINT,2,02340124
-CS_MATH_JOINT,2,02340141
-CS_MATH_JOINT,3,01040295
-CS_MATH_JOINT,3,01040293
-CS_MATH_JOINT,3,01040222
-CS_MATH_JOINT,3,02340218
-CS_MATH_JOINT,3,04402520
-CS_MATH_JOINT,4,01040158
-CS_MATH_JOINT,4,01040142
-CS_MATH_JOINT,4,01040285
-CS_MATH_JOINT,4,02340118
-CS_MATH_JOINT,4,02340247
-CS_MATH_JOINT,5,01040294
-CS_MATH_JOINT,5,01040122
-CS_MATH_JOINT,5,01040279
-CS_MATH_JOINT,5,02360343
-CS_MATH_JOINT,6,01040192
-CS_MATH_JOINT,6,02360267
-CS_MATH_JOINT,6,01060156
-CS_MATH_JOINT,6,02340123
+Three-year program in Mathematics,1,01040195
+Three-year program in Mathematics,1,01040066
+Three-year program in Mathematics,1,01040002
+Three-year program in Mathematics,1,02340128
+Three-year program in Mathematics,1,03940800
+Three-year program in Mathematics,2,01040281
+Three-year program in Mathematics,2,01040168
+Three-year program in Mathematics,2,03240033
+Three-year program in Mathematics,2,01040286
+Three-year program in Mathematics,2,01140071
+Three-year program in Mathematics,2,03940800
+Three-year program in Mathematics,3,01040295
+Three-year program in Mathematics,3,01040285
+Three-year program in Mathematics,3,01040222
+Three-year program in Mathematics,3,01040158
+Three-year program in Mathematics,3,01040293
+Three-year program in Mathematics,4,01040279
+Three-year program in Mathematics,4,01040142
+Three-year program in Mathematics,4,01040192
+Three-year program in Mathematics,5,01040122
+Combined Mathematics-Physics,1,00440102
+Combined Mathematics-Physics,1,01040000
+Combined Mathematics-Physics,1,01040195
+Combined Mathematics-Physics,1,01040066
+Combined Mathematics-Physics,1,01140074
+Combined Mathematics-Physics,1,01140020
+Combined Mathematics-Physics,1,03940800
+Combined Mathematics-Physics,2,01040281
+Combined Mathematics-Physics,2,01040168
+Combined Mathematics-Physics,2,01140076
+Combined Mathematics-Physics,2,01140021
+Combined Mathematics-Physics,2,03240033
+Combined Mathematics-Physics,2,03940800
+Combined Mathematics-Physics,3,01040295
+Combined Mathematics-Physics,3,01040285
+Combined Mathematics-Physics,3,01040222
+Combined Mathematics-Physics,3,01140101
+Combined Mathematics-Physics,3,01140086
+Combined Mathematics-Physics,3,02340128
+Combined Mathematics-Physics,4,01040142
+Combined Mathematics-Physics,4,01040030
+Combined Mathematics-Physics,4,01040158
+Combined Mathematics-Physics,4,01150203
+Combined Mathematics-Physics,4,01140035
+Combined Mathematics-Physics,4,01140036
+Combined Mathematics-Physics,5,01040122
+Combined Mathematics-Physics,5,01150204
+Combined Mathematics-Physics,6,01140246
+Mathematics with Computer Science,1,01040195
+Mathematics with Computer Science,1,01040066
+Mathematics with Computer Science,1,01040002
+Mathematics with Computer Science,1,02340114
+Mathematics with Computer Science,1,03240033
+Mathematics with Computer Science,2,01040281
+Mathematics with Computer Science,2,01040168
+Mathematics with Computer Science,2,01140071
+Mathematics with Computer Science,2,01040286
+Mathematics with Computer Science,2,02340124
+Mathematics with Computer Science,2,03940800
+Mathematics with Computer Science,3,01040295
+Mathematics with Computer Science,3,01040293
+Mathematics with Computer Science,3,02340218
+Mathematics with Computer Science,3,01040222
+Mathematics with Computer Science,3,04402520
+Mathematics with Computer Science,4,01040158
+Mathematics with Computer Science,4,01040285
+Mathematics with Computer Science,4,01040291
+Mathematics with Computer Science,4,02340118
+Mathematics with Computer Science,4,03940800
+Mathematics with Computer Science,5,01040122
+Mathematics with Computer Science,5,01040294
+Mathematics with Computer Science,5,02340123
+Mathematics with Computer Science,6,01040192
+Applied Mathematics,1,01040195
+Applied Mathematics,1,01040066
+Applied Mathematics,1,01040002
+Applied Mathematics,1,02340128
+Applied Mathematics,1,03940800
+Applied Mathematics,2,01040281
+Applied Mathematics,2,01040168
+Applied Mathematics,2,03240033
+Applied Mathematics,2,01040286
+Applied Mathematics,2,01140071
+Applied Mathematics,2,03940800
+Applied Mathematics,3,01040295
+Applied Mathematics,3,01040285
+Applied Mathematics,3,01040158
+Applied Mathematics,3,01040222
+Applied Mathematics,3,01040142
+Applied Mathematics,4,01040122
+Applied Mathematics,4,01040273
+Applied Mathematics,4,01040193
+Applied Mathematics,4,01040291
+Applied Mathematics,5,01040192
+Applied Mathematics,5,01040294
+Computer Science and Mathematics,1,01040195
+Computer Science and Mathematics,1,01040066
+Computer Science and Mathematics,1,02340114
+Computer Science and Mathematics,1,02340129
+Computer Science and Mathematics,1,03240033
+Computer Science and Mathematics,1,03940800
+Computer Science and Mathematics,2,01040281
+Computer Science and Mathematics,2,01040168
+Computer Science and Mathematics,2,01140071
+Computer Science and Mathematics,2,03940800
+Computer Science and Mathematics,2,02340124
+Computer Science and Mathematics,2,02340141
+Computer Science and Mathematics,3,01040295
+Computer Science and Mathematics,3,01040293
+Computer Science and Mathematics,3,01040222
+Computer Science and Mathematics,3,02340218
+Computer Science and Mathematics,3,00440252
+Computer Science and Mathematics,3,02340252
+Computer Science and Mathematics,4,01040158
+Computer Science and Mathematics,4,01040142
+Computer Science and Mathematics,4,01040285
+Computer Science and Mathematics,4,02340118
+Computer Science and Mathematics,4,02340247
+Computer Science and Mathematics,5,01040294
+Computer Science and Mathematics,5,02340125
+Computer Science and Mathematics,5,01040122
+Computer Science and Mathematics,5,01040279
+Computer Science and Mathematics,5,02360343
+Computer Science and Mathematics,6,01040192
+Computer Science and Mathematics,6,02360267
+Computer Science and Mathematics,6,01060156
+Computer Science and Mathematics,6,02340123

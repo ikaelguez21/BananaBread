@@ -1,74 +1,75 @@
 track_name,semester,course_id
-CHEM_ENG,1,01040065
-CHEM_ENG,1,00040041
-CHEM_ENG,1,01140051
-CHEM_ENG,1,01240120
-CHEM_ENG,1,01340127
-CHEM_ENG,1,01040018
-CHEM_ENG,1,01140077
-CHEM_ENG,2,00540478
-CHEM_ENG,2,01040043
-CHEM_ENG,2,01040131
-CHEM_ENG,2,01140052
-CHEM_ENG,2,01250101
-CHEM_ENG,2,01250801
-CHEM_ENG,2,3940800
-CHEM_ENG,2,00540132
-CHEM_ENG,3,00540142
-CHEM_ENG,3,00540344
-CHEM_ENG,3,01040228
-CHEM_ENG,3,01250341
-CHEM_ENG,3,01250342
-CHEM_ENG,3,01250202
-CHEM_ENG,3,02340124
-CHEM_ENG,4,00540245
-CHEM_ENG,4,00540247
-CHEM_ENG,4,00540479
-CHEM_ENG,4,00540246
-CHEM_ENG,4,00540144
-CHEM_ENG,4,00540343
-CHEM_ENG,5,00540248
-CHEM_ENG,5,00540134
-CHEM_ENG,5,00540126
-CHEM_ENG,6,00540249
-CHEM_ENG,6,00540345
-CHEM_ENG,6,00540476
-CHEM_ENG,7,00540346
-CHEM_ENG,7,00540475
-CHEM_ENG,7,00540477
-BIOCHEM_ENG,1,01040065
-BIOCHEM_ENG,1,00040041
-BIOCHEM_ENG,1,01140051
-BIOCHEM_ENG,1,01240120
-BIOCHEM_ENG,1,01340127
-BIOCHEM_ENG,2,00540478
-BIOCHEM_ENG,2,01040043
-BIOCHEM_ENG,2,01040131
-BIOCHEM_ENG,2,01140052
-BIOCHEM_ENG,2,01250101
-BIOCHEM_ENG,2,01250801
-BIOCHEM_ENG,3,00540142
-BIOCHEM_ENG,3,00540344
-BIOCHEM_ENG,3,01040228
-BIOCHEM_ENG,3,01250341
-BIOCHEM_ENG,3,01250202
-BIOCHEM_ENG,3,01340019
-BIOCHEM_ENG,4,00540245
-BIOCHEM_ENG,4,00540247
-BIOCHEM_ENG,4,00540479
-BIOCHEM_ENG,4,00540144
-BIOCHEM_ENG,4,00540343
-BIOCHEM_ENG,4,01340238
-BIOCHEM_ENG,5,00540248
-BIOCHEM_ENG,5,00540134
-BIOCHEM_ENG,5,00540126
-BIOCHEM_ENG,6,00540249
-BIOCHEM_ENG,6,00540345
-BIOCHEM_ENG,6,00540476
-BIOCHEM_ENG,6,00540560
-BIOCHEM_ENG,6,00540561
-BIOCHEM_ENG,6,00540604
-BIOCHEM_ENG,7,00540346
-BIOCHEM_ENG,7,00540475
-BIOCHEM_ENG,7,00540477
-BIOCHEM_ENG,7,00540552
+Chemical Engineering,1,01040065
+Chemical Engineering,1,00040041
+Chemical Engineering,1,01140051
+Chemical Engineering,1,01240120
+Chemical Engineering,1,01340127
+Chemical Engineering,2,00540478
+Chemical Engineering,2,01040043
+Chemical Engineering,2,01040131
+Chemical Engineering,2,01140052
+Chemical Engineering,2,01250101
+Chemical Engineering,2,01250801
+Chemical Engineering,2,03940800
+Chemical Engineering,3,00540316
+Chemical Engineering,3,01040228
+Chemical Engineering,3,01250102
+Chemical Engineering,3,01340019
+Chemical Engineering,3,02340128
+Chemical Engineering,3,03240033
+Chemical Engineering,3,03940800
+Chemical Engineering,4,00540319
+Chemical Engineering,4,00540374
+Chemical Engineering,4,00540480
+Chemical Engineering,4,01240213
+Chemical Engineering,4,01240911
+Chemical Engineering,4,01250000
+Chemical Engineering,6,00540309
+Chemical Engineering,6,00540322
+Chemical Engineering,6,00540330
+Chemical Engineering,7,00540310
+Chemical Engineering,7,00540417
+Chemical Engineering,7,00540479
+Chemical Engineering,8,00540400
+Chemical Engineering,8,00540410
+Chemical Engineering,8,00540411
+Biochemical Engineering,1,01040019
+Biochemical Engineering,1,01040041
+Biochemical Engineering,1,01140051
+Biochemical Engineering,1,01240120
+Biochemical Engineering,1,01340058
+Biochemical Engineering,2,00540478
+Biochemical Engineering,2,01040043
+Biochemical Engineering,2,01250801
+Biochemical Engineering,2,01340019
+Biochemical Engineering,2,01340020
+Biochemical Engineering,3,00540316
+Biochemical Engineering,3,01040131
+Biochemical Engineering,3,01340113
+Biochemical Engineering,3,01340142
+Biochemical Engineering,3,01340082
+Biochemical Engineering,3,02340128
+Biochemical Engineering,3,03240033
+Biochemical Engineering,3,03940800
+Biochemical Engineering,4,00540203
+Biochemical Engineering,4,00540319
+Biochemical Engineering,4,00540374
+Biochemical Engineering,4,01040228
+Biochemical Engineering,4,01340119
+Biochemical Engineering,4,01340128
+Biochemical Engineering,4,03940800
+Biochemical Engineering,5,00540320
+Biochemical Engineering,5,00540321
+Biochemical Engineering,5,01140052
+Biochemical Engineering,6,00540324
+Biochemical Engineering,6,00540330
+Biochemical Engineering,6,00540322
+Biochemical Engineering,6,01250101
+Biochemical Engineering,6,01340121
+Biochemical Engineering,6,01340143
+Biochemical Engineering,7,00540314
+Biochemical Engineering,7,00540417
+Biochemical Engineering,7,00540318
+Biochemical Engineering,7,00540412
+Biochemical Engineering,8,00540420
+Biochemical Engineering,8,01250105

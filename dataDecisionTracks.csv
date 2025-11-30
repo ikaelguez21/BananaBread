@@ -1,127 +1,161 @@
 track_name,semester,course_id
-DATA_INFO,1,00940345
-DATA_INFO,1,01040031
-DATA_INFO,1,01040166
-DATA_INFO,1,02340117
-DATA_INFO,1,03240033
-DATA_INFO,2,00940700
-DATA_INFO,2,00940219
-DATA_INFO,2,00940210
-DATA_INFO,2,00940412
-DATA_INFO,2,01040043
-DATA_INFO,2,01040065
-DATA_INFO,3,00940701
-DATA_INFO,3,00940312
-DATA_INFO,3,00940416
-DATA_INFO,3,02340218
-DATA_INFO,3,03940800
-DATA_INFO,4,00940702
-DATA_INFO,4,00940223
-DATA_INFO,4,00940203
-DATA_INFO,4,00940313
-DATA_INFO,4,02340124
-DATA_INFO,4,00940302
-DATA_INFO,5,00940703
-DATA_INFO,5,00940314
-DATA_INFO,5,00940130
-DATA_INFO,5,02340311
-DATA_INFO,5,03940800
-DATA_INFO,7,00940705
-IND_ENG_MGMT,1,00940101
-IND_ENG_MGMT,1,00940345
-IND_ENG_MGMT,1,01040065
-IND_ENG_MGMT,1,01040031
-IND_ENG_MGMT,1,02340117
-IND_ENG_MGMT,1,03240033
-IND_ENG_MGMT,1,01040018
-IND_ENG_MGMT,2,00940123
-IND_ENG_MGMT,2,00940412
-IND_ENG_MGMT,2,01040043
-IND_ENG_MGMT,2,00940582
-IND_ENG_MGMT,2,00940219
-IND_ENG_MGMT,2,00940124
-IND_ENG_MGMT,2,01040022
-IND_ENG_MGMT,3,00940125
-IND_ENG_MGMT,3,00940312
-IND_ENG_MGMT,3,00940416
-IND_ENG_MGMT,3,00940210
-IND_ENG_MGMT,3,00940584
-IND_ENG_MGMT,3,03940800
-IND_ENG_MGMT,4,00940121
-IND_ENG_MGMT,4,00940223
-IND_ENG_MGMT,4,00940313
-IND_ENG_MGMT,4,00940122
-IND_ENG_MGMT,5,00940314
-IND_ENG_MGMT,5,00940203
-IND_ENG_MGMT,5,00940130
-IND_ENG_MGMT,5,03940800
-IND_ENG_MGMT,6,00940226
-IND_ENG_MGMT,6,00940720
-IND_ENG_MGMT,7,00940340
-INFO_SYS,1,00940345
-INFO_SYS,1,00940704
-INFO_SYS,1,01040065
-INFO_SYS,1,01040031
-INFO_SYS,1,02340117
-INFO_SYS,1,03240033
-INFO_SYS,1,01040066
-INFO_SYS,1,01040166
-INFO_SYS,1,01040018
-INFO_SYS,1,01040016
-INFO_SYS,1,02340128
-INFO_SYS,2,00940219
-INFO_SYS,2,00940412
-INFO_SYS,2,01040043
-INFO_SYS,2,00940123
-INFO_SYS,2,00940124
-INFO_SYS,2,01040044
-INFO_SYS,2,02340124
-INFO_SYS,2,02340129
-INFO_SYS,2,01040022
-INFO_SYS,2,01040131
-INFO_SYS,2,02340114
-INFO_SYS,2,02340117
-INFO_SYS,3,00940312
-INFO_SYS,3,00940416
-INFO_SYS,3,02340218
-INFO_SYS,3,00940210
-INFO_SYS,3,02340124
-INFO_SYS,3,00940582
-INFO_SYS,3,03940800
-INFO_SYS,3,00940701
-INFO_SYS,3,02340117
-INFO_SYS,4,00940223
-INFO_SYS,4,00940313
-INFO_SYS,4,02340234
-INFO_SYS,4,00940203
-INFO_SYS,4,00940302
-INFO_SYS,4,00940121
-INFO_SYS,4,00940122
-INFO_SYS,4,00940702
-INFO_SYS,4,02340222
-INFO_SYS,4,00940314
-INFO_SYS,4,02340311
-INFO_SYS,5,00940224
-INFO_SYS,5,00940314
-INFO_SYS,5,02340311
-INFO_SYS,5,00940130
-INFO_SYS,5,00940302
-INFO_SYS,5,00940703
-INFO_SYS,5,03940800
-INFO_SYS,5,00940203
-INFO_SYS,5,00940131
-INFO_SYS,5,02340222
-INFO_SYS,6,00940226
-INFO_SYS,6,02340311
-INFO_SYS,6,02340222
-INFO_SYS,6,00940130
-INFO_SYS,7,00940340
-INFO_SYS,7,00940122
-INFO_SYS,7,00940125
-INFO_SYS,7,00940131
-INFO_SYS,7,00940203
-INFO_SYS,7,00940302
-INFO_SYS,7,00940702
-INFO_SYS,7,00940703
-INFO_SYS,7,00940705
-INFO_SYS,7,02340222
+Data and Information Engineering,1,00940345
+Data and Information Engineering,1,01040031
+Data and Information Engineering,1,01040166
+Data and Information Engineering,1,02340117
+Data and Information Engineering,1,03240033
+Data and Information Engineering,2,00940700
+Data and Information Engineering,2,00940219
+Data and Information Engineering,2,00940210
+Data and Information Engineering,2,00940412
+Data and Information Engineering,2,01040032
+Data and Information Engineering,2,01140051
+Data and Information Engineering,3,00940224
+Data and Information Engineering,3,00940241
+Data and Information Engineering,3,00940424
+Data and Information Engineering,3,00950296
+Data and Information Engineering,3,00960570
+Data and Information Engineering,4,00940314
+Data and Information Engineering,4,00960211
+Data and Information Engineering,4,00960224
+Data and Information Engineering,4,00960327
+Data and Information Engineering,4,00960411
+Data and Information Engineering,4,00970414
+Data and Information Engineering,5,00960210
+Data and Information Engineering,5,00960250
+Data and Information Engineering,5,00960275
+Data and Information Engineering,5,00970209
+Data and Information Engineering,5,00970447
+Data and Information Engineering,7,00940290
+Data and Information Engineering,8,00940295
+Industrial Engineering and Management,1,00940101
+Industrial Engineering and Management,1,00940345
+Industrial Engineering and Management,1,01040065
+Industrial Engineering and Management,1,01040042
+Industrial Engineering and Management,1,02340221
+Industrial Engineering and Management,2,00940411
+Industrial Engineering and Management,2,00940202
+Industrial Engineering and Management,2,00940219
+Industrial Engineering and Management,2,01040044
+Industrial Engineering and Management,2,03240033
+Industrial Engineering and Management,3,00940224
+Industrial Engineering and Management,3,00940312
+Industrial Engineering and Management,3,00940424
+Industrial Engineering and Management,3,00940564
+Industrial Engineering and Management,3,00940594
+Industrial Engineering and Management,3,01140051
+Industrial Engineering and Management,4,00940139
+Industrial Engineering and Management,4,00940314
+Industrial Engineering and Management,4,00950605
+Industrial Engineering and Management,4,00970800
+Industrial Engineering and Management,5,00950139
+Industrial Engineering and Management,5,00950334
+Industrial Engineering and Management,5,00940142
+Industrial Engineering and Management,5,00940170
+Industrial Engineering and Management,6,00960324
+Industrial Engineering and Management,6,00950113
+Industrial Engineering and Management,7,00940189
+Industrial Engineering and Management,8,00940195
+Information Systems Engineering,1,00940345
+Information Systems Engineering,1,00940704
+Information Systems Engineering,1,01040065
+Information Systems Engineering,1,01040042
+Information Systems Engineering,1,02340221
+Information Systems Engineering,2,00940210
+Information Systems Engineering,2,00940219
+Information Systems Engineering,2,00940411
+Information Systems Engineering,2,00940202
+Information Systems Engineering,2,01040044
+Information Systems Engineering,2,03240033
+Information Systems Engineering,3,00940224
+Information Systems Engineering,3,00940241
+Information Systems Engineering,3,00940312
+Information Systems Engineering,3,00940424
+Information Systems Engineering,3,00940564
+Information Systems Engineering,3,00960570
+Information Systems Engineering,4,00940314
+Information Systems Engineering,4,00950605
+Information Systems Engineering,4,00960221
+Information Systems Engineering,4,00960411
+Information Systems Engineering,4,00970800
+Information Systems Engineering,4,01140051
+Information Systems Engineering,5,00940594
+Information Systems Engineering,5,00950139
+Information Systems Engineering,5,00960210
+Information Systems Engineering,5,00960250
+Information Systems Engineering,5,00970447
+Information Systems Engineering,7,00940395
+Information Systems Engineering,8,00940396
+Medicine and Data Engineering,1,00940345
+Medicine and Data Engineering,1,01040031
+Medicine and Data Engineering,1,01040166
+Medicine and Data Engineering,1,01140071
+Medicine and Data Engineering,1,02340117
+Medicine and Data Engineering,2,09407000
+Medicine and Data Engineering,2,00940219
+Medicine and Data Engineering,2,00940210
+Medicine and Data Engineering,2,00940412
+Medicine and Data Engineering,2,01040032
+Medicine and Data Engineering,2,01140249
+Medicine and Data Engineering,3,00940224
+Medicine and Data Engineering,3,00940241
+Medicine and Data Engineering,3,00940424
+Medicine and Data Engineering,3,00950296
+Medicine and Data Engineering,3,00960570
+Medicine and Data Engineering,3,00960411
+Medicine and Data Engineering,3,0124507
+Medicine and Data Engineering,4,00940314
+Medicine and Data Engineering,4,00960211
+Medicine and Data Engineering,4,00960224
+Medicine and Data Engineering,4,00960327
+Medicine and Data Engineering,4,00970447
+Medicine and Data Engineering,4,00970209
+Medicine and Data Engineering,5,00960210
+Medicine and Data Engineering,5,00960250
+Medicine and Data Engineering,5,00960275
+Medicine and Data Engineering,5,00970414
+Medicine and Data Engineering,5,02740142
+Medicine and Data Engineering,5,02740167
+Medicine and Data Engineering,5,02740257
+Medicine and Data Engineering,6,01250803
+Medicine and Data Engineering,6,02740143
+Medicine and Data Engineering,6,02740165
+Medicine and Data Engineering,6,02740266
+Medicine and Data Engineering,7,00940290
+Medicine and Data Engineering,7,02740241
+Medicine and Data Engineering,7,02740242
+Medicine and Data Engineering,7,02740243
+Medicine and Data Engineering,7,02740234
+Medicine and Data Engineering,7,02740258
+Medicine and Data Engineering,7,02740260
+Medicine and Data Engineering,7,02740320
+Medicine and Data Engineering,7,03240397
+Medicine and Data Engineering,8,00940295
+Medicine and Data Engineering,8,02740246
+Medicine and Data Engineering,8,02740253
+Medicine and Data Engineering,8,02740235
+Medicine and Data Engineering,8,02740261
+Medicine and Data Engineering,8,02740262
+Medicine and Data Engineering,8,02740265
+Medicine and Data Engineering,8,02740267
+Medicine and Data Engineering,8,02740268
+Medicine and Data Engineering,9,00940701
+Medicine and Data Engineering,9,02740231
+Medicine and Data Engineering,9,02740322
+Medicine and Data Engineering,9,02740323
+Medicine and Data Engineering,9,02740326
+Medicine and Data Engineering,9,02740336
+Medicine and Data Engineering,9,02740348
+Medicine and Data Engineering,9,02740372
+Medicine and Data Engineering,9,02740375
+Medicine and Data Engineering,10,00940702
+Medicine and Data Engineering,10,02740251
+Medicine and Data Engineering,10,02740252
+Medicine and Data Engineering,10,02740318
+Medicine and Data Engineering,10,02740319
+Medicine and Data Engineering,10,02740327
+Medicine and Data Engineering,10,02740328
+Medicine and Data Engineering,10,02740352
+Medicine and Data Engineering,10,02740367
+Medicine and Data Engineering,10,02740369
+Medicine and Data Engineering,10,02740376

@@ -1,178 +1,276 @@
 track_name,semester,course_id
-CIVIL_WATER_TRANS,1,00140102
-CIVIL_WATER_TRANS,1,01040042
-CIVIL_WATER_TRANS,1,01040019
-CIVIL_WATER_TRANS,1,01140051
-CIVIL_WATER_TRANS,1,01250001
-CIVIL_WATER_TRANS,1,03940800
-CIVIL_WATER_TRANS,2,00140008
-CIVIL_WATER_TRANS,2,00140104
-CIVIL_WATER_TRANS,2,01040044
-CIVIL_WATER_TRANS,2,01040131
-CIVIL_WATER_TRANS,2,02340128
-CIVIL_WATER_TRANS,2,03240033
-CIVIL_WATER_TRANS,3,00140003
-CIVIL_WATER_TRANS,3,00140505
-CIVIL_WATER_TRANS,3,01140052
-CIVIL_WATER_TRANS,3,00140214
-CIVIL_WATER_TRANS,3,00140316
-CIVIL_WATER_TRANS,3,01040228
-CIVIL_WATER_TRANS,3,03140536
-CIVIL_WATER_TRANS,4,00140153
-CIVIL_WATER_TRANS,4,00140006
-CIVIL_WATER_TRANS,4,00140405
-CIVIL_WATER_TRANS,4,00140702
-CIVIL_WATER_TRANS,4,00150019
-CIVIL_WATER_TRANS,5,00140205
-CIVIL_WATER_TRANS,5,00140212
-CIVIL_WATER_TRANS,5,00140409
-CIVIL_WATER_TRANS,5,00140841
-CIVIL_WATER_TRANS,6,00140004
-CIVIL_WATER_TRANS,6,00140603
-CIVIL_WATER_TRANS,6,00940202
-CIVIL_WATER_TRANS,6,03940800
-CIVIL_STRUCT,1,00140008
-CIVIL_STRUCT,1,00140102
-CIVIL_STRUCT,1,01040042
-CIVIL_STRUCT,1,01040019
-CIVIL_STRUCT,1,01250001
-CIVIL_STRUCT,1,03940800
-CIVIL_STRUCT,2,00140104
-CIVIL_STRUCT,2,01040044
-CIVIL_STRUCT,2,01040131
-CIVIL_STRUCT,2,01140051
-CIVIL_STRUCT,2,02340128
-CIVIL_STRUCT,2,03240033
-CIVIL_STRUCT,3,00140003
-CIVIL_STRUCT,3,00140108
-CIVIL_STRUCT,3,00140214
-CIVIL_STRUCT,3,00140525
-CIVIL_STRUCT,3,01040228
-CIVIL_STRUCT,3,01140052
-CIVIL_STRUCT,4,00140005
-CIVIL_STRUCT,4,00140006
-CIVIL_STRUCT,4,00140153
-CIVIL_STRUCT,4,00140405
-CIVIL_STRUCT,4,00140603
-CIVIL_STRUCT,4,00140618
-CIVIL_STRUCT,4,00140779
-CIVIL_STRUCT,5,00140143
-CIVIL_STRUCT,5,00140145
-CIVIL_STRUCT,5,00140149
-CIVIL_STRUCT,5,00140160
-CIVIL_STRUCT,5,00140409
-CIVIL_STRUCT,5,00140841
-CIVIL_STRUCT,5,03940800
-CIVIL_STRUCT,6,00140146
-CIVIL_STRUCT,6,00140148
-CIVIL_STRUCT,6,00140150
-CIVIL_STRUCT,6,00140411
-CIVIL_STRUCT,6,00940202
-CIVIL_STRUCT,7,00140004
-CIVIL_STRUCT,7,00140163
-CIVIL_STRUCT,7,00140147
-CIVIL_MGMT,1,00140008
-CIVIL_MGMT,1,00140102
-CIVIL_MGMT,1,01040042
-CIVIL_MGMT,1,01040019
-CIVIL_MGMT,1,01250001
-CIVIL_MGMT,1,03940800
-CIVIL_MGMT,2,00140104
-CIVIL_MGMT,2,01040044
-CIVIL_MGMT,2,01040131
-CIVIL_MGMT,2,01140051
-CIVIL_MGMT,2,02340128
-CIVIL_MGMT,2,03240033
-CIVIL_MGMT,3,00140003
-CIVIL_MGMT,3,00140108
-CIVIL_MGMT,3,00140214
-CIVIL_MGMT,3,00140525
-CIVIL_MGMT,3,01040228
-CIVIL_MGMT,3,01140052
-CIVIL_MGMT,4,00140005
-CIVIL_MGMT,4,00140006
-CIVIL_MGMT,4,00140153
-CIVIL_MGMT,4,00140405
-CIVIL_MGMT,4,00140603
-CIVIL_MGMT,4,00140618
-CIVIL_MGMT,4,00140779
-CIVIL_MGMT,5,00140160
-CIVIL_MGMT,5,00140409
-CIVIL_MGMT,5,00140617
-CIVIL_MGMT,5,00140619
-CIVIL_MGMT,5,00140841
-CIVIL_MGMT,5,00160503
-CIVIL_MGMT,6,00140411
-CIVIL_MGMT,6,00140609
-CIVIL_MGMT,6,00140520
-CIVIL_MGMT,6,00940202
-ENV_ENG,1,01040019
-ENV_ENG,1,01040042
-ENV_ENG,1,01250001
-ENV_ENG,1,01340058
-ENV_ENG,1,01140051
-ENV_ENG,1,03940800
-ENV_ENG,2,00150007
-ENV_ENG,2,01040044
-ENV_ENG,2,03240033
-ENV_ENG,2,01240801
-ENV_ENG,2,01040131
-ENV_ENG,2,00140603
-ENV_ENG,3,00140214
-ENV_ENG,3,00140978
-ENV_ENG,3,02340128
-ENV_ENG,3,01340019
-ENV_ENG,3,00340035
-ENV_ENG,3,01140052
-ENV_ENG,4,00140003
-ENV_ENG,4,00140313
-ENV_ENG,4,00140333
-ENV_ENG,4,00140956
-ENV_ENG,4,01040228
-ENV_ENG,4,00140006
-ENV_ENG,5,00140205
-ENV_ENG,5,00140977
-ENV_ENG,5,00140212
-ENV_ENG,5,00140412
-ENV_ENG,5,00140940
-ENV_ENG,5,00150024
-ENV_ENG,6,00140004
-ENV_ENG,6,00160306
-ENV_ENG,6,00140979
-ENV_ENG,6,03940800
-GEO_INFO,1,01040042
-GEO_INFO,1,00140008
-GEO_INFO,1,01040019
-GEO_INFO,1,01250001
-GEO_INFO,1,02340128
-GEO_INFO,1,03940800
-GEO_INFO,2,00140881
-GEO_INFO,2,00140845
-GEO_INFO,2,01040044
-GEO_INFO,2,00150007
-GEO_INFO,2,01140051
-GEO_INFO,2,03240033
-GEO_INFO,3,00140003
-GEO_INFO,3,01140052
-GEO_INFO,3,00140842
-GEO_INFO,3,00140848
-GEO_INFO,3,00140846
-GEO_INFO,3,01040131
-GEO_INFO,3,03940800
-GEO_INFO,4,00140006
-GEO_INFO,4,00140603
-GEO_INFO,4,00140814
-GEO_INFO,4,00140877
-GEO_INFO,4,00140878
-GEO_INFO,4,00140849
-GEO_INFO,4,00140863
-GEO_INFO,5,00140004
-GEO_INFO,5,00140829
-GEO_INFO,5,00140843
-GEO_INFO,5,00140851
-GEO_INFO,5,00140855
-GEO_INFO,5,00140890
-GEO_INFO,6,00140888
-GEO_INFO,6,00140852
-GEO_INFO,6,00140853
-GEO_INFO,6,00140864
+Civil Engineering - Water & Environment,1,00140102
+Civil Engineering - Water & Environment,1,01040042
+Civil Engineering - Water & Environment,1,01040019
+Civil Engineering - Water & Environment,1,01140051
+Civil Engineering - Water & Environment,1,01250001
+Civil Engineering - Water & Environment,1,03940800
+Civil Engineering - Water & Environment,2,00140008
+Civil Engineering - Water & Environment,2,00140104
+Civil Engineering - Water & Environment,2,01040044
+Civil Engineering - Water & Environment,2,01040131
+Civil Engineering - Water & Environment,2,02340128
+Civil Engineering - Water & Environment,2,03240033
+Civil Engineering - Water & Environment,3,00140003
+Civil Engineering - Water & Environment,3,00140214
+Civil Engineering - Water & Environment,3,00140316
+Civil Engineering - Water & Environment,3,00140505
+Civil Engineering - Water & Environment,3,01040228
+Civil Engineering - Water & Environment,3,01140052
+Civil Engineering - Water & Environment,3,03140536
+Civil Engineering - Water & Environment,4,00140006
+Civil Engineering - Water & Environment,4,00140153
+Civil Engineering - Water & Environment,4,00140405
+Civil Engineering - Water & Environment,4,00140702
+Civil Engineering - Water & Environment,4,00150019
+Civil Engineering - Water & Environment,4,00140332
+Civil Engineering - Water & Environment,5,00140205
+Civil Engineering - Water & Environment,5,00140212
+Civil Engineering - Water & Environment,5,00140409
+Civil Engineering - Water & Environment,5,00140841
+Civil Engineering - Water & Environment,5,00140412
+Civil Engineering - Water & Environment,5,00140977
+Civil Engineering - Water & Environment,5,01240503
+Civil Engineering - Water & Environment,6,00140004
+Civil Engineering - Water & Environment,6,00140603
+Civil Engineering - Water & Environment,6,00940202
+Civil Engineering - Water & Environment,6,03940800
+Civil Engineering - Water & Environment,6,00140325
+Civil Engineering - Water & Environment,7,00140618
+Civil Engineering - Water & Environment,7,00160203
+Civil Engineering - Transportation,1,00140102
+Civil Engineering - Transportation,1,01040042
+Civil Engineering - Transportation,1,01040019
+Civil Engineering - Transportation,1,01140051
+Civil Engineering - Transportation,1,01250001
+Civil Engineering - Transportation,1,03940800
+Civil Engineering - Transportation,2,00140008
+Civil Engineering - Transportation,2,00140104
+Civil Engineering - Transportation,2,01040044
+Civil Engineering - Transportation,2,01040131
+Civil Engineering - Transportation,2,02340128
+Civil Engineering - Transportation,2,03240033
+Civil Engineering - Transportation,3,00140003
+Civil Engineering - Transportation,3,00140214
+Civil Engineering - Transportation,3,00140316
+Civil Engineering - Transportation,3,00140505
+Civil Engineering - Transportation,3,01040228
+Civil Engineering - Transportation,3,01140052
+Civil Engineering - Transportation,3,03140536
+Civil Engineering - Transportation,4,00140006
+Civil Engineering - Transportation,4,00140153
+Civil Engineering - Transportation,4,00140405
+Civil Engineering - Transportation,4,00140702
+Civil Engineering - Transportation,4,00150019
+Civil Engineering - Transportation,4,00140779
+Civil Engineering - Transportation,5,00140205
+Civil Engineering - Transportation,5,00140212
+Civil Engineering - Transportation,5,00140409
+Civil Engineering - Transportation,5,00140841
+Civil Engineering - Transportation,5,00140733
+Civil Engineering - Transportation,5,00940591
+Civil Engineering - Transportation,6,00140004
+Civil Engineering - Transportation,6,00140603
+Civil Engineering - Transportation,6,00940202
+Civil Engineering - Transportation,6,03940800
+Civil Engineering - Transportation,6,00140735
+Civil Engineering - Transportation,7,00140618
+Civil Engineering - Transportation,7,00140709
+Civil Engineering - Transportation,7,00140710
+Civil Engineering,1,00140008
+Civil Engineering,1,00140102
+Civil Engineering,1,01040042
+Civil Engineering,1,01040019
+Civil Engineering,1,01250001
+Civil Engineering,1,03940800
+Civil Engineering,2,00140104
+Civil Engineering,2,01040044
+Civil Engineering,2,01040131
+Civil Engineering,2,01140051
+Civil Engineering,2,02340128
+Civil Engineering,2,03240033
+Civil Engineering,3,00140003
+Civil Engineering,3,00140108
+Civil Engineering,3,00140214
+Civil Engineering,3,00140525
+Civil Engineering,3,01040228
+Civil Engineering,3,01140052
+Civil Engineering,4,00140005
+Civil Engineering,4,00140006
+Civil Engineering,4,00140153
+Civil Engineering,4,00140405
+Civil Engineering,4,00140603
+Civil Engineering,4,00140618
+Civil Engineering,4,00140779
+Civil Engineering,5,00140143
+Civil Engineering,5,00140145
+Civil Engineering,5,00140149
+Civil Engineering,5,00140160
+Civil Engineering,5,00140409
+Civil Engineering,5,00140841
+Civil Engineering,5,03940800
+Civil Engineering,6,00140146
+Civil Engineering,6,00140148
+Civil Engineering,6,00140150
+Civil Engineering,6,00140411
+Civil Engineering,6,00940202
+Civil Engineering,7,00140004
+Civil Engineering,7,00140163
+Civil Engineering,7,00140147
+Civil Engineering,8,00140131
+Civil Engineering,8,00140132
+Civil Engineering - Management and Construction,1,00140008
+Civil Engineering - Management and Construction,1,00140102
+Civil Engineering - Management and Construction,1,01040042
+Civil Engineering - Management and Construction,1,01040019
+Civil Engineering - Management and Construction,1,01250001
+Civil Engineering - Management and Construction,1,03940800
+Civil Engineering - Management and Construction,2,00140104
+Civil Engineering - Management and Construction,2,01040044
+Civil Engineering - Management and Construction,2,01040131
+Civil Engineering - Management and Construction,2,01140051
+Civil Engineering - Management and Construction,2,02340128
+Civil Engineering - Management and Construction,2,03240033
+Civil Engineering - Management and Construction,3,00140003
+Civil Engineering - Management and Construction,3,00140108
+Civil Engineering - Management and Construction,3,00140214
+Civil Engineering - Management and Construction,3,00140525
+Civil Engineering - Management and Construction,3,01040228
+Civil Engineering - Management and Construction,3,01140052
+Civil Engineering - Management and Construction,4,00140005
+Civil Engineering - Management and Construction,4,00140006
+Civil Engineering - Management and Construction,4,00140153
+Civil Engineering - Management and Construction,4,00140405
+Civil Engineering - Management and Construction,4,00140603
+Civil Engineering - Management and Construction,4,00140618
+Civil Engineering - Management and Construction,4,00140779
+Civil Engineering - Management and Construction,5,00140160
+Civil Engineering - Management and Construction,5,00140409
+Civil Engineering - Management and Construction,5,00140617
+Civil Engineering - Management and Construction,5,00140619
+Civil Engineering - Management and Construction,5,00140621
+Civil Engineering - Management and Construction,5,00140841
+Civil Engineering - Management and Construction,5,00160503
+Environmental Engineering,1,00140008
+Environmental Engineering,1,00140102
+Environmental Engineering,1,01040042
+Environmental Engineering,1,01040019
+Environmental Engineering,1,01250001
+Environmental Engineering,1,03940800
+Environmental Engineering,2,00140104
+Environmental Engineering,2,01040044
+Environmental Engineering,2,01040131
+Environmental Engineering,2,01140051
+Environmental Engineering,2,02340128
+Environmental Engineering,2,03240033
+Environmental Engineering,3,00140003
+Environmental Engineering,3,00140108
+Environmental Engineering,3,00140214
+Environmental Engineering,3,00140525
+Environmental Engineering,3,01040228
+Environmental Engineering,3,01140052
+Environmental Engineering,4,00140005
+Environmental Engineering,4,00140006
+Environmental Engineering,4,00140153
+Environmental Engineering,4,00140405
+Environmental Engineering,4,00140603
+Environmental Engineering,4,00140618
+Environmental Engineering,4,00140779
+Environmental Engineering,5,00140205
+Environmental Engineering,5,00140977
+Environmental Engineering,5,00140212
+Environmental Engineering,5,00140412
+Environmental Engineering,5,00140940
+Environmental Engineering,5,00150024
+Environmental Engineering,6,00140004
+Environmental Engineering,6,00160306
+Environmental Engineering,6,00140979
+Environmental Engineering,6,03940800
+Environmental Engineering,7,00160338
+Environmental Engineering,7,00140302
+Environmental Engineering,7,00160303
+Mapping and Geo-Information Engineering,1,01040042
+Mapping and Geo-Information Engineering,1,00140008
+Mapping and Geo-Information Engineering,1,01040019
+Mapping and Geo-Information Engineering,1,01250001
+Mapping and Geo-Information Engineering,1,02340128
+Mapping and Geo-Information Engineering,1,03940800
+Mapping and Geo-Information Engineering,2,00140881
+Mapping and Geo-Information Engineering,2,00140845
+Mapping and Geo-Information Engineering,2,01040044
+Mapping and Geo-Information Engineering,2,00150007
+Mapping and Geo-Information Engineering,2,01140051
+Mapping and Geo-Information Engineering,2,03240033
+Mapping and Geo-Information Engineering,3,00140842
+Mapping and Geo-Information Engineering,3,00140848
+Mapping and Geo-Information Engineering,3,00140846
+Mapping and Geo-Information Engineering,3,01040131
+Mapping and Geo-Information Engineering,3,03940800
+Mapping and Geo-Information Engineering,4,00140829
+Mapping and Geo-Information Engineering,4,00140859
+Mapping and Geo-Information Engineering,4,00140858
+Mapping and Geo-Information Engineering,4,00140830
+Mapping and Geo-Information Engineering,4,00140854
+Mapping and Geo-Information Engineering,4,01040228
+Mapping and Geo-Information Engineering,5,00140004
+Mapping and Geo-Information Engineering,5,00140829
+Mapping and Geo-Information Engineering,5,00140843
+Mapping and Geo-Information Engineering,5,00140851
+Mapping and Geo-Information Engineering,5,00140855
+Mapping and Geo-Information Engineering,5,00140890
+Mapping and Geo-Information Engineering,6,00140888
+Mapping and Geo-Information Engineering,6,00140852
+Mapping and Geo-Information Engineering,6,00140853
+Mapping and Geo-Information Engineering,6,00140864
+Mapping and Geo-Information Engineering,6,00140856
+Mapping and Geo-Information Engineering,6,00140857
+Mapping and Geo-Information Engineering,6,00140889
+Mapping and Geo-Information Engineering,6,00140831
+Mapping and Geo-Information Engineering,7,00140867
+Mapping and Geo-Information Engineering,7,00140869
+Mapping and Geo-Information Engineering,7,00140885
+Mapping and Geo-Information Engineering,7,00160828
+Mapping and Geo-Information Engineering,8,00140866
+Mapping and Geo-Information Engineering,8,00160829
+Mapping and Geo-Information Engineering,8,00160818
+Mapping and Geo-Information Engineering,8,00140882
+Mapping and Geo-Information 3Y Engineering,1,00440102
+Mapping and Geo-Information 3Y Engineering,1,01040042
+Mapping and Geo-Information 3Y Engineering,1,01040065
+Mapping and Geo-Information 3Y Engineering,1,01140071
+Mapping and Geo-Information 3Y Engineering,1,01240507
+Mapping and Geo-Information 3Y Engineering,1,02740167
+Mapping and Geo-Information 3Y Engineering,2,01040013
+Mapping and Geo-Information 3Y Engineering,2,01040038
+Mapping and Geo-Information 3Y Engineering,2,01040136
+Mapping and Geo-Information 3Y Engineering,2,01140052
+Mapping and Geo-Information 3Y Engineering,2,01240801
+Mapping and Geo-Information 3Y Engineering,2,02340128
+Mapping and Geo-Information 3Y Engineering,3,00140003
+Mapping and Geo-Information 3Y Engineering,3,00140842
+Mapping and Geo-Information 3Y Engineering,3,00140848
+Mapping and Geo-Information 3Y Engineering,3,00140846
+Mapping and Geo-Information 3Y Engineering,3,01140052
+Mapping and Geo-Information 3Y Engineering,3,01040131
+Mapping and Geo-Information 3Y Engineering,4,00140006
+Mapping and Geo-Information 3Y Engineering,4,00140603
+Mapping and Geo-Information 3Y Engineering,4,00140814
+Mapping and Geo-Information 3Y Engineering,4,00140877
+Mapping and Geo-Information 3Y Engineering,4,00140878
+Mapping and Geo-Information 3Y Engineering,4,00140849
+Mapping and Geo-Information 3Y Engineering,4,00140863
+Mapping and Geo-Information 3Y Engineering,5,00140829
+Mapping and Geo-Information 3Y Engineering,5,00140843
+Mapping and Geo-Information 3Y Engineering,5,00140851
+Mapping and Geo-Information 3Y Engineering,5,00140855
+Mapping and Geo-Information 3Y Engineering,5,00140890
+Mapping and Geo-Information 3Y Engineering,6,00140888
+Mapping and Geo-Information 3Y Engineering,6,00140852
+Mapping and Geo-Information 3Y Engineering,6,00140853
+Mapping and Geo-Information 3Y Engineering,6,00140866
+Mapping and Geo-Information 3Y Engineering,6,00140867
+Mapping and Geo-Information 3Y Engineering,6,00140864
+Mapping and Geo-Information 3Y Engineering,6,00140856
+Mapping and Geo-Information 3Y Engineering,6,00140857
+Mapping and Geo-Information 3Y Engineering,6,00140889
+Mapping and Geo-Information 3Y Engineering,6,00140831
