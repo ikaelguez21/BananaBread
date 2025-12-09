@@ -547,13 +547,24 @@
         const handleSaveCourse = () => {
             if (!newCourseName) return;
             const targetSem = parseInt(newCourseSem);
-            const catalogCourse = catalog.find(c => c.id === newCourseId);
-            const prereqStr = catalogCourse ? catalogCourse.prereqString : "";
             
+            // FIX: Try to find catalog match even if user manually typed the name/id
+            // This ensures we get the correct ID and Prereqs even without clicking suggestions
+            const catalogMatch = catalog.find(c => c.id === newCourseId || c.id === normalizeId(newCourseName) || c.name === newCourseName);
+            const finalId = catalogMatch ? catalogMatch.id : (newCourseId || Math.random().toString(36).substr(2, 9));
+            const prereqStr = catalogMatch ? catalogMatch.prereqString : "";
+            // Use existing state prereqs, or fallback to catalog prereqs
+            const finalPrereqs = (newCoursePrereqs && newCoursePrereqs.length > 0) ? newCoursePrereqs : (catalogMatch ? catalogMatch.prereqs : []);
+
             const courseData = {
-                id: newCourseId || Math.random().toString(36).substr(2, 9),
-                name: newCourseName, semester: targetSem, credits: parseFloat(newCourseCredits) || 0,
-                prereqs: newCoursePrereqs || [], faculty: newCourseFaculty || '', prereqString: prereqStr, completed: false
+                id: finalId,
+                name: newCourseName, 
+                semester: targetSem, 
+                credits: parseFloat(newCourseCredits) || 0,
+                prereqs: finalPrereqs, // Use the resolved prereqs
+                faculty: newCourseFaculty || (catalogMatch ? catalogMatch.faculty : ''), 
+                prereqString: prereqStr, 
+                completed: false
             };
 
             if (editingId) {
@@ -579,17 +590,36 @@
         const confirmPrereqSelection = () => {
             if (!pendingCourse) return;
             let targetCourse = { ...pendingCourse };
+
+            // FIX: Ensure the selected prerequisites are added to the target course's 
+            // dependency list so the visual lines appear.
+            const updatedPrereqs = new Set(targetCourse.prereqs || []);
+            selectedPrereqsToAdd.forEach(id => updatedPrereqs.add(id));
+            targetCourse.prereqs = Array.from(updatedPrereqs);
+
             let prereqSemester = Math.max(1, targetCourse.semester - 1);
-            if (selectedPrereqsToAdd.length > 0 && targetCourse.semester <= 1) { targetCourse.semester = 2; prereqSemester = 1; }
+            if (selectedPrereqsToAdd.length > 0 && targetCourse.semester <= 1) { 
+                targetCourse.semester = 2; 
+                prereqSemester = 1; 
+            }
+            
             const extras = selectedPrereqsToAdd.map(pid => {
                 const catInfo = catalog.find(c => c.id === pid);
                 return {
-                    id: pid, name: catInfo ? catInfo.name : pid, credits: catInfo ? catInfo.credits : 0,
-                    faculty: catInfo ? catInfo.faculty : '', semester: prereqSemester, 
-                    prereqs: catInfo ? catInfo.prereqs : [], prereqString: catInfo ? catInfo.prereqString : "", completed: false
+                    id: pid, 
+                    name: catInfo ? catInfo.name : pid, 
+                    credits: catInfo ? catInfo.credits : 0,
+                    faculty: catInfo ? catInfo.faculty : '', 
+                    semester: prereqSemester, 
+                    prereqs: catInfo ? catInfo.prereqs : [], 
+                    prereqString: catInfo ? catInfo.prereqString : "", 
+                    completed: false
                 };
             });
-            setCourses([...courses, ...extras, targetCourse]); setShowPrereqSelector(false); setPendingCourse(null);
+            
+            setCourses([...courses, ...extras, targetCourse]); 
+            setShowPrereqSelector(false); 
+            setPendingCourse(null);
         };
 
         const handleDeleteCourse = useCallback((id) => {
@@ -726,14 +756,24 @@
                                     <label className="text-xs font-bold text-slate-500 uppercase">שם הקורס</label>
                                     <input className="w-full border p-2 rounded-lg outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" value={newCourseName} onChange={handleNameChange} placeholder="הקלד שם או מספר..." autoFocus />
                                     {showSuggestions && (
-                                        <div className="absolute w-full bg-white border shadow-xl rounded-lg mt-1 max-h-48 overflow-y-auto z-50">
-                                            {suggestions.map(s => (
-                                                <button key={s.id} onClick={() => { setNewCourseName(s.name); setNewCourseCredits(s.credits); setNewCourseId(s.id); setNewCourseFaculty(s.faculty); setNewCoursePrereqs(courses.filter(c => s.prereqs.includes(c.id)).map(c=>c.id)); setShowSuggestions(false); }} className="w-full text-right px-4 py-2 hover:bg-indigo-50 border-b flex justify-between">
-                                                    <span>{s.name}</span><span className="text-xs bg-slate-100 px-2 rounded">{s.id}</span>
-                                                </button>
-                                            ))}
-                                        </div>
-                                    )}
+    <div className="absolute w-full bg-white border shadow-xl rounded-lg mt-1 max-h-48 overflow-y-auto z-50">
+        {suggestions.map(s => (
+            <button key={s.id} onClick={() => { 
+                setNewCourseName(s.name); 
+                setNewCourseCredits(s.credits); 
+                setNewCourseId(s.id); 
+                setNewCourseFaculty(s.faculty);
+                
+                // FIX: Use s.prereqs directly from catalog, do not filter by existing courses
+                setNewCoursePrereqs(s.prereqs || []); 
+                
+                setShowSuggestions(false); 
+            }} className="w-full text-right px-4 py-2 hover:bg-indigo-50 border-b flex justify-between">
+                <span>{s.name}</span><span className="text-xs bg-slate-100 px-2 rounded">{s.id}</span>
+            </button>
+        ))}
+    </div>
+)}
                                 </div>
                                 <div><label className="text-xs font-bold text-slate-500 uppercase">נקודות</label><input type="number" step="0.5" className="w-full border p-2 rounded-lg" value={newCourseCredits} onChange={e=>setNewCourseCredits(e.target.value)}/></div>
                                 <div>
