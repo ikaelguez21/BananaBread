@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BananaBread v23.2</title>
+    <title>BananaBread v24.0 (Optimized)</title>
     
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 
     <style>
         .custom-scrollbar::-webkit-scrollbar { height: 8px; width: 8px; }
@@ -19,11 +18,14 @@
         
         html, body { height: 100%; margin: 0; padding: 0; background-color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
         
+        /* Connections are now behind cards */
+        svg.connections-layer { z-index: 0; pointer-events: none; }
+        .course-card { z-index: 10; position: relative; }
+
         path.connection-line { 
             fill: none; 
             stroke-linecap: round;
             transition: stroke-opacity 0.3s, stroke-width 0.3s, stroke 0.3s;
-            pointer-events: none;
         }
 
         /* Card Hover Animations */
@@ -51,7 +53,7 @@
         PlusCircle: ({size=20}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/></svg>,
         Refresh: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>,
         GitBranch: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>,
-        Eye: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>,
+        Eye: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8-11-8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>,
         EyeOff: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>,
         ChevronDown: ({size=16, className}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="6 9 12 15 18 9"></polyline></svg>,
         ChevronUp: ({size=16, className}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="18 15 12 9 6 15"></polyline></svg>,
@@ -61,27 +63,6 @@
         BookOpen: ({size=20}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>,
         Plus: ({size=20}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>,
         Search: ({size=16}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>,
-    };
-
-    // --- FACULTY DATA & HELPERS ---
-    const FACULTY_DATA = {
-        "הנדסת חשמל ומחשבים": [{ id: "electricalEngTracks.csv:Electrical Engineering", name: "הנדסת חשמל" }, { id: "electricalEngTracks.csv:Electrical Engineering and Mathematics", name: "הנדסת חשמל ומתמטיקה" }, { id: "electricalEngTracks.csv:Electrical and Computer Engineering", name: "הנדסת חשמל ומחשבים" }, { id: "electricalEngTracks.csv:Electrical Engineering and Physics", name: "הנדסת חשמל ופיזיקה" }, { id: "electricalEngTracks.csv:Combined Electrical Engineering and Physics", name: "הנדסת חשמל ופיזיקה (משולב)" }, { id: "electricalEngTracks.csv:Computer Engineering", name: "הנדסת מחשבים" }],
-        "מדעי המחשב": [{ id: "csTracks.csv:Computer Science - General Four-Year Track", name: "מדעי המחשב (כללי 4 שנתי)" }, { id: "csTracks.csv:Computer Science and Computer Systems - Cyber Security Track", name: "סייבר ואבטחת מידע" }, { id: "csTracks.csv:Computer Science - General Three-Year Track", name: "מדעי המחשב (כללי 3 שנתי)" }, { id: "csTracks.csv:Computer Science - Learning and Data Analysis Track", name: "למידה וניתוח מידע" }, { id: "csTracks.csv:Computer Science - Bioinformatics Track", name: "ביואינפורמטיקה" }, { id: "csTracks.csv:Software Engineering Track", name: "הנדסת תוכנה" }, { id: "csTracks.csv:Computer Engineering Track", name: "הנדסת מחשבים (מדמ\"ח)" }, { id: "csTracks.csv:Computer Science and Mathematics - Combined Track", name: "מדעי המחשב ומתמטיקה" }, { id: "csTracks.csv:Computer Science and Physics - Combined Track", name: "מדעי המחשב ופיזיקה" }, { id: "csTracks.csv:Medicine and Computer Science - Double Degree Track", name: "רפואה ומדעי המחשב" }],
-        "הנדסת מכונות": [{ id: "mechEngTracks.csv:Mechanical Engineering", name: "הנדסת מכונות" }, { id: "mechEngTracks.csv:BRAKIM", name: "ברקים (מצוינות)" }],
-        "הנדסה אזרחית וסביבתית": [{ id: "civilEngTracks.csv:Civil Engineering - Water & Environment", name: "הנדסה אזרחית - מים וסביבה" }, { id: "civilEngTracks.csv:Civil Engineering - Transportation", name: "הנדסה אזרחית - תחבורה" }, { id: "civilEngTracks.csv:Civil Engineering", name: "הנדסה אזרחית (כללי/מבנים)" }, { id: "civilEngTracks.csv:Civil Engineering - Management and Construction", name: "ניהול ובנייה" }, { id: "civilEngTracks.csv:Environmental Engineering", name: "הנדסת סביבה" }, { id: "civilEngTracks.csv:Mapping and Geo-Information Engineering", name: "מיפוי וגיאו-אינפורמציה" }, { id: "civilEngTracks.csv:Mapping and Geo-Information 3Y Engineering", name: "מיפוי וגיאו-אינפורמציה (3 שנתי)" }],
-        "הנדסת תעשייה וניהול": [{ id: "dataDecisionTracks.csv:Data and Information Engineering", name: "הנדסת נתונים ומידע" }, { id: "dataDecisionTracks.csv:Industrial Engineering and Management", name: "הנדסת תעשייה וניהול" }, { id: "dataDecisionTracks.csv:Information Systems Engineering", name: "מערכות מידע" }, { id: "dataDecisionTracks.csv:Medicine and Data Engineering", name: "רפואה והנדסת נתונים" }],
-        "הנדסת אווירונאוטיקה וחלל": [{ id: "aerospaceTracks.csv:Aeronautics and Astronautics", name: "הנדסת אווירונאוטיקה" }, { id: "aerospaceTracks.csv:Aeronautics and Physics", name: "אווירונאוטיקה ופיזיקה" }],
-        "הנדסה כימית": [{ id: "chemicalEngTracks.csv:Chemical Engineering", name: "הנדסה כימית" }, { id: "chemicalEngTracks.csv:Biochemical Engineering", name: "הנדסה ביוכימית" }],
-        "הנדסת ביוטכנולוגיה ומזון": [{ id: "biotechFoodTracks.csv:Biotechnology and Food Engineering", name: "הנדסת ביוטכנולוגיה ומזון" }],
-        "הנדסה ביו-רפואית": [{ id: "biomedicalTracks.csv:Biomedical Engineering", name: "הנדסה ביו-רפואית" }, { id: "biomedicalTracks.csv:Biomedical Engineering and Physics", name: "ביו-רפואה ופיזיקה" }, { id: "biomedicalTracks.csv:Medicine and Biomedical Engineering", name: "רפואה והנדסה ביו-רפואית" }],
-        "הנדסת חומרים": [{ id: "materialsTracks.csv:Materials Engineering", name: "הנדסת חומרים" }, { id: "materialsTracks.csv:Materials Engineering and Physics", name: "הנדסת חומרים ופיזיקה" }, { id: "materialsTracks.csv:Materials Engineering and Chemistry", name: "הנדסת חומרים וכימיה" }, { id: "materialsTracks.csv:Materials Engineering and Biology", name: "הנדסת חומרים וביולוגיה" }],
-        "ארכיטקטורה ובינוי ערים": [{ id: "architectureTracks.csv:Architecture and Town Planning", name: "ארכיטקטורה" }],
-        "מתמטיקה": [{ id: "mathTracks.csv:Three-year program in Mathematics", name: "מתמטיקה (3 שנתי)" }, { id: "mathTracks.csv:Combined Mathematics-Physics", name: "מתמטיקה ופיזיקה (משולב)" }, { id: "mathTracks.csv:Mathematics with Computer Science", name: "מתמטיקה עם מדעי המחשב" }, { id: "mathTracks.csv:Applied Mathematics", name: "מתמטיקה שימושית" }, { id: "mathTracks.csv:Computer Science and Mathematics", name: "מדעי המחשב ומתמטיקה" }],
-        "פיזיקה": [{ id: "physicsTracks.csv:Physics - Three-Year Track", name: "פיזיקה (3 שנתי)" }, { id: "physicsTracks.csv:Physics - Four-Year Track", name: "פיזיקה (4 שנתי)" }, { id: "physicsTracks.csv:Mathematics and Physics - Combined Three-Year Track", name: "מתמטיקה ופיזיקה (3 שנתי)" }, { id: "physicsTracks.csv:Physics - Electrical and Computer Engineering Track", name: "פיזיקה - מגמת הנדסת חשמל" }, { id: "physicsTracks.csv:Physics and Electrical Engineering - Combined Track", name: "פיזיקה והנדסת חשמל (משולב)" }, { id: "physicsTracks.csv:Computer Science and Physics - Combined Degree Track", name: "מדעי המחשב ופיזיקה (משולב)" }, { id: "physicsTracks.csv:Biomedical Engineering and Physics - Combined Degree Track", name: "הנדסה ביו-רפואית ופיזיקה" }, { id: "physicsTracks.csv:Aerospace Engineering and Physics - Combined Degree Track", name: "אווירונאוטיקה ופיזיקה" }],
-        "כימיה": [{ id: "chemistryTracks.csv:Chemistry", name: "כימיה" }, { id: "chemistryTracks.csv:Haznek Chemistry - Medicinal", name: "כימיה - מזנק (רפואית)" }, { id: "chemistryTracks.csv:Haznek Chemistry - Technologies", name: "כימיה - מזנק (טכנולוגיות)" }, { id: "chemistryTracks.csv:Haznek Chemistry - Quantum", name: "כימיה - מזנק (קוונטים)" }, { id: "chemistryTracks.csv:Molecular Biochemistry", name: "ביוכימיה מולקולרית" }],
-        "ביולוגיה": [{ id: "biologyTracks.csv:Biology", name: "ביולוגיה" }, { id: "biologyTracks.csv:Biology - Research and Human Development", name: "ביולוגיה - מחקר והתפתחות האדם" }, { id: "biologyTracks.csv:Biology - Microbiology Ecology and Environment", name: "ביולוגיה - מיקרוביולוגיה ואקולוגיה" }, { id: "biologyTracks.csv:Biology - Research in Biology and Molecular Biochemistry", name: "ביולוגיה - ביוכימיה מולקולרית" }, { id: "biologyTracks.csv:Double Major in Biology and Chemistry", name: "ביולוגיה וכימיה (דו-חוגי)" }],
-        "רפואה": [{ id: "medicineTracks.csv:Medical Sciences", name: "מדעי הרפואה" }, { id: "medicineTracks.csv:Medicine and Biomedical Engineering", name: "רפואה והנדסה ביו-רפואית" }, { id: "medicineTracks.csv:Medicine and Computer Science - Double Degree Track", name: "רפואה ומדעי המחשב" }],
-        "חינוך למדע וטכנולוגיה": [{ id: "educationTracks.csv:Mathematics Education", name: "הוראת המתמטיקה" }, { id: "educationTracks.csv:Physics Education", name: "הוראת הפיזיקה" }, { id: "educationTracks.csv:Chemistry Education", name: "הוראת הכימיה" }, { id: "educationTracks.csv:Biology-Environmental Sciences Education", name: "הוראת הביולוגיה ומדעי הסביבה" }, { id: "educationTracks.csv:Computer Science Education", name: "הוראת מדעי המחשב" }, { id: "educationTracks.csv:Technology-Mechanical Education", name: "הוראת טכנולוגיה-מכונות" }, { id: "educationTracks.csv:Electronics-Electricity Education", name: "הוראת חשמל ואלקטרוניקה" }]
     };
 
     const normalizeId = (id) => String(id).trim();
@@ -138,19 +119,26 @@
             return !!result;
 
         } catch (e) {
+            // Fallback
             const values = Object.values(completionMap || {});
             const completedCount = values.filter(v => v === true).length;
-            const requiredCount = values.length;
-            if (requiredCount > 1 && completedCount > 0) return true; 
+            if (values.length > 1 && completedCount > 0) return true; 
             return false;
         }
+    };
+
+    const formatPrereqString = (str) => {
+        if (!str) return "";
+        return str.replace(/א[וֹ]/g, " או ").replace(/וגם/g, " וגם ").replace(/[\[\]]/g, "").replace(/\s+/g, ' ').trim();
     };
 
     const checkPrerequisiteError = (course, allCourses) => {
         try {
             if (course.prereqString) {
+                // If the logic passes (returns true), there is NO error.
                 if (checkPrerequisiteLogic(course.prereqString, course.semester, allCourses)) return null;
-                return "דרישות הקדם לא הושלמו";
+                // If logic fails, return standard message
+                return "דרישות קדם לא הושלמו";
             }
             if (!course.prereqs || !Array.isArray(course.prereqs)) return null;
             const missing = course.prereqs.filter(pid => {
@@ -159,31 +147,6 @@
             });
             return missing.length > 0 ? "חסרים קדמים" : null;
         } catch (e) { return null; }
-    };
-
-    const getMissingDetails = (course, allCourses) => {
-        const missingList = [];
-        try {
-             if (course.prereqs && Array.isArray(course.prereqs)) {
-                 course.prereqs.forEach(pid => {
-                     const pre = allCourses.find(c => c.id === pid);
-                     if (!pre) missingList.push({ id: pid, reason: 'חסר בלוח' });
-                     else if (!pre.completed && pre.semester >= course.semester) missingList.push({ id: pid, name: pre.name, reason: `סמסטר ${pre.semester} (חייב להיות לפני)` });
-                 });
-             }
-             if (course.prereqString && missingList.length === 0) {
-                 const courseIds = course.prereqString.match(/\d{6,8}/g) || [];
-                 courseIds.forEach(id => {
-                     const pre = allCourses.find(c => c.id === normalizeId(id));
-                     if (!pre || (!pre.completed && pre.semester >= course.semester)) {
-                         if (!missingList.find(x => x.id === id)) {
-                             missingList.push({ id: id, name: pre ? pre.name : 'קורס', reason: pre ? `סמסטר ${pre.semester}` : 'חסר' });
-                         }
-                     }
-                 });
-             }
-        } catch(e) {}
-        return missingList;
     };
 
     const getFacultyColor = (id, highlightState) => {
@@ -208,18 +171,27 @@
         
         if (highlightState === 'dimmed') return `${baseStyle} bg-slate-50 border-slate-100 opacity-20 grayscale border-l-slate-200`;
         if (highlightState === 'focused') return `${baseStyle} ${colorClass} scale-[1.02] shadow-lg ring-2 ring-indigo-400 z-30`;
-        if (highlightState === 'ancestor') return `${baseStyle} bg-blue-50 border-blue-400 ring-1 ring-blue-300 z-20`;
-        if (highlightState === 'descendant') return `${baseStyle} bg-amber-50 border-amber-400 ring-1 ring-amber-300 z-20`;
+        if (highlightState === 'ancestor') return `${baseStyle} bg-red-50 border-red-300 ring-1 ring-red-200 z-20`;
+        if (highlightState === 'descendant') return `${baseStyle} bg-green-50 border-green-300 ring-1 ring-green-200 z-20`;
         
         return `${baseStyle} ${colorClass}`;
     };
 
     // --- SUB-COMPONENTS ---
 
-    const TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
+    const TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack, trackData }) => {
         if (!isOpen) return null;
         const [expandedFaculty, setExpandedFaculty] = React.useState(null);
         const toggleFaculty = (faculty) => setExpandedFaculty(expandedFaculty === faculty ? null : faculty);
+
+        // Group tracks by some logic if possible, otherwise list them
+        // Note: With minified data we might lose the faculty grouping if not preserved. 
+        // For simplicity, we list them or group by first letter if faculty data missing.
+        // Assuming trackData is { "Track Name": [courses...] }
+        // We will just list them alphabetically or by some grouping if we had it.
+        // In the optimized JSON, tracks is a dict.
+        
+        const trackNames = Object.keys(trackData || {}).sort();
 
         return (
             <div className="fixed inset-0 bg-slate-900/60 flex items-center justify-center z-[80] backdrop-blur-sm p-4 animate-in fade-in">
@@ -231,32 +203,13 @@
                         </h2>
                         <button onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold p-2 bg-slate-200/50 hover:bg-slate-200 rounded-full transition-colors w-8 h-8 flex items-center justify-center">✕</button>
                     </div>
-                    <div className="flex-1 overflow-y-auto custom-scrollbar p-2 bg-slate-100">
-                        <div className="space-y-2">
-                        {Object.entries(FACULTY_DATA).map(([facultyName, tracks]) => {
-                            const isOpen = expandedFaculty === facultyName;
-                            return (
-                                <div key={facultyName} className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
-                                    <button onClick={() => toggleFaculty(facultyName)} className={`w-full px-5 py-4 flex items-center justify-between transition-colors ${isOpen ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700 hover:bg-slate-50'}`}>
-                                        <span className="font-bold text-base">{facultyName}</span>
-                                        {isOpen ? <Icons.ChevronUp size={20} /> : <Icons.ChevronDown size={20} className="text-slate-400" />}
-                                    </button>
-                                    {isOpen && (
-                                        <div className="bg-slate-50 px-4 py-3 border-t border-indigo-100 shadow-inner">
-                                            {tracks.length > 0 ? (
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                                    {tracks.map((track) => (
-                                                        <button key={track.id} onClick={() => onSelectTrack(track.id)} className="text-right px-4 py-3 rounded-lg text-sm text-slate-600 hover:text-indigo-700 hover:bg-white hover:shadow-md transition-all border border-slate-200 hover:border-indigo-200 flex items-center gap-3 bg-white">
-                                                            <div className="w-2 h-2 rounded-full bg-indigo-400 shrink-0"></div><span className="font-medium">{track.name}</span>
-                                                        </button>
-                                                    ))}
-                                                </div>
-                                            ) : <div className="text-center text-slate-400 text-sm py-2">(אין מסלולים זמינים)</div>}
-                                        </div>
-                                    )}
-                                </div>
-                            );
-                        })}
+                    <div className="flex-1 overflow-y-auto custom-scrollbar p-4 bg-slate-100">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {trackNames.map(name => (
+                                <button key={name} onClick={() => onSelectTrack(name)} className="text-right px-4 py-3 rounded-lg text-sm text-slate-600 hover:text-indigo-700 hover:bg-white hover:shadow-md transition-all border border-slate-200 hover:border-indigo-200 flex items-center gap-3 bg-white">
+                                    <div className="w-2 h-2 rounded-full bg-indigo-400 shrink-0"></div><span className="font-medium">{name}</span>
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -295,7 +248,6 @@
                     </div>
                 </div>
 
-                {/* SLIDE-UP ACTION BAR (Solves overlap issue) */}
                 <div className="action-bar absolute bottom-0 left-0 right-0 bg-white/95 border-t border-slate-200 px-3 py-1.5 flex items-center justify-between backdrop-blur-sm z-20">
                      <span className="text-[10px] text-slate-400 font-bold">פעולות:</span>
                      <div className="flex gap-3">
@@ -305,7 +257,7 @@
                 </div>
 
                 {error && !course.completed && (
-                    <div className="mt-1 text-[10px] text-red-600 bg-red-100/50 px-2 py-1 rounded border border-red-200 flex items-center gap-1">
+                    <div className="mt-1 text-[10px] text-red-600 bg-red-100/50 px-2 py-1 rounded border border-red-200 flex items-center gap-1" title={course.prereqString ? formatPrereqString(course.prereqString) : "חסרים קדמים"}>
                         <Icons.AlertCircle size={10} /> 
                         <span className="truncate">{error}</span>
                     </div>
@@ -318,6 +270,7 @@
 
     function DegreePlanner() {
         const [catalog, setCatalog] = useState([]); 
+        const [tracksData, setTracksData] = useState({});
         const [loadingStatus, setLoadingStatus] = useState("loading");
         const [statusMessage, setStatusMessage] = useState("טוען קטלוג...");
         const [courses, setCourses] = useState([]);
@@ -354,47 +307,43 @@
 
         // Load / Save Logic
         useEffect(() => {
-            const savedCourses = localStorage.getItem("technion_planner_courses_v5");
-            const savedSemesters = localStorage.getItem("technion_planner_semesters_v5");
+            const savedCourses = localStorage.getItem("bananabread_courses");
+            const savedSemesters = localStorage.getItem("bananabread_semesters");
             if (savedCourses) { try { setCourses(JSON.parse(savedCourses)); } catch(e) {} }
             if (savedSemesters) setSemesterCount(parseInt(savedSemesters));
         }, []);
 
         useEffect(() => {
             if (courses.length > 0 || semesterCount !== 8) {
-                localStorage.setItem("technion_planner_courses_v5", JSON.stringify(courses));
-                localStorage.setItem("technion_planner_semesters_v5", semesterCount.toString());
+                localStorage.setItem("bananabread_courses", JSON.stringify(courses));
+                localStorage.setItem("bananabread_semesters", semesterCount.toString());
             }
         }, [courses, semesterCount]);
 
-        // Load Catalog
+        // Load Data (Optimized JSON)
         useEffect(() => {
             const loadData = async () => {
-                const fetchCsv = (file) => new Promise((resolve, reject) => {
-                    Papa.parse(file, {
-                        download: true, header: true, skipEmptyLines: true,
-                        complete: (res) => resolve(res.data),
-                        error: (err) => reject(err)
-                    });
-                });
                 try {
-                    const coursesRaw = await fetchCsv('courses.csv');
-                    if (!coursesRaw || coursesRaw.length === 0) throw new Error("קובץ ריק");
-                    const processedCatalog = coursesRaw.map(row => {
-                        if (!row.id) return null;
-                        return {
-                            id: normalizeId(row.id), name: row.name || "ללא שם", credits: parseFloat(row.points || row.credits || 0),
-                            faculty: row.faculty || "", recSem: 1, 
-                            prereqs: (row.prerequisites || "").match(/\d{6,8}/g)?.map(n => normalizeId(n)) || [], 
-                            prereqString: row.prerequisites || "" 
-                        };
-                    }).filter(Boolean);
+                    const response = await fetch('minified_data.json');
+                    if (!response.ok) throw new Error("File not found");
+                    const data = await response.json();
+                    
+                    // Transform catalog from dict to array
+                    const processedCatalog = Object.entries(data.catalog).map(([id, info]) => ({
+                        id: id,
+                        name: info.n,
+                        credits: info.p,
+                        prereqString: info.pr,
+                        prereqs: (info.pr.match(/\d{6,8}/g) || [])
+                    }));
+                    
                     setCatalog(processedCatalog);
+                    setTracksData(data.tracks);
                     setLoadingStatus("success");
-                    setStatusMessage(`קטלוג: ${processedCatalog.length} קורסים`);
+                    setStatusMessage("נטען בהצלחה");
                 } catch (err) {
                     setLoadingStatus("error");
-                    setStatusMessage(`שגיאה בטעינת קטלוג. וודא שקובץ courses.csv קיים.`);
+                    setStatusMessage("שגיאה בטעינת minified_data.json. האם הרצת את הסקריפט?");
                 }
             };
             loadData();
@@ -437,33 +386,39 @@
                             const sourceCoords = getCoords(c.id);
                             if (!sourceCoords) return;
                             c.prereqs.forEach(pid => {
-                                const prereqCourse = courses.find(pc => pc.id === pid);
-                                if (prereqCourse) {
-                                    const targetCoords = getCoords(pid);
-                                    if (targetCoords) newConnections.push({ id: `${c.id}-${pid}`, path: createPath(sourceCoords, targetCoords), color: "#cbd5e1", opacity: 0.3, width: 2 });
-                                }
+                                const targetCoords = getCoords(pid);
+                                if (targetCoords) newConnections.push({ id: `${c.id}-${pid}`, path: createPath(sourceCoords, targetCoords), color: "#cbd5e1", opacity: 0.3, width: 2 });
                             });
                         });
                     } 
                     
                     if (hoveredCourse) {
                         const ancestors = getAllAncestors(hoveredCourse.id, courses);
-                        const chainSet = new Set([...ancestors, hoveredCourse.id]);
-                        
-                        courses.forEach(c => {
-                            if (chainSet.has(c.id) && c.prereqs) {
-                                c.prereqs.forEach(pid => {
-                                    if (chainSet.has(pid)) {
-                                        const src = getCoords(c.id); const tgt = getCoords(pid);
-                                        if (src && tgt) newConnections.push({ id: `chain-${c.id}-${pid}`, path: createPath(src, tgt), color: "#3b82f6", opacity: 0.8, width: 3 });
+                        // Prerequisites (Red)
+                        ancestors.forEach(ancId => {
+                            // Find courses that depend on this ancestor within the chain
+                            // Simplified: Draw from Hovered to Parents
+                            const src = getCoords(hoveredCourse.id);
+                            if (hoveredCourse.prereqs.includes(ancId)) {
+                                const tgt = getCoords(ancId);
+                                if (src && tgt) newConnections.push({ id: `pre-${ancId}`, path: createPath(src, tgt), color: "#ef4444", opacity: 0.7, width: 2.5 });
+                            }
+                            // Also draw connections deeper in the chain
+                            const ancCourse = courses.find(c => c.id === ancId);
+                            if (ancCourse && ancCourse.prereqs) {
+                                ancCourse.prereqs.forEach(pid => {
+                                    if(ancestors.has(pid)) {
+                                        const s = getCoords(ancId); const t = getCoords(pid);
+                                        if(s && t) newConnections.push({ id: `deep-${ancId}-${pid}`, path: createPath(s, t), color: "#fca5a5", opacity: 0.5, width: 2 });
                                     }
                                 });
                             }
                         });
                         
+                        // Unlocks / Follow-up (Green)
                         courses.filter(c => c.prereqs && c.prereqs.includes(hoveredCourse.id)).forEach(post => {
                             const src = getCoords(post.id); const tgt = getCoords(hoveredCourse.id);
-                            if (src && tgt) newConnections.push({ id: `post-${post.id}`, path: createPath(src, tgt), color: "#f59e0b", opacity: 0.8, width: 3 });
+                            if (src && tgt) newConnections.push({ id: `post-${post.id}`, path: createPath(src, tgt), color: "#10b981", opacity: 0.8, width: 3 });
                         });
                     }
                     setConnections(newConnections);
@@ -471,73 +426,43 @@
             });
         }, [hoveredCourse, courses, showAllConnections]);
 
-        useEffect(() => { updateConnections(); }, [updateConnections]);
+        useEffect(() => { 
+            // Delay to allow DOM update
+            const t = setTimeout(updateConnections, 50);
+            return () => clearTimeout(t);
+        }, [updateConnections, courses.length]); // Added courses.length dep
 
         // Handlers
         const resetAllData = () => {
             if(confirm("בטוח שברצונך למחוק הכל ולהתחיל מחדש?")) {
                 setCourses([]); setSemesterCount(8);
-                localStorage.removeItem("technion_planner_courses_v5");
-                localStorage.removeItem("technion_planner_semesters_v5");
+                localStorage.removeItem("bananabread_courses");
+                localStorage.removeItem("bananabread_semesters");
             }
         };
 
-        const handleExport = () => {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({courses, semesterCount, version: "23.2"}));
-            const downloadAnchorNode = document.createElement('a');
-            downloadAnchorNode.setAttribute("href", dataStr);
-            downloadAnchorNode.setAttribute("download", "bananabread_plan.json");
-            document.body.appendChild(downloadAnchorNode);
-            downloadAnchorNode.click();
-            downloadAnchorNode.remove();
-        };
-
-        const handleImportClick = () => fileInputRef.current.click();
-        const handleImportFile = (event) => {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                try {
-                    const json = JSON.parse(e.target.result);
-                    if(json.courses) setCourses(json.courses);
-                    if(json.semesterCount) setSemesterCount(json.semesterCount);
-                    alert("התוכנית נטענה בהצלחה!");
-                } catch(err) { alert("שגיאה בטעינת הקובץ"); }
-            };
-            reader.readAsText(file);
-            event.target.value = null; 
-        };
-
-        const handleTrackSelect = async (selectionId) => {
-            if (!selectionId) return;
-            const [fileName, trackName] = selectionId.split(':');
+        const handleTrackSelect = (trackName) => {
             if (courses.length > 0 && !window.confirm("טעינת מסלול תמחק את הקורסים הקיימים. להמשיך?")) return; 
             
-            setLoadingStatus("loading"); setStatusMessage(`טוען מסלול ${trackName}...`); setShowTrackModal(false);
-            try {
-                const response = await fetch(fileName);
-                if (!response.ok) throw new Error(`הקובץ ${fileName} לא נמצא`);
-                Papa.parse(await response.text(), {
-                    header: true, skipEmptyLines: true,
-                    complete: (results) => {
-                        const trackRows = results.data.filter(row => row.track_name === trackName);
-                        if (trackRows.length === 0) throw new Error(`המסלול לא נמצא בקובץ`);
-                        const newBoard = []; let maxSem = semesterCount;
-                        trackRows.forEach(row => {
-                            const cId = normalizeId(row.course_id || row.id); 
-                            const semester = parseInt(row.semester || row.recommended_semester);
-                            if (semester > maxSem) maxSem = semester;
-                            const fullDetails = catalog.find(c => c.id === cId);
-                            if (fullDetails) newBoard.push({ ...fullDetails, semester: semester, completed: false });
-                            else newBoard.push({ id: cId, name: cId, credits: 0, semester: semester, completed: false });
-                        });
-                        if (maxSem > semesterCount) setSemesterCount(maxSem);
-                        setCourses(newBoard); setLoadingStatus("success"); setStatusMessage("מסלול נטען");
-                    },
-                    error: (err) => { throw new Error("שגיאת CSV"); }
-                });
-            } catch (err) { setLoadingStatus("error"); setStatusMessage(`שגיאה: ${err.message}`); }
+            const selectedTrackCourses = tracksData[trackName];
+            if (!selectedTrackCourses) return;
+
+            const newBoard = []; 
+            let maxSem = semesterCount;
+            
+            selectedTrackCourses.forEach(tCourse => {
+                const cId = normalizeId(tCourse.id); 
+                const semester = tCourse.s;
+                if (semester > maxSem) maxSem = semester;
+                
+                const fullDetails = catalog.find(c => c.id === cId);
+                if (fullDetails) newBoard.push({ ...fullDetails, semester: semester, completed: false });
+                else newBoard.push({ id: cId, name: cId, credits: 0, semester: semester, completed: false });
+            });
+
+            if (maxSem > semesterCount) setSemesterCount(maxSem);
+            setCourses(newBoard);
+            setShowTrackModal(false);
         };
 
         const toggleCourseCompletion = useCallback((courseId) => {
@@ -560,6 +485,7 @@
                 setCourses(prev => [...prev.filter(c => c.id !== editingId), courseData]); setIsEditing(false); return;
             }
 
+            // Check for missing prereqs on board
             let missingIds = [];
             if (prereqStr) missingIds = (prereqStr.match(/\d{6,8}/g) || []).filter(pid => !courses.find(c => c.id === pid));
             
@@ -649,7 +575,7 @@
                     <div className="flex items-center gap-4">
                         <div className="flex flex-col">
                             <h1 className="text-2xl font-black bg-gradient-to-r from-yellow-600 to-amber-700 bg-clip-text text-transparent flex items-center gap-2">
-                                BananaBread <span className="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full border">v23.2</span>
+                                BananaBread <span className="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full border">v24.0</span>
                             </h1>
                         </div>
                         <div className="h-8 w-px bg-slate-200 mx-2"></div>
@@ -661,7 +587,6 @@
                                 {showAllConnections ? <Icons.EyeOff size={16}/> : <Icons.Eye size={16}/>} תלות
                             </button>
                             
-                            {/* Search Bar */}
                             <div className="relative group ml-4">
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400">
                                     <Icons.Search size={14}/>
@@ -680,16 +605,13 @@
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <input type="file" ref={fileInputRef} onChange={handleImportFile} className="hidden" accept=".json" />
-                        <button onClick={handleImportClick} className="text-slate-500 hover:text-indigo-600 p-2 rounded hover:bg-slate-100" title="טען תוכנית"><Icons.Upload size={18}/></button>
-                        <button onClick={handleExport} className="text-slate-500 hover:text-indigo-600 p-2 rounded hover:bg-slate-100" title="שמור תוכנית"><Icons.Download size={18}/></button>
                         <div className="w-px h-6 bg-slate-200"></div>
                         <button onClick={resetAllData} className="text-slate-400 hover:text-red-500 p-2 hover:bg-red-50 rounded" title="איפוס"><Icons.Refresh size={16}/></button>
                     </div>
                 </div>
 
                 {/* MODALS */}
-                <TrackSelectionModal isOpen={showTrackModal} onClose={() => setShowTrackModal(false)} onSelectTrack={handleTrackSelect} />
+                <TrackSelectionModal isOpen={showTrackModal} onClose={() => setShowTrackModal(false)} onSelectTrack={handleTrackSelect} trackData={tracksData} />
                 
                 {showPrereqSelector && (
                     <div className="fixed inset-0 bg-slate-900/40 flex items-center justify-center z-[70] backdrop-blur-sm">
@@ -753,7 +675,7 @@
 
                 {/* MAIN BOARD */}
                 <div className="flex-1 overflow-x-auto overflow-y-hidden relative custom-scrollbar bg-slate-100" ref={containerRef}>
-                    <svg className="absolute top-0 left-0 w-full h-full pointer-events-none z-0" style={{minWidth: 'max-content', height: '100%'}}>
+                    <svg className="connections-layer absolute top-0 left-0 w-full h-full pointer-events-none" style={{minWidth: 'max-content', height: '100%'}}>
                         {connections.map((conn, i) => (
                             <path key={conn.id + i} d={conn.path} stroke={conn.color} strokeOpacity={conn.opacity} strokeWidth={conn.width || 2} className="connection-line" />
                         ))}
@@ -831,7 +753,7 @@
                         </div>
                     </div>
                     <div className="text-xs text-slate-500 px-4">
-                        פותח ע"י סטודנטים מהטכניון &bull; BananaBread v23.2
+                        פותח ע"י סטודנטים מהטכניון &bull; BananaBread v24.0
                     </div>
                 </div>
             </div>
