@@ -3,13 +3,16 @@ import Icons from './data/Icons';
 import FacultyData from './data/facultyData.ts';
 
 const TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
-  if (!isOpen) return null;
   const [expandedFaculty, setExpandedFaculty] = useState(null);
   const toggleFaculty = (faculty) =>
     setExpandedFaculty(expandedFaculty === faculty ? null : faculty);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
-    <div className="fixed inset-0 bg-slate-900/60 flex items-center justify-center z-[80] backdrop-blur-sm p-4 animate-in fade-in">
+    <div className="fixed inset-0 bg-slate-900/60 flex items-center justify-center z-80 backdrop-blur-sm p-4 animate-in fade-in">
       <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full h-[80vh] flex flex-col border border-slate-200 dark:border-slate-700 overflow-hidden">
         <div className="p-4 bg-slate-50 dark:bg-slate-850 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center shrink-0">
           <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">

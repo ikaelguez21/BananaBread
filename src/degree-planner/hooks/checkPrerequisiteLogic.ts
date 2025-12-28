@@ -10,29 +10,30 @@ const checkPrerequisiteLogic = (prereqString, targetSemester, currentCourses) =>
     courseIds.forEach((id) => {
       const normalizedId = normalizeId(id);
       const courseInBoard = currentCourses.find((c) => c.id === normalizedId);
-      const isCompleted =
+
+      completionMap[id] =
         (courseInBoard && courseInBoard.completed) ||
         (courseInBoard && courseInBoard.semester < targetSemester);
-      completionMap[id] = isCompleted;
     });
 
     let cleanStr = prereqString
+      // eslint-disable-next-line no-misleading-character-class
       .replace(/א[וֹ]/g, '||')
       .replace(/\sOR\s/gi, '||')
       .replace(/וגם/g, '&&')
       .replace(/\sAND\s/gi, '&&')
-      .replace(/[\[\{]/g, '(')
-      .replace(/[\]\}]/g, ')');
+      .replace(/[[{]/g, '(')
+      .replace(/[\]}]/g, ')');
 
     const ids = Object.keys(completionMap).sort((a, b) => b.length - a.length);
     ids.forEach((id) => {
       cleanStr = cleanStr.split(id).join(completionMap[id].toString());
     });
 
-    const safeEvalStr = cleanStr.replace(/[^truefalse\(\)\&\|!\s]/gi, '');
+    const safeEvalStr = cleanStr.replace(/[^truefals()&|!\s]/gi, '');
     const result = new Function(`return (${safeEvalStr});`)();
     return !!result;
-  } catch (e) {
+  } catch {
     const values = Object.values(completionMap || {});
     const completedCount = values.filter((v) => v === true).length;
     const requiredCount = values.length;

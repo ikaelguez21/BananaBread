@@ -2,7 +2,7 @@ const getFacultyColor = (id, highlightState) => {
   const cleanId = String(id).replace(/^0+/, '');
   const prefix = cleanId.substring(0, 2);
 
-  let colorClass = '';
+  let colorClass: string;
   // Colors: [Light Mode] / [Dark Mode]
   switch (prefix) {
     case '23':

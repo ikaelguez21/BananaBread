@@ -72,7 +72,9 @@ const DegreePlanner = () => {
     if (savedCourses) {
       try {
         setCourses(JSON.parse(savedCourses));
-      } catch (e) {}
+      } finally {
+        /* empty */
+      }
     }
     if (savedSemesters) setSemesterCount(parseInt(savedSemesters));
   }, []);
@@ -99,7 +101,9 @@ const DegreePlanner = () => {
         });
       try {
         const coursesRaw = await fetchCsv('/assets/csvs/courses.csv');
-        if (!coursesRaw || coursesRaw.length === 0) throw new Error('קובץ ריק');
+        if (!coursesRaw || coursesRaw.length === 0) {
+          throw new Error('קובץ ריק');
+        }
         const processedCatalog = coursesRaw
           .map((row) => {
             if (!row.id) return null;
@@ -118,7 +122,7 @@ const DegreePlanner = () => {
         setCatalog(processedCatalog);
         setLoadingStatus('success');
         setStatusMessage(`קטלוג: ${processedCatalog.length} קורסים`);
-      } catch (err) {
+      } catch {
         setLoadingStatus('error');
         setStatusMessage(`שגיאה בטעינת קטלוג. וודא שקובץ courses.csv קיים.`);
       }
@@ -228,7 +232,7 @@ const DegreePlanner = () => {
             });
         }
         setConnections(newConnections);
-      } catch (e) {
+      } catch {
         setConnections([]);
       }
     });
@@ -296,7 +300,9 @@ const DegreePlanner = () => {
     setShowTrackModal(false);
     try {
       const response = await fetch(`/assets/csvs/${fileName}`);
-      if (!response.ok) throw new Error(`הקובץ ${fileName} לא נמצא`);
+      if (!response.ok) {
+        throw new Error(`הקובץ ${fileName} לא נמצא`);
+      }
       Papa.parse(await response.text(), {
         header: true,
         skipEmptyLines: true,
