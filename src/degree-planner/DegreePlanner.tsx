@@ -98,7 +98,7 @@ const DegreePlanner = () => {
           });
         });
       try {
-        const coursesRaw = await fetchCsv('courses.csv');
+        const coursesRaw = await fetchCsv('/assets/csvs/courses.csv');
         if (!coursesRaw || coursesRaw.length === 0) throw new Error('קובץ ריק');
         const processedCatalog = coursesRaw
           .map((row) => {
@@ -295,7 +295,7 @@ const DegreePlanner = () => {
     setStatusMessage(`טוען מסלול ${trackName}...`);
     setShowTrackModal(false);
     try {
-      const response = await fetch(fileName);
+      const response = await fetch(`/assets/csvs/${fileName}`);
       if (!response.ok) throw new Error(`הקובץ ${fileName} לא נמצא`);
       Papa.parse(await response.text(), {
         header: true,
