@@ -673,15 +673,24 @@
                 {/* HEADER */}
                 <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 shadow-sm z-40 px-6 py-3 flex justify-between items-center shrink-0 transition-colors">
                     <div className="flex items-center gap-4">
-    {/* LOGO ADDED HERE */}
-    <img src="bananaBreadLogo.png" alt="Logo" className="w-28 h-28 object-contain" />
-    
-    <div className="flex flex-col">
-        <h1 className="text-2xl font-black bg-gradient-to-r from-yellow-600 to-amber-700 dark:from-yellow-400 dark:to-amber-500 bg-clip-text text-transparent flex items-center gap-2">
-            BananaBread <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 px-2 py-0.5 rounded-full border dark:border-slate-600">v24</span>
-        </h1>
-    </div>
-    <div className="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+                        {/* WRAPPED LOGO + TEXT */}
+                        <div className="relative flex items-center justify-center">
+                            {/* Logo - Absolute, Big, Behind */}
+                            <img 
+                                src="bananaBreadLogo.png" 
+                                alt="Logo" 
+                                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 object-contain opacity-15 pointer-events-none select-none" 
+                            />
+                            
+                            {/* Title - Relative, z-10 */}
+                            <div className="flex flex-col relative z-10">
+                                <h1 className="text-2xl font-black bg-gradient-to-r from-yellow-600 to-amber-700 dark:from-yellow-400 dark:to-amber-500 bg-clip-text text-transparent flex items-center gap-2">
+                                    BananaBread <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 px-2 py-0.5 rounded-full border dark:border-slate-600">v24</span>
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div className="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
                         <div className="flex items-center gap-2">
                             <button onClick={() => setShowTrackModal(true)} className="flex items-center gap-2 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-900/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-bold transition-colors">
                                 <Icons.BookOpen size={16}/> מסלול
