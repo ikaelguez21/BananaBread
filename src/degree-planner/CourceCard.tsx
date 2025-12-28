@@ -1,4 +1,6 @@
 import { memo } from 'react';
+import Icons from './data/Icons';
+import getFacultyColor from './hooks/getFacultyColor.ts';
 
 const CourseCard = memo(
   ({

@@ -5,6 +5,7 @@ import TrackSelectionModal from './TrackSelectionModal.tsx';
 import CourseCard from './CourceCard.tsx';
 import checkPrerequisiteError from './hooks/checkPrerequisiteError.ts';
 import getBlockingCount from './hooks/getBlockingCount.ts';
+import normalizeId from './hooks/normalizeId.ts';
 
 const DegreePlanner = () => {
   // Theme State

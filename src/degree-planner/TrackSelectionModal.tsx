@@ -1,4 +1,6 @@
 import { memo, useState } from 'react';
+import Icons from './data/Icons';
+import FacultyData from './data/facultyData.ts';
 
 const TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
   if (!isOpen) return null;
@@ -23,7 +25,7 @@ const TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
         </div>
         <div className="flex-1 overflow-y-auto custom-scrollbar p-2 bg-slate-100 dark:bg-slate-900">
           <div className="space-y-2">
-            {Object.entries(FACULTY_DATA).map(([facultyName, tracks]) => {
+            {Object.entries(FacultyData).map(([facultyName, tracks]) => {
               const isOpen = expandedFaculty === facultyName;
               return (
                 <div

@@ -1,3 +1,5 @@
+import checkPrerequisiteLogic from './checkPrerequisiteLogic.ts';
+
 const checkPrerequisiteError = (course, allCourses) => {
   try {
     if (course.prereqString) {

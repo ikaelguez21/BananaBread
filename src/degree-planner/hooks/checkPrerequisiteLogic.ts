@@ -1,3 +1,5 @@
+import normalizeId from './normalizeId.ts';
+
 const checkPrerequisiteLogic = (prereqString, targetSemester, currentCourses) => {
   if (!prereqString || typeof prereqString !== 'string' || !prereqString.trim()) return true;
   try {
@@ -30,7 +32,7 @@ const checkPrerequisiteLogic = (prereqString, targetSemester, currentCourses) =>
     const safeEvalStr = cleanStr.replace(/[^truefalse\(\)\&\|!\s]/gi, '');
     const result = new Function(`return (${safeEvalStr});`)();
     return !!result;
-  } catch () {
+  } catch (e) {
     const values = Object.values(completionMap || {});
     const completedCount = values.filter((v) => v === true).length;
     const requiredCount = values.length;
