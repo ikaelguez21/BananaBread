@@ -277,7 +277,7 @@ const DegreePlanner = () => {
         if (json.courses) setCourses(json.courses);
         if (json.semesterCount) setSemesterCount(json.semesterCount);
         alert('התוכנית נטענה בהצלחה!');
-      } catch (err) {
+      } catch {
         alert('שגיאה בטעינת הקובץ');
       }
     };
@@ -326,7 +326,7 @@ const DegreePlanner = () => {
           setLoadingStatus('success');
           setStatusMessage('מסלול נטען');
         },
-        error: (err) => {
+        error: () => {
           throw new Error('שגיאת CSV');
         }
       });
@@ -502,14 +502,14 @@ const DegreePlanner = () => {
               {/* The large, rotated, watermark logo */}
               <div className="absolute -right-2 -top-4 w-20 h-20 opacity-20 z-[-1] pointer-events-none rotate-12">
                 <img
-                  src="bananaBreadLogo.png"
+                  src="/bananaBreadLogo.png"
                   alt="Logo"
                   className="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal dark:opacity-30"
                 />
               </div>
 
               {/* Gradient Text */}
-              <span className="bg-gradient-to-r from-yellow-600 to-amber-700 dark:from-yellow-400 dark:to-amber-500 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="bg-linear-to-r from-yellow-600 to-amber-700 dark:from-yellow-400 dark:to-amber-500 bg-clip-text text-transparent drop-shadow-sm">
                 BananaBread
               </span>
 
@@ -613,7 +613,7 @@ const DegreePlanner = () => {
       />
 
       {showPrereqSelector && (
-        <div className="fixed inset-0 bg-slate-900/40 flex items-center justify-center z-[70] backdrop-blur-sm">
+        <div className="fixed inset-0 bg-slate-900/40 flex items-center justify-center z-70 backdrop-blur-sm">
           <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl max-w-lg w-full animate-in zoom-in-95 border border-slate-200 dark:border-slate-700">
             <div className="flex items-start gap-3 mb-4">
               <div className="bg-amber-100 dark:bg-amber-900/40 p-2 rounded-full text-amber-600 dark:text-amber-400">
@@ -672,7 +672,7 @@ const DegreePlanner = () => {
       )}
 
       {isEditing && (
-        <div className="fixed inset-0 bg-slate-900/30 flex items-start justify-center pt-20 z-[60] backdrop-blur-sm">
+        <div className="fixed inset-0 bg-slate-900/30 flex items-start justify-center pt-20 z-60 backdrop-blur-sm">
           <div className="w-full max-w-2xl bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl animate-in slide-in-from-bottom-4 border border-slate-200 dark:border-slate-700">
             <h3 className="font-bold text-xl text-slate-800 dark:text-slate-100 mb-4">
               {editingId ? 'עריכת קורס' : 'הוספת קורס'}
@@ -875,7 +875,7 @@ const DegreePlanner = () => {
           </div>
           <div className="w-48 h-2 bg-slate-700 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-emerald-500 to-emerald-300 transition-all duration-500"
+              className="h-full bg-linear-to-r from-emerald-500 to-emerald-300 transition-all duration-500"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
