@@ -6,3 +6,4 @@ recent problems:
 7. some coursse show only as the course id
 8. got some feedback about the UI
 9. when single course is shown twice because u need to do it twice in the degree and checking one as done the other one is also checked
+10. 03940901 is supposed to be listed as חינוך גופני. all the PE classes need a re workd
