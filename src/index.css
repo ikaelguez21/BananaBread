@@ -1,73 +1,73 @@
-:root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
+@import "tailwindcss";
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Custom Scrollbar - Light Mode */
+.custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
 }
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
 }
 
-a:hover {
-    color: #535bf2;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
 }
 
-body {
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Custom Scrollbar - Dark Mode */
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+html, body {
+    height: 100%;
     margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
+    padding: 0;
+    background-color: #f8fafc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
+/* Dark Mode Background for Body */
+html.dark body {
+    background-color: #0f172a;
 }
 
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
+path.connection-line {
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-opacity 0.3s, stroke-width 0.3s, stroke 0.3s;
+    pointer-events: none;
 }
 
-button:hover {
-    border-color: #646cff;
+/* Card Hover Animations */
+.course-card .action-bar {
+    transform: translateY(100%);
+    transition: transform 0.2s ease-out;
 }
 
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+.course-card:hover .action-bar {
+    transform: translateY(0);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
+.glass-dark {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+}
 
-    a:hover {
-        color: #747bff;
-    }
-
-    button {
-        background-color: #f9f9f9;
-    }
+.glass-dark-border {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
