@@ -509,7 +509,7 @@
         };
 
         const handleExport = () => {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({courses, semesterCount, version: "23.2"}));
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({courses, semesterCount, version: "24"}));
             const downloadAnchorNode = document.createElement('a');
             downloadAnchorNode.setAttribute("href", dataStr);
             downloadAnchorNode.setAttribute("download", "bananabread_plan.json");
@@ -675,7 +675,7 @@
                     <div className="flex items-center gap-4">
                         <div className="flex flex-col">
                             <h1 className="text-2xl font-black bg-gradient-to-r from-yellow-600 to-amber-700 dark:from-yellow-400 dark:to-amber-500 bg-clip-text text-transparent flex items-center gap-2">
-                                BananaBread <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 px-2 py-0.5 rounded-full border dark:border-slate-600">v23.2</span>
+                                BananaBread <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 px-2 py-0.5 rounded-full border dark:border-slate-600">v24</span>
                             </h1>
                         </div>
                         <div className="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
