@@ -6,6 +6,7 @@ import CourseCard from './CourceCard.tsx';
 import checkPrerequisiteError from './hooks/checkPrerequisiteError.ts';
 import getBlockingCount from './hooks/getBlockingCount.ts';
 import normalizeId from './hooks/normalizeId.ts';
+import Papa from 'papaparse';
 
 const DegreePlanner = () => {
   // Theme State
