@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Custom Scrollbar - Light Mode */
+.custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Custom Scrollbar - Dark Mode */
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Dark Mode Background for Body */
+html.dark body {
+    background-color: #0f172a;
+}
+
+path.connection-line {
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-opacity 0.3s, stroke-width 0.3s, stroke 0.3s;
+    pointer-events: none;
+}
+
+/* Card Hover Animations */
+.course-card .action-bar {
+    transform: translateY(100%);
+    transition: transform 0.2s ease-out;
+}
+
+.course-card:hover .action-bar {
+    transform: translateY(0);
+}
+
+.glass-dark {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.glass-dark-border {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
