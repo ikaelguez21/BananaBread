@@ -603,3 +603,5 @@ export default function DegreePlanner() {
         </div>
     );
 }
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<DegreePlanner />);
