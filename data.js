@@ -1,7 +1,8 @@
-import React from 'react';
+// data.js
+const { createElement } = React;
 
 // --- ICONS ---
-export const Icons = {
+window.Icons = {
     Loader: ({size=24}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>,
     Trash2: ({size=14}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>,
     Pencil: ({size=14}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>,
@@ -26,8 +27,7 @@ export const Icons = {
 };
 
 // --- FACULTY DATA ---
-// All tracks now reference 'completeTrack.csv'
-export const FACULTY_DATA = {
+window.FACULTY_DATA = {
     "הנדסת חשמל ומחשבים": [
         { id: "completeTrack.csv:Electrical Engineering", name: "הנדסת חשמל" }, 
         { id: "completeTrack.csv:Electrical Engineering and Mathematics", name: "הנדסת חשמל ומתמטיקה" }, 
