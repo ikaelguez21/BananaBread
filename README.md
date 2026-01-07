@@ -7,15 +7,15 @@
   **The Modern Academic Degree Planner for Technion Students**
   
   <p>
+    <a href="https://ikaelguez21.github.io/bananabread/"><b>🌐 USE THE WEBSITE</b></a> •
     <a href="#-key-features">Features</a> •
-    <a href="#-tech-stack">Tech Stack</a> •
-    <a href="#-getting-started">Getting Started</a> •
-    <a href="#-credits">Credits</a>
+    <a href="#-screenshots">Screenshots</a> •
+    <a href="#-getting-started">Run Locally</a>
   </p>
 
   ![License](https://img.shields.io/badge/License-MIT-blue.svg)
   ![Version](https://img.shields.io/badge/Version-v24-green.svg)
-  ![Status](https://img.shields.io/badge/Status-Active-success.svg)
+  ![Status](https://img.shields.io/badge/Status-Work_in_Progress-yellow.svg)
 
 </div>
 
@@ -25,40 +25,21 @@
 
 **BananaBread** is a sleek, browser-based interactive tool designed to revolutionize how students plan their academic path. Forget clunky spreadsheets and manual prerequisite checking. BananaBread visualizes your entire degree, tracks your progress, and ensures you never miss a prerequisite again.
 
-It runs entirely in your browser with **no installation required**.
-
----
-
-### ✨ Key Features
-
-| Feature | Description |
-| :--- | :--- |
-| **🎓 Smart Tracks** | Instantly load official degree tracks (CS, Medicine, Engineering, etc.) directly from Technion catalogs. |
-| **🖱️ Drag & Drop** | Effortlessly drag courses between semesters to craft your perfect schedule. |
-| **🔗 Visual Dependencies** | **Dynamic connecting lines** visualize course prerequisites and blocking chains in real-time. |
-| **🧠 Intelligent Logic** | Automatic validation checks for prerequisites (ancestors) and alerts you to errors instantly. |
-| **🌗 Dark Mode** | A beautiful, fully integrated Dark Mode for those late-night planning sessions. |
-| **💾 Auto-Save** | Your plan is saved locally to your browser. Close the tab and pick up right where you left off. |
-| **📊 Live Stats** | Real-time progress bar tracking your completed credit points against degree requirements. |
-| **🎨 Faculty Coding** | Courses are color-coded by faculty (e.g., CS is Emerald, Physics is Violet) for instant recognition. |
-
----
-
-### 🛠 Tech Stack
-
-BananaBread is built with modern web technologies, focusing on performance and simplicity (no build step required!).
-
-* ![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) **Core Framework**
-* ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) **Styling & Dark Mode**
-* ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) **ES6+ Logic**
-* ![PapaParse](https://img.shields.io/badge/PapaParse-CSV-orange?style=for-the-badge) **Data Parsing**
-* ![Babel](https://img.shields.io/badge/Babel-Standalone-yellow?style=for-the-badge) **In-Browser JSX**
+**No installation needed!** Just visit the website to start planning immediately.
 
 ---
 
 ### 🚀 Getting Started
 
-You don't need `npm`, `yarn`, or a local server. BananaBread works right out of the box!
+#### 🌐 Option 1: Use the Website (Recommended)
+The easiest way to use BananaBread is online. The latest version is always available here:
+
+## [👉 Click here to open BananaBread](https://ikaelguez21.github.io/bananabread/)
+
+<br>
+
+#### 💻 Option 2: Run Locally
+If you prefer to run the project on your own machine (no server required):
 
 1.  **Clone the repository:**
     ```bash
@@ -69,30 +50,59 @@ You don't need `npm`, `yarn`, or a local server. BananaBread works right out of 
     cd BananaBread-main
     ```
 3.  **Launch:**
-    Double-click `index.html` to open it in your favorite browser (Chrome, Edge, Firefox, Safari).
+    Double-click `index.html` to open it in your favorite web browser (Chrome, Edge, Firefox, Safari).
+
+---
+
+### ✨ Key Features
+
+| Feature | Description |
+| :--- | :--- |
+| **🎓 Smart Tracks** | Instantly load official degree tracks (CS, Medicine, Engineering, etc.) directly from Technion catalogs. |
+| **🖱️ Drag & Drop** | Effortlessly drag courses between semesters to craft your perfect schedule. |
+| **🔗 Visual Dependencies** | **Dynamic connecting lines** visualize course prerequisites (ancestors) and blocking chains in real-time when hovering. |
+| **🧠 Intelligent Logic** | Automatic validation checks for prerequisites and alerts you if a course is misplaced. |
+| **🌗 Dark Mode** | A beautiful, fully integrated Dark Mode for comfortable late-night study sessions. |
+| **💾 Auto-Save** | Your plan is saved locally to your browser. Close the tab and pick up right where you left off. |
+| **📊 Live Stats** | Real-time progress bar tracking your completed credit points against degree requirements. |
+| **🎨 Faculty Coding** | Courses are color-coded by faculty (e.g., CS is Emerald, Math is Blue) for instant recognition. |
 
 ---
 
 ### 📸 Screenshots
 
-> *Add screenshots of your application here to show off the Light/Dark mode and the dependency graph!*
+Experience planning in your preferred style with powerful visualization tools.
 
-<div align="center">
-  <br />
-  <b>🌗 Toggle between Light and Dark themes instantly</b>
-  <br />
-</div>
+#### ☀️ Light Mode & Dependency Visualization
+*Hovering over a course instantly reveals its prerequisites and the courses it blocks.*
+![Light Mode showing dependency lines](image_0.png)
+
+<br>
+
+#### 🌑 Dark Mode & Drag-and-Drop Planning
+*Easily rearrange your entire degree plan in a sleek dark theme.*
+![Dark Mode showing drag and drop](image_1.png)
 
 ---
 
-### 📂 Project Structure
+### ⚠️ A Note on Development
 
-* `index.html` - The entry point and app container.
-* `app.js` - Main application logic, state management, and effects.
-* `components.js` - Reusable React components (CourseCard, Modal).
-* `data.js` - Static icons and faculty definitions.
-* `courses.csv` - The complete course catalog database.
-* `completeTrack.csv` - Definitions for various degree tracks.
+**BananaBread is currently a Work in Progress (WIP).**
+
+While fully functional for planning, you may encounter occasional bugs, data discrepancies in course catalogs, or incomplete track definitions. We are actively working to improve the stability, data accuracy, and feature set of the tool.
+
+Feedback and bug reports via GitHub issues are highly appreciated!
+
+---
+
+### 🛠 Tech Stack
+
+BananaBread is built with modern web technologies, focusing on performance and simplicity (no complex build step required!).
+
+* ![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) **Core Framework**
+* ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) **Styling & Dark Mode**
+* ![PapaParse](https://img.shields.io/badge/PapaParse-CSV-orange?style=for-the-badge) **Data Parsing**
+* **Babel Standalone** **In-Browser JSX**
 
 ---
 
@@ -100,10 +110,10 @@ You don't need `npm`, `yarn`, or a local server. BananaBread works right out of 
 
 Built with ❤️ by Technion students for the community.
 
-* **Icons:** [Lucide React](https://lucide.dev/) (embedded via `data.js`)
-* **Data:** Technion Course Catalog
+* **Icons:** [Lucide React](https://lucide.dev/)
+* **Data Source:** Technion Academic Catalog
 
-Feel free to fork this repository and submit Pull Requests to add new features or fix bugs!
+Feel free to fork this repository and submit Pull Requests!
 
 ---
 
