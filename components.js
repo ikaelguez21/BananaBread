@@ -1,8 +1,7 @@
-const { memo } = React;
+// components.js
+const { memo, useState } = React;
 
 // --- HELPERS ---
-
-
 window.normalizeId = (id) => String(id).trim();
 
 // Recursively find all ancestors (prerequisites of prerequisites)
@@ -88,37 +87,16 @@ window.getFacultyColor = (courseId, highlightState) => {
     const prefix = String(courseId).trim().substring(0, 4);
     
     // 1. Define your Color Groups
-    // We group prefixes here so we only write the CSS once per group.
-    
     const COLORS = {
-        // Computer Science / Data (Emerald Green)
         CS: "bg-emerald-50 border-emerald-200 border-l-emerald-600 text-emerald-900 dark:bg-emerald-950/40 dark:border-emerald-800 dark:border-l-emerald-500 dark:text-emerald-200",
-        
-        // Electrical Engineering (Sky Blue)
         EE: "bg-sky-100 border-sky-300 border-l-sky-600 text-sky-900 dark:bg-sky-900/30 dark:border-sky-700 dark:text-sky-100",
-        
-        // Aerospace (Cyan)
         AERO: "bg-cyan-100 border-cyan-300 border-l-cyan-600 text-cyan-900 dark:bg-cyan-900/30 dark:border-cyan-700 dark:text-cyan-100",
-        
-        // Physics (Violet)
         PHYS: "bg-violet-100 border-violet-300 border-l-violet-600 text-violet-900 dark:bg-violet-900/30 dark:border-violet-700 dark:text-violet-100",
-        
-        // Industrial / Data Science (Indigo)
         DATA: "bg-indigo-100 border-indigo-300 border-l-indigo-600 text-indigo-900 dark:bg-indigo-900/30 dark:border-indigo-700 dark:text-indigo-100",
-        
-        // Civil / Environmental (Stone/Gray)
         CIVIL: "bg-stone-100 border-stone-300 border-l-stone-600 text-stone-900 dark:bg-stone-900/30 dark:border-stone-700 dark:text-stone-100",
-        
-        // Medicine / Bio / Food (Teal)
         BIO: "bg-teal-100 border-teal-300 border-l-teal-600 text-teal-900 dark:bg-teal-900/30 dark:border-teal-700 dark:text-teal-100",
-        
-        // Mechanical / Materials / Chem (Rose/Red)
         MECH: "bg-rose-100 border-rose-300 border-l-rose-600 text-rose-900 dark:bg-rose-900/30 dark:border-rose-700 dark:text-rose-100",
-        
-        // Math / Education (Fuchsia/Pink)
         MATH: "bg-fuchsia-100 border-fuchsia-300 border-l-fuchsia-600 text-fuchsia-900 dark:bg-fuchsia-900/30 dark:border-fuchsia-700 dark:text-fuchsia-100",
-        
-        // Default (White)
         DEFAULT: "bg-white border-slate-200 border-l-slate-400 text-slate-700 dark:bg-slate-800 dark:border-slate-600 dark:border-l-slate-400 dark:text-slate-300"
     };
 
@@ -127,31 +105,22 @@ window.getFacultyColor = (courseId, highlightState) => {
     
     // CS & Software
     if (["0233", "0234", "0236", "0238"].includes(prefix)) group = "CS";
-    
     // Electrical & Computer Eng
     else if (["0044", "0045", "0046", "0048", "0049", "0440"].includes(prefix)) group = "EE";
-    
     // Industrial & Data
     else if (["0094", "0095", "0096", "0097", "0098", "0099"].includes(prefix)) group = "DATA";
-    
     // Aerospace
     else if (["0084", "0085", "0086", "0088", "0738", "5208"].includes(prefix)) group = "AERO";
-    
     // Mechanical, Materials, Chemistry
     else if (["0034", "0035", "0036", "0038", "0314", "0315", "0316", "0318", "0123", "0124", "0125", "0126", "0127", "0128", "0054", "0056", "0058"].includes(prefix)) group = "MECH";
-    
     // Civil & Environmental
     else if (["0014", "0015", "0016", "0017", "0018", "0019"].includes(prefix)) group = "CIVIL";
-    
     // Physics
     else if (["0113", "0114", "0115", "0116", "0117", "0118"].includes(prefix)) group = "PHYS";
-    
     // Math & Education
     else if (["0103", "0104", "0106", "0108", "0196", "0197", "0213", "0214", "0216", "0218"].includes(prefix)) group = "MATH";
-    
-    // Medicine, Bio, Food, Architecture (Architecture usually goes well with Bio colors or Civil, put in BIO for now)
+    // Medicine, Bio, Food
     else if (["0064", "0066", "0068", "0134", "0136", "0138", "0274", "0275", "0276", "0277", "0278", "0334", "0335", "0336", "0337", "0338", "0648", "0204", "0205", "0206", "0207", "0208", "0209"].includes(prefix)) group = "BIO";
-
 
     // 3. Apply Highlight States (Dimming/Focus)
     const colorClass = COLORS[group];
@@ -169,7 +138,7 @@ window.getFacultyColor = (courseId, highlightState) => {
 
 window.TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
     if (!isOpen) return null;
-    const [expandedFaculty, setExpandedFaculty] = React.useState(null);
+    const [expandedFaculty, setExpandedFaculty] = useState(null);
     const toggleFaculty = (faculty) => setExpandedFaculty(expandedFaculty === faculty ? null : faculty);
 
     return (
@@ -263,4 +232,3 @@ window.CourseCard = memo(({ course, highlightState, error, blockCount, onToggle,
         </div>
     );
 });
-
