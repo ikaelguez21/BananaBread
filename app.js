@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Papa from 'papaparse';
-import { Icons } from './data';
-import { 
+// app.js
+const { useState, useEffect, useRef, useCallback } = React;
+// Retrieve global components and data
+const { Icons, FACULTY_DATA } = window;
+const { 
     TrackSelectionModal, 
     CourseCard, 
     normalizeId, 
@@ -9,9 +10,9 @@ import {
     getBlockingCount, 
     getAllAncestors, 
     getFacultyColor 
-} from './components';
+} = window;
 
-export default function DegreePlanner() {
+function DegreePlanner() {
     // --- STATE MANAGEMENT ---
     const [isDarkMode, setIsDarkMode] = useState(() => {
         if (typeof window !== 'undefined') {
@@ -603,5 +604,7 @@ export default function DegreePlanner() {
         </div>
     );
 }
+
+// Initialize the app
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<DegreePlanner />);
