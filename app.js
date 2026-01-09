@@ -533,16 +533,11 @@ function DegreePlanner() {
                         {/* Course List */}
                         <div className="flex-1 overflow-y-auto p-2 space-y-2 custom-scrollbar bg-slate-50/50 dark:bg-slate-900/50">
                           {semCourses.length === 0 && (
-    <button 
-        onClick={() => openAddModal(semNum)}
-        className="w-full h-full flex flex-col items-center justify-center text-slate-300 hover:text-indigo-500 dark:text-slate-600 dark:hover:text-indigo-400 gap-2 transition-colors group cursor-pointer"
-    >
-        <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/30 flex items-center justify-center transition-colors">
-            <Icons.Plus size={20}/>
-        </div>
-        <span className="text-xs font-bold">לחץ להוספת קורס</span>
-    </button>
-)}
+                              <div className="h-full flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 gap-2">
+                                  <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center"><Icons.Plus size={20}/></div>
+                                  <span className="text-xs">גרירה או הוספה</span>
+                              </div>
+                          )}
                           {semCourses.map((course) => {
                             const error = checkPrerequisiteError(course, courses);
                             const blockCount = getBlockingCount(course.id, courses);
