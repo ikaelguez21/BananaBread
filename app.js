@@ -637,12 +637,13 @@ const handleSaveCourse = () => {
                         <div className="h-full bg-gradient-to-r from-emerald-500 to-emerald-300 transition-all duration-500" style={{width: `${progress}%`}}></div>
                     </div>
                 </div>
-                <div className="text-xs text-slate-500 px-4">
+              <div className="text-xs text-slate-500 px-4">
+                    Please report any issue{' '}
                     <a 
                         href="mailto:bananabreadproblems@gmail.com?subject=Hi! Please address this problem!" 
-                        className="hover:text-indigo-500 hover:underline transition-colors"
+                        className="font-bold text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
                     >
-                        bananabreadproblems@gmail.com
+                        HERE
                     </a>
                     &nbsp;&bull; BananaBread v24
                 </div>
