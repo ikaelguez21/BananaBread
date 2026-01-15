@@ -638,7 +638,13 @@ const handleSaveCourse = () => {
                     </div>
                 </div>
                 <div className="text-xs text-slate-500 px-4">
-                    פותח ע"י סטודנטים מהטכניון &bull; BananaBread v24
+                    <a 
+                        href="mailto:bananabreadproblems@gmail.com?subject=Hi! Please address this problem!" 
+                        className="hover:text-indigo-500 hover:underline transition-colors"
+                    >
+                        bananabreadproblems@gmail.com
+                    </a>
+                    &nbsp;&bull; BananaBread v24
                 </div>
             </div>
             
