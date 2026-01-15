@@ -290,10 +290,8 @@ function DegreePlanner() {
         setDraggedCourse(null); 
     };
 
-
-    // בתוך app.js, החלף את הפונקציה handleSaveCourse בקוד הבא:
-
-const handleSaveCourse = () => {
+    // Save Logic
+    const handleSaveCourse = () => {
         if (!newCourseName) return;
         const targetSem = parseInt(newCourseSem);
         const catalogCourse = catalog.find(c => c.id === newCourseId);
@@ -323,7 +321,7 @@ const handleSaveCourse = () => {
                         const id = String(rawId).trim();
                         const course = courses.find(c => String(c.id).trim() === id);
                         
-                        // תיקון: אם הקורס לא קיים, isValid יהיה false (ולא undefined)
+                        // תיקון: אם הקורס לא קיים, isValid יהיה false
                         const isValid = course 
                             ? (course.completed || course.semester < checkSem) 
                             : false;
@@ -334,13 +332,12 @@ const handleSaveCourse = () => {
                     });
 
                     const safeStr = evalStr.replace(/[^truefalse\(\)\&\|!\s]/gi, "");
-                    
                     if (!safeStr.trim()) return true;
 
                     return new Function(`return (${safeStr});`)();
                 } catch (e) {
                     console.warn("Prereq check failed, bypassing:", e);
-                    return true; // במקרה של תקלה, לאפשר הוספה
+                    return true;
                 }
             };
 
@@ -367,7 +364,7 @@ const handleSaveCourse = () => {
             setIsEditing(false); setShowPrereqSelector(true); return;
         }
 
-        // בדיקה למניעת כפילויות (פותר את האזהרה בלוג)
+        // בדיקה למניעת כפילויות
         if (courses.some(c => c.id === courseData.id)) {
             alert("הקורס כבר קיים בלוח!");
             return;
@@ -439,8 +436,6 @@ const handleSaveCourse = () => {
             localStorage.removeItem("technion_planner_semesters_v5");
         }
     };
-
-
 
     return (
         <div className="flex flex-col h-screen overflow-hidden bg-slate-100 dark:bg-slate-900 font-sans text-slate-900 dark:text-slate-100 transition-colors duration-200">
@@ -638,12 +633,12 @@ const handleSaveCourse = () => {
                     </div>
                 </div>
               <div className="text-xs text-slate-500 px-4">
-                    Please report any issue{' '}
+                    Please report any issue to{' '}
                     <a 
-                        href="mailto:bananabreadproblems@gmail.com?subject=Hi! Please address this problem!" 
+                        href="mailto:bananabreadproblems@gmail.com?subject=BananaBread - Issue Report" 
                         className="font-bold text-indigo-600 hover:text-indigo-800 hover:underline transition-colors"
                     >
-                        HERE
+                        bananabreadproblems@gmail.com
                     </a>
                     &nbsp;&bull; BananaBread v24
                 </div>
