@@ -455,7 +455,7 @@ function DegreePlanner() {
                                 BananaBread
                             </span>
                             <span className="absolute -bottom-2 -left-2 text-xs font-medium text-slate-400 bg-slate-50/80 dark:bg-slate-700/80 px-1.5 rounded-full border border-slate-100 dark:border-slate-600">
-                                v24
+                                0.1.1
                             </span>
                         </h1>
                     </div>
@@ -663,7 +663,7 @@ function DegreePlanner() {
                     >
                         bananabreadproblems@gmail.com
                     </a>
-                    &nbsp;&bull; BananaBread v24
+                    &nbsp;&bull; BananaBread 0.1.1
                 </div>
             </div>
             
