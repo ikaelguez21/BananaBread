@@ -439,39 +439,49 @@ function DegreePlanner() {
 
     return (
         <div className="flex flex-col h-screen overflow-hidden bg-slate-100 dark:bg-slate-900 font-sans text-slate-900 dark:text-slate-100 transition-colors duration-200">
-            {/* HEADER */}
-            <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 shadow-sm z-40 px-6 py-3 flex justify-between items-center shrink-0 transition-colors">
+{/* HEADER */}
+            <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 shadow-sm z-40 px-6 py-4 flex justify-between items-center shrink-0 transition-colors">
                 <div className="flex items-center gap-6">
-                    <div className="relative group select-none"> 
-                        <h1 className="text-3xl font-extrabold relative z-10 py-1 px-2 flex items-center">
+                    {/* LOGO SECTION - WITH BACKGROUND IMAGE */}
+                    <div className="relative group select-none flex items-center justify-center"> 
+                        {/* תמונת הלוגו ברקע */}
+                        <img 
+                            src="bananaBreadLogo.png" 
+                            alt="Logo" 
+                            className="absolute w-28 h-28 opacity-15 rotate-12 pointer-events-none -left-4"
+                        />
+                        <h1 className="text-4xl font-extrabold relative z-10 py-1 px-2 flex items-center">
                             <span className="bg-gradient-to-r from-yellow-600 to-amber-700 dark:from-yellow-400 dark:to-amber-500 bg-clip-text text-transparent drop-shadow-sm">
                                 BananaBread
                             </span>
-                            <span className="absolute -bottom-1 -left-2 text-[10px] font-medium text-slate-400 bg-slate-50/80 dark:bg-slate-700/80 px-1.5 rounded-full border border-slate-100 dark:border-slate-600">
-                                v24
+                            <span className="absolute -bottom-2 -left-2 text-xs font-medium text-slate-400 bg-slate-50/80 dark:bg-slate-700/80 px-1.5 rounded-full border border-slate-100 dark:border-slate-600">
+                                0.1.1
                             </span>
                         </h1>
                     </div>
 
-                    <div className="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
-                    <div className="flex items-center gap-2">
-                        <button onClick={() => setShowTrackModal(true)} className="flex items-center gap-2 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-900/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-bold transition-colors">
-                            <Icons.BookOpen size={16}/> מסלול
+                    <div className="h-10 w-px bg-slate-200 dark:bg-slate-700 mx-4"></div>
+                    
+                    <div className="flex items-center gap-4">
+                        {/* כפתור מסלול - מוגדל */}
+                        <button onClick={() => setShowTrackModal(true)} className="flex items-center gap-3 px-6 py-3 bg-indigo-50 dark:bg-indigo-900/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 rounded-xl text-lg font-bold transition-all shadow-sm hover:shadow-md transform hover:scale-105">
+                            <Icons.BookOpen size={24}/> מסלול
                         </button>
-                        <button onClick={() => setShowAllConnections(!showAllConnections)} className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-bold transition-colors border ${showAllConnections ? 'bg-slate-800 text-white dark:bg-slate-200 dark:text-slate-900 border-slate-800' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700'}`}>
-                            {showAllConnections ? <Icons.EyeOff size={16}/> : <Icons.Eye size={16}/>} תלות
+                        
+                        <button onClick={() => setShowAllConnections(!showAllConnections)} className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-colors border ${showAllConnections ? 'bg-slate-800 text-white dark:bg-slate-200 dark:text-slate-900 border-slate-800' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700'}`}>
+                            {showAllConnections ? <Icons.EyeOff size={18}/> : <Icons.Eye size={18}/>} תלות
                         </button>
                         
                         <div className="relative group ml-4">
                             <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400">
-                                <Icons.Search size={14}/>
+                                <Icons.Search size={16}/>
                             </div>
                             <input 
                                 type="text" 
                                 placeholder="חיפוש מהיר..." 
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="pr-9 pl-3 py-1.5 bg-slate-100 dark:bg-slate-700 border border-transparent focus:bg-white dark:focus:bg-slate-600 focus:border-indigo-300 rounded-lg text-sm w-48 transition-all focus:w-64 outline-none text-slate-900 dark:text-white"
+                                className="pr-10 pl-3 py-2 bg-slate-100 dark:bg-slate-700 border border-transparent focus:bg-white dark:focus:bg-slate-600 focus:border-indigo-300 rounded-lg text-sm w-56 transition-all focus:w-72 outline-none text-slate-900 dark:text-white"
                             />
                             {searchQuery && <button onClick={() => setSearchQuery('')} className="absolute inset-y-0 left-0 flex items-center pl-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">✕</button>}
                         </div>
@@ -479,12 +489,18 @@ function DegreePlanner() {
                     {loadingStatus !== 'success' && <span className="text-xs flex items-center gap-1 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-2 py-1 rounded"><Icons.Loader size={12}/> {statusMessage}</span>}
                 </div>
 
-                <div className="flex items-center gap-3">
-                    <button onClick={() => setIsDarkMode(!isDarkMode)} className="text-slate-500 hover:text-amber-500 dark:text-slate-400 dark:hover:text-amber-300 p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-                        {isDarkMode ? <Icons.Sun size={18}/> : <Icons.Moon size={18}/>}
+                <div className="flex items-center gap-4">
+                    {/* כפתור מוד חושך - מוגדל */}
+                    <button onClick={() => setIsDarkMode(!isDarkMode)} className="text-slate-500 hover:text-amber-500 dark:text-slate-400 dark:hover:text-amber-300 p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                        {isDarkMode ? <Icons.Sun size={28}/> : <Icons.Moon size={28}/>}
                     </button>
-                    <div className="w-px h-6 bg-slate-200 dark:bg-slate-700"></div>
-                    <button onClick={resetAllData} className="text-slate-400 hover:text-red-500 p-2 hover:bg-red-50 dark:hover:bg-red-900/30 rounded"><Icons.Refresh size={16}/></button>
+                    
+                    <div className="w-px h-10 bg-slate-200 dark:bg-slate-700"></div>
+                    
+                    {/* כפתור מחיקה - מוגדל ואדום */}
+                    <button onClick={resetAllData} className="text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/40 border border-red-200 dark:border-red-800 p-3 rounded-xl transition-all shadow-sm hover:shadow-md transform hover:scale-105" title="מחק הכל והתחל מחדש">
+                        <Icons.Refresh size={28}/>
+                    </button>
                 </div>
             </div>
 
@@ -574,7 +590,14 @@ function DegreePlanner() {
                               <h2 className="font-bold text-slate-700 dark:text-slate-200">סמסטר {semNum}</h2>
                               <div className={`text-xs font-bold ${semCredits > 27 ? 'text-red-600 dark:text-red-400' : 'text-slate-400'}`}>{semCredits} נק'</div>
                           </div>
-                          <button onClick={() => openAddModal(semNum)} className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 p-1.5 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-colors"><Icons.PlusCircle size={20}/></button>
+                          {/* כפתור הוספה - מוגדל */}
+                          <button 
+                              onClick={() => openAddModal(semNum)} 
+                              className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all hover:scale-110 shadow-sm hover:shadow"
+                              title="הוסף קורס"
+                          >
+                              <Icons.PlusCircle size={30}/>
+                          </button>
                         </div>
 
                         {/* Course List */}
@@ -640,7 +663,7 @@ function DegreePlanner() {
                     >
                         bananabreadproblems@gmail.com
                     </a>
-                    &nbsp;&bull; BananaBread v24
+                    &nbsp;&bull; BananaBread 0.1.1
                 </div>
             </div>
             
