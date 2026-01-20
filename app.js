@@ -570,7 +570,8 @@ function DegreePlanner() {
             )}
 
             {/* MAIN BOARD */}
-            <div className="flex-1 overflow-x-auto overflow-y-hidden relative custom-scrollbar bg-slate-100 dark:bg-slate-900 transition-colors" ref={containerRef}>
+            {/* Added min-h-0 here to prevent flex overflow */}
+            <div className="flex-1 overflow-x-auto overflow-y-hidden relative custom-scrollbar bg-slate-100 dark:bg-slate-900 transition-colors min-h-0" ref={containerRef}>
                 <svg className="absolute top-0 left-0 w-full h-full pointer-events-none z-0" style={{minWidth: 'max-content', height: '100%'}}>
                     {connections.map((conn, i) => (
                         <path key={conn.id + i} d={conn.path} stroke={conn.color} strokeOpacity={conn.opacity} strokeWidth={conn.width || 2} className="connection-line" />
@@ -583,7 +584,7 @@ function DegreePlanner() {
                     const semCredits = semCourses.reduce((sum, c) => sum + (c.credits || 0), 0);
                     
                     return (
-                      <div key={semNum} onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, semNum)} className="w-80 flex flex-col h-[calc(100vh-140px)] rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm transition-colors hover:border-indigo-300 dark:hover:border-indigo-500 z-10">
+                      <div key={semNum} onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, semNum)} className="w-80 flex flex-col h-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm transition-colors hover:border-indigo-300 dark:hover:border-indigo-500 z-10">
                         {/* Semester Header */}
                         <div className={`p-3 border-b border-slate-100 dark:border-slate-700 rounded-t-2xl flex justify-between items-center ${semCredits > 27 ? 'bg-red-50 dark:bg-red-900/20' : 'bg-slate-50 dark:bg-slate-850'}`}>
                           <div>
@@ -635,7 +636,7 @@ function DegreePlanner() {
                     );
                   })}
                   
-                  <button onClick={() => setSemesterCount(c => c + 1)} className="w-12 h-[calc(100vh-140px)] rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 text-slate-400 dark:text-slate-600 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center justify-center transition-all">
+                  <button onClick={() => setSemesterCount(c => c + 1)} className="w-12 h-full rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 text-slate-400 dark:text-slate-600 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center justify-center transition-all">
                       <Icons.Plus size={24} />
                   </button>
                 </div>
