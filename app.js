@@ -109,12 +109,11 @@ function DegreePlanner() {
                 
                 const processedCatalog = coursesRaw.map(row => {
                     if (!row.id) return null;
-                    // --- REVERTED REGEX to strict 8 digits ---
                     const prereqArray = (row.prerequisites || "").match(/\d{8}/g)?.map(n => normalizeId(n)) || [];
                     
                     return {
                         id: normalizeId(row.id), 
-                        name: row.name || "ללא שם", 
+                        name: row.name || "ללא שם", // Reading 'name' column
                         credits: parseFloat(row.points || row.credits || 0),
                         faculty: row.faculty || "", 
                         recSem: 1, 
@@ -215,10 +214,40 @@ function DegreePlanner() {
 
     // --- HANDLERS ---
 
+    // === Helper for Course Names ===
+    const getCourseName = useCallback((id) => {
+        const found = catalog.find(c => c.id === id);
+        return found ? found.name : id;
+    }, [catalog]);
+    // ===============================
+
+    // === Add Prereq Handler ===
+    const handleAddPrereq = useCallback((prereqId, targetSemester) => {
+        const semToSet = Math.max(1, targetSemester);
+        setCourses(prev => {
+            const existing = prev.find(c => c.id === prereqId);
+            if (existing) {
+                return prev.map(c => c.id === prereqId ? { ...c, semester: semToSet } : c);
+            }
+            const catInfo = catalog.find(c => c.id === prereqId);
+            const newCourse = {
+                id: prereqId,
+                name: catInfo ? catInfo.name : prereqId,
+                credits: catInfo ? catInfo.credits : 0,
+                faculty: catInfo ? catInfo.faculty : '',
+                semester: semToSet,
+                prereqs: catInfo ? catInfo.prereqs : [],
+                prereqString: catInfo ? catInfo.prereqString : "",
+                completed: false
+            };
+            return [...prev, newCourse];
+        });
+    }, [catalog]);
+    // =================================================
+
     const handleTrackSelect = async (selectionId) => {
         if (!selectionId) return;
         
-        // Split "filename.csv:TrackName"
         const [fileName, trackName] = selectionId.split(':');
         
         if (courses.length > 0 && !window.confirm("טעינת מסלול תמחק את הקורסים הקיימים. להמשיך?")) return; 
@@ -228,7 +257,6 @@ function DegreePlanner() {
         setShowTrackModal(false);
         
         try {
-            // Fetch the CSV file (completeTracks.csv)
             const response = await fetch(fileName);
             if (!response.ok) throw new Error(`הקובץ ${fileName} לא נמצא`);
             
@@ -238,7 +266,6 @@ function DegreePlanner() {
                 header: true, 
                 skipEmptyLines: true,
                 complete: (results) => {
-                    // Filter the HUGE csv for just the rows matching our track name
                     const trackRows = results.data.filter(row => row.track_name && row.track_name.trim() === trackName);
                     
                     if (trackRows.length === 0) throw new Error(`המסלול ${trackName} לא נמצא בקובץ`);
@@ -252,14 +279,19 @@ function DegreePlanner() {
                         
                         if (semester > maxSem) maxSem = semester;
                         
-                        // Hydrate with full details from the already loaded catalog
                         const fullDetails = catalog.find(c => c.id === cId);
                         
                         if (fullDetails) {
                             newBoard.push({ ...fullDetails, semester: semester, completed: false });
                         } else {
-                            // Fallback if course not in main catalog
-                            newBoard.push({ id: cId, name: cId, credits: 0, semester: semester, completed: false });
+                            // HERE IS THE FIX: Try to read 'name' from the track row if available
+                            newBoard.push({ 
+                                id: cId, 
+                                name: row.name || cId, 
+                                credits: 0, 
+                                semester: semester, 
+                                completed: false 
+                            });
                         }
                     });
                     
@@ -301,7 +333,6 @@ function DegreePlanner() {
         const catalogCourse = catalog.find(c => c.id === newCourseId);
         const prereqStr = catalogCourse ? catalogCourse.prereqString : "";
         
-        // --- SYNC FIX: Ensure Prereqs Array matches String using strict 8 digits ---
         const derivedPrereqs = (prereqStr || "").match(/\d{8}/g)?.map(normalizeId) || [];
         const finalPrereqs = (newCoursePrereqs && newCoursePrereqs.length > 0) ? newCoursePrereqs : derivedPrereqs;
 
@@ -310,7 +341,7 @@ function DegreePlanner() {
             name: newCourseName, 
             semester: targetSem, 
             credits: parseFloat(newCourseCredits) || 0,
-            prereqs: finalPrereqs, // <--- Using the synced array fix
+            prereqs: finalPrereqs, 
             faculty: newCourseFaculty || '', 
             prereqString: prereqStr, 
             completed: false
@@ -320,13 +351,11 @@ function DegreePlanner() {
             setCourses(prev => [...prev.filter(c => c.id !== editingId), courseData]); setIsEditing(false); return;
         }
 
-        // --- Logic using Centralized Analysis ---
         let showMissingModal = false;
         let missingIds = [];
 
         if (prereqStr) {
             const analysis = analyzePrerequisites(prereqStr, targetSem, courses);
-            // If satisfied logic returns false AND potentially satisfied is false (meaning missing courses)
             if (!analysis.isSatisfied && !analysis.isPotentiallySatisfied) {
                 showMissingModal = true;
                 missingIds = analysis.missingIds;
@@ -605,6 +634,8 @@ function DegreePlanner() {
                                 onDragStart={handleDragStart}
                                 onHover={setHoveredCourse}
                                 onLeave={() => setHoveredCourse(null)}
+                                onAddPrereq={handleAddPrereq}
+                                getCourseName={getCourseName} // <--- PASSING THE HELPER
                                 setRef={el => courseRefs.current[course.id] = el}
                               />
                             );

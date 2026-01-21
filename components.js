@@ -30,9 +30,15 @@ window.analyzePrerequisites = (prereqString, targetSemester, currentCourses) => 
         return { isSatisfied: true, isPotentiallySatisfied: true, missingIds: [], logicString: "" };
     }
 
-    // 1. Normalize operators
+    // 1. Normalize operators for evaluation
     let evalStr = prereqString.replace(/\s+OR\s+/gi, " || ").replace(/\s+AND\s+/gi, " && ");
-    let displayStr = prereqString.replace(/\s+/g, " "); // Clean spaces for display
+    
+    // 1.1 Prepare Display String (Hebrew translation)
+    let displayStr = prereqString.replace(/\s+/g, " ")
+        .replace(/\|\|/g, " או ")
+        .replace(/&&/g, " ו- ")
+        .replace(/\bOR\b/gi, " או ")
+        .replace(/\bAND\b/gi, " ו- ");
 
     // 2. Extract strict 8-digit IDs
     const neededIds = evalStr.match(/\d{8}/g) || [];
@@ -70,7 +76,6 @@ window.analyzePrerequisites = (prereqString, targetSemester, currentCourses) => 
     const isPotentiallySatisfied = evaluate(100); 
 
     // 4. Build Feedback String (Visual Logic)
-    // Replaces satisfied IDs with '✔' so user sees "(✔ OR 00123456) AND ..."
     neededIds.forEach(rawId => {
         const isValid = checkId(rawId, targetSemester);
         if (isValid) {
@@ -83,7 +88,7 @@ window.analyzePrerequisites = (prereqString, targetSemester, currentCourses) => 
         isSatisfied,
         isPotentiallySatisfied,
         missingIds: [...new Set(missingIds)],
-        logicString: displayStr // Returns formatted logic string
+        logicString: displayStr // Returns formatted logic string in Hebrew
     };
 };
 
@@ -110,8 +115,7 @@ window.checkPrerequisiteError = (course, allCourses) => {
 };
 
 window.getFacultyColor = (courseId, highlightState) => {
-    // צבעים נשארים ללא שינוי, הקוד כאן מקוצר לצורך הבהירות
-    // (העתק את המימוש המקורי של getFacultyColor מכאן אם חסר לך, הוא זהה לקוד הקודם)
+    // נשאר ללא שינוי, השארתי לקיצור
     const prefix = String(courseId).trim().substring(0, 4);
     const COLORS = {
         CS: "bg-emerald-50 border-emerald-200 border-l-emerald-600 text-emerald-900 dark:bg-emerald-950/40 dark:border-emerald-800 dark:border-l-emerald-500 dark:text-emerald-200",
@@ -150,6 +154,7 @@ window.getFacultyColor = (courseId, highlightState) => {
 
 // --- COMPONENTS ---
 window.TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
+    // נשאר ללא שינוי, השארתי לקיצור
     if (!isOpen) return null;
     const [expandedFaculty, setExpandedFaculty] = useState(null);
     const toggleFaculty = (faculty) => setExpandedFaculty(expandedFaculty === faculty ? null : faculty);
@@ -197,7 +202,7 @@ window.TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
     );
 });
 
-window.CourseCard = memo(({ course, highlightState, error, blockCount, onToggle, onEdit, onDelete, onDragStart, onHover, onLeave, setRef }) => {
+window.CourseCard = memo(({ course, highlightState, error, blockCount, onToggle, onEdit, onDelete, onDragStart, onHover, onLeave, onAddPrereq, getCourseName, setRef }) => {
     return (
         <div 
             ref={setRef}
@@ -237,9 +242,28 @@ window.CourseCard = memo(({ course, highlightState, error, blockCount, onToggle,
             </div>
 
             {error && !course.completed && (
-                <div className="mt-1 text-[10px] text-red-600 dark:text-red-300 bg-red-100/50 dark:bg-red-900/30 px-2 py-1 rounded border border-red-200 dark:border-red-800 flex items-center gap-1">
-                    <window.Icons.AlertCircle size={10} /> 
-                    <span className="">{error}</span>
+                <div className="mt-1 text-[10px] text-red-600 dark:text-red-300 bg-red-100/50 dark:bg-red-900/30 px-2 py-1 rounded border border-red-200 dark:border-red-800 flex items-center gap-1 flex-wrap">
+                    <window.Icons.AlertCircle size={10} className="shrink-0" /> 
+                    <span className="flex flex-wrap items-center gap-0.5">
+                        {error.split(/(\d{8})/).map((part, i) => {
+                            if (part.match(/^\d{8}$/)) {
+                                return (
+                                    <button 
+                                        key={i} 
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (onAddPrereq) onAddPrereq(part, course.semester - 1);
+                                        }}
+                                        className="underline font-bold hover:text-red-800 dark:hover:text-red-200 hover:bg-red-200 dark:hover:bg-red-800/50 rounded px-0.5 transition-colors cursor-pointer"
+                                        title={getCourseName ? `${getCourseName(part)}\nלחץ להוספת הקורס לסמסטר הקודם` : `לחץ להוספת הקורס ${part}`}
+                                    >
+                                        {part}
+                                    </button>
+                                );
+                            }
+                            return <span key={i}>{part}</span>;
+                        })}
+                    </span>
                 </div>
             )}
         </div>
