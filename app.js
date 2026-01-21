@@ -6,7 +6,8 @@ const {
     TrackSelectionModal, 
     CourseCard, 
     normalizeId, 
-    checkPrerequisiteError, 
+    checkPrerequisiteError,
+    analyzePrerequisites, 
     getBlockingCount, 
     getAllAncestors, 
     getFacultyColor 
@@ -108,13 +109,15 @@ function DegreePlanner() {
                 
                 const processedCatalog = coursesRaw.map(row => {
                     if (!row.id) return null;
+                    const prereqArray = (row.prerequisites || "").match(/\d{8}/g)?.map(n => normalizeId(n)) || [];
+                    
                     return {
                         id: normalizeId(row.id), 
-                        name: row.name || "ללא שם", 
+                        name: row.name || "ללא שם", // Reading 'name' column
                         credits: parseFloat(row.points || row.credits || 0),
                         faculty: row.faculty || "", 
                         recSem: 1, 
-                        prereqs: (row.prerequisites || "").match(/\d{8}/g)?.map(n => normalizeId(n)) || [], 
+                        prereqs: prereqArray, 
                         prereqString: row.prerequisites || "" 
                     };
                 }).filter(Boolean);
@@ -211,10 +214,40 @@ function DegreePlanner() {
 
     // --- HANDLERS ---
 
+    // === Helper for Course Names ===
+    const getCourseName = useCallback((id) => {
+        const found = catalog.find(c => c.id === id);
+        return found ? found.name : id;
+    }, [catalog]);
+    // ===============================
+
+    // === Add Prereq Handler ===
+    const handleAddPrereq = useCallback((prereqId, targetSemester) => {
+        const semToSet = Math.max(1, targetSemester);
+        setCourses(prev => {
+            const existing = prev.find(c => c.id === prereqId);
+            if (existing) {
+                return prev.map(c => c.id === prereqId ? { ...c, semester: semToSet } : c);
+            }
+            const catInfo = catalog.find(c => c.id === prereqId);
+            const newCourse = {
+                id: prereqId,
+                name: catInfo ? catInfo.name : prereqId,
+                credits: catInfo ? catInfo.credits : 0,
+                faculty: catInfo ? catInfo.faculty : '',
+                semester: semToSet,
+                prereqs: catInfo ? catInfo.prereqs : [],
+                prereqString: catInfo ? catInfo.prereqString : "",
+                completed: false
+            };
+            return [...prev, newCourse];
+        });
+    }, [catalog]);
+    // =================================================
+
     const handleTrackSelect = async (selectionId) => {
         if (!selectionId) return;
         
-        // Split "filename.csv:TrackName"
         const [fileName, trackName] = selectionId.split(':');
         
         if (courses.length > 0 && !window.confirm("טעינת מסלול תמחק את הקורסים הקיימים. להמשיך?")) return; 
@@ -224,7 +257,6 @@ function DegreePlanner() {
         setShowTrackModal(false);
         
         try {
-            // Fetch the CSV file (completeTracks.csv)
             const response = await fetch(fileName);
             if (!response.ok) throw new Error(`הקובץ ${fileName} לא נמצא`);
             
@@ -234,7 +266,6 @@ function DegreePlanner() {
                 header: true, 
                 skipEmptyLines: true,
                 complete: (results) => {
-                    // Filter the HUGE csv for just the rows matching our track name
                     const trackRows = results.data.filter(row => row.track_name && row.track_name.trim() === trackName);
                     
                     if (trackRows.length === 0) throw new Error(`המסלול ${trackName} לא נמצא בקובץ`);
@@ -248,14 +279,19 @@ function DegreePlanner() {
                         
                         if (semester > maxSem) maxSem = semester;
                         
-                        // Hydrate with full details from the already loaded catalog
                         const fullDetails = catalog.find(c => c.id === cId);
                         
                         if (fullDetails) {
                             newBoard.push({ ...fullDetails, semester: semester, completed: false });
                         } else {
-                            // Fallback if course not in main catalog
-                            newBoard.push({ id: cId, name: cId, credits: 0, semester: semester, completed: false });
+                            // HERE IS THE FIX: Try to read 'name' from the track row if available
+                            newBoard.push({ 
+                                id: cId, 
+                                name: row.name || cId, 
+                                credits: 0, 
+                                semester: semester, 
+                                completed: false 
+                            });
                         }
                     });
                     
@@ -297,60 +333,32 @@ function DegreePlanner() {
         const catalogCourse = catalog.find(c => c.id === newCourseId);
         const prereqStr = catalogCourse ? catalogCourse.prereqString : "";
         
+        const derivedPrereqs = (prereqStr || "").match(/\d{8}/g)?.map(normalizeId) || [];
+        const finalPrereqs = (newCoursePrereqs && newCoursePrereqs.length > 0) ? newCoursePrereqs : derivedPrereqs;
+
         const courseData = {
             id: newCourseId || Math.random().toString(36).substr(2, 9),
-            name: newCourseName, semester: targetSem, credits: parseFloat(newCourseCredits) || 0,
-            prereqs: newCoursePrereqs || [], faculty: newCourseFaculty || '', prereqString: prereqStr, completed: false
+            name: newCourseName, 
+            semester: targetSem, 
+            credits: parseFloat(newCourseCredits) || 0,
+            prereqs: finalPrereqs, 
+            faculty: newCourseFaculty || '', 
+            prereqString: prereqStr, 
+            completed: false
         };
 
         if (editingId) {
             setCourses(prev => [...prev.filter(c => c.id !== editingId), courseData]); setIsEditing(false); return;
         }
 
-        // --- לוגיקה מתוקנת 3.0: טיפול בערכי undefined ---
         let showMissingModal = false;
         let missingIds = [];
 
         if (prereqStr) {
-            const checkLogic = (checkSem) => {
-                try {
-                    let evalStr = prereqStr.replace(/\s+OR\s+/gi, " || ").replace(/\s+AND\s+/gi, " && ");
-                    const neededIds = evalStr.match(/\d{6,9}/g) || [];
-                    
-                    neededIds.forEach(rawId => {
-                        const id = String(rawId).trim();
-                        const course = courses.find(c => String(c.id).trim() === id);
-                        
-                        // תיקון: אם הקורס לא קיים, isValid יהיה false
-                        const isValid = course 
-                            ? (course.completed || course.semester < checkSem) 
-                            : false;
-                        
-                        // מחליפים את ה-ID ב-true או false
-                        const idRegex = new RegExp(`\\b${rawId}\\b`, 'g');
-                        evalStr = evalStr.replace(idRegex, isValid.toString());
-                    });
-
-                    const safeStr = evalStr.replace(/[^truefalse\(\)\&\|!\s]/gi, "");
-                    if (!safeStr.trim()) return true;
-
-                    return new Function(`return (${safeStr});`)();
-                } catch (e) {
-                    console.warn("Prereq check failed, bypassing:", e);
-                    return true;
-                }
-            };
-
-            // 1. בדיקה האם התנאי מתקיים כרגע
-            const isSatisfied = checkLogic(targetSem);
-            
-            // 2. בדיקה האם הקורסים בכלל קיימים בלוח (בדיקה מול סמסטר עתידי)
-            const isPotentiallySatisfied = checkLogic(100);
-
-            // מציגים התראה רק אם התנאי לא מתקיים וגם הקורסים חסרים פיזית
-            if (!isSatisfied && !isPotentiallySatisfied) {
+            const analysis = analyzePrerequisites(prereqStr, targetSem, courses);
+            if (!analysis.isSatisfied && !analysis.isPotentiallySatisfied) {
                 showMissingModal = true;
-                missingIds = (prereqStr.match(/\d{6,9}/g) || []).filter(pid => !courses.find(c => c.id === pid));
+                missingIds = analysis.missingIds;
             }
         }
         
@@ -364,7 +372,6 @@ function DegreePlanner() {
             setIsEditing(false); setShowPrereqSelector(true); return;
         }
 
-        // בדיקה למניעת כפילויות
         if (courses.some(c => c.id === courseData.id)) {
             alert("הקורס כבר קיים בלוח!");
             return;
@@ -455,7 +462,7 @@ function DegreePlanner() {
                                 BananaBread
                             </span>
                             <span className="absolute -bottom-2 -left-2 text-xs font-medium text-slate-400 bg-slate-50/80 dark:bg-slate-700/80 px-1.5 rounded-full border border-slate-100 dark:border-slate-600">
-                                0.1.1
+                                0.1.2
                             </span>
                         </h1>
                     </div>
@@ -627,6 +634,8 @@ function DegreePlanner() {
                                 onDragStart={handleDragStart}
                                 onHover={setHoveredCourse}
                                 onLeave={() => setHoveredCourse(null)}
+                                onAddPrereq={handleAddPrereq}
+                                getCourseName={getCourseName} // <--- PASSING THE HELPER
                                 setRef={el => courseRefs.current[course.id] = el}
                               />
                             );
@@ -664,7 +673,7 @@ function DegreePlanner() {
                     >
                         bananabreadproblems@gmail.com
                     </a>
-                    &nbsp;&bull; BananaBread 0.1.1
+                    &nbsp;&bull; BananaBread 0.1.2
                 </div>
             </div>
             
