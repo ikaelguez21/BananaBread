@@ -6,7 +6,8 @@ const {
     TrackSelectionModal, 
     CourseCard, 
     normalizeId, 
-    checkPrerequisiteError, 
+    checkPrerequisiteError,
+    analyzePrerequisites, 
     getBlockingCount, 
     getAllAncestors, 
     getFacultyColor 
@@ -108,13 +109,16 @@ function DegreePlanner() {
                 
                 const processedCatalog = coursesRaw.map(row => {
                     if (!row.id) return null;
+                    // --- REVERTED REGEX to strict 8 digits ---
+                    const prereqArray = (row.prerequisites || "").match(/\d{8}/g)?.map(n => normalizeId(n)) || [];
+                    
                     return {
                         id: normalizeId(row.id), 
                         name: row.name || "ללא שם", 
                         credits: parseFloat(row.points || row.credits || 0),
                         faculty: row.faculty || "", 
                         recSem: 1, 
-                        prereqs: (row.prerequisites || "").match(/\d{8}/g)?.map(n => normalizeId(n)) || [], 
+                        prereqs: prereqArray, 
                         prereqString: row.prerequisites || "" 
                     };
                 }).filter(Boolean);
@@ -297,60 +301,35 @@ function DegreePlanner() {
         const catalogCourse = catalog.find(c => c.id === newCourseId);
         const prereqStr = catalogCourse ? catalogCourse.prereqString : "";
         
+        // --- SYNC FIX: Ensure Prereqs Array matches String using strict 8 digits ---
+        const derivedPrereqs = (prereqStr || "").match(/\d{8}/g)?.map(normalizeId) || [];
+        const finalPrereqs = (newCoursePrereqs && newCoursePrereqs.length > 0) ? newCoursePrereqs : derivedPrereqs;
+
         const courseData = {
             id: newCourseId || Math.random().toString(36).substr(2, 9),
-            name: newCourseName, semester: targetSem, credits: parseFloat(newCourseCredits) || 0,
-            prereqs: newCoursePrereqs || [], faculty: newCourseFaculty || '', prereqString: prereqStr, completed: false
+            name: newCourseName, 
+            semester: targetSem, 
+            credits: parseFloat(newCourseCredits) || 0,
+            prereqs: finalPrereqs, // <--- Using the synced array fix
+            faculty: newCourseFaculty || '', 
+            prereqString: prereqStr, 
+            completed: false
         };
 
         if (editingId) {
             setCourses(prev => [...prev.filter(c => c.id !== editingId), courseData]); setIsEditing(false); return;
         }
 
-        // --- לוגיקה מתוקנת 3.0: טיפול בערכי undefined ---
+        // --- Logic using Centralized Analysis ---
         let showMissingModal = false;
         let missingIds = [];
 
         if (prereqStr) {
-            const checkLogic = (checkSem) => {
-                try {
-                    let evalStr = prereqStr.replace(/\s+OR\s+/gi, " || ").replace(/\s+AND\s+/gi, " && ");
-                    const neededIds = evalStr.match(/\d{6,9}/g) || [];
-                    
-                    neededIds.forEach(rawId => {
-                        const id = String(rawId).trim();
-                        const course = courses.find(c => String(c.id).trim() === id);
-                        
-                        // תיקון: אם הקורס לא קיים, isValid יהיה false
-                        const isValid = course 
-                            ? (course.completed || course.semester < checkSem) 
-                            : false;
-                        
-                        // מחליפים את ה-ID ב-true או false
-                        const idRegex = new RegExp(`\\b${rawId}\\b`, 'g');
-                        evalStr = evalStr.replace(idRegex, isValid.toString());
-                    });
-
-                    const safeStr = evalStr.replace(/[^truefalse\(\)\&\|!\s]/gi, "");
-                    if (!safeStr.trim()) return true;
-
-                    return new Function(`return (${safeStr});`)();
-                } catch (e) {
-                    console.warn("Prereq check failed, bypassing:", e);
-                    return true;
-                }
-            };
-
-            // 1. בדיקה האם התנאי מתקיים כרגע
-            const isSatisfied = checkLogic(targetSem);
-            
-            // 2. בדיקה האם הקורסים בכלל קיימים בלוח (בדיקה מול סמסטר עתידי)
-            const isPotentiallySatisfied = checkLogic(100);
-
-            // מציגים התראה רק אם התנאי לא מתקיים וגם הקורסים חסרים פיזית
-            if (!isSatisfied && !isPotentiallySatisfied) {
+            const analysis = analyzePrerequisites(prereqStr, targetSem, courses);
+            // If satisfied logic returns false AND potentially satisfied is false (meaning missing courses)
+            if (!analysis.isSatisfied && !analysis.isPotentiallySatisfied) {
                 showMissingModal = true;
-                missingIds = (prereqStr.match(/\d{6,9}/g) || []).filter(pid => !courses.find(c => c.id === pid));
+                missingIds = analysis.missingIds;
             }
         }
         
@@ -364,7 +343,6 @@ function DegreePlanner() {
             setIsEditing(false); setShowPrereqSelector(true); return;
         }
 
-        // בדיקה למניעת כפילויות
         if (courses.some(c => c.id === courseData.id)) {
             alert("הקורס כבר קיים בלוח!");
             return;
@@ -455,7 +433,7 @@ function DegreePlanner() {
                                 BananaBread
                             </span>
                             <span className="absolute -bottom-2 -left-2 text-xs font-medium text-slate-400 bg-slate-50/80 dark:bg-slate-700/80 px-1.5 rounded-full border border-slate-100 dark:border-slate-600">
-                                0.1.1
+                                0.1.2
                             </span>
                         </h1>
                     </div>
@@ -664,7 +642,7 @@ function DegreePlanner() {
                     >
                         bananabreadproblems@gmail.com
                     </a>
-                    &nbsp;&bull; BananaBread 0.1.1
+                    &nbsp;&bull; BananaBread 0.1.2
                 </div>
             </div>
             

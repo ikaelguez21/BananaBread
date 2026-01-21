@@ -4,7 +4,6 @@ const { memo, useState } = React;
 // --- HELPERS ---
 window.normalizeId = (id) => String(id).trim();
 
-// Recursively find all ancestors (prerequisites of prerequisites)
 window.getAllAncestors = (courseId, allCourses) => {
     const ancestors = new Set();
     try {
@@ -21,72 +20,99 @@ window.getAllAncestors = (courseId, allCourses) => {
     return ancestors;
 };
 
-// Count how many future courses are blocked by this one
 window.getBlockingCount = (courseId, allCourses) => {
     return allCourses.filter(c => c.prereqs && c.prereqs.includes(courseId)).length;
 };
 
-// Check if prerequisites are met using strict 8-digit matching
-window.checkPrerequisiteLogic = (prereqString, targetSemester, currentCourses) => {
-    if (!prereqString || typeof prereqString !== 'string' || !prereqString.trim()) return true;
-    try {
-        // STRICT: Only look for exactly 8 digits
-        const courseIds = prereqString.match(/\d{8}/g);
-        if (!courseIds) return true;
-
-        const completionMap = {};
-        courseIds.forEach(id => {
-            const normalizedId = window.normalizeId(id);
-            const courseInBoard = currentCourses.find(c => c.id === normalizedId);
-            // A prereq is met if it's marked completed OR it's in a previous semester
-            const isCompleted = (courseInBoard && courseInBoard.completed) || (courseInBoard && courseInBoard.semester < targetSemester);
-            completionMap[id] = isCompleted;
-        });
-
-        let cleanStr = prereqString;
-        // Replace IDs in the string with "true" or "false"
-        const ids = Object.keys(completionMap);
-        ids.forEach(id => {
-             cleanStr = cleanStr.split(id).join(completionMap[id].toString());
-        });
-
-        // Security: Remove unsafe characters before evaluating
-        const safeEvalStr = cleanStr.replace(/[^truefalse\(\)\&\|!\s]/gi, "");
-        const result = new Function(`return (${safeEvalStr});`)();
-        return !!result;
-
-    } catch (e) {
-        // Fallback simple logic
-        const values = Object.values(completionMap || {});
-        return values.length > 1 && values.some(v => v);
+// --- UPDATED: Smart Logic Analysis (Strict 8 Digits) ---
+window.analyzePrerequisites = (prereqString, targetSemester, currentCourses) => {
+    if (!prereqString || typeof prereqString !== 'string' || !prereqString.trim()) {
+        return { isSatisfied: true, isPotentiallySatisfied: true, missingIds: [], logicString: "" };
     }
+
+    // 1. Normalize operators
+    let evalStr = prereqString.replace(/\s+OR\s+/gi, " || ").replace(/\s+AND\s+/gi, " && ");
+    let displayStr = prereqString.replace(/\s+/g, " "); // Clean spaces for display
+
+    // 2. Extract strict 8-digit IDs
+    const neededIds = evalStr.match(/\d{8}/g) || [];
+    const missingIds = []; 
+    
+    const checkId = (rawId, checkSem) => {
+        const id = window.normalizeId(rawId);
+        const course = currentCourses.find(c => c.id === id);
+        
+        // If missing entirely from board (for Add Modal logic)
+        if (!course && checkSem === targetSemester) {
+            missingIds.push(id);
+        }
+
+        return course ? (course.completed || course.semester < checkSem) : false;
+    };
+
+    // 3. Evaluate Boolean Logic
+    const evaluate = (checkSem) => {
+        let localStr = evalStr;
+        neededIds.forEach(rawId => {
+            const isValid = checkId(rawId, checkSem);
+            // Strict replacement to avoid partial matches
+            const idRegex = new RegExp(`\\b${rawId}\\b`, 'g');
+            localStr = localStr.replace(idRegex, isValid.toString());
+        });
+        try {
+            const safeStr = localStr.replace(/[^truefalse\(\)\&\|!\s]/gi, "");
+            if (!safeStr.trim()) return true;
+            return new Function(`return (${safeStr});`)();
+        } catch (e) { return true; }
+    };
+
+    const isSatisfied = evaluate(targetSemester);
+    const isPotentiallySatisfied = evaluate(100); 
+
+    // 4. Build Feedback String (Visual Logic)
+    // Replaces satisfied IDs with '✔' so user sees "(✔ OR 00123456) AND ..."
+    neededIds.forEach(rawId => {
+        const isValid = checkId(rawId, targetSemester);
+        if (isValid) {
+            const idRegex = new RegExp(`\\b${rawId}\\b`, 'g');
+            displayStr = displayStr.replace(idRegex, "✔");
+        }
+    });
+
+    return {
+        isSatisfied,
+        isPotentiallySatisfied,
+        missingIds: [...new Set(missingIds)],
+        logicString: displayStr // Returns formatted logic string
+    };
 };
 
 window.checkPrerequisiteError = (course, allCourses) => {
     try {
-        // Priority 1: Complex String Logic
         if (course.prereqString) {
-            const isSatisfied = window.checkPrerequisiteLogic(course.prereqString, course.semester, allCourses);
-            return isSatisfied ? null : "דרישות הקדם לא הושלמו";
+            const { isSatisfied, logicString } = window.analyzePrerequisites(course.prereqString, course.semester, allCourses);
+            if (!isSatisfied) {
+                // מציג למשתמש את הלוגיקה המפורשת
+                return `חסר: ${logicString}`;
+            }
+            return null;
         }
         
-        // Priority 2: Simple Array (Fallback)
         if (course.prereqs && course.prereqs.length > 0) {
-            const missing = course.prereqs.some(pid => {
+            const missing = course.prereqs.filter(pid => {
                 const pre = allCourses.find(c => c.id === pid);
                 return !pre || (!pre.completed && pre.semester >= course.semester);
             });
-            return missing ? "חסרים קדמים" : null;
+            if (missing.length > 0) return `חסר: ${missing.join(', ')}`;
         }
         return null;
     } catch (e) { return null; }
 };
 
-// --- OPTIMIZED: Direct ID Prefix -> Color Mapping ---
 window.getFacultyColor = (courseId, highlightState) => {
+    // צבעים נשארים ללא שינוי, הקוד כאן מקוצר לצורך הבהירות
+    // (העתק את המימוש המקורי של getFacultyColor מכאן אם חסר לך, הוא זהה לקוד הקודם)
     const prefix = String(courseId).trim().substring(0, 4);
-    
-    // 1. Define your Color Groups
     const COLORS = {
         CS: "bg-emerald-50 border-emerald-200 border-l-emerald-600 text-emerald-900 dark:bg-emerald-950/40 dark:border-emerald-800 dark:border-l-emerald-500 dark:text-emerald-200",
         EE: "bg-sky-100 border-sky-300 border-l-sky-600 text-sky-900 dark:bg-sky-900/30 dark:border-sky-700 dark:text-sky-100",
@@ -100,29 +126,17 @@ window.getFacultyColor = (courseId, highlightState) => {
         DEFAULT: "bg-white border-slate-200 border-l-slate-400 text-slate-700 dark:bg-slate-800 dark:border-slate-600 dark:border-l-slate-400 dark:text-slate-300"
     };
 
-    // 2. Map Prefix -> Color Group Key
     let group = "DEFAULT";
-    
-    // CS & Software
     if (["0233", "0234", "0236", "0238"].includes(prefix)) group = "CS";
-    // Electrical & Computer Eng
     else if (["0044", "0045", "0046", "0048", "0049", "0440"].includes(prefix)) group = "EE";
-    // Industrial & Data
     else if (["0094", "0095", "0096", "0097", "0098", "0099"].includes(prefix)) group = "DATA";
-    // Aerospace
     else if (["0084", "0085", "0086", "0088", "0738", "5208"].includes(prefix)) group = "AERO";
-    // Mechanical, Materials, Chemistry
     else if (["0034", "0035", "0036", "0038", "0314", "0315", "0316", "0318", "0123", "0124", "0125", "0126", "0127", "0128", "0054", "0056", "0058"].includes(prefix)) group = "MECH";
-    // Civil & Environmental
     else if (["0014", "0015", "0016", "0017", "0018", "0019"].includes(prefix)) group = "CIVIL";
-    // Physics
     else if (["0113", "0114", "0115", "0116", "0117", "0118"].includes(prefix)) group = "PHYS";
-    // Math & Education
     else if (["0103", "0104", "0106", "0108", "0196", "0197", "0213", "0214", "0216", "0218"].includes(prefix)) group = "MATH";
-    // Medicine, Bio, Food
     else if (["0064", "0066", "0068", "0134", "0136", "0138", "0274", "0275", "0276", "0277", "0278", "0334", "0335", "0336", "0337", "0338", "0648", "0204", "0205", "0206", "0207", "0208", "0209"].includes(prefix)) group = "BIO";
 
-    // 3. Apply Highlight States (Dimming/Focus)
     const colorClass = COLORS[group];
     const baseStyle = "border-l-[4px] shadow-sm hover:shadow-md transition-all";
 
@@ -135,7 +149,6 @@ window.getFacultyColor = (courseId, highlightState) => {
 };
 
 // --- COMPONENTS ---
-
 window.TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
     if (!isOpen) return null;
     const [expandedFaculty, setExpandedFaculty] = useState(null);
@@ -184,8 +197,6 @@ window.TrackSelectionModal = memo(({ isOpen, onClose, onSelectTrack }) => {
     );
 });
 
-// התאמה של הגודל וכו
-
 window.CourseCard = memo(({ course, highlightState, error, blockCount, onToggle, onEdit, onDelete, onDragStart, onHover, onLeave, setRef }) => {
     return (
         <div 
@@ -194,7 +205,6 @@ window.CourseCard = memo(({ course, highlightState, error, blockCount, onToggle,
             onDragStart={(e) => onDragStart(e, course)} 
             onMouseEnter={() => onHover(course)} 
             onMouseLeave={onLeave} 
-            // שינוי 1: הוספתי pb-10 כדי לפנות מקום לסרגל הכלים התחתון, ו-h-auto כדי שהגובה יגדל לפי התוכן
             className={`relative p-3 pb-10 rounded-xl border select-none group course-card h-auto
                 ${window.getFacultyColor(course.id, highlightState)} 
                 ${error && !course.completed ? '!border-red-400 !bg-red-50 dark:!bg-red-900/20 dark:!border-red-500' : ''}
@@ -204,7 +214,6 @@ window.CourseCard = memo(({ course, highlightState, error, blockCount, onToggle,
         >
             <div className="flex justify-between items-start gap-2 mb-2">
                 <div className="flex-1 min-w-0">
-                    {/* שינוי 2: הסרתי את truncate כדי שהשם המלא יופיע גם אם הוא ארוך */}
                     <h4 className={`font-bold text-sm leading-tight ${course.completed ? 'line-through opacity-60' : ''}`} title={course.name}>{course.name}</h4>
                     <div className="flex items-center gap-2 mt-1">
                         <span className="text-[10px] bg-slate-100 dark:bg-slate-950/50 px-1.5 rounded text-slate-500 dark:text-slate-400 font-mono">{course.id}</span>
@@ -230,7 +239,6 @@ window.CourseCard = memo(({ course, highlightState, error, blockCount, onToggle,
             {error && !course.completed && (
                 <div className="mt-1 text-[10px] text-red-600 dark:text-red-300 bg-red-100/50 dark:bg-red-900/30 px-2 py-1 rounded border border-red-200 dark:border-red-800 flex items-center gap-1">
                     <window.Icons.AlertCircle size={10} /> 
-                    {/* שינוי 3: הסרתי את truncate כדי שהודעת השגיאה המלאה תופיע */}
                     <span className="">{error}</span>
                 </div>
             )}
