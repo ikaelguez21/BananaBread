@@ -284,7 +284,6 @@ function DegreePlanner() {
                         if (fullDetails) {
                             newBoard.push({ ...fullDetails, semester: semester, completed: false });
                         } else {
-                            // HERE IS THE FIX: Try to read 'name' from the track row if available
                             newBoard.push({ 
                                 id: cId, 
                                 name: row.name || cId, 
@@ -315,6 +314,33 @@ function DegreePlanner() {
     const handleDeleteCourse = useCallback((id) => {
         if(window.confirm("למחוק קורס זה?")) setCourses(prev => prev.filter(c => c.id !== id));
     }, []);
+
+    // === מחיקת סמסטר והזזת קורסים (החדש) ===
+    const handleDeleteSemester = useCallback((semNum) => {
+        if (semesterCount <= 1) {
+            alert("לא ניתן למחוק את הסמסטר היחיד שנותר.");
+            return;
+        }
+        
+        if (!window.confirm(`האם אתה בטוח שברצונך למחוק את סמסטר ${semNum}?\nפעולה זו תמחק את כל הקורסים בסמסטר זה, ותזיז את כל הסמסטרים הבאים אחורה.`)) return;
+
+        setCourses(prev => {
+            // 1. הסר את כל הקורסים שנמצאים בסמסטר שנמחק
+            const filtered = prev.filter(c => c.semester !== semNum);
+            
+            // 2. עבור כל קורס שנשאר: אם הוא היה בסמסטר מתקדם יותר, הקטן את מספר הסמסטר שלו ב-1
+            return filtered.map(c => {
+                if (c.semester > semNum) {
+                    return { ...c, semester: c.semester - 1 };
+                }
+                return c;
+            });
+        });
+
+        // 3. הקטן את ספירת הסמסטרים הכללית
+        setSemesterCount(prev => prev - 1);
+    }, [semesterCount]);
+    // ============================================
 
     // Drag & Drop
     const handleDragStart = useCallback((e, course) => { setDraggedCourse(course); }, []);
@@ -455,7 +481,7 @@ function DegreePlanner() {
                         <img 
                             src="bananaBreadLogo.png" 
                             alt="Logo" 
-                            className="absolute w-28 h-28 opacity-15 rotate-12 pointer-events-none -left-4"
+                            className="absolute w-40 h-34 opacity-50 rotate-12 pointer-events-none -left-8"
                         />
                         <h1 className="text-4xl font-extrabold relative z-10 py-1 px-2 flex items-center">
                             <span className="bg-gradient-to-r from-yellow-600 to-amber-700 dark:from-yellow-400 dark:to-amber-500 bg-clip-text text-transparent drop-shadow-sm">
@@ -601,14 +627,22 @@ function DegreePlanner() {
                                   {semCredits > 27 && <span>- לתשומת לבך: סמסטר עמוס!</span>}
                               </div>
                           </div>
-                          {/* כפתור הוספה - מוגדל */}
-                          <button 
-                              onClick={() => openAddModal(semNum)} 
-                              className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all hover:scale-110 shadow-sm hover:shadow"
-                              title="הוסף קורס"
-                          >
-                              <Icons.PlusCircle size={30}/>
-                          </button>
+                          <div className="flex items-center gap-1">
+                              <button 
+                                  onClick={() => handleDeleteSemester(semNum)}
+                                  className="text-slate-400 hover:text-red-600 dark:hover:text-red-400 p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all hover:scale-110 shadow-sm hover:shadow"
+                                  title="מחק סמסטר (מוחק את הקורסים ומזיז סמסטרים עוקבים)"
+                              >
+                                  <Icons.Trash2 size={20}/>
+                              </button>
+                              <button 
+                                  onClick={() => openAddModal(semNum)} 
+                                  className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 p-2 hover:bg-white dark:hover:bg-slate-700 rounded-full transition-all hover:scale-110 shadow-sm hover:shadow"
+                                  title="הוסף קורס"
+                              >
+                                  <Icons.PlusCircle size={30}/>
+                              </button>
+                          </div>
                         </div>
 
                         {/* Course List */}
