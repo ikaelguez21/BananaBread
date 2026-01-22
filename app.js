@@ -462,7 +462,7 @@ function DegreePlanner() {
                                 BananaBread
                             </span>
                             <span className="absolute -bottom-2 -left-2 text-xs font-medium text-slate-400 bg-slate-50/80 dark:bg-slate-700/80 px-1.5 rounded-full border border-slate-100 dark:border-slate-600">
-                                0.1.2
+                                0.1.3
                             </span>
                         </h1>
                     </div>
@@ -612,7 +612,13 @@ function DegreePlanner() {
                         <div className="flex-1 overflow-y-auto p-2 space-y-2 custom-scrollbar bg-slate-50/50 dark:bg-slate-900/50">
                           {semCourses.length === 0 && (
                               <div className="h-full flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 gap-2">
-                                  <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center"><Icons.Plus size={20}/></div>
+                                  <button 
+                                      onClick={() => openAddModal(semNum)} 
+                                      className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-indigo-500 transition-all cursor-pointer shadow-sm hover:shadow hover:scale-105"
+                                      title="הוסף קורס לסמסטר זה"
+                                  >
+                                      <Icons.Plus size={20}/>
+                                  </button>
                                   <span className="text-xs">גרירה או הוספה</span>
                               </div>
                           )}
@@ -673,7 +679,7 @@ function DegreePlanner() {
                     >
                         bananabreadproblems@gmail.com
                     </a>
-                    &nbsp;&bull; BananaBread 0.1.2
+                    &nbsp;&bull; BananaBread 0.1.3
                 </div>
             </div>
             
