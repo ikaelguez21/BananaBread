@@ -6,7 +6,7 @@ const {
     TrackSelectionModal, 
     CourseCard, 
     normalizeId, 
-    checkPrerequisiteError,
+    checkPrerequisiteError, 
     analyzePrerequisites, 
     getBlockingCount, 
     getAllAncestors, 
@@ -596,7 +596,10 @@ function DegreePlanner() {
                         <div className={`p-3 border-b border-slate-100 dark:border-slate-700 rounded-t-2xl flex justify-between items-center ${semCredits > 27 ? 'bg-red-50 dark:bg-red-900/20' : 'bg-slate-50 dark:bg-slate-850'}`}>
                           <div>
                               <h2 className="font-bold text-slate-700 dark:text-slate-200">סמסטר {semNum}</h2>
-                              <div className={`text-xs font-bold ${semCredits > 27 ? 'text-red-600 dark:text-red-400' : 'text-slate-400'}`}>{semCredits} נק'</div>
+                              <div className={`text-xs font-bold flex items-center gap-1 ${semCredits > 27 ? 'text-red-600 dark:text-red-400' : 'text-slate-400'}`}>
+                                  <span>{semCredits} נק'</span>
+                                  {semCredits > 27 && <span>- לתשומת לבך: סמסטר עמוס!</span>}
+                              </div>
                           </div>
                           {/* כפתור הוספה - מוגדל */}
                           <button 
