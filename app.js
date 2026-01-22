@@ -481,7 +481,7 @@ function DegreePlanner() {
                         <img 
                             src="bananaBreadLogo.png" 
                             alt="Logo" 
-                            className="absolute w-40 h-34 opacity-50 rotate-12 pointer-events-none -left-8"
+                            className="absolute w-40 h-34 opacity-50 rotate-12 pointer-events-none -left-8 dark:invert"
                         />
                         <h1 className="text-4xl font-extrabold relative z-10 py-1 px-2 flex items-center">
                             <span className="bg-gradient-to-r from-yellow-600 to-amber-700 dark:from-yellow-400 dark:to-amber-500 bg-clip-text text-transparent drop-shadow-sm">
