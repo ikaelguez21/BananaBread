@@ -9,7 +9,8 @@ interface SemesterColumnProps {
   onToggleComplete: (courseId: string) => void;
   onDelete: (courseId: string) => void;
   onFocusCourse: (courseId: string | null) => void;
-  getCourseError: (course: PlannerCourse) => string | null;
+  getCoursePrereqMeta: (course: PlannerCourse) => { error: string | null; missingIds: string[] };
+  onAddPrereq: (missingId: string, targetSemester: number) => void;
 }
 
 export default function SemesterColumn({
@@ -19,7 +20,8 @@ export default function SemesterColumn({
   onToggleComplete,
   onDelete,
   onFocusCourse,
-  getCourseError
+  getCoursePrereqMeta,
+  onAddPrereq
 }: SemesterColumnProps) {
   const droppableId = `semester-${semester}`;
   const { setNodeRef, isOver } = useDroppable({ id: droppableId });
@@ -35,17 +37,22 @@ export default function SemesterColumn({
       </div>
       <div className="course-list">
         {courses.length > 0 ? (
-          courses.map((course) => (
-            <CourseCard
-              key={course.id}
-              course={course}
-              error={getCourseError(course) ?? undefined}
-              blockCount={blocksByCourse[course.id] ?? 0}
-              onToggleComplete={onToggleComplete}
-              onDelete={onDelete}
-              onFocus={onFocusCourse}
-            />
-          ))
+          courses.map((course) => {
+            const prereqMeta = getCoursePrereqMeta(course);
+            return (
+              <CourseCard
+                key={course.id}
+                course={course}
+                error={prereqMeta.error ?? undefined}
+                missingPrereqs={prereqMeta.missingIds}
+                blockCount={blocksByCourse[course.id] ?? 0}
+                onToggleComplete={onToggleComplete}
+                onDelete={onDelete}
+                onFocus={onFocusCourse}
+                onAddPrereq={(missingId) => onAddPrereq(missingId, Math.max(1, course.semester - 1))}
+              />
+            );
+          })
         ) : (
           <p style={{ color: '#475569' }}>גרור קורסים לכאן כדי לארגן את הסמסטר.</p>
         )}

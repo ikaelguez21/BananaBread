@@ -5,19 +5,23 @@ import type { PlannerCourse } from '../types';
 interface CourseCardProps {
   course: PlannerCourse;
   error?: string;
+  missingPrereqs?: string[];
   blockCount: number;
   onToggleComplete: (courseId: string) => void;
   onDelete: (courseId: string) => void;
   onFocus: (courseId: string | null) => void;
+  onAddPrereq: (missingId: string) => void;
 }
 
 export default function CourseCard({
   course,
   error,
+  missingPrereqs = [],
   blockCount,
   onToggleComplete,
   onDelete,
-  onFocus
+  onFocus,
+  onAddPrereq
 }: CourseCardProps) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: `course-${course.id}`,
@@ -46,6 +50,20 @@ export default function CourseCard({
       </div>
       <p className="badge">{course.faculty}</p>
       {error ? <div className="error-pill">{error}</div> : null}
+      {missingPrereqs.length > 0 ? (
+        <div style={{ marginTop: 10, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+          {missingPrereqs.map((missingId) => (
+            <button
+              key={missingId}
+              type="button"
+              className="small-button"
+              onClick={() => onAddPrereq(missingId)}
+            >
+              הוסף {missingId}
+            </button>
+          ))}
+        </div>
+      ) : null}
       <div className="course-actions">
         <button className="button secondary" type="button" onClick={() => onToggleComplete(course.id)}>
           {course.completed ? 'בטל הושלמה' : 'סמן הושלמה'}

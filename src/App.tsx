@@ -7,6 +7,7 @@ import StatsBar from './components/StatsBar';
 import type { Course, PlannerCourse, TrackEntry } from './types';
 import courseCatalog from './data/courseCatalog.json';
 import trackCatalog from './data/trackCatalog.json';
+import { analyzePrerequisites, normalizeId } from './utils/prerequisite';
 
 const SEMESTER_COUNT = 8;
 const STORAGE_KEY = 'banana-bread-vite-state';
@@ -87,13 +88,21 @@ function App() {
     return map;
   }, [trackEntries]);
 
-  const getCourseError = useCallback(
+  const getCoursePrereqMeta = useCallback(
     (course: PlannerCourse) => {
+      if (course.prereqString && course.prereqString.trim()) {
+        const analysis = analyzePrerequisites(course.prereqString, course.semester, courses);
+        return {
+          error: analysis.isSatisfied ? null : `חסר: ${analysis.logicString}`,
+          missingIds: analysis.missingIds
+        };
+      }
+
       const missing = course.prereqs.filter((id) => {
-        const prereqCourse = courses.find((item) => item.id === id);
+        const prereqCourse = courses.find((item) => normalizeId(item.id) === normalizeId(id));
         return !(prereqCourse && (prereqCourse.completed || prereqCourse.semester < course.semester));
       });
-      return missing.length ? `חסר: ${missing.join(', ')}` : null;
+      return { error: missing.length ? `חסר: ${missing.join(', ')}` : null, missingIds: missing };
     },
     [courses]
   );
@@ -121,6 +130,26 @@ function App() {
       prev.map((course) => (course.id === courseId ? { ...course, completed: !course.completed } : course))
     );
   }, []);
+
+  const addPrerequisiteCourse = useCallback(
+    (missingId: string, targetSemester: number) => {
+      const canonicalId = normalizeId(missingId);
+      const existing = courses.find((course) => normalizeId(course.id) === canonicalId);
+      if (existing) {
+        setCourses((prev) =>
+          prev.map((course) =>
+            normalizeId(course.id) === canonicalId ? { ...course, semester: Math.max(1, targetSemester) } : course
+          )
+        );
+        return;
+      }
+
+      const sourceCourse = courseMap.get(canonicalId);
+      if (!sourceCourse) return;
+      setCourses((prev) => [...prev, createPlannerCourse(sourceCourse, Math.max(1, targetSemester))]);
+    },
+    [courseMap, courses, createPlannerCourse]
+  );
 
   const loadTrack = useCallback(
     (trackName: string) => {
@@ -250,7 +279,8 @@ function App() {
                 onToggleComplete={toggleComplete}
                 onDelete={removeCourse}
                 onFocusCourse={setFocusedCourseId}
-                getCourseError={getCourseError}
+                getCoursePrereqMeta={getCoursePrereqMeta}
+                onAddPrereq={addPrerequisiteCourse}
               />
             ))}
           </div>
@@ -258,11 +288,13 @@ function App() {
             {dragOverlayCourse ? (
               <CourseCard
                 course={dragOverlayCourse}
-                error={getCourseError(dragOverlayCourse) ?? undefined}
+                error={getCoursePrereqMeta(dragOverlayCourse).error ?? undefined}
+                missingPrereqs={getCoursePrereqMeta(dragOverlayCourse).missingIds}
                 blockCount={blocksByCourse[dragOverlayCourse.id] ?? 0}
                 onToggleComplete={toggleComplete}
                 onDelete={removeCourse}
                 onFocus={() => undefined}
+                onAddPrereq={(missingId) => addPrerequisiteCourse(missingId, Math.max(1, dragOverlayCourse.semester - 1))}
               />
             ) : null}
           </DragOverlay>
