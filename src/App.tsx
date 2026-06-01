@@ -4,15 +4,15 @@ import CourseCard from './components/CourseCard';
 import SemesterColumn from './components/SemesterColumn';
 import TrackSelector from './components/TrackSelector';
 import StatsBar from './components/StatsBar';
-import type { Course, PlannerCourse, TrackEntry } from './types';
+import type { Course, PlannerCourse, MissingPrereq, PrereqMeta, TrackOption } from './types';
 import courseCatalog from './data/courseCatalog.json';
-import trackCatalog from './data/trackCatalog.json';
 import { analyzePrerequisites, normalizeId } from './utils/prerequisite';
+import { createStaticTrackLoader } from './services/trackService';
 
 const SEMESTER_COUNT = 8;
 const STORAGE_KEY = 'banana-bread-vite-state';
 const catalog = courseCatalog as Course[];
-const trackEntries = trackCatalog as TrackEntry[];
+const trackLoader = createStaticTrackLoader();
 
 function App() {
   const [courses, setCourses] = useState<PlannerCourse[]>([]);
@@ -73,38 +73,37 @@ function App() {
       .slice(0, 12);
   }, [searchQuery, catalog, courses]);
 
-  const trackNames = useMemo(
-    () => Array.from(new Set(trackEntries.map((entry) => entry.track_name))).sort((a, b) => a.localeCompare(b, 'he')),
-    [trackEntries]
-  );
-
-  const trackMap = useMemo(() => {
-    const map = new Map<string, TrackEntry[]>();
-    trackEntries.forEach((entry) => {
-      const list = map.get(entry.track_name) ?? [];
-      list.push(entry);
-      map.set(entry.track_name, list);
-    });
-    return map;
-  }, [trackEntries]);
+  const trackOptions = useMemo<TrackOption[]>(() => trackLoader.getTrackOptions(), []);
 
   const getCoursePrereqMeta = useCallback(
     (course: PlannerCourse) => {
+      const buildMissing = (ids: string[]) =>
+        ids.map((id) => ({ id, name: courseMap.get(normalizeId(id))?.name ?? id }));
+
+      const getPrereqIds = (prereqString: string) => Array.from(new Set(prereqString.match(/\d{8}/g) || []));
+      const isCourseSatisfied = (id: string) => {
+        const prereqCourse = courses.find((item) => normalizeId(item.id) === normalizeId(id));
+        return Boolean(prereqCourse && (prereqCourse.completed || prereqCourse.semester < course.semester));
+      };
+
       if (course.prereqString && course.prereqString.trim()) {
         const analysis = analyzePrerequisites(course.prereqString, course.semester, courses);
+        const missingIds = analysis.isSatisfied
+          ? []
+          : getPrereqIds(course.prereqString).filter((id) => !isCourseSatisfied(id));
         return {
           error: analysis.isSatisfied ? null : `חסר: ${analysis.logicString}`,
-          missingIds: analysis.missingIds
+          missingPrereqs: buildMissing(missingIds)
         };
       }
 
-      const missing = course.prereqs.filter((id) => {
-        const prereqCourse = courses.find((item) => normalizeId(item.id) === normalizeId(id));
-        return !(prereqCourse && (prereqCourse.completed || prereqCourse.semester < course.semester));
-      });
-      return { error: missing.length ? `חסר: ${missing.join(', ')}` : null, missingIds: missing };
+      const missing = course.prereqs.filter((id) => !isCourseSatisfied(id));
+      return {
+        error: missing.length ? `חסר: ${missing.join(', ')}` : null,
+        missingPrereqs: buildMissing(missing)
+      };
     },
-    [courses]
+    [courses, courseMap]
   );
 
   const createPlannerCourse = useCallback((course: Course, semester = 1): PlannerCourse => {
@@ -152,9 +151,9 @@ function App() {
   );
 
   const loadTrack = useCallback(
-    (trackName: string) => {
-      const entries = trackMap.get(trackName) ?? [];
-      const loaded = entries
+    (trackId: string) => {
+      const { semesterEntries } = trackLoader.loadTrack(trackId);
+      const loaded = semesterEntries
         .map((entry) => {
           const sourceCourse = courseMap.get(entry.course_id);
           return createPlannerCourse(
@@ -173,7 +172,7 @@ function App() {
       setCourses(loaded);
       setIsTrackOpen(false);
     },
-    [courseMap, createPlannerCourse, trackMap]
+    [courseMap, createPlannerCourse]
   );
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 6 } }));
@@ -256,14 +255,14 @@ function App() {
           <h2>מסלולים זמינים</h2>
           <p>בחר מסלול כדי למלא את התכנית עם קורסים מוכנים.</p>
           <div className="track-list">
-            {trackNames.slice(0, 10).map((trackName) => (
-              <button key={trackName} type="button" className="track-item" onClick={() => loadTrack(trackName)}>
-                <span>{trackName}</span>
+            {trackOptions.slice(0, 10).map((track) => (
+              <button key={track.id} type="button" className="track-item" onClick={() => loadTrack(track.id)}>
+                <span>{track.label}</span>
                 <span>טען</span>
               </button>
             ))}
           </div>
-          {trackNames.length > 10 ? <p style={{ marginTop: 12, color: '#64748b' }}>השתמש בחיפוש במסך בוחר המסלולים כדי למצוא עוד.</p> : null}
+          {trackOptions.length > 10 ? <p style={{ marginTop: 12, color: '#64748b' }}>השתמש בחיפוש במסך בוחר המסלולים כדי למצוא עוד.</p> : null}
         </section>
       </div>
 
@@ -289,7 +288,7 @@ function App() {
               <CourseCard
                 course={dragOverlayCourse}
                 error={getCoursePrereqMeta(dragOverlayCourse).error ?? undefined}
-                missingPrereqs={getCoursePrereqMeta(dragOverlayCourse).missingIds}
+                missingPrereqs={getCoursePrereqMeta(dragOverlayCourse).missingPrereqs}
                 blockCount={blocksByCourse[dragOverlayCourse.id] ?? 0}
                 onToggleComplete={toggleComplete}
                 onDelete={removeCourse}
@@ -301,7 +300,7 @@ function App() {
         </DndContext>
       </div>
 
-      <TrackSelector open={isTrackOpen} tracks={trackNames} onClose={() => setIsTrackOpen(false)} onSelect={loadTrack} />
+      <TrackSelector open={isTrackOpen} tracks={trackOptions} onClose={() => setIsTrackOpen(false)} onSelect={loadTrack} />
     </div>
   );
 }

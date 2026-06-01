@@ -39,8 +39,8 @@ button {
 
 .app-shell {
   display: grid;
-  grid-template-columns: minmax(280px, 360px) 1fr;
-  gap: 20px;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  gap: 16px;
   align-items: start;
 }
 
@@ -49,21 +49,21 @@ button {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: rgba(248, 250, 252, 0.88);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 20px;
-  padding: 16px;
-  margin-bottom: 18px;
+  background: rgba(248, 250, 252, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.06);
 }
 
 .sticky-bar h1 {
   margin: 0;
-  font-size: clamp(1.4rem, 1.5vw, 1.8rem);
+  font-size: 1.1rem;
 }
 
 .metric-list {
@@ -96,22 +96,44 @@ button {
   gap: 18px;
 }
 
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.semester-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: white;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
 .card {
   background: white;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 1px solid rgba(148, 163, 184, 0.14);
-  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
-  padding: 20px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  padding: 18px;
 }
 
 .card h2 {
-  margin: 0 0 12px;
-  font-size: 1.1rem;
+  margin: 0 0 10px;
+  font-size: 1rem;
 }
 
 .search-row {
   display: grid;
   gap: 10px;
+}
+
+.search-row input {
+  padding: 10px 12px;
 }
 
 .search-row input {
@@ -130,8 +152,8 @@ button {
 
 .button {
   border: none;
-  border-radius: 14px;
-  padding: 12px 16px;
+  border-radius: 12px;
+  padding: 10px 14px;
   background: #4338ca;
   color: white;
   font-weight: 700;
@@ -139,7 +161,7 @@ button {
 }
 
 .button.secondary {
-  background: #e2e8f0;
+  background: #f1f5f9;
   color: #0f172a;
 }
 
@@ -150,14 +172,39 @@ button {
 .small-button {
   background: #f8fafc;
   color: #0f172a;
-  padding: 10px 14px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 8px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 12px;
+  font-size: 0.78rem;
+}
+
+.icon-button {
+  border: none;
+  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #1e293b;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-button:hover {
+  background: #dbeafe;
+  transform: translateY(-1px);
+}
+
+.icon-button.danger {
+  color: #991b1b;
+  background: #fee2e2;
 }
 
 .track-list {
   display: grid;
   gap: 10px;
-  max-height: 360px;
+  max-height: 300px;
   overflow-y: auto;
 }
 
@@ -165,23 +212,22 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-radius: 14px;
   background: #f8fafc;
   border: 1px solid rgba(148, 163, 184, 0.18);
-    color: #0f172a;
-    text-align: right;
-  }
+  color: #0f172a;
+  text-align: right;
+}
 
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.4);
-    display: grid;
-    place-items: center;
-    padding: 18px;
-    z-index: 50;
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: grid;
+  place-items: center;
   padding: 14px;
+  z-index: 50;
   min-height: 220px;
 }
 
@@ -203,15 +249,15 @@ button {
 
 .course-list {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .course-card {
-  border-radius: 20px;
-  padding: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.06);
+  border-radius: 18px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
 }
 
 .course-card.completed {
@@ -225,34 +271,55 @@ button {
 }
 
 .course-card h4 {
-  margin: 0 0 8px;
-  font-size: 1rem;
+  margin: 0 0 6px;
+  font-size: 1.05rem;
 }
 
 .course-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.course-meta h4 {
+  flex: 1 1 100%;
+  font-size: 0.95rem;
 }
 
 .badge {
   border-radius: 999px;
   background: rgba(148, 163, 184, 0.12);
-  padding: 6px 10px;
-  font-size: 0.82rem;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+.small-badge {
+  padding: 3px 8px;
+}
+
+.course-id-badge {
+  cursor: help;
 }
 
 .course-actions {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: flex-end;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .course-actions button {
-  flex: 1;
-  min-width: 100px;
+  flex: 0 0 auto;
+}
+
+.missing-prereq-list {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .error-pill {

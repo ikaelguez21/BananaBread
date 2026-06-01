@@ -2,10 +2,15 @@ import { type CSSProperties } from 'react';
 import { useDraggable } from '@dnd-kit/core';
 import type { PlannerCourse } from '../types';
 
+interface MissingPrereq {
+  id: string;
+  name: string;
+}
+
 interface CourseCardProps {
   course: PlannerCourse;
   error?: string;
-  missingPrereqs?: string[];
+  missingPrereqs?: MissingPrereq[];
   blockCount: number;
   onToggleComplete: (courseId: string) => void;
   onDelete: (courseId: string) => void;
@@ -44,32 +49,51 @@ export default function CourseCard({
       {...listeners}
     >
       <div className="course-meta">
-        <strong>{course.name}</strong>
-        <span className="badge">{course.id}</span>
-        <span className="badge">{course.credits} נק׳</span>
+        <h4 title={course.name}>{course.name}</h4>
+        <span className="badge course-id-badge" title={course.name}>{course.id}</span>
+        <span className="badge small-badge">{course.credits} נק׳</span>
       </div>
-      <p className="badge">{course.faculty}</p>
+      <p className="badge faculty-badge">{course.faculty}</p>
       {error ? <div className="error-pill">{error}</div> : null}
-      {missingPrereqs.length > 0 ? (
-        <div style={{ marginTop: 10, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-          {missingPrereqs.map((missingId) => (
+      {error && missingPrereqs.length > 0 ? (
+        <div className="missing-prereq-list">
+          {missingPrereqs.map((missing) => (
             <button
-              key={missingId}
+              key={missing.id}
               type="button"
               className="small-button"
-              onClick={() => onAddPrereq(missingId)}
+              title={missing.name}
+              onClick={() => onAddPrereq(missing.id)}
             >
-              הוסף {missingId}
+              הוסף {missing.id}
             </button>
           ))}
         </div>
       ) : null}
       <div className="course-actions">
-        <button className="button secondary" type="button" onClick={() => onToggleComplete(course.id)}>
-          {course.completed ? 'בטל הושלמה' : 'סמן הושלמה'}
+        <button
+          className="icon-button"
+          type="button"
+          title={course.completed ? 'בטל הושלמה' : 'סמן הושלמה'}
+          onClick={() => onToggleComplete(course.id)}
+        >
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </button>
-        <button className="button secondary" type="button" onClick={() => onDelete(course.id)}>
-          הסר
+        <button
+          className="icon-button danger"
+          type="button"
+          title="הסר"
+          onClick={() => onDelete(course.id)}
+        >
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M3 6h18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M8 6V4h8v2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M10 11v6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M14 11v6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M5 6l1 14h12l1-14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+          </svg>
         </button>
       </div>
       {blockCount > 0 ? <span className="badge">חוסם {blockCount} קורסים</span> : null}

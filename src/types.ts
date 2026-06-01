@@ -12,6 +12,37 @@ export interface PlannerCourse extends Course {
   completed: boolean;
 }
 
+export interface MissingPrereq {
+  id: string;
+  name: string;
+}
+
+export interface PrereqMeta {
+  error: string | null;
+  missingPrereqs: MissingPrereq[];
+}
+
+export interface TrackOption {
+  id: string;
+  label: string;
+}
+
+export interface RecommendedSchedule {
+  semester: number;
+  courseIds: string[];
+}
+
+export interface InfoFetcherResult {
+  recommendedSchedule: RecommendedSchedule[];
+  source: 'static' | 'info-fetcher';
+  warnings?: string[];
+}
+
+export interface TrackLoadResult {
+  semesterEntries: TrackEntry[];
+  infoFetcherResult: InfoFetcherResult;
+}
+
 export interface TrackEntry {
   track_name: string;
   semester: number;

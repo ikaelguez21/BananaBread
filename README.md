@@ -104,6 +104,28 @@ BananaBread is built with modern web technologies, focusing on performance and s
 * ![PapaParse](https://img.shields.io/badge/PapaParse-CSV-orange?style=for-the-badge) **Data Parsing**
 * **Babel Standalone** **In-Browser JSX**
 
+### 📦 Data Backbone
+
+BananaBread now includes a semester-driven data backbone that merges live SAP course data with official PDF catalog track structure.
+
+* `tracks_to_json.py` discovers SAP entity sets and generates structured SAP source JSON.
+* `parse_catalog_pdfs.py` downloads faculty catalog PDFs, extracts Hebrew track requirements, and converts them into structured PDF source JSON.
+* `merge_track_data.py` merges SAP and PDF outputs into `src/data/tracks-{YEAR}-{SEMESTER}.json` and `src/data/tracks-latest.json`.
+* `.github/workflows/tracks-to-json.yml` now runs the full SAP/PDF/merge workflow and publishes JSON artifacts to `gh-pages`.
+* `TRACKS_API.md` documents source responsibilities, PDF discovery, and current SAP metadata exploration limitations.
+
+#### Local data generation
+
+```bash
+python -m pip install -r requirements.txt
+npm run generate-tracks
+npm run parse-catalogs
+npm run merge-tracks
+npm run validate-tracks
+```
+
+If you are using PDF parsing, set `ANTHROPIC_API_KEY` in your environment before running `npm run parse-catalogs`.
+
 ---
 
 ### 🤝 Credits & Contribution

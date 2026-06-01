@@ -1,0 +1,100 @@
+name: Tracks Data Backbone
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 1 10 *'
+    - cron: '0 6 1 3 *'
+  push:
+    branches:
+      - main
+      - 'release/**'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate Python track tooling
+        run: python -m py_compile tracks_to_json.py parse_catalog_pdfs.py merge_track_data.py
+
+      - name: Set runtime semester variables
+        id: semester-vars
+        run: |
+          YEAR=$(date +'%Y')
+          MONTH=$(date +'%m')
+          if [ "$MONTH" -ge 10 ] || [ "$MONTH" -le 2 ]; then
+            SEMESTER=1
+          else
+            SEMESTER=2
+          fi
+          echo "YEAR=$YEAR" >> $GITHUB_ENV
+          echo "SEMESTER=$SEMESTER" >> $GITHUB_ENV
+
+      - name: Discover SAP entity metadata
+        if: always()
+        env:
+          TECHNION_SAP_BASE_URL: ${{ secrets.TECHNION_SAP_BASE_URL }}
+          TECHNION_SAP_CLIENT: ${{ secrets.TECHNION_SAP_CLIENT }}
+          TECHNION_SAP_USERNAME: ${{ secrets.TECHNION_SAP_USERNAME }}
+          TECHNION_SAP_PASSWORD: ${{ secrets.TECHNION_SAP_PASSWORD }}
+        run: |
+          python tracks_to_json.py --metadata-only --base-url "$TECHNION_SAP_BASE_URL" --client "$TECHNION_SAP_CLIENT"
+
+      - name: Generate SAP track output
+        if: always()
+        env:
+          TECHNION_SAP_BASE_URL: ${{ secrets.TECHNION_SAP_BASE_URL }}
+          TECHNION_SAP_CLIENT: ${{ secrets.TECHNION_SAP_CLIENT }}
+          TECHNION_SAP_USERNAME: ${{ secrets.TECHNION_SAP_USERNAME }}
+          TECHNION_SAP_PASSWORD: ${{ secrets.TECHNION_SAP_PASSWORD }}
+        run: |
+          python tracks_to_json.py --output src/data/tracks-sap-${{ env.YEAR }}-${{ env.SEMESTER }}.json --metadata-output sap-track-metadata-${{ env.YEAR }}-${{ env.SEMESTER }}.json --year ${{ env.YEAR }} --semester ${{ env.SEMESTER }} --base-url "$TECHNION_SAP_BASE_URL" --client "$TECHNION_SAP_CLIENT" || true
+
+      - name: Generate PDF catalog output
+        if: always()
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python parse_catalog_pdfs.py --output src/data/tracks-pdf-${{ env.YEAR }}-${{ env.SEMESTER }}.json --cache-dir data/catalog-cache || true
+
+      - name: Merge SAP + PDF track data
+        if: always()
+        run: |
+          python merge_track_data.py --sap src/data/tracks-sap-${{ env.YEAR }}-${{ env.SEMESTER }}.json --pdf src/data/tracks-pdf-${{ env.YEAR }}-${{ env.SEMESTER }}.json --output-dir src/data --year ${{ env.YEAR }} --semester ${{ env.SEMESTER }} || true
+
+      - name: Validate merged JSON schema
+        if: always()
+        run: |
+          python schema_validator.py src/data/tracks-${{ env.YEAR }}-${{ env.SEMESTER }}.json src/data/tracks-latest.json
+
+      - name: Prepare gh-pages artifact
+        if: always()
+        run: |
+          mkdir -p gh-pages
+          cp src/data/tracks-${{ env.YEAR }}-${{ env.SEMESTER }}.json gh-pages/ 2>/dev/null || true
+          cp src/data/tracks-latest.json gh-pages/ 2>/dev/null || true
+          ls -1 gh-pages || true
+
+      - name: Publish JSON artifacts to gh-pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: gh-pages
+          user_name: github-actions
+          user_email: github-actions@github.com

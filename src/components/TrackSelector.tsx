@@ -1,17 +1,18 @@
 import { useMemo, useState } from 'react';
+import type { TrackOption } from '../types';
 
 interface TrackSelectorProps {
   open: boolean;
-  tracks: string[];
+  tracks: TrackOption[];
   onClose: () => void;
-  onSelect: (trackName: string) => void;
+  onSelect: (trackId: string) => void;
 }
 
 export default function TrackSelector({ open, tracks, onClose, onSelect }: TrackSelectorProps) {
   const [query, setQuery] = useState('');
 
   const filteredTracks = useMemo(
-    () => tracks.filter((track) => track.toLowerCase().includes(query.toLowerCase())),
+    () => tracks.filter((track) => track.label.toLowerCase().includes(query.toLowerCase())),
     [query, tracks]
   );
 
@@ -33,8 +34,8 @@ export default function TrackSelector({ open, tracks, onClose, onSelect }: Track
         <div className="track-list">
           {filteredTracks.length ? (
             filteredTracks.map((track) => (
-              <button key={track} type="button" className="track-item" onClick={() => onSelect(track)}>
-                <span>{track}</span>
+              <button key={track.id} type="button" className="track-item" onClick={() => onSelect(track.id)}>
+                <span>{track.label}</span>
                 <span>בחר</span>
               </button>
             ))
