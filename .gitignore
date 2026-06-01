@@ -3,3 +3,4 @@ dist
 .vite
 .env
 .DS_Store
+__pycache__
