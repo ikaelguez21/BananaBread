@@ -14,6 +14,7 @@ interface CourseCardProps {
   blockCount: number;
   onToggleComplete: (courseId: string) => void;
   onDelete: (courseId: string) => void;
+  onViewDetails: (courseId: string) => void;
   onFocus: (courseId: string | null) => void;
   onAddPrereq: (missingId: string) => void;
 }
@@ -25,6 +26,7 @@ export default function CourseCard({
   blockCount,
   onToggleComplete,
   onDelete,
+  onViewDetails,
   onFocus,
   onAddPrereq
 }: CourseCardProps) {
@@ -32,6 +34,10 @@ export default function CourseCard({
     id: `course-${course.id}`,
     data: { courseId: course.id }
   });
+
+  const missingTooltip = missingPrereqs.length
+    ? missingPrereqs.map((missing) => `${missing.name}`).join('\n')
+    : undefined;
 
   const style = {
     transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : undefined,
@@ -54,23 +60,37 @@ export default function CourseCard({
         <span className="badge small-badge">{course.credits} נק׳</span>
       </div>
       <p className="badge faculty-badge">{course.faculty}</p>
-      {error ? <div className="error-pill">{error}</div> : null}
-      {error && missingPrereqs.length > 0 ? (
-        <div className="missing-prereq-list">
-          {missingPrereqs.map((missing) => (
+      {error ? (
+        <div className="error-pill">
+          {error}
+          {missingPrereqs.length > 0 ? (
             <button
-              key={missing.id}
               type="button"
-              className="small-button"
-              title={missing.name}
-              onClick={() => onAddPrereq(missing.id)}
+              className="missing-tooltip-button"
+              onClick={() => onAddPrereq(missingPrereqs[0].id)}
+              data-tooltip={missingTooltip}
+              title={missingTooltip}
+              aria-label={`הוסף ${missingPrereqs[0].id}`}
             >
-              הוסף {missing.id}
+              {missingPrereqs.length}
+              <span className="missing-tooltip-icon">+</span>
             </button>
-          ))}
+          ) : null}
         </div>
       ) : null}
       <div className="course-actions">
+        <button
+          className="icon-button"
+          type="button"
+          title="פרטים"
+          onClick={() => onViewDetails(course.id)}
+        >
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M12 8v4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M12 16h.01" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
+          </svg>
+        </button>
         <button
           className="icon-button"
           type="button"

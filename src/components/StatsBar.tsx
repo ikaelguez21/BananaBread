@@ -25,6 +25,10 @@ export default function StatsBar({ totalCredits, completedCount, currentCourses,
           <strong>{completedCount}</strong>
           <span>הושלמו</span>
         </div>
+        <div className="metric">
+          <strong>{activeSemester}</strong>
+          <span>סמסטרים</span>
+        </div>
       </div>
     </div>
   );

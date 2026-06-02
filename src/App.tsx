@@ -4,12 +4,14 @@ import CourseCard from './components/CourseCard';
 import SemesterColumn from './components/SemesterColumn';
 import TrackSelector from './components/TrackSelector';
 import StatsBar from './components/StatsBar';
+import CourseDetailModal from './components/CourseDetailModal';
 import type { Course, PlannerCourse, MissingPrereq, PrereqMeta, TrackOption } from './types';
 import courseCatalog from './data/courseCatalog.json';
 import { analyzePrerequisites, normalizeId } from './utils/prerequisite';
 import { createStaticTrackLoader } from './services/trackService';
 
 const SEMESTER_COUNT = 8;
+const MAX_SEMESTER_CREDITS = 30;
 const STORAGE_KEY = 'banana-bread-vite-state';
 const catalog = courseCatalog as Course[];
 const trackLoader = createStaticTrackLoader();
@@ -17,7 +19,9 @@ const trackLoader = createStaticTrackLoader();
 function App() {
   const [courses, setCourses] = useState<PlannerCourse[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchSort, setSearchSort] = useState<'name' | 'id'>('name');
   const [isTrackOpen, setIsTrackOpen] = useState(false);
+  const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
   const [activeDragId, setActiveDragId] = useState<string | null>(null);
   const [focusedCourseId, setFocusedCourseId] = useState<string | null>(null);
 
@@ -70,8 +74,13 @@ function App() {
         const term = `${course.name} ${course.id}`.toLowerCase();
         return term.includes(query) && !courses.some((item) => item.id === course.id);
       })
+      .sort((a, b) =>
+        searchSort === 'name'
+          ? a.name.localeCompare(b.name, 'he')
+          : a.id.localeCompare(b.id)
+      )
       .slice(0, 12);
-  }, [searchQuery, catalog, courses]);
+  }, [searchQuery, searchSort, catalog, courses]);
 
   const trackOptions = useMemo<TrackOption[]>(() => trackLoader.getTrackOptions(), []);
 
@@ -205,6 +214,10 @@ function App() {
     return courses.find((course) => course.id === courseId) ?? null;
   }, [activeDragId, courses]);
 
+  const selectedCourse = selectedCourseId ? courses.find((course) => course.id === selectedCourseId) ?? null : null;
+  const selectedCourseMeta = selectedCourse ? getCoursePrereqMeta(selectedCourse) : null;
+  const selectedCourseBlockCount = selectedCourse ? blocksByCourse[selectedCourse.id] ?? 0 : 0;
+
   return (
     <div className="app-shell">
       <div className="panel">
@@ -215,6 +228,16 @@ function App() {
           activeSemester={SEMESTER_COUNT}
         />
 
+        <section className="card hero-card">
+          <p className="eyebrow">🧠 תכנון חכם</p>
+          <h2>צור מסלול לימודים ברור ויזואלי</h2>
+          <p>גרור קורסים בין סמסטרים, קבל חיווי על חוסרי קדם בזמן אמת, וטען מסלולים מוכנים בלחיצה אחת.</p>
+          <div className="hero-actions">
+            <span className="pill">נשמר אוטומטית</span>
+            <span className="pill soft">תואם 8 סמסטרים</span>
+          </div>
+        </section>
+
         <section className="card">
           <h2>חיפוש והוספת קורסים</h2>
           <div className="search-row">
@@ -223,6 +246,15 @@ function App() {
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="חפש קורס לפי שם או קוד"
             />
+            <div className="search-controls">
+              <label>
+                מיין לפי
+                <select value={searchSort} onChange={(event) => setSearchSort(event.target.value as 'name' | 'id')}>
+                  <option value="name">שם</option>
+                  <option value="id">קוד</option>
+                </select>
+              </label>
+            </div>
             <div className="button-group">
               <button className="button" type="button" onClick={() => setIsTrackOpen(true)}>
                 בחר מסלול
@@ -275,8 +307,10 @@ function App() {
                 semester={index + 1}
                 courses={semesterCourses}
                 blocksByCourse={blocksByCourse}
+                maxCredits={MAX_SEMESTER_CREDITS}
                 onToggleComplete={toggleComplete}
                 onDelete={removeCourse}
+                onViewDetails={setSelectedCourseId}
                 onFocusCourse={setFocusedCourseId}
                 getCoursePrereqMeta={getCoursePrereqMeta}
                 onAddPrereq={addPrerequisiteCourse}
@@ -292,6 +326,7 @@ function App() {
                 blockCount={blocksByCourse[dragOverlayCourse.id] ?? 0}
                 onToggleComplete={toggleComplete}
                 onDelete={removeCourse}
+                onViewDetails={setSelectedCourseId}
                 onFocus={() => undefined}
                 onAddPrereq={(missingId) => addPrerequisiteCourse(missingId, Math.max(1, dragOverlayCourse.semester - 1))}
               />
@@ -300,6 +335,16 @@ function App() {
         </DndContext>
       </div>
 
+      <CourseDetailModal
+        open={Boolean(selectedCourse)}
+        course={selectedCourse}
+        prereqMeta={selectedCourseMeta}
+        blockCount={selectedCourseBlockCount}
+        onClose={() => setSelectedCourseId(null)}
+        onToggleComplete={toggleComplete}
+        onDelete={removeCourse}
+        onAddPrereq={(missingId) => selectedCourse ? addPrerequisiteCourse(missingId, Math.max(1, selectedCourse.semester - 1)) : undefined}
+      />
       <TrackSelector open={isTrackOpen} tracks={trackOptions} onClose={() => setIsTrackOpen(false)} onSelect={loadTrack} />
     </div>
   );
