@@ -111,6 +111,7 @@ BananaBread now includes a semester-driven data backbone that merges live SAP co
 * `tracks_to_json.py` discovers SAP entity sets and generates structured SAP source JSON.
 * `parse_catalog_pdfs.py` downloads faculty catalog PDFs, extracts Hebrew track requirements, and converts them into structured PDF source JSON.
 * `merge_track_data.py` merges SAP and PDF outputs into `src/data/tracks-{YEAR}-{SEMESTER}.json` and `src/data/tracks-latest.json`.
+* The SAP extractor emits a metadata wrapper around `track_data`; the merge script now accepts both wrapper and root-level SAP JSON inputs.
 * `.github/workflows/tracks-to-json.yml` now runs the full SAP/PDF/merge workflow and publishes JSON artifacts to `gh-pages`.
 * `TRACKS_API.md` documents source responsibilities, PDF discovery, and current SAP metadata exploration limitations.
 

@@ -8,13 +8,13 @@ import CourseDetailModal from './components/CourseDetailModal';
 import type { Course, PlannerCourse, MissingPrereq, PrereqMeta, TrackOption } from './types';
 import courseCatalog from './data/courseCatalog.json';
 import { analyzePrerequisites, normalizeId } from './utils/prerequisite';
-import { createStaticTrackLoader } from './services/trackService';
+import { createMergedTrackLoader } from './services/trackService';
 
 const SEMESTER_COUNT = 8;
 const MAX_SEMESTER_CREDITS = 30;
 const STORAGE_KEY = 'banana-bread-vite-state';
 const catalog = courseCatalog as Course[];
-const trackLoader = createStaticTrackLoader();
+const trackLoader = createMergedTrackLoader();
 
 function App() {
   const [courses, setCourses] = useState<PlannerCourse[]>([]);

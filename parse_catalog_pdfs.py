@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import base64
 import json
 import os
 import re
@@ -96,7 +95,7 @@ SYSTEM_INSTRUCTIONS = (
 )
 
 
-def build_prompt(pdf_name: str, page_range: str, page_text: str, pdf_base64_snippet: Optional[str]) -> str:
+def build_prompt(pdf_name: str, page_range: str, page_text: str) -> str:
     prompt_lines = [
         SYSTEM_INSTRUCTIONS,
         "",
@@ -113,20 +112,12 @@ def build_prompt(pdf_name: str, page_range: str, page_text: str, pdf_base64_snip
         "- Any overlap/double-counting rules between baskets",
         "- Any exemption rules",
         "",
-        "Use the schema exactly as shown below. Return ONLY valid JSON.",
+        "Use the schema exactly as shown below. Return ONLY valid JSON with no explanatory text.",
         SCHEMA_PROMPT,
         "",
-    ]
-    if pdf_base64_snippet:
-        prompt_lines.extend([
-            "The PDF is also available in base64 form. Use it only as a reference if necessary.",
-            pdf_base64_snippet,
-            "",
-        ])
-    prompt_lines.extend([
         "Here is the extracted page text:",
         page_text,
-    ])
+    ]
     return "\n".join(prompt_lines)
 
 
@@ -249,9 +240,10 @@ def parse_json_from_response(text: str) -> Any:
     try:
         return json.loads(cleaned)
     except json.JSONDecodeError:
-        match = re.search(r"\{.*\}", cleaned, re.S)
-        if match:
-            return json.loads(match.group(0))
+        for regex in [r"\{.*\}", r"\[.*\]"]:
+            match = re.search(regex, cleaned, re.S)
+            if match:
+                return json.loads(match.group(0))
         raise
 
 
@@ -326,9 +318,6 @@ def main() -> int:
             print(f"Downloaded {pdf_url} -> {pdf_path}")
             pages = extract_pdf_pages(pdf_path)
             chunks = build_page_chunks(pages)
-            pdf_bytes = pdf_path.read_bytes()
-            pdf_base64 = base64.b64encode(pdf_bytes).decode("ascii")
-            pdf_base64_snippet = pdf_base64[:2000] + "..." if len(pdf_base64) > 2000 else pdf_base64
 
             if args.dry_run:
                 print(f"Discovered {len(pages)} pages in {pdf_path.name} and built {len(chunks)} chunks.")
@@ -336,7 +325,7 @@ def main() -> int:
 
             for chunk in chunks:
                 page_range = f"{chunk['pages'][0]}-{chunk['pages'][-1]}"
-                prompt = build_prompt(pdf_path.name, page_range, chunk["content"], pdf_base64_snippet)
+                prompt = build_prompt(pdf_path.name, page_range, chunk["content"])
                 completion = call_claude(prompt)
                 parsed = parse_json_from_response(completion)
                 if not isinstance(parsed, dict):

@@ -23,21 +23,21 @@ export function analyzePrerequisites(prereqString: string, targetSemester: numbe
     .trim();
 
   const courseIds = Array.from(new Set(normalizedExpr.match(/\d{8}/g) || []));
-  const missingIds: string[] = [];
+  const missingIdSet = new Set<string>();
 
-  const checkSatisfied = (courseId: string, semesterCheck: number) => {
+  const checkSatisfied = (courseId: string) => {
     const normalized = normalizeId(courseId);
     const course = currentCourses.find((item) => normalizeId(item.id) === normalized);
-    const satisfied = Boolean(course && (course.completed || course.semester < semesterCheck));
-    if (!course && semesterCheck === targetSemester) {
-      missingIds.push(normalized);
+    const satisfied = Boolean(course && (course.completed || course.semester < targetSemester));
+    if (!satisfied) {
+      missingIdSet.add(normalized);
     }
     return satisfied;
   };
 
   let expression = normalizedExpr;
   courseIds.forEach((rawId) => {
-    const value = checkSatisfied(rawId, targetSemester);
+    const value = checkSatisfied(rawId);
     const safeId = rawId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     expression = expression.replace(new RegExp(`\\b${safeId}\\b`, 'g'), String(value));
   });
@@ -54,11 +54,11 @@ export function analyzePrerequisites(prereqString: string, targetSemester: numbe
   }
 
   const logicString = courseIds.reduce((result, id) => {
-    const satisfied = checkSatisfied(id, targetSemester);
+    const satisfied = checkSatisfied(id);
     return result.replace(new RegExp(`\\b${id}\\b`, 'g'), satisfied ? '✔' : id);
   }, normalizedExpr);
 
-  return { isSatisfied, missingIds: Array.from(new Set(missingIds)), logicString };
+  return { isSatisfied, missingIds: Array.from(missingIdSet), logicString };
 }
 
 export function formatMissingIds(missing: string[]): string {

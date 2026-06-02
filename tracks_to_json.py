@@ -9,6 +9,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -35,24 +36,35 @@ class EntitySetInfo:
     entity_type: str
 
 
+MAX_FETCH_RETRIES = 3
+FETCH_BACKOFF_SECONDS = 2
+
+
 def fetch_url(url: str, username: Optional[str], password: Optional[str]) -> bytes:
     headers = {
         "Accept": "application/json,application/xml;q=0.9,*/*;q=0.8",
         "User-Agent": "banana-bread-sap-fetcher/1.0",
     }
-    request = urllib.request.Request(url, headers=headers)
-    opener = urllib.request.build_opener()
-    if username and password:
-        password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
-        password_mgr.add_password(None, url, username, password)
-        opener = urllib.request.build_opener(urllib.request.HTTPBasicAuthHandler(password_mgr))
-    try:
-        with opener.open(request, timeout=30) as response:
-            return response.read()
-    except urllib.error.HTTPError as exc:
-        raise RuntimeError(f"HTTP error fetching {url}: {exc.code} {exc.reason}") from exc
-    except urllib.error.URLError as exc:
-        raise RuntimeError(f"URL error fetching {url}: {exc.reason}") from exc
+    for attempt in range(1, MAX_FETCH_RETRIES + 1):
+        request = urllib.request.Request(url, headers=headers)
+        opener = urllib.request.build_opener()
+        if username and password:
+            password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+            password_mgr.add_password(None, url, username, password)
+            opener = urllib.request.build_opener(urllib.request.HTTPBasicAuthHandler(password_mgr))
+        try:
+            with opener.open(request, timeout=30) as response:
+                return response.read()
+        except urllib.error.HTTPError as exc:
+            if 500 <= exc.code < 600 and attempt < MAX_FETCH_RETRIES:
+                time.sleep(FETCH_BACKOFF_SECONDS * attempt)
+                continue
+            raise RuntimeError(f"HTTP error fetching {url}: {exc.code} {exc.reason}") from exc
+        except urllib.error.URLError as exc:
+            if attempt < MAX_FETCH_RETRIES:
+                time.sleep(FETCH_BACKOFF_SECONDS * attempt)
+                continue
+            raise RuntimeError(f"URL error fetching {url}: {exc.reason}") from exc
 
 
 def parse_metadata(raw: bytes) -> List[EntitySetInfo]:
@@ -100,6 +112,8 @@ def extract_value(data: Any) -> List[Mapping[str, Any]]:
             return data["value"]
         if "d" in data:
             return extract_value(data["d"])
+        if "results" in data and isinstance(data["results"], list):
+            return data["results"]
     if isinstance(data, list):
         return data
     return []
@@ -113,6 +127,10 @@ def get_first_string(record: Mapping[str, Any], keys: Sequence[str]) -> Optional
                 return value.strip()
             if isinstance(value, (int, float)):
                 return str(value)
+            if isinstance(value, list):
+                for item in value:
+                    if isinstance(item, str) and item.strip():
+                        return item.strip()
     return None
 
 
@@ -154,9 +172,21 @@ def fetch_entity_records(base_url: str, entity_set: str, client: str, username: 
     }
     query = urllib.parse.urlencode(params, safe="$,")
     url = f"{base_url}/{urllib.parse.quote(entity_set)}?{query}"
-    raw = fetch_url(url, username, password)
-    data = json_from_bytes(raw)
-    return extract_value(data)
+    records: List[Mapping[str, Any]] = []
+    while url:
+        raw = fetch_url(url, username, password)
+        data = json_from_bytes(raw)
+        records.extend(extract_value(data))
+        next_link = None
+        if isinstance(data, dict):
+            next_link = data.get("@odata.nextLink") or data.get("odata.nextLink")
+            if next_link is None and "d" in data and isinstance(data["d"], dict):
+                next_link = data["d"].get("__next")
+        if next_link:
+            url = next_link if next_link.startswith("http") else urllib.parse.urljoin(base_url + "/", next_link)
+        else:
+            break
+    return records
 
 
 def discover_entity_sets(base_url: str, client: str, username: Optional[str], password: Optional[str]) -> List[EntitySetInfo]:
@@ -207,6 +237,7 @@ def build_sap_track_schema(
     semester: int,
 ) -> Dict[str, Any]:
     faculties: Dict[str, Dict[str, Any]] = {}
+    specialization_plans: Dict[str, Dict[int, set[str]]] = {}
     schedule_records = fetched_records.get("recommended_schedule", [])
 
     for record in schedule_records:
@@ -217,7 +248,7 @@ def build_sap_track_schema(
 
         faculty_id = slugify(faculty_name)
         program_id = slugify(program_name)
-        specialization_id = slugify(f"{program_name}-{specialization_name}")
+        specialization_id = slugify(f"{program_name}-{specialization_name or ''}")
 
         faculty = faculties.setdefault(
             faculty_id,
@@ -248,6 +279,7 @@ def build_sap_track_schema(
                 "partial": True,
             },
         )
+        specialization_plans.setdefault(specialization_id, {})
 
         semester_value = parse_int(get_first_string(record, ["Semester", "Term", "Period", "PlanSemester", "Year"])) or 0
         course_ids = extract_course_ids(
@@ -259,26 +291,30 @@ def build_sap_track_schema(
             or record.get("Courses")
         )
 
-        if course_ids:
-            course_entries = [
-                {"courseId": course_id}
-                for course_id in course_ids
-            ]
-            if semester_value or course_entries:
-                specialization["recommendedPlan"].append(
-                    {
-                        "semester": semester_value,
-                        "isFixedPlacement": True,
-                        "courses": course_entries,
-                    }
-                )
+        if not course_ids:
+            warnings.append(
+                f"Record missing course IDs for faculty='{faculty_name}', program='{program_name}', specialization='{specialization_name}'"
+            )
+            continue
+
+        plan_map = specialization_plans[specialization_id]
+        plan_map.setdefault(semester_value, set()).update(course_ids)
 
     faculties_out: List[Dict[str, Any]] = []
     for faculty in faculties.values():
         programs_out: List[Dict[str, Any]] = []
         for program in faculty["programs"].values():
             specializations_out: List[Dict[str, Any]] = []
-            for specialization in program["specializations"].values():
+            for specialization_id, specialization in program["specializations"].items():
+                plan_map = specialization_plans.get(specialization_id, {})
+                specialization["recommendedPlan"] = [
+                    {
+                        "semester": semester_value,
+                        "isFixedPlacement": True,
+                        "courses": [{"courseId": course_id} for course_id in sorted(course_ids)],
+                    }
+                    for semester_value, course_ids in sorted(plan_map.items())
+                ]
                 if not specialization["recommendedPlan"]:
                     specialization["partial"] = True
                 specializations_out.append(specialization)

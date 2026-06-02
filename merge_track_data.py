@@ -33,6 +33,26 @@ def merge_field(name: str, sap_value: Any, pdf_value: Any, prefer: str) -> Any:
     return sap_value if prefer == "sap" else pdf_value
 
 
+def normalize_list(value: Any) -> List[Any]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    if isinstance(value, tuple):
+        return list(value)
+    return [value]
+
+
+def merge_list_values(left: Any, right: Any) -> List[Any]:
+    merged: List[Any] = []
+    seen = set()
+    for item in normalize_list(left) + normalize_list(right):
+        if item not in seen:
+            seen.add(item)
+            merged.append(item)
+    return merged
+
+
 def merge_groups(sap_groups: List[Mapping[str, Any]], pdf_groups: List[Mapping[str, Any]]) -> List[Dict[str, Any]]:
     merged: List[Dict[str, Any]] = []
     pdf_index = {group.get("id") or slugify(group.get("label")): group for group in pdf_groups}
@@ -49,8 +69,8 @@ def merge_groups(sap_groups: List[Mapping[str, Any]], pdf_groups: List[Mapping[s
         )
 
         merged_group: Dict[str, Any] = {
-            "id": pdf_group.get("id") or sap_group.get("id") if sap_group else pdf_group_id,
-            "label": pdf_group.get("label") or sap_group.get("label"),
+            "id": pdf_group.get("id") or (sap_group.get("id") if sap_group else pdf_group_id),
+            "label": pdf_group.get("label") or (sap_group.get("label") if sap_group else ""),
             "type": merge_field("type", sap_group.get("type") if sap_group else None, pdf_group.get("type"), "pdf"),
             "minCredits": merge_field("minCredits", sap_group.get("minCredits") if sap_group else None, pdf_group.get("minCredits"), "sap"),
             "maxCredits": merge_field("maxCredits", sap_group.get("maxCredits") if sap_group else None, pdf_group.get("maxCredits"), "sap"),
@@ -61,9 +81,9 @@ def merge_groups(sap_groups: List[Mapping[str, Any]], pdf_groups: List[Mapping[s
                 pdf_group.get("allowsDoubleCounting"),
                 "pdf",
             ),
-            "canOverlapWith": pdf_group.get("canOverlapWith") or (sap_group.get("canOverlapWith") if sap_group else []),
-            "cannotOverlapWith": pdf_group.get("cannotOverlapWith") or (sap_group.get("cannotOverlapWith") if sap_group else []),
-            "courses": sap_group.get("courses") if sap_group and sap_group.get("courses") else pdf_group.get("courses", []),
+            "canOverlapWith": merge_list_values(pdf_group.get("canOverlapWith"), sap_group.get("canOverlapWith") if sap_group else []),
+            "cannotOverlapWith": merge_list_values(pdf_group.get("cannotOverlapWith"), sap_group.get("cannotOverlapWith") if sap_group else []),
+            "courses": merge_list_values(sap_group.get("courses") if sap_group else [], pdf_group.get("courses", [])),
             "partial": bool(pdf_group.get("partial") or (sap_group.get("partial") if sap_group else False)),
         }
 
@@ -79,11 +99,42 @@ def merge_groups(sap_groups: List[Mapping[str, Any]], pdf_groups: List[Mapping[s
 
 
 def merge_plans(sap_plan: List[Mapping[str, Any]], pdf_plan: List[Mapping[str, Any]]) -> List[Dict[str, Any]]:
-    if pdf_plan:
-        merged = [dict(item, **{"conflict": bool(sap_plan and item not in sap_plan)}) for item in pdf_plan]
-    else:
-        merged = [dict(item, **{"partial": True}) for item in sap_plan]
-    return merged
+    merged_by_semester: Dict[int, Dict[str, Any]] = {}
+
+    for item in pdf_plan:
+        semester_value = item.get("semester")
+        if semester_value is None:
+            continue
+        merged_item = merged_by_semester.setdefault(
+            semester_value,
+            {
+                "semester": semester_value,
+                "isFixedPlacement": bool(item.get("isFixedPlacement")),
+                "courses": [],
+                "partial": False,
+                "conflict": False,
+            },
+        )
+        merged_item["courses"] = merge_list_values(merged_item["courses"], item.get("courses", []))
+        if any(sap_item.get("semester") == semester_value and sap_item != item for sap_item in sap_plan):
+            merged_item["conflict"] = True
+
+    for item in sap_plan:
+        semester_value = item.get("semester")
+        if semester_value is None:
+            continue
+        if semester_value in merged_by_semester:
+            merged_item = merged_by_semester[semester_value]
+            merged_item["courses"] = merge_list_values(merged_item["courses"], item.get("courses", []))
+            if item not in pdf_plan:
+                merged_item["partial"] = True
+        else:
+            merged_by_semester[semester_value] = {**item, "partial": True}
+
+    if not pdf_plan:
+        return [dict(item, **{"partial": True}) for item in sap_plan]
+
+    return [merged_by_semester[key] for key in sorted(merged_by_semester)]
 
 
 def merge_specializations(sap_spec: Mapping[str, Any], pdf_spec: Mapping[str, Any]) -> Dict[str, Any]:
@@ -182,6 +233,14 @@ def merge_top_level(sap_data: Mapping[str, Any], pdf_data: Mapping[str, Any]) ->
     }
 
 
+def normalize_input(data: Any) -> Mapping[str, Any]:
+    if isinstance(data, dict) and "track_data" in data and isinstance(data["track_data"], dict):
+        return data["track_data"]
+    if isinstance(data, dict):
+        return data
+    raise ValueError("Input JSON must be an object or contain a root track_data object")
+
+
 def validate_output(data: Mapping[str, Any]) -> None:
     if data.get("source") not in {"sap", "pdf", "merged"}:
         raise ValueError("Output source must be sap, pdf, or merged")
@@ -208,8 +267,8 @@ def main() -> int:
 
     sap_path = Path(args.sap)
     pdf_path = Path(args.pdf)
-    sap_data = load_json(sap_path)
-    pdf_data = load_json(pdf_path)
+    sap_data = normalize_input(load_json(sap_path))
+    pdf_data = normalize_input(load_json(pdf_path))
     validate_output(sap_data)
     validate_output(pdf_data)
 

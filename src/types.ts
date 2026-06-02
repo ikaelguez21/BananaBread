@@ -34,7 +34,7 @@ export interface RecommendedSchedule {
 
 export interface InfoFetcherResult {
   recommendedSchedule: RecommendedSchedule[];
-  source: 'static' | 'info-fetcher';
+  source: 'static' | 'info-fetcher' | 'merged';
   warnings?: string[];
 }
 
