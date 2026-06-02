@@ -4,3 +4,6 @@ dist
 .env
 .DS_Store
 __pycache__
+data/catalog-cache/
+src/data/tracks-sap-*.json
+src/data/tracks-pdf-*.json
