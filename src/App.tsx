@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { DndContext, DragEndEvent, DragOverlay, DragStartEvent, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { DndContext, DragEndEvent, DragOverlay, DragStartEvent, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import CourseCard from './components/CourseCard';
 import SemesterColumn from './components/SemesterColumn';
 import TrackSelector from './components/TrackSelector';
 import StatsBar from './components/StatsBar';
 import CourseDetailModal from './components/CourseDetailModal';
-import type { Course, PlannerCourse, MissingPrereq, PrereqMeta, TrackOption } from './types';
+import type { Course, PlannerCourse, PrereqMeta, TrackOption } from './types';
 import courseCatalog from './data/courseCatalog.json';
 import { analyzePrerequisites, normalizeId } from './utils/prerequisite';
 import { createMergedTrackLoader } from './services/trackService';
@@ -13,7 +13,7 @@ import { createMergedTrackLoader } from './services/trackService';
 const SEMESTER_COUNT = 8;
 const MAX_SEMESTER_CREDITS = 30;
 const STORAGE_KEY = 'banana-bread-vite-state';
-const catalog = courseCatalog as Course[];
+const catalog = (courseCatalog as Course[]).filter((course) => !course.name.startsWith('השלמות'));
 const trackLoader = createMergedTrackLoader();
 
 function App() {
@@ -23,7 +23,6 @@ function App() {
   const [isTrackOpen, setIsTrackOpen] = useState(false);
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
   const [activeDragId, setActiveDragId] = useState<string | null>(null);
-  const [focusedCourseId, setFocusedCourseId] = useState<string | null>(null);
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -80,12 +79,12 @@ function App() {
           : a.id.localeCompare(b.id)
       )
       .slice(0, 12);
-  }, [searchQuery, searchSort, catalog, courses]);
+  }, [searchQuery, searchSort, courses]);
 
   const trackOptions = useMemo<TrackOption[]>(() => trackLoader.getTrackOptions(), []);
 
   const getCoursePrereqMeta = useCallback(
-    (course: PlannerCourse) => {
+    (course: PlannerCourse): PrereqMeta => {
       const buildMissing = (ids: string[]) =>
         ids.map((id) => ({ id, name: courseMap.get(normalizeId(id))?.name ?? id }));
 
@@ -177,6 +176,7 @@ function App() {
             entry.semester
           );
         })
+        .filter((course) => !course.name.startsWith('השלמות'))
         .sort((left, right) => left.semester - right.semester);
       setCourses(loaded);
       setIsTrackOpen(false);
@@ -184,7 +184,10 @@ function App() {
     [courseMap, createPlannerCourse]
   );
 
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 6 } }));
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 200, tolerance: 8 } })
+  );
 
   const handleDragStart = useCallback((event: DragStartEvent) => {
     if (typeof event.active.id === 'string') {
@@ -213,6 +216,11 @@ function App() {
     const courseId = activeDragId.replace('course-', '');
     return courses.find((course) => course.id === courseId) ?? null;
   }, [activeDragId, courses]);
+
+  const dragOverlayMeta = useMemo<PrereqMeta | null>(
+    () => (dragOverlayCourse ? getCoursePrereqMeta(dragOverlayCourse) : null),
+    [dragOverlayCourse, getCoursePrereqMeta]
+  );
 
   const selectedCourse = selectedCourseId ? courses.find((course) => course.id === selectedCourseId) ?? null : null;
   const selectedCourseMeta = selectedCourse ? getCoursePrereqMeta(selectedCourse) : null;
@@ -311,18 +319,17 @@ function App() {
                 onToggleComplete={toggleComplete}
                 onDelete={removeCourse}
                 onViewDetails={setSelectedCourseId}
-                onFocusCourse={setFocusedCourseId}
                 getCoursePrereqMeta={getCoursePrereqMeta}
                 onAddPrereq={addPrerequisiteCourse}
               />
             ))}
           </div>
           <DragOverlay>
-            {dragOverlayCourse ? (
+            {dragOverlayCourse && dragOverlayMeta ? (
               <CourseCard
                 course={dragOverlayCourse}
-                error={getCoursePrereqMeta(dragOverlayCourse).error ?? undefined}
-                missingPrereqs={getCoursePrereqMeta(dragOverlayCourse).missingPrereqs}
+                error={dragOverlayMeta.error ?? undefined}
+                missingPrereqs={dragOverlayMeta.missingPrereqs}
                 blockCount={blocksByCourse[dragOverlayCourse.id] ?? 0}
                 onToggleComplete={toggleComplete}
                 onDelete={removeCourse}
@@ -342,7 +349,7 @@ function App() {
         blockCount={selectedCourseBlockCount}
         onClose={() => setSelectedCourseId(null)}
         onToggleComplete={toggleComplete}
-        onDelete={removeCourse}
+        onDelete={(id) => { removeCourse(id); setSelectedCourseId(null); }}
         onAddPrereq={(missingId) => selectedCourse ? addPrerequisiteCourse(missingId, Math.max(1, selectedCourse.semester - 1)) : undefined}
       />
       <TrackSelector open={isTrackOpen} tracks={trackOptions} onClose={() => setIsTrackOpen(false)} onSelect={loadTrack} />

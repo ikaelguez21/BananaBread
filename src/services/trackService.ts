@@ -164,6 +164,3 @@ export function createMergedTrackLoader(): TrackLoader {
   return mergedEntries.length ? createTrackLoader(mergedEntries, mergedOptions, 'merged') : createStaticTrackLoader();
 }
 
-export function loadStaticTrack(trackId: string): TrackLoadResult {
-  return createStaticTrackLoader().loadTrack(trackId);
-}

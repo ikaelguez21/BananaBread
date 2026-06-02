@@ -1,11 +1,6 @@
 import { type CSSProperties } from 'react';
 import { useDraggable } from '@dnd-kit/core';
-import type { PlannerCourse } from '../types';
-
-interface MissingPrereq {
-  id: string;
-  name: string;
-}
+import type { MissingPrereq, PlannerCourse } from '../types';
 
 interface CourseCardProps {
   course: PlannerCourse;

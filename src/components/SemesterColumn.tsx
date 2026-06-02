@@ -1,6 +1,6 @@
 import { useDroppable } from '@dnd-kit/core';
 import CourseCard from './CourseCard';
-import type { MissingPrereq, PlannerCourse, PrereqMeta } from '../types';
+import type { PlannerCourse, PrereqMeta } from '../types';
 
 interface SemesterColumnProps {
   semester: number;
@@ -10,7 +10,6 @@ interface SemesterColumnProps {
   onToggleComplete: (courseId: string) => void;
   onDelete: (courseId: string) => void;
   onViewDetails: (courseId: string) => void;
-  onFocusCourse: (courseId: string | null) => void;
   getCoursePrereqMeta: (course: PlannerCourse) => PrereqMeta;
   onAddPrereq: (missingId: string, targetSemester: number) => void;
 }
@@ -23,7 +22,6 @@ export default function SemesterColumn({
   onToggleComplete,
   onDelete,
   onViewDetails,
-  onFocusCourse,
   getCoursePrereqMeta,
   onAddPrereq
 }: SemesterColumnProps) {
@@ -58,7 +56,7 @@ export default function SemesterColumn({
                 onToggleComplete={onToggleComplete}
                 onDelete={onDelete}
                 onViewDetails={onViewDetails}
-                onFocus={onFocusCourse}
+                onFocus={() => undefined}
                 onAddPrereq={(missingId) => onAddPrereq(missingId, Math.max(1, course.semester - 1))}
               />
             );
