@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "generate-tracks": "python tracks_to_json.py --output src/data/tracks-sap-latest.json",
-    "parse-catalogs": "python parse_catalog_pdfs.py --output src/data/tracks-pdf-latest.json",
+    "parse-catalogs": "python parse_catalog_pdfs.py",
     "merge-tracks": "python merge_track_data.py --sap src/data/tracks-sap-latest.json --pdf src/data/tracks-pdf-latest.json --output-dir src/data",
     "validate-tracks": "python merge_track_data.py --sap src/data/tracks-sap-latest.json --pdf src/data/tracks-pdf-latest.json --validate-only",
     "validate-schema": "python schema_validator.py src/data/tracks-latest.json"
