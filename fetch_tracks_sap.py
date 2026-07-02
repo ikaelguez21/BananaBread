@@ -51,6 +51,10 @@ HEADERS = {
 session = requests.Session()
 
 
+class ODataError(RuntimeError):
+    """Deterministic business error returned by the OData service (no point retrying)."""
+
+
 def send_request(query: str) -> dict:
     body = f"""
 --{BOUNDARY}
@@ -79,9 +83,12 @@ MaxDataServiceVersion: 2.0
             chunks = response.text.replace("\r\n", "\n").strip().split("\n\n")
             payload = json.loads(chunks[2].split("\n", 1)[0])
             if "error" in payload:
-                raise RuntimeError(f"OData error for {query}: {json.dumps(payload['error'])[:300]}")
+                time.sleep(REQUEST_DELAY_SECONDS)
+                raise ODataError(f"OData error for {query}: {json.dumps(payload['error'], ensure_ascii=False)[:300]}")
             time.sleep(REQUEST_DELAY_SECONDS)
             return payload
+        except ODataError:
+            raise
         except (requests.RequestException, RuntimeError, json.JSONDecodeError, IndexError) as exc:
             last_error = exc
             if attempt < MAX_RETRIES:
@@ -164,9 +171,29 @@ def latest_version(versions: list[dict]) -> dict:
     return max(versions, key=sort_key)
 
 
+FALLBACK_YEARS = 6
+
+
 def fetch_program_track(program: dict, year: str, semester: str) -> dict | None:
-    """Latest version node + full structure tree for one SC program; None if no version this year."""
-    versions = fetch_tree_children(program["Otjid"], year, semester)
+    """Latest version node + full structure tree for one SC program.
+
+    If the program has no version at the requested period, walk back year by
+    year (winter session) and take the most recently released version found."""
+    def try_period(y: str, s: str) -> list[dict]:
+        try:
+            return fetch_tree_children(program["Otjid"], y, s)
+        except ODataError:
+            return []  # old periods often return a generic SAP error — treat as "no version"
+
+    versions = try_period(year, semester)
+    if not versions and semester != "200":
+        semester = "200"
+        versions = try_period(year, semester)
+    for _ in range(FALLBACK_YEARS):
+        if versions:
+            break
+        year = str(int(year) - 1)
+        versions = try_period(year, semester)
     if not versions:
         return None
     versions = [latest_version(versions)]
