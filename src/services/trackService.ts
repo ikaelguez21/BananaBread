@@ -161,6 +161,13 @@ export function createStaticTrackLoader(): TrackLoader {
 export function createMergedTrackLoader(): TrackLoader {
   const mergedEntries = buildMergedTrackEntries(mergedTrackData);
   const mergedOptions = buildMergedTrackOptions(mergedTrackData);
-  return mergedEntries.length ? createTrackLoader(mergedEntries, mergedOptions, 'merged') : createStaticTrackLoader();
+  if (!mergedEntries.length) return createStaticTrackLoader();
+  // SAP-sourced tracks first, static catalog tracks after (ids never collide:
+  // merged ids are "faculty:program:spec", static ids are raw track names).
+  return createTrackLoader(
+    [...mergedEntries, ...trackEntries],
+    [...mergedOptions, ...getStaticTrackOptions()],
+    'merged'
+  );
 }
 

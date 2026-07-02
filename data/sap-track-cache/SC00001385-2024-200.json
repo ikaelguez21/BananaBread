@@ -1,0 +1,2859 @@
+{
+ "id": "SC00001385",
+ "name": "הנדסת אוירונוטיקה וחלל",
+ "facultyId": "00002160",
+ "facultyName": "הפקולטה להנדסת אווירונוטיקה וחלל",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008131",
+   "name": "B.Sc. גרסת AE 2024 חורף",
+   "structure": [
+    {
+     "otjid": "CG00010098",
+     "type": "CG",
+     "name": "דרישות אנגלית",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "SM03240032",
+       "type": "SM",
+       "name": "אנגלית למתקדמים א'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240032"
+      },
+      {
+       "otjid": "SM03240033",
+       "type": "SM",
+       "name": "אנגלית טכנית-מתקדמים ב'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240033"
+      }
+     ]
+    },
+    {
+     "otjid": "CG00008132",
+     "type": "CG",
+     "name": "נתיב: אוירונוטיקה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00009291",
+       "type": "CG",
+       "name": "אפשרויות בחירה בחובה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00009293",
+         "type": "CG",
+         "name": "אפשרות 1",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM00840651",
+           "type": "SM",
+           "name": "פרויקט תכן 51-פ.אסטרונוטיקה(חורף)",
+           "category": null,
+           "credits": null,
+           "courseId": "00840651"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00009294",
+         "type": "CG",
+         "name": "אפשרות 2",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM00840653",
+           "type": "SM",
+           "name": "פרויקט תכן 53-פ.אווירונוטיקה-חורף",
+           "category": null,
+           "credits": null,
+           "courseId": "00840653"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "otjid": "CG00009574",
+       "type": "CG",
+       "name": "רשימת קורסי עברית",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03240053",
+         "type": "SM",
+         "name": "עברית 4",
+         "category": null,
+         "credits": null,
+         "courseId": "03240053"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00008133",
+       "type": "CG",
+       "name": "מקצועות חובה באוירונוטיקה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00440102",
+         "type": "SM",
+         "name": "בטיחות במעבדות חשמל",
+         "category": null,
+         "credits": null,
+         "courseId": "00440102"
+        },
+        {
+         "otjid": "SM00840154",
+         "type": "SM",
+         "name": "שיטות ניסוי בהנדסה אוירונוטית",
+         "category": null,
+         "credits": null,
+         "courseId": "00840154"
+        },
+        {
+         "otjid": "SM00840213",
+         "type": "SM",
+         "name": "תרמודינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00840213"
+        },
+        {
+         "otjid": "SM00840220",
+         "type": "SM",
+         "name": "מכניקת הטיס 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00840220"
+        },
+        {
+         "otjid": "SM00840225",
+         "type": "SM",
+         "name": "דינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00840225"
+        },
+        {
+         "otjid": "SM00840312",
+         "type": "SM",
+         "name": "זרימה דחיסה, כונסים ונחירים",
+         "category": null,
+         "credits": null,
+         "courseId": "00840312"
+        },
+        {
+         "otjid": "SM00840314",
+         "type": "SM",
+         "name": "זרימה צמיגה ומעבר חום",
+         "category": null,
+         "credits": null,
+         "courseId": "00840314"
+        },
+        {
+         "otjid": "SM00840641",
+         "type": "SM",
+         "name": "תכן הנ. וייצור של מערכות תעופתיות",
+         "category": null,
+         "credits": null,
+         "courseId": "00840641"
+        },
+        {
+         "otjid": "SM00840738",
+         "type": "SM",
+         "name": "תורת הבקרה",
+         "category": null,
+         "credits": null,
+         "courseId": "00840738"
+        },
+        {
+         "otjid": "SM00940411",
+         "type": "SM",
+         "name": "הסתברות ת'",
+         "category": null,
+         "credits": null,
+         "courseId": "00940411"
+        },
+        {
+         "otjid": "SM01040019",
+         "type": "SM",
+         "name": "אלגברה ליניארית מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040019"
+        },
+        {
+         "otjid": "SM01040041",
+         "type": "SM",
+         "name": "חשבון דיפרנציאלי ואינטגרלי 1מ1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040041"
+        },
+        {
+         "otjid": "SM01040043",
+         "type": "SM",
+         "name": "חשבון דיפרנציאלי ואינטגרלי 2מ1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040043"
+        },
+        {
+         "otjid": "SM01040131",
+         "type": "SM",
+         "name": "משוואות דיפרנציאליות רגילות/ח",
+         "category": null,
+         "credits": null,
+         "courseId": "01040131"
+        },
+        {
+         "otjid": "SM01040215",
+         "type": "SM",
+         "name": "פונקציות מרוכבות א'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040215"
+        },
+        {
+         "otjid": "SM01040228",
+         "type": "SM",
+         "name": "משוואות דיפרנציאליות חלקיות מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040228"
+        },
+        {
+         "otjid": "SM01140051",
+         "type": "SM",
+         "name": "פיסיקה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01140051"
+        },
+        {
+         "otjid": "SM01140052",
+         "type": "SM",
+         "name": "פיסיקה 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01140052"
+        },
+        {
+         "otjid": "SM01140054",
+         "type": "SM",
+         "name": "פיסיקה 3",
+         "category": null,
+         "credits": null,
+         "courseId": "01140054"
+        },
+        {
+         "otjid": "SM01250001",
+         "type": "SM",
+         "name": "כימיה כללית",
+         "category": null,
+         "credits": null,
+         "courseId": "01250001"
+        },
+        {
+         "otjid": "SM02340128",
+         "type": "SM",
+         "name": "מבוא למחשב שפת פייתון",
+         "category": null,
+         "credits": null,
+         "courseId": "02340128"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000629",
+       "type": "CG",
+       "name": "אשכול: אווירודינמיקה ואווירואקוסטיקה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00860320",
+         "type": "SM",
+         "name": "מעבר חום בהנדסת אוירונוטיקה וחלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860320"
+        },
+        {
+         "otjid": "SM00860321",
+         "type": "SM",
+         "name": "נושאים נבחרים בתורת הזרימה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00860321"
+        },
+        {
+         "otjid": "SM00860325",
+         "type": "SM",
+         "name": "דינמיקה ויציבות זרימות רב-פאזיות",
+         "category": null,
+         "credits": null,
+         "courseId": "00860325"
+        },
+        {
+         "otjid": "SM00860385",
+         "type": "SM",
+         "name": "מבוא לזרימות גזים קלושים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860385"
+        },
+        {
+         "otjid": "SM00880318",
+         "type": "SM",
+         "name": "תורת הכנף",
+         "category": null,
+         "credits": null,
+         "courseId": "00880318"
+        },
+        {
+         "otjid": "SM00880780",
+         "type": "SM",
+         "name": "יציבות הידרודינמית ותרמית של שכבות גבול",
+         "category": null,
+         "credits": null,
+         "courseId": "00880780"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000355",
+       "type": "CG",
+       "name": "אשכול: אוירונוטיקה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00840220",
+         "type": "SM",
+         "name": "מכניקת הטיס 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00840220"
+        },
+        {
+         "otjid": "SM00860219",
+         "type": "SM",
+         "name": "דינמיקה ואוירודינמיקה  של מסוקים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860219"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006309",
+       "type": "CG",
+       "name": "אשכול: אסטרונוטיקה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00840913",
+         "type": "SM",
+         "name": "יסודות הנדסת חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00840913"
+        },
+        {
+         "otjid": "SM00860290",
+         "type": "SM",
+         "name": "בקרת מסלולי לוויינים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860290"
+        },
+        {
+         "otjid": "SM00860385",
+         "type": "SM",
+         "name": "מבוא לזרימות גזים קלושים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860385"
+        },
+        {
+         "otjid": "SM00860923",
+         "type": "SM",
+         "name": "אסטרודינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00860923"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006310",
+       "type": "CG",
+       "name": "אשכול: הנחיה, ניווט, בקרה ומערכות אוטו.",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00850605",
+         "type": "SM",
+         "name": "מעבדת אוויוניקה ותוכנת הטסה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850605"
+        },
+        {
+         "otjid": "SM00860290",
+         "type": "SM",
+         "name": "בקרת מסלולי לוויינים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860290"
+        },
+        {
+         "otjid": "SM00860312",
+         "type": "SM",
+         "name": "בקרה לא לינארית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860312"
+        },
+        {
+         "otjid": "SM00860733",
+         "type": "SM",
+         "name": "תהליכים אקראיים במערכות אויר-חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860733"
+        },
+        {
+         "otjid": "SM00860761",
+         "type": "SM",
+         "name": "ניווט ומיפוי מבוסס ראיה ממוחשבת",
+         "category": null,
+         "credits": null,
+         "courseId": "00860761"
+        },
+        {
+         "otjid": "SM00880751",
+         "type": "SM",
+         "name": "בקרה אופטימלית במערכות תעופתיות 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00880751"
+        },
+        {
+         "otjid": "SM00880759",
+         "type": "SM",
+         "name": "נושאים מתקדמים בהנחית טילים",
+         "category": null,
+         "credits": null,
+         "courseId": "00880759"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006311",
+       "type": "CG",
+       "name": "אשכול: המרת הנעה ואנרגיה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00860320",
+         "type": "SM",
+         "name": "מעבר חום בהנדסת אוירונוטיקה וחלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860320"
+        },
+        {
+         "otjid": "SM00860401",
+         "type": "SM",
+         "name": "מערכות הנעה לכלי טייס המונעים במדחף",
+         "category": null,
+         "credits": null,
+         "courseId": "00860401"
+        },
+        {
+         "otjid": "SM00860414",
+         "type": "SM",
+         "name": "מנועי מגח סילון",
+         "category": null,
+         "credits": null,
+         "courseId": "00860414"
+        },
+        {
+         "otjid": "SM00860480",
+         "type": "SM",
+         "name": "יסודות אווירו-תרמיים של טורבו-מכונות",
+         "category": null,
+         "credits": null,
+         "courseId": "00860480"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006312",
+       "type": "CG",
+       "name": "אשכול: מבנים וחומרים mech.",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00860520",
+         "type": "SM",
+         "name": "בעיות מצומדות בחומרים פונקציונליים לא ליניאריים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860520"
+        },
+        {
+         "otjid": "SM00860521",
+         "type": "SM",
+         "name": "נושאים נבחרים במבנים אוירו-חלל 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00860521"
+        },
+        {
+         "otjid": "SM00860574",
+         "type": "SM",
+         "name": "אלמנטים סופיים בהנדסה אוירונוטית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860574"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006313",
+       "type": "CG",
+       "name": "אשכול: תכן והנדסת מערכות",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00850605",
+         "type": "SM",
+         "name": "מעבדת אוויוניקה ותוכנת הטסה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850605"
+        },
+        {
+         "otjid": "SM00850640",
+         "type": "SM",
+         "name": "תמיכה כוללת במוצר למע. אויר חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00850640"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000161",
+       "type": "CG",
+       "name": "אפשרות 1: אוירונוטיקה",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000360",
+       "type": "CG",
+       "name": "רשימה: מעבדה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00850156",
+         "type": "SM",
+         "name": "פרויקט ניסוי",
+         "category": null,
+         "credits": null,
+         "courseId": "00850156"
+        },
+        {
+         "otjid": "SM00850220",
+         "type": "SM",
+         "name": "מעבדה במכניקת הטיס",
+         "category": null,
+         "credits": null,
+         "courseId": "00850220"
+        },
+        {
+         "otjid": "SM00850305",
+         "type": "SM",
+         "name": "מעבדה באוירודינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850305"
+        },
+        {
+         "otjid": "SM00850405",
+         "type": "SM",
+         "name": "מעבדה בהנעה ושריפה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850405"
+        },
+        {
+         "otjid": "SM00850455",
+         "type": "SM",
+         "name": "מעבדה במנועי סילון וטורבינות",
+         "category": null,
+         "credits": null,
+         "courseId": "00850455"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000164",
+       "type": "CG",
+       "name": "רשימה: סמינר",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00850801",
+         "type": "SM",
+         "name": "סמינריון בנושא זרימה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850801"
+        },
+        {
+         "otjid": "SM00850803",
+         "type": "SM",
+         "name": "סמינריון בנושא הנעה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850803"
+        },
+        {
+         "otjid": "SM00850805",
+         "type": "SM",
+         "name": "סמינריון בנושא חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00850805"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000582",
+       "type": "CG",
+       "name": "מקצועות בחירה פקולטיים AE",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00840220",
+         "type": "SM",
+         "name": "מכניקת הטיס 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00840220"
+        },
+        {
+         "otjid": "SM00840913",
+         "type": "SM",
+         "name": "יסודות הנדסת חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00840913"
+        },
+        {
+         "otjid": "SM00850156",
+         "type": "SM",
+         "name": "פרויקט ניסוי",
+         "category": null,
+         "credits": null,
+         "courseId": "00850156"
+        },
+        {
+         "otjid": "SM00850640",
+         "type": "SM",
+         "name": "תמיכה כוללת במוצר למע. אויר חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00850640"
+        },
+        {
+         "otjid": "SM00850851",
+         "type": "SM",
+         "name": "פרויקט מחקר 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00850851"
+        },
+        {
+         "otjid": "SM00850852",
+         "type": "SM",
+         "name": "פרויקט מחקר 2",
+         "category": null,
+         "credits": null,
+         "courseId": "00850852"
+        },
+        {
+         "otjid": "SM00860219",
+         "type": "SM",
+         "name": "דינמיקה ואוירודינמיקה  של מסוקים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860219"
+        },
+        {
+         "otjid": "SM00860290",
+         "type": "SM",
+         "name": "בקרת מסלולי לוויינים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860290"
+        },
+        {
+         "otjid": "SM00860312",
+         "type": "SM",
+         "name": "בקרה לא לינארית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860312"
+        },
+        {
+         "otjid": "SM00860320",
+         "type": "SM",
+         "name": "מעבר חום בהנדסת אוירונוטיקה וחלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860320"
+        },
+        {
+         "otjid": "SM00860321",
+         "type": "SM",
+         "name": "נושאים נבחרים בתורת הזרימה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00860321"
+        },
+        {
+         "otjid": "SM00860325",
+         "type": "SM",
+         "name": "דינמיקה ויציבות זרימות רב-פאזיות",
+         "category": null,
+         "credits": null,
+         "courseId": "00860325"
+        },
+        {
+         "otjid": "SM00860385",
+         "type": "SM",
+         "name": "מבוא לזרימות גזים קלושים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860385"
+        },
+        {
+         "otjid": "SM00860401",
+         "type": "SM",
+         "name": "מערכות הנעה לכלי טייס המונעים במדחף",
+         "category": null,
+         "credits": null,
+         "courseId": "00860401"
+        },
+        {
+         "otjid": "SM00860414",
+         "type": "SM",
+         "name": "מנועי מגח סילון",
+         "category": null,
+         "credits": null,
+         "courseId": "00860414"
+        },
+        {
+         "otjid": "SM00860480",
+         "type": "SM",
+         "name": "יסודות אווירו-תרמיים של טורבו-מכונות",
+         "category": null,
+         "credits": null,
+         "courseId": "00860480"
+        },
+        {
+         "otjid": "SM00860520",
+         "type": "SM",
+         "name": "בעיות מצומדות בחומרים פונקציונליים לא ליניאריים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860520"
+        },
+        {
+         "otjid": "SM00860521",
+         "type": "SM",
+         "name": "נושאים נבחרים במבנים אוירו-חלל 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00860521"
+        },
+        {
+         "otjid": "SM00860574",
+         "type": "SM",
+         "name": "אלמנטים סופיים בהנדסה אוירונוטית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860574"
+        },
+        {
+         "otjid": "SM00860733",
+         "type": "SM",
+         "name": "תהליכים אקראיים במערכות אויר-חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860733"
+        },
+        {
+         "otjid": "SM00860761",
+         "type": "SM",
+         "name": "ניווט ומיפוי מבוסס ראיה ממוחשבת",
+         "category": null,
+         "credits": null,
+         "courseId": "00860761"
+        },
+        {
+         "otjid": "SM00860923",
+         "type": "SM",
+         "name": "אסטרודינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00860923"
+        },
+        {
+         "otjid": "SM00880318",
+         "type": "SM",
+         "name": "תורת הכנף",
+         "category": null,
+         "credits": null,
+         "courseId": "00880318"
+        },
+        {
+         "otjid": "SM00880751",
+         "type": "SM",
+         "name": "בקרה אופטימלית במערכות תעופתיות 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00880751"
+        },
+        {
+         "otjid": "SM00880759",
+         "type": "SM",
+         "name": "נושאים מתקדמים בהנחית טילים",
+         "category": null,
+         "credits": null,
+         "courseId": "00880759"
+        },
+        {
+         "otjid": "SM00880780",
+         "type": "SM",
+         "name": "יציבות הידרודינמית ותרמית של שכבות גבול",
+         "category": null,
+         "credits": null,
+         "courseId": "00880780"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006314",
+       "type": "CG",
+       "name": "מקצועות בחירה מפקולטות אחרות",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00160210",
+         "type": "SM",
+         "name": "גלי מים",
+         "category": null,
+         "credits": null,
+         "courseId": "00160210"
+        },
+        {
+         "otjid": "SM00340404",
+         "type": "SM",
+         "name": "מעבדה מתקדמת בתיב\"ם",
+         "category": null,
+         "credits": null,
+         "courseId": "00340404"
+        },
+        {
+         "otjid": "SM00350001",
+         "type": "SM",
+         "name": "מבוא לרובוטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00350001"
+        },
+        {
+         "otjid": "SM00350010",
+         "type": "SM",
+         "name": "קינמטיקה של מכניזמים",
+         "category": null,
+         "credits": null,
+         "courseId": "00350010"
+        },
+        {
+         "otjid": "SM00350036",
+         "type": "SM",
+         "name": "תכן מערכות בקרה",
+         "category": null,
+         "credits": null,
+         "courseId": "00350036"
+        },
+        {
+         "otjid": "SM00350044",
+         "type": "SM",
+         "name": "הידרוסטטיקה של אוניות",
+         "category": null,
+         "credits": null,
+         "courseId": "00350044"
+        },
+        {
+         "otjid": "SM00350146",
+         "type": "SM",
+         "name": "מנועי שריפה פנימית",
+         "category": null,
+         "credits": null,
+         "courseId": "00350146"
+        },
+        {
+         "otjid": "SM00360009",
+         "type": "SM",
+         "name": "מעבר חום ומסה",
+         "category": null,
+         "credits": null,
+         "courseId": "00360009"
+        },
+        {
+         "otjid": "SM00360015",
+         "type": "SM",
+         "name": "שיטות אלמנטים סופיים בהנדסה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00360015"
+        },
+        {
+         "otjid": "SM00360020",
+         "type": "SM",
+         "name": "גאומטריה חישובית ומודלים לתיב\"ם 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00360020"
+        },
+        {
+         "otjid": "SM00360048",
+         "type": "SM",
+         "name": "אנליזה של רטט לא לינארי",
+         "category": null,
+         "credits": null,
+         "courseId": "00360048"
+        },
+        {
+         "otjid": "SM00360049",
+         "type": "SM",
+         "name": "רשתות עצביות לבקרה ודיאגנוסטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00360049"
+        },
+        {
+         "otjid": "SM00380715",
+         "type": "SM",
+         "name": "תרמודינמיקה מתקדמת 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00380715"
+        },
+        {
+         "otjid": "SM00380782",
+         "type": "SM",
+         "name": "שיטות מספריות במכניקת הזורמים",
+         "category": null,
+         "credits": null,
+         "courseId": "00380782"
+        },
+        {
+         "otjid": "SM00440101",
+         "type": "SM",
+         "name": "מבוא למערכות תכנה",
+         "category": null,
+         "credits": null,
+         "courseId": "00440101"
+        },
+        {
+         "otjid": "SM00440202",
+         "type": "SM",
+         "name": "אותות אקראיים",
+         "category": null,
+         "credits": null,
+         "courseId": "00440202"
+        },
+        {
+         "otjid": "SM00440268",
+         "type": "SM",
+         "name": "מבוא למבני נתונים ואלגוריתמים",
+         "category": null,
+         "credits": null,
+         "courseId": "00440268"
+        },
+        {
+         "otjid": "SM00440334",
+         "type": "SM",
+         "name": "רשתות מחשבים ואינטרנט 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00440334"
+        },
+        {
+         "otjid": "SM00460195",
+         "type": "SM",
+         "name": "מערכות לומדות",
+         "category": null,
+         "credits": null,
+         "courseId": "00460195"
+        },
+        {
+         "otjid": "SM00460201",
+         "type": "SM",
+         "name": "עיבוד אותות אקראיים",
+         "category": null,
+         "credits": null,
+         "courseId": "00460201"
+        },
+        {
+         "otjid": "SM00460211",
+         "type": "SM",
+         "name": "למידה עמוקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00460211"
+        },
+        {
+         "otjid": "SM00860312",
+         "type": "SM",
+         "name": "בקרה לא לינארית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860312"
+        },
+        {
+         "otjid": "SM00860401",
+         "type": "SM",
+         "name": "מערכות הנעה לכלי טייס המונעים במדחף",
+         "category": null,
+         "credits": null,
+         "courseId": "00860401"
+        },
+        {
+         "otjid": "SM00860574",
+         "type": "SM",
+         "name": "אלמנטים סופיים בהנדסה אוירונוטית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860574"
+        },
+        {
+         "otjid": "SM00860733",
+         "type": "SM",
+         "name": "תהליכים אקראיים במערכות אויר-חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860733"
+        },
+        {
+         "otjid": "SM00880751",
+         "type": "SM",
+         "name": "בקרה אופטימלית במערכות תעופתיות 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00880751"
+        },
+        {
+         "otjid": "SM00880780",
+         "type": "SM",
+         "name": "יציבות הידרודינמית ותרמית של שכבות גבול",
+         "category": null,
+         "credits": null,
+         "courseId": "00880780"
+        },
+        {
+         "otjid": "SM00940219",
+         "type": "SM",
+         "name": "הנדסת תוכנה",
+         "category": null,
+         "credits": null,
+         "courseId": "00940219"
+        },
+        {
+         "otjid": "SM00940423",
+         "type": "SM",
+         "name": "מבוא לסטטיסטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00940423"
+        },
+        {
+         "otjid": "SM02340124",
+         "type": "SM",
+         "name": "מבוא לתכנות מערכות",
+         "category": null,
+         "credits": null,
+         "courseId": "02340124"
+        },
+        {
+         "otjid": "SM02360927",
+         "type": "SM",
+         "name": "מבוא לרובוטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "02360927"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "otjid": "CG00008134",
+     "type": "CG",
+     "name": "נתיב: אסטרונוטיקה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00009292",
+       "type": "CG",
+       "name": "אפשרויות בחירה בחובה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00009295",
+         "type": "CG",
+         "name": "אפשרות 1",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM00840651",
+           "type": "SM",
+           "name": "פרויקט תכן 51-פ.אסטרונוטיקה(חורף)",
+           "category": null,
+           "credits": null,
+           "courseId": "00840651"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00009296",
+         "type": "CG",
+         "name": "אפשרות 2",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM00840653",
+           "type": "SM",
+           "name": "פרויקט תכן 53-פ.אווירונוטיקה-חורף",
+           "category": null,
+           "credits": null,
+           "courseId": "00840653"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "otjid": "CG00009575",
+       "type": "CG",
+       "name": "רשימת קורסי עברית",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03240053",
+         "type": "SM",
+         "name": "עברית 4",
+         "category": null,
+         "credits": null,
+         "courseId": "03240053"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00008135",
+       "type": "CG",
+       "name": "מקצועות חובה באסטרונוטיקה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00440102",
+         "type": "SM",
+         "name": "בטיחות במעבדות חשמל",
+         "category": null,
+         "credits": null,
+         "courseId": "00440102"
+        },
+        {
+         "otjid": "SM00840154",
+         "type": "SM",
+         "name": "שיטות ניסוי בהנדסה אוירונוטית",
+         "category": null,
+         "credits": null,
+         "courseId": "00840154"
+        },
+        {
+         "otjid": "SM00840213",
+         "type": "SM",
+         "name": "תרמודינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00840213"
+        },
+        {
+         "otjid": "SM00840225",
+         "type": "SM",
+         "name": "דינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00840225"
+        },
+        {
+         "otjid": "SM00840312",
+         "type": "SM",
+         "name": "זרימה דחיסה, כונסים ונחירים",
+         "category": null,
+         "credits": null,
+         "courseId": "00840312"
+        },
+        {
+         "otjid": "SM00840314",
+         "type": "SM",
+         "name": "זרימה צמיגה ומעבר חום",
+         "category": null,
+         "credits": null,
+         "courseId": "00840314"
+        },
+        {
+         "otjid": "SM00840641",
+         "type": "SM",
+         "name": "תכן הנ. וייצור של מערכות תעופתיות",
+         "category": null,
+         "credits": null,
+         "courseId": "00840641"
+        },
+        {
+         "otjid": "SM00840738",
+         "type": "SM",
+         "name": "תורת הבקרה",
+         "category": null,
+         "credits": null,
+         "courseId": "00840738"
+        },
+        {
+         "otjid": "SM00840913",
+         "type": "SM",
+         "name": "יסודות הנדסת חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00840913"
+        },
+        {
+         "otjid": "SM00940411",
+         "type": "SM",
+         "name": "הסתברות ת'",
+         "category": null,
+         "credits": null,
+         "courseId": "00940411"
+        },
+        {
+         "otjid": "SM01040019",
+         "type": "SM",
+         "name": "אלגברה ליניארית מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040019"
+        },
+        {
+         "otjid": "SM01040041",
+         "type": "SM",
+         "name": "חשבון דיפרנציאלי ואינטגרלי 1מ1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040041"
+        },
+        {
+         "otjid": "SM01040043",
+         "type": "SM",
+         "name": "חשבון דיפרנציאלי ואינטגרלי 2מ1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040043"
+        },
+        {
+         "otjid": "SM01040131",
+         "type": "SM",
+         "name": "משוואות דיפרנציאליות רגילות/ח",
+         "category": null,
+         "credits": null,
+         "courseId": "01040131"
+        },
+        {
+         "otjid": "SM01040215",
+         "type": "SM",
+         "name": "פונקציות מרוכבות א'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040215"
+        },
+        {
+         "otjid": "SM01040228",
+         "type": "SM",
+         "name": "משוואות דיפרנציאליות חלקיות מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040228"
+        },
+        {
+         "otjid": "SM01140051",
+         "type": "SM",
+         "name": "פיסיקה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01140051"
+        },
+        {
+         "otjid": "SM01140052",
+         "type": "SM",
+         "name": "פיסיקה 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01140052"
+        },
+        {
+         "otjid": "SM01140054",
+         "type": "SM",
+         "name": "פיסיקה 3",
+         "category": null,
+         "credits": null,
+         "courseId": "01140054"
+        },
+        {
+         "otjid": "SM01250001",
+         "type": "SM",
+         "name": "כימיה כללית",
+         "category": null,
+         "credits": null,
+         "courseId": "01250001"
+        },
+        {
+         "otjid": "SM02340128",
+         "type": "SM",
+         "name": "מבוא למחשב שפת פייתון",
+         "category": null,
+         "credits": null,
+         "courseId": "02340128"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000629",
+       "type": "CG",
+       "name": "אשכול: אווירודינמיקה ואווירואקוסטיקה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00860320",
+         "type": "SM",
+         "name": "מעבר חום בהנדסת אוירונוטיקה וחלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860320"
+        },
+        {
+         "otjid": "SM00860321",
+         "type": "SM",
+         "name": "נושאים נבחרים בתורת הזרימה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00860321"
+        },
+        {
+         "otjid": "SM00860325",
+         "type": "SM",
+         "name": "דינמיקה ויציבות זרימות רב-פאזיות",
+         "category": null,
+         "credits": null,
+         "courseId": "00860325"
+        },
+        {
+         "otjid": "SM00860385",
+         "type": "SM",
+         "name": "מבוא לזרימות גזים קלושים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860385"
+        },
+        {
+         "otjid": "SM00880318",
+         "type": "SM",
+         "name": "תורת הכנף",
+         "category": null,
+         "credits": null,
+         "courseId": "00880318"
+        },
+        {
+         "otjid": "SM00880780",
+         "type": "SM",
+         "name": "יציבות הידרודינמית ותרמית של שכבות גבול",
+         "category": null,
+         "credits": null,
+         "courseId": "00880780"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000355",
+       "type": "CG",
+       "name": "אשכול: אוירונוטיקה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00840220",
+         "type": "SM",
+         "name": "מכניקת הטיס 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00840220"
+        },
+        {
+         "otjid": "SM00860219",
+         "type": "SM",
+         "name": "דינמיקה ואוירודינמיקה  של מסוקים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860219"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006309",
+       "type": "CG",
+       "name": "אשכול: אסטרונוטיקה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00840913",
+         "type": "SM",
+         "name": "יסודות הנדסת חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00840913"
+        },
+        {
+         "otjid": "SM00860290",
+         "type": "SM",
+         "name": "בקרת מסלולי לוויינים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860290"
+        },
+        {
+         "otjid": "SM00860385",
+         "type": "SM",
+         "name": "מבוא לזרימות גזים קלושים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860385"
+        },
+        {
+         "otjid": "SM00860923",
+         "type": "SM",
+         "name": "אסטרודינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00860923"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006310",
+       "type": "CG",
+       "name": "אשכול: הנחיה, ניווט, בקרה ומערכות אוטו.",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00850605",
+         "type": "SM",
+         "name": "מעבדת אוויוניקה ותוכנת הטסה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850605"
+        },
+        {
+         "otjid": "SM00860290",
+         "type": "SM",
+         "name": "בקרת מסלולי לוויינים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860290"
+        },
+        {
+         "otjid": "SM00860312",
+         "type": "SM",
+         "name": "בקרה לא לינארית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860312"
+        },
+        {
+         "otjid": "SM00860733",
+         "type": "SM",
+         "name": "תהליכים אקראיים במערכות אויר-חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860733"
+        },
+        {
+         "otjid": "SM00860761",
+         "type": "SM",
+         "name": "ניווט ומיפוי מבוסס ראיה ממוחשבת",
+         "category": null,
+         "credits": null,
+         "courseId": "00860761"
+        },
+        {
+         "otjid": "SM00880751",
+         "type": "SM",
+         "name": "בקרה אופטימלית במערכות תעופתיות 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00880751"
+        },
+        {
+         "otjid": "SM00880759",
+         "type": "SM",
+         "name": "נושאים מתקדמים בהנחית טילים",
+         "category": null,
+         "credits": null,
+         "courseId": "00880759"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006311",
+       "type": "CG",
+       "name": "אשכול: המרת הנעה ואנרגיה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00860320",
+         "type": "SM",
+         "name": "מעבר חום בהנדסת אוירונוטיקה וחלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860320"
+        },
+        {
+         "otjid": "SM00860401",
+         "type": "SM",
+         "name": "מערכות הנעה לכלי טייס המונעים במדחף",
+         "category": null,
+         "credits": null,
+         "courseId": "00860401"
+        },
+        {
+         "otjid": "SM00860414",
+         "type": "SM",
+         "name": "מנועי מגח סילון",
+         "category": null,
+         "credits": null,
+         "courseId": "00860414"
+        },
+        {
+         "otjid": "SM00860480",
+         "type": "SM",
+         "name": "יסודות אווירו-תרמיים של טורבו-מכונות",
+         "category": null,
+         "credits": null,
+         "courseId": "00860480"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006312",
+       "type": "CG",
+       "name": "אשכול: מבנים וחומרים mech.",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00860520",
+         "type": "SM",
+         "name": "בעיות מצומדות בחומרים פונקציונליים לא ליניאריים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860520"
+        },
+        {
+         "otjid": "SM00860521",
+         "type": "SM",
+         "name": "נושאים נבחרים במבנים אוירו-חלל 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00860521"
+        },
+        {
+         "otjid": "SM00860574",
+         "type": "SM",
+         "name": "אלמנטים סופיים בהנדסה אוירונוטית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860574"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006313",
+       "type": "CG",
+       "name": "אשכול: תכן והנדסת מערכות",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00850605",
+         "type": "SM",
+         "name": "מעבדת אוויוניקה ותוכנת הטסה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850605"
+        },
+        {
+         "otjid": "SM00850640",
+         "type": "SM",
+         "name": "תמיכה כוללת במוצר למע. אויר חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00850640"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000169",
+       "type": "CG",
+       "name": "אפשרות 1: אסטרונוטיקה",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000360",
+       "type": "CG",
+       "name": "רשימה: מעבדה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00850156",
+         "type": "SM",
+         "name": "פרויקט ניסוי",
+         "category": null,
+         "credits": null,
+         "courseId": "00850156"
+        },
+        {
+         "otjid": "SM00850220",
+         "type": "SM",
+         "name": "מעבדה במכניקת הטיס",
+         "category": null,
+         "credits": null,
+         "courseId": "00850220"
+        },
+        {
+         "otjid": "SM00850305",
+         "type": "SM",
+         "name": "מעבדה באוירודינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850305"
+        },
+        {
+         "otjid": "SM00850405",
+         "type": "SM",
+         "name": "מעבדה בהנעה ושריפה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850405"
+        },
+        {
+         "otjid": "SM00850455",
+         "type": "SM",
+         "name": "מעבדה במנועי סילון וטורבינות",
+         "category": null,
+         "credits": null,
+         "courseId": "00850455"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000164",
+       "type": "CG",
+       "name": "רשימה: סמינר",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00850801",
+         "type": "SM",
+         "name": "סמינריון בנושא זרימה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850801"
+        },
+        {
+         "otjid": "SM00850803",
+         "type": "SM",
+         "name": "סמינריון בנושא הנעה",
+         "category": null,
+         "credits": null,
+         "courseId": "00850803"
+        },
+        {
+         "otjid": "SM00850805",
+         "type": "SM",
+         "name": "סמינריון בנושא חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00850805"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000582",
+       "type": "CG",
+       "name": "מקצועות בחירה פקולטיים AE",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00840220",
+         "type": "SM",
+         "name": "מכניקת הטיס 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00840220"
+        },
+        {
+         "otjid": "SM00840913",
+         "type": "SM",
+         "name": "יסודות הנדסת חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00840913"
+        },
+        {
+         "otjid": "SM00850156",
+         "type": "SM",
+         "name": "פרויקט ניסוי",
+         "category": null,
+         "credits": null,
+         "courseId": "00850156"
+        },
+        {
+         "otjid": "SM00850640",
+         "type": "SM",
+         "name": "תמיכה כוללת במוצר למע. אויר חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00850640"
+        },
+        {
+         "otjid": "SM00850851",
+         "type": "SM",
+         "name": "פרויקט מחקר 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00850851"
+        },
+        {
+         "otjid": "SM00850852",
+         "type": "SM",
+         "name": "פרויקט מחקר 2",
+         "category": null,
+         "credits": null,
+         "courseId": "00850852"
+        },
+        {
+         "otjid": "SM00860219",
+         "type": "SM",
+         "name": "דינמיקה ואוירודינמיקה  של מסוקים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860219"
+        },
+        {
+         "otjid": "SM00860290",
+         "type": "SM",
+         "name": "בקרת מסלולי לוויינים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860290"
+        },
+        {
+         "otjid": "SM00860312",
+         "type": "SM",
+         "name": "בקרה לא לינארית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860312"
+        },
+        {
+         "otjid": "SM00860320",
+         "type": "SM",
+         "name": "מעבר חום בהנדסת אוירונוטיקה וחלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860320"
+        },
+        {
+         "otjid": "SM00860321",
+         "type": "SM",
+         "name": "נושאים נבחרים בתורת הזרימה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00860321"
+        },
+        {
+         "otjid": "SM00860325",
+         "type": "SM",
+         "name": "דינמיקה ויציבות זרימות רב-פאזיות",
+         "category": null,
+         "credits": null,
+         "courseId": "00860325"
+        },
+        {
+         "otjid": "SM00860385",
+         "type": "SM",
+         "name": "מבוא לזרימות גזים קלושים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860385"
+        },
+        {
+         "otjid": "SM00860401",
+         "type": "SM",
+         "name": "מערכות הנעה לכלי טייס המונעים במדחף",
+         "category": null,
+         "credits": null,
+         "courseId": "00860401"
+        },
+        {
+         "otjid": "SM00860414",
+         "type": "SM",
+         "name": "מנועי מגח סילון",
+         "category": null,
+         "credits": null,
+         "courseId": "00860414"
+        },
+        {
+         "otjid": "SM00860480",
+         "type": "SM",
+         "name": "יסודות אווירו-תרמיים של טורבו-מכונות",
+         "category": null,
+         "credits": null,
+         "courseId": "00860480"
+        },
+        {
+         "otjid": "SM00860520",
+         "type": "SM",
+         "name": "בעיות מצומדות בחומרים פונקציונליים לא ליניאריים",
+         "category": null,
+         "credits": null,
+         "courseId": "00860520"
+        },
+        {
+         "otjid": "SM00860521",
+         "type": "SM",
+         "name": "נושאים נבחרים במבנים אוירו-חלל 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00860521"
+        },
+        {
+         "otjid": "SM00860574",
+         "type": "SM",
+         "name": "אלמנטים סופיים בהנדסה אוירונוטית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860574"
+        },
+        {
+         "otjid": "SM00860733",
+         "type": "SM",
+         "name": "תהליכים אקראיים במערכות אויר-חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860733"
+        },
+        {
+         "otjid": "SM00860761",
+         "type": "SM",
+         "name": "ניווט ומיפוי מבוסס ראיה ממוחשבת",
+         "category": null,
+         "credits": null,
+         "courseId": "00860761"
+        },
+        {
+         "otjid": "SM00860923",
+         "type": "SM",
+         "name": "אסטרודינמיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00860923"
+        },
+        {
+         "otjid": "SM00880318",
+         "type": "SM",
+         "name": "תורת הכנף",
+         "category": null,
+         "credits": null,
+         "courseId": "00880318"
+        },
+        {
+         "otjid": "SM00880751",
+         "type": "SM",
+         "name": "בקרה אופטימלית במערכות תעופתיות 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00880751"
+        },
+        {
+         "otjid": "SM00880759",
+         "type": "SM",
+         "name": "נושאים מתקדמים בהנחית טילים",
+         "category": null,
+         "credits": null,
+         "courseId": "00880759"
+        },
+        {
+         "otjid": "SM00880780",
+         "type": "SM",
+         "name": "יציבות הידרודינמית ותרמית של שכבות גבול",
+         "category": null,
+         "credits": null,
+         "courseId": "00880780"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006314",
+       "type": "CG",
+       "name": "מקצועות בחירה מפקולטות אחרות",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00160210",
+         "type": "SM",
+         "name": "גלי מים",
+         "category": null,
+         "credits": null,
+         "courseId": "00160210"
+        },
+        {
+         "otjid": "SM00340404",
+         "type": "SM",
+         "name": "מעבדה מתקדמת בתיב\"ם",
+         "category": null,
+         "credits": null,
+         "courseId": "00340404"
+        },
+        {
+         "otjid": "SM00350001",
+         "type": "SM",
+         "name": "מבוא לרובוטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00350001"
+        },
+        {
+         "otjid": "SM00350010",
+         "type": "SM",
+         "name": "קינמטיקה של מכניזמים",
+         "category": null,
+         "credits": null,
+         "courseId": "00350010"
+        },
+        {
+         "otjid": "SM00350036",
+         "type": "SM",
+         "name": "תכן מערכות בקרה",
+         "category": null,
+         "credits": null,
+         "courseId": "00350036"
+        },
+        {
+         "otjid": "SM00350044",
+         "type": "SM",
+         "name": "הידרוסטטיקה של אוניות",
+         "category": null,
+         "credits": null,
+         "courseId": "00350044"
+        },
+        {
+         "otjid": "SM00350146",
+         "type": "SM",
+         "name": "מנועי שריפה פנימית",
+         "category": null,
+         "credits": null,
+         "courseId": "00350146"
+        },
+        {
+         "otjid": "SM00360009",
+         "type": "SM",
+         "name": "מעבר חום ומסה",
+         "category": null,
+         "credits": null,
+         "courseId": "00360009"
+        },
+        {
+         "otjid": "SM00360015",
+         "type": "SM",
+         "name": "שיטות אלמנטים סופיים בהנדסה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00360015"
+        },
+        {
+         "otjid": "SM00360020",
+         "type": "SM",
+         "name": "גאומטריה חישובית ומודלים לתיב\"ם 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00360020"
+        },
+        {
+         "otjid": "SM00360048",
+         "type": "SM",
+         "name": "אנליזה של רטט לא לינארי",
+         "category": null,
+         "credits": null,
+         "courseId": "00360048"
+        },
+        {
+         "otjid": "SM00360049",
+         "type": "SM",
+         "name": "רשתות עצביות לבקרה ודיאגנוסטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00360049"
+        },
+        {
+         "otjid": "SM00380715",
+         "type": "SM",
+         "name": "תרמודינמיקה מתקדמת 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00380715"
+        },
+        {
+         "otjid": "SM00380782",
+         "type": "SM",
+         "name": "שיטות מספריות במכניקת הזורמים",
+         "category": null,
+         "credits": null,
+         "courseId": "00380782"
+        },
+        {
+         "otjid": "SM00440101",
+         "type": "SM",
+         "name": "מבוא למערכות תכנה",
+         "category": null,
+         "credits": null,
+         "courseId": "00440101"
+        },
+        {
+         "otjid": "SM00440202",
+         "type": "SM",
+         "name": "אותות אקראיים",
+         "category": null,
+         "credits": null,
+         "courseId": "00440202"
+        },
+        {
+         "otjid": "SM00440268",
+         "type": "SM",
+         "name": "מבוא למבני נתונים ואלגוריתמים",
+         "category": null,
+         "credits": null,
+         "courseId": "00440268"
+        },
+        {
+         "otjid": "SM00440334",
+         "type": "SM",
+         "name": "רשתות מחשבים ואינטרנט 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00440334"
+        },
+        {
+         "otjid": "SM00460195",
+         "type": "SM",
+         "name": "מערכות לומדות",
+         "category": null,
+         "credits": null,
+         "courseId": "00460195"
+        },
+        {
+         "otjid": "SM00460201",
+         "type": "SM",
+         "name": "עיבוד אותות אקראיים",
+         "category": null,
+         "credits": null,
+         "courseId": "00460201"
+        },
+        {
+         "otjid": "SM00460211",
+         "type": "SM",
+         "name": "למידה עמוקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00460211"
+        },
+        {
+         "otjid": "SM00860312",
+         "type": "SM",
+         "name": "בקרה לא לינארית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860312"
+        },
+        {
+         "otjid": "SM00860401",
+         "type": "SM",
+         "name": "מערכות הנעה לכלי טייס המונעים במדחף",
+         "category": null,
+         "credits": null,
+         "courseId": "00860401"
+        },
+        {
+         "otjid": "SM00860574",
+         "type": "SM",
+         "name": "אלמנטים סופיים בהנדסה אוירונוטית",
+         "category": null,
+         "credits": null,
+         "courseId": "00860574"
+        },
+        {
+         "otjid": "SM00860733",
+         "type": "SM",
+         "name": "תהליכים אקראיים במערכות אויר-חלל",
+         "category": null,
+         "credits": null,
+         "courseId": "00860733"
+        },
+        {
+         "otjid": "SM00880751",
+         "type": "SM",
+         "name": "בקרה אופטימלית במערכות תעופתיות 1",
+         "category": null,
+         "credits": null,
+         "courseId": "00880751"
+        },
+        {
+         "otjid": "SM00880780",
+         "type": "SM",
+         "name": "יציבות הידרודינמית ותרמית של שכבות גבול",
+         "category": null,
+         "credits": null,
+         "courseId": "00880780"
+        },
+        {
+         "otjid": "SM00940219",
+         "type": "SM",
+         "name": "הנדסת תוכנה",
+         "category": null,
+         "credits": null,
+         "courseId": "00940219"
+        },
+        {
+         "otjid": "SM00940423",
+         "type": "SM",
+         "name": "מבוא לסטטיסטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00940423"
+        },
+        {
+         "otjid": "SM02340124",
+         "type": "SM",
+         "name": "מבוא לתכנות מערכות",
+         "category": null,
+         "credits": null,
+         "courseId": "02340124"
+        },
+        {
+         "otjid": "SM02360927",
+         "type": "SM",
+         "name": "מבוא לרובוטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "02360927"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "otjid": "CG00000170",
+     "type": "CG",
+     "name": "בחירה כלל טכניונית",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00000551",
+       "type": "CG",
+       "name": "תוכנית קהילתית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000175",
+       "type": "CG",
+       "name": "בחירה חופשית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00010092",
+       "type": "CG",
+       "name": "קורסי מל\"ג",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00360106",
+         "type": "SM",
+         "name": "נושאים ביסודות אנליטיות במכונות",
+         "category": null,
+         "credits": null,
+         "courseId": "00360106"
+        },
+        {
+         "otjid": "SM01340163",
+         "type": "SM",
+         "name": "טכנול' ביולוגיות לקיימות גלובלית",
+         "category": null,
+         "credits": null,
+         "courseId": "01340163"
+        },
+        {
+         "otjid": "SM02060972",
+         "type": "SM",
+         "name": "שינויי אקלים: מדע! מדיניות ותכנון",
+         "category": null,
+         "credits": null,
+         "courseId": "02060972"
+        },
+        {
+         "otjid": "SM02070953",
+         "type": "SM",
+         "name": "תכנון וניהול הסביבה החופית והימית",
+         "category": null,
+         "credits": null,
+         "courseId": "02070953"
+        },
+        {
+         "otjid": "SM02140120",
+         "type": "SM",
+         "name": "יסודות למידה והוראה",
+         "category": null,
+         "credits": null,
+         "courseId": "02140120"
+        },
+        {
+         "otjid": "SM02160003",
+         "type": "SM",
+         "name": "מוח וחינוך - לקויות למידה בילדים",
+         "category": null,
+         "credits": null,
+         "courseId": "02160003"
+        },
+        {
+         "otjid": "SM03240236",
+         "type": "SM",
+         "name": "תזמורת נשיפה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240236"
+        },
+        {
+         "otjid": "SM03240250",
+         "type": "SM",
+         "name": "עיצוב גרפי ותקשורת חזותית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240250"
+        },
+        {
+         "otjid": "SM03240261",
+         "type": "SM",
+         "name": "אחריות מקצועית:דילמות חוק ואתיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240261"
+        },
+        {
+         "otjid": "SM03240262",
+         "type": "SM",
+         "name": "תולדות הפילוסופיה והמדע בעת החדשה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240262"
+        },
+        {
+         "otjid": "SM03240266",
+         "type": "SM",
+         "name": "מדע וביקורות המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240266"
+        },
+        {
+         "otjid": "SM03240269",
+         "type": "SM",
+         "name": "אתיקה בפעולה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240269"
+        },
+        {
+         "otjid": "SM03240274",
+         "type": "SM",
+         "name": "מבוא להאזנה מודרכת-ענקי הפסנתר",
+         "category": null,
+         "credits": null,
+         "courseId": "03240274"
+        },
+        {
+         "otjid": "SM03240284",
+         "type": "SM",
+         "name": "חינוך בסין ובישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240284"
+        },
+        {
+         "otjid": "SM03240292",
+         "type": "SM",
+         "name": "משפט שוויון וצדק חברתי",
+         "category": null,
+         "credits": null,
+         "courseId": "03240292"
+        },
+        {
+         "otjid": "SM03240298",
+         "type": "SM",
+         "name": "מן התנ\"ך ועד למשפט הישראלי החדשני",
+         "category": null,
+         "credits": null,
+         "courseId": "03240298"
+        },
+        {
+         "otjid": "SM03240299",
+         "type": "SM",
+         "name": "טרור, ג'יהד ותגובה מדינית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240299"
+        },
+        {
+         "otjid": "SM03240305",
+         "type": "SM",
+         "name": "היסטוריה של המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240305"
+        },
+        {
+         "otjid": "SM03240314",
+         "type": "SM",
+         "name": "היסטוריה של המדע: המאה ה-20 ומעבר",
+         "category": null,
+         "credits": null,
+         "courseId": "03240314"
+        },
+        {
+         "otjid": "SM03240397",
+         "type": "SM",
+         "name": "סוגיות בפילוסופיה של מדעי החיים-לרפואנים בלבד",
+         "category": null,
+         "credits": null,
+         "courseId": "03240397"
+        },
+        {
+         "otjid": "SM03240432",
+         "type": "SM",
+         "name": "פסיכולוגיה של המוזיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240432"
+        },
+        {
+         "otjid": "SM03240439",
+         "type": "SM",
+         "name": "יסודות באמנות יפן",
+         "category": null,
+         "credits": null,
+         "courseId": "03240439"
+        },
+        {
+         "otjid": "SM03240442",
+         "type": "SM",
+         "name": "משפט העבודה בישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240442"
+        },
+        {
+         "otjid": "SM03240445",
+         "type": "SM",
+         "name": "הסתגלות למצבי לחץ",
+         "category": null,
+         "credits": null,
+         "courseId": "03240445"
+        },
+        {
+         "otjid": "SM03240454",
+         "type": "SM",
+         "name": "מבוא לפילוסופיה של המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240454"
+        },
+        {
+         "otjid": "SM03240460",
+         "type": "SM",
+         "name": "מחשבה מדינית יהודית עד העת החדשה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240460"
+        },
+        {
+         "otjid": "SM03240478",
+         "type": "SM",
+         "name": "תכנון וניהול קריירה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240478"
+        },
+        {
+         "otjid": "SM03240518",
+         "type": "SM",
+         "name": "חדשנות, יצירתיות ואושר",
+         "category": null,
+         "credits": null,
+         "courseId": "03240518"
+        },
+        {
+         "otjid": "SM03240520",
+         "type": "SM",
+         "name": "יזמות עסקית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240520"
+        },
+        {
+         "otjid": "SM03240527",
+         "type": "SM",
+         "name": "יסודות היזמות",
+         "category": null,
+         "credits": null,
+         "courseId": "03240527"
+        },
+        {
+         "otjid": "SM03240528",
+         "type": "SM",
+         "name": "מנהיגות יזמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240528"
+        },
+        {
+         "otjid": "SM03240536",
+         "type": "SM",
+         "name": "הייטק בישראל: כיצד להוביל עולמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240536"
+        },
+        {
+         "otjid": "SM03240539",
+         "type": "SM",
+         "name": "מחקרי שוק",
+         "category": null,
+         "credits": null,
+         "courseId": "03240539"
+        },
+        {
+         "otjid": "SM03240675",
+         "type": "SM",
+         "name": "ספרדית למתחילים",
+         "category": null,
+         "credits": null,
+         "courseId": "03240675"
+        },
+        {
+         "otjid": "SM03240697",
+         "type": "SM",
+         "name": "עקרונות מעשיים לעיבוד תמונה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240697"
+        },
+        {
+         "otjid": "SM03240879",
+         "type": "SM",
+         "name": "סוגיות נבחרות בחברה הישראלית-מרכז בינ\"ל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240879"
+        },
+        {
+         "otjid": "SM03240881",
+         "type": "SM",
+         "name": "פרקים נבחרים בתולדות ישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240881"
+        },
+        {
+         "otjid": "SM03240908",
+         "type": "SM",
+         "name": "תולדות הצילום:מהלשכה האפלה לסמרטפון",
+         "category": null,
+         "credits": null,
+         "courseId": "03240908"
+        },
+        {
+         "otjid": "SM03240992",
+         "type": "SM",
+         "name": "סוגיות אתיות במרחב האישי והציבורי",
+         "category": null,
+         "credits": null,
+         "courseId": "03240992"
+        },
+        {
+         "otjid": "SM03250001",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 1",
+         "category": null,
+         "credits": null,
+         "courseId": "03250001"
+        },
+        {
+         "otjid": "SM03250002",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 2",
+         "category": null,
+         "credits": null,
+         "courseId": "03250002"
+        },
+        {
+         "otjid": "SM03250005",
+         "type": "SM",
+         "name": "יזמות מפי היזמים",
+         "category": null,
+         "credits": null,
+         "courseId": "03250005"
+        },
+        {
+         "otjid": "SM03250008",
+         "type": "SM",
+         "name": "מבוא ליזמות והון סיכון",
+         "category": null,
+         "credits": null,
+         "courseId": "03250008"
+        },
+        {
+         "otjid": "SM03250009",
+         "type": "SM",
+         "name": "להשאיר חותם במדע ובאמנות",
+         "category": null,
+         "credits": null,
+         "courseId": "03250009"
+        },
+        {
+         "otjid": "SM03250010",
+         "type": "SM",
+         "name": "מדע דת ופילוסופיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03250010"
+        },
+        {
+         "otjid": "SM03250011",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 3",
+         "category": null,
+         "credits": null,
+         "courseId": "03250011"
+        },
+        {
+         "otjid": "SM03250012",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 4",
+         "category": null,
+         "credits": null,
+         "courseId": "03250012"
+        },
+        {
+         "otjid": "SM03250013",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 5",
+         "category": null,
+         "credits": null,
+         "courseId": "03250013"
+        },
+        {
+         "otjid": "SM03250021",
+         "type": "SM",
+         "name": "נושאים נבחרים במדעי הרוח 1",
+         "category": null,
+         "credits": null,
+         "courseId": "03250021"
+        },
+        {
+         "otjid": "SM03250022",
+         "type": "SM",
+         "name": "נושאים נבחרים במדעי הרוח 2",
+         "category": null,
+         "credits": null,
+         "courseId": "03250022"
+        },
+        {
+         "otjid": "SM03250024",
+         "type": "SM",
+         "name": "אתיקה רפואית וביואתיקה ישראלית",
+         "category": null,
+         "credits": null,
+         "courseId": "03250024"
+        },
+        {
+         "otjid": "SM03260000",
+         "type": "SM",
+         "name": "פרקים בהיסטוריה ופילוסופיה מראשית המחשוב ועד לאינטרנט",
+         "category": null,
+         "credits": null,
+         "courseId": "03260000"
+        },
+        {
+         "otjid": "SM03260001",
+         "type": "SM",
+         "name": "סוגיות נבח. בהיסט. ופילו. של המדע: על מנגנונים ושימוש",
+         "category": null,
+         "credits": null,
+         "courseId": "03260001"
+        },
+        {
+         "otjid": "SM03260002",
+         "type": "SM",
+         "name": "אתיקה של טכנולוגיות חדשניות",
+         "category": null,
+         "credits": null,
+         "courseId": "03260002"
+        },
+        {
+         "otjid": "SM03260005",
+         "type": "SM",
+         "name": "פריצות דרך בתולדות החשיבה המתמטית",
+         "category": null,
+         "credits": null,
+         "courseId": "03260005"
+        },
+        {
+         "otjid": "SM03260006",
+         "type": "SM",
+         "name": "תורת הקוואנטים: מבט פילוסופי",
+         "category": null,
+         "credits": null,
+         "courseId": "03260006"
+        },
+        {
+         "otjid": "SM03260008",
+         "type": "SM",
+         "name": "תרבות המערב: ספרי יסוד",
+         "category": null,
+         "credits": null,
+         "courseId": "03260008"
+        },
+        {
+         "otjid": "SM03260009",
+         "type": "SM",
+         "name": "תיאוריות אנתרופולוגיות",
+         "category": null,
+         "credits": null,
+         "courseId": "03260009"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000172",
+       "type": "CG",
+       "name": "קורסי ספורט",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940800",
+         "type": "SM",
+         "name": "חינוך גופני - כושר בנים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940800"
+        },
+        {
+         "otjid": "SM03940802",
+         "type": "SM",
+         "name": "חינוך גופני - שחיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940802"
+        },
+        {
+         "otjid": "SM03940803",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי כדור",
+         "category": null,
+         "credits": null,
+         "courseId": "03940803"
+        },
+        {
+         "otjid": "SM03940804",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי מחבט",
+         "category": null,
+         "credits": null,
+         "courseId": "03940804"
+        },
+        {
+         "otjid": "SM03940801",
+         "type": "SM",
+         "name": "חינוך גופני - התעמלות כללית בנות",
+         "category": null,
+         "credits": null,
+         "courseId": "03940801"
+        },
+        {
+         "otjid": "SM03940805",
+         "type": "SM",
+         "name": "חינוך גופני - אתלטיקה קלה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940805"
+        },
+        {
+         "otjid": "SM03940806",
+         "type": "SM",
+         "name": "חינוך גופני - הגנה עצמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03940806"
+        },
+        {
+         "otjid": "SM03940807",
+         "type": "SM",
+         "name": "חינוך גופני: כושר גופני מעורב",
+         "category": null,
+         "credits": null,
+         "courseId": "03940807"
+        },
+        {
+         "otjid": "SM03940808",
+         "type": "SM",
+         "name": "חינוך גופני-מיועד לסטודנטים חדשים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940808"
+        },
+        {
+         "otjid": "SM03940820",
+         "type": "SM",
+         "name": "חינוך גופני - תנועה ומחול",
+         "category": null,
+         "credits": null,
+         "courseId": "03940820"
+        },
+        {
+         "otjid": "CG00000173",
+         "type": "CG",
+         "name": "קבוצות ספורט",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM03940902",
+           "type": "SM",
+           "name": "נבחרות ספורט",
+           "category": null,
+           "credits": null,
+           "courseId": "03940902"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000174",
+       "type": "CG",
+       "name": "מקהלה / תזמורת",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940582",
+         "type": "SM",
+         "name": "תזמורת",
+         "category": null,
+         "credits": null,
+         "courseId": "03940582"
+        },
+        {
+         "otjid": "SM03940587",
+         "type": "SM",
+         "name": "מקהלה 3",
+         "category": null,
+         "credits": null,
+         "courseId": "03940587"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

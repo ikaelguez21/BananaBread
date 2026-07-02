@@ -83,6 +83,29 @@ Output shape: `{generatedAt, year, semester, source:"sap", tracks:[{id, name, fa
 facultyName, academicLevel, versions:[{otjid, name, structure:[nested nodes: {otjid, type,
 name, category, credits, courseId?, children?}]}]}]}`
 
+## POC DONE (2026-07-02, session 2): aerospace faculty live in app
+
+`fetch_tracks_sap.py` + `build_tracks_latest.py` (NEW) produce a working
+`src/data/tracks-latest.json` for the aerospace faculty: 3 loadable tracks with real
+semester plans (21 courses each). Verified in app build; trackService now APPENDS
+SAP tracks to static ones (no longer replaces).
+
+Key decisions/fixes since the doc was first written:
+- Latest-version-only rule (user decision): each program keeps only its newest catalog
+  version (`latest_version()` in fetcher; year parsed from version name).
+- Current period auto-detected from `SemesterSet` (sessions 200/201/202, IsCurrent != 0,
+  max year+session). No more hardcoded --year. Current = 2025/201.
+- ScObjectSet ZzAcademicLevel values: 0=pre-academic, 1=undergrad, 2=MSc, 3=PhD (single char).
+- Partof cache MUST be period-keyed (SM<id>-<year>-<sem>.json): rows fetched at an older
+  period lack newer catalog-version groups (caused 22->9 course regression before fix).
+- Recommended-plan courses = Partof rows with oblig=true and minSemester>0 for the track's
+  version CG. Elective/basket structure is fetched (tracks-sap-latest.json) but NOT yet
+  consumed by the app schema.
+
+Refresh commands (no args needed):
+  python3 fetch_tracks_sap.py --undergrad-only          # all faculties, ~1-2h, resumable
+  python3 build_tracks_latest.py --sap src/data/tracks-sap-latest.json
+
 ## Next steps (in order)
 
 1. **Full fetch run** for 2024/200 undergrad (user can run it themselves — no session credits).

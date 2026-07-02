@@ -1,7 +1,328 @@
 {
-  "generatedAt": "2026-06-02T00:00:00Z",
-  "year": 2026,
-  "semester": 0,
-  "source": "merged",
-  "faculties": []
+ "generatedAt": "2026-07-02T12:47:14.842125+00:00",
+ "year": 2025,
+ "semester": 201,
+ "source": "merged",
+ "faculties": [
+  {
+   "id": "00002160",
+   "name": "הפקולטה להנדסת אווירונוטיקה וחלל",
+   "programs": [
+    {
+     "id": "SC00001384",
+     "name": "הנדסת אוירונאוטיקה וחלל ופיזיקה (אוירונאוטיקה) — גרסה 2023 B.Sc הנדסת אוירונוטיקה-פיזיקה",
+     "specializations": [
+      {
+       "id": "CG00006553",
+       "name": null,
+       "recommendedPlan": [
+        {
+         "semester": 1,
+         "courses": [
+          {
+           "courseId": "00440102"
+          },
+          {
+           "courseId": "01040016"
+          },
+          {
+           "courseId": "01140020"
+          },
+          {
+           "courseId": "01140074"
+          }
+         ]
+        },
+        {
+         "semester": 2,
+         "courses": [
+          {
+           "courseId": "00840506"
+          },
+          {
+           "courseId": "01040013"
+          },
+          {
+           "courseId": "01140076"
+          }
+         ]
+        },
+        {
+         "semester": 3,
+         "courses": [
+          {
+           "courseId": "01040034"
+          },
+          {
+           "courseId": "01040215"
+          },
+          {
+           "courseId": "01140035"
+          }
+         ]
+        },
+        {
+         "semester": 4,
+         "courses": [
+          {
+           "courseId": "00840311"
+          },
+          {
+           "courseId": "00840515"
+          },
+          {
+           "courseId": "00840737"
+          },
+          {
+           "courseId": "01140036"
+          },
+          {
+           "courseId": "01140037"
+          },
+          {
+           "courseId": "01150203"
+          }
+         ]
+        },
+        {
+         "semester": 5,
+         "courses": [
+          {
+           "courseId": "01140250"
+          }
+         ]
+        },
+        {
+         "semester": 6,
+         "courses": [
+          {
+           "courseId": "00440098"
+          },
+          {
+           "courseId": "00840135"
+          },
+          {
+           "courseId": "01140246"
+          }
+         ]
+        },
+        {
+         "semester": 8,
+         "courses": [
+          {
+           "courseId": "00840630"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "SC00001385",
+     "name": "הנדסת אוירונוטיקה וחלל — B.Sc. גרסת AE 2025 חורף",
+     "specializations": [
+      {
+       "id": "CG00010471",
+       "name": "אוירונוטיקה",
+       "recommendedPlan": [
+        {
+         "semester": 1,
+         "courses": [
+          {
+           "courseId": "01040041"
+          },
+          {
+           "courseId": "01140051"
+          },
+          {
+           "courseId": "01250001"
+          },
+          {
+           "courseId": "02340128"
+          }
+         ]
+        },
+        {
+         "semester": 2,
+         "courses": [
+          {
+           "courseId": "00840506"
+          },
+          {
+           "courseId": "01040043"
+          },
+          {
+           "courseId": "01040131"
+          },
+          {
+           "courseId": "01140052"
+          },
+          {
+           "courseId": "03140200"
+          }
+         ]
+        },
+        {
+         "semester": 3,
+         "courses": [
+          {
+           "courseId": "00940411"
+          },
+          {
+           "courseId": "01040215"
+          },
+          {
+           "courseId": "01040228"
+          }
+         ]
+        },
+        {
+         "semester": 4,
+         "courses": [
+          {
+           "courseId": "00840135"
+          },
+          {
+           "courseId": "00840311"
+          },
+          {
+           "courseId": "00840515"
+          },
+          {
+           "courseId": "00840630"
+          },
+          {
+           "courseId": "00840737"
+          },
+          {
+           "courseId": "01140054"
+          }
+         ]
+        },
+        {
+         "semester": 5,
+         "courses": [
+          {
+           "courseId": "00440102"
+          }
+         ]
+        },
+        {
+         "semester": 6,
+         "courses": [
+          {
+           "courseId": "00440098"
+          },
+          {
+           "courseId": "00850915"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "CG00010474",
+       "name": "אסטרונוטיקה",
+       "recommendedPlan": [
+        {
+         "semester": 1,
+         "courses": [
+          {
+           "courseId": "01040041"
+          },
+          {
+           "courseId": "01140051"
+          },
+          {
+           "courseId": "01250001"
+          },
+          {
+           "courseId": "02340128"
+          }
+         ]
+        },
+        {
+         "semester": 2,
+         "courses": [
+          {
+           "courseId": "00840506"
+          },
+          {
+           "courseId": "01040043"
+          },
+          {
+           "courseId": "01040131"
+          },
+          {
+           "courseId": "01140052"
+          },
+          {
+           "courseId": "03140200"
+          }
+         ]
+        },
+        {
+         "semester": 3,
+         "courses": [
+          {
+           "courseId": "00940411"
+          },
+          {
+           "courseId": "01040215"
+          },
+          {
+           "courseId": "01040228"
+          }
+         ]
+        },
+        {
+         "semester": 4,
+         "courses": [
+          {
+           "courseId": "00840135"
+          },
+          {
+           "courseId": "00840311"
+          },
+          {
+           "courseId": "00840515"
+          },
+          {
+           "courseId": "00840630"
+          },
+          {
+           "courseId": "00840737"
+          },
+          {
+           "courseId": "01140054"
+          }
+         ]
+        },
+        {
+         "semester": 5,
+         "courses": [
+          {
+           "courseId": "00440102"
+          }
+         ]
+        },
+        {
+         "semester": 6,
+         "courses": [
+          {
+           "courseId": "00440098"
+          },
+          {
+           "courseId": "00850915"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }

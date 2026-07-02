@@ -93,6 +93,19 @@ def odata_results(payload: dict) -> list:
     return payload.get("d", {}).get("results", [])
 
 
+def detect_current_period() -> tuple[str, str]:
+    """Latest active regular semester (sessions 200/201/202) from SemesterSet."""
+    rows = odata_results(send_request("SemesterSet?sap-client=700"))
+    regular = [
+        r for r in rows
+        if r.get("PiqSession") in ("200", "201", "202") and r.get("IsCurrent") != 0
+    ]
+    if not regular:
+        raise RuntimeError("Could not detect current semester from SemesterSet")
+    best = max(regular, key=lambda r: (r["PiqYear"], r["PiqSession"]))
+    return best["PiqYear"], best["PiqSession"]
+
+
 def fetch_programs(year: str, semester: str) -> list[dict]:
     """All study programs (SC objects) for the catalog year, paged."""
     programs: list[dict] = []
@@ -142,11 +155,21 @@ def build_tree(parent_otjid: str, year: str, semester: str, depth: int = 0, max_
     return nodes
 
 
+def latest_version(versions: list[dict]) -> dict:
+    """Pick the newest catalog version; year parsed from the version name
+    ("גרסה 2023 חורף B.Sc..."), CG otjid as tie-breaker (higher = newer)."""
+    def sort_key(v: dict):
+        years = [int(m) for m in __import__("re").findall(r"(?:19|20)\d{2}", v.get("Stext") or "")]
+        return (max(years) if years else 0, v.get("Otjid") or "")
+    return max(versions, key=sort_key)
+
+
 def fetch_program_track(program: dict, year: str, semester: str) -> dict | None:
-    """Version node + full structure tree for one SC program; None if no version this year."""
+    """Latest version node + full structure tree for one SC program; None if no version this year."""
     versions = fetch_tree_children(program["Otjid"], year, semester)
     if not versions:
         return None
+    versions = [latest_version(versions)]
     return {
         "id": program["Otjid"],
         "name": (program.get("Name") or "").strip(),
@@ -166,10 +189,11 @@ def fetch_program_track(program: dict, year: str, semester: str) -> dict | None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--year", required=True)
-    parser.add_argument("--semester", default="200")
+    parser.add_argument("--year", default=None, help="Catalog year; auto-detected from SAP if omitted")
+    parser.add_argument("--semester", default=None, help="Session id (200/201/202); auto-detected if omitted")
     parser.add_argument("--output", default=None)
     parser.add_argument("--program", default=None, help="Fetch a single SC otjid (testing)")
+    parser.add_argument("--faculty", default=None, help="Only programs whose faculty name contains this string")
     parser.add_argument("--undergrad-only", action="store_true")
     parser.add_argument("--cache-dir", default="data/sap-track-cache")
     args = parser.parse_args()
@@ -177,14 +201,23 @@ def main() -> int:
     cache_dir = Path(args.cache_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
 
+    if not args.year or not args.semester:
+        detected_year, detected_semester = detect_current_period()
+        args.year = args.year or detected_year
+        args.semester = args.semester or detected_semester
+        print(f"Auto-detected current period: {args.year}/{args.semester}", flush=True)
+
     print(f"Fetching study programs for {args.year}/{args.semester}...", flush=True)
     programs = fetch_programs(args.year, args.semester)
     print(f"Found {len(programs)} programs", flush=True)
 
     if args.program:
         programs = [p for p in programs if p["Otjid"] == args.program]
+    if args.faculty:
+        programs = [p for p in programs if args.faculty in (p.get("OrgText") or "")]
     if args.undergrad_only:
-        programs = [p for p in programs if p.get("ZzAcademicLevel") == "0001"]
+        # ZzAcademicLevel: 0=pre-academic, 1=undergrad (לימודי הסמכה), 2=masters, 3=PhD
+        programs = [p for p in programs if p.get("ZzAcademicLevel") == "1"]
 
     tracks = []
     for index, program in enumerate(programs, 1):
