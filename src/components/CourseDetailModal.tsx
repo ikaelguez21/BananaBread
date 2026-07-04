@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import type { PlannerCourse, PrereqMeta } from '../types';
 
 interface CourseDetailModalProps {
@@ -21,11 +22,20 @@ export default function CourseDetailModal({
   onDelete,
   onAddPrereq
 }: CourseDetailModalProps) {
+  useEffect(() => {
+    if (!open) return;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [open, onClose]);
+
   if (!open || !course) return null;
 
   return (
-    <div className="modal-backdrop">
-      <div className="card detail-modal">
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="card detail-modal" onClick={(event) => event.stopPropagation()}>
         <div className="detail-header">
           <div>
             <h2>{course.name}</h2>
@@ -53,13 +63,14 @@ export default function CourseDetailModal({
                 <button
                   key={missing.id}
                   type="button"
-                  className="missing-tooltip-button"
+                  className="missing-prereq-row"
                   onClick={() => onAddPrereq(missing.id)}
-                  data-tooltip={missing.name}
-                  title={missing.name}
-                  aria-label={`הוסף ${missing.id}`}
+                  title={`הוסף את ${missing.name} לתכנית`}
                 >
-                  {missing.id}
+                  <span className="missing-prereq-name">
+                    {missing.name}
+                    {missing.name !== missing.id ? <span className="missing-prereq-id"> • {missing.id}</span> : null}
+                  </span>
                   <span className="missing-tooltip-icon">+</span>
                 </button>
               ))}

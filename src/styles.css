@@ -906,3 +906,36 @@ button {
   background: var(--surface);
   color: var(--text);
 }
+
+/* Detail modal missing-prereq rows */
+.missing-prereq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.missing-prereq-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  cursor: pointer;
+  text-align: start;
+}
+
+.missing-prereq-row:hover {
+  background: var(--primary-soft);
+}
+
+.missing-prereq-id {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
