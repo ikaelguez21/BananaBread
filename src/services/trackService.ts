@@ -59,7 +59,8 @@ function buildMergedTrackEntries(source: Record<string, unknown>): TrackEntry[] 
       specializations.forEach((specRaw) => {
         if (typeof specRaw !== 'object' || specRaw === null) return;
         const specialization = specRaw as Record<string, unknown>;
-        const specializationName = normalizeTrackId(specialization.name as string | undefined);
+        const rawSpecName = specialization.name;
+        const specializationName = typeof rawSpecName === 'string' && rawSpecName.trim() ? rawSpecName.trim() : '';
         const specializationId = normalizeTrackId(specialization.id as string | undefined) || slugify(`${programName}-${specializationName}`);
         const trackId = `${facultyId}:${programId}:${specializationId}`;
 
@@ -106,7 +107,8 @@ function buildMergedTrackOptions(source: Record<string, unknown>): TrackOption[]
       specializations.forEach((specRaw) => {
         if (typeof specRaw !== 'object' || specRaw === null) return;
         const specialization = specRaw as Record<string, unknown>;
-        const specializationName = normalizeTrackId(specialization.name as string | undefined);
+        const rawSpecName = specialization.name;
+        const specializationName = typeof rawSpecName === 'string' && rawSpecName.trim() ? rawSpecName.trim() : '';
         const specializationId = normalizeTrackId(specialization.id as string | undefined) || slugify(`${programName}-${specializationName}`);
         const trackId = `${facultyId}:${programId}:${specializationId}`;
         const label = [facultyName, programName, specializationName].filter(Boolean).join(' / ');
