@@ -856,3 +856,53 @@ button {
   padding: 4px 12px;
   font-size: 0.8rem;
 }
+
+/* Requirements panel polish */
+.requirement-group-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.requirement-group-path {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.requirement-group-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mandatory-pill {
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  font-size: 0.68rem;
+  padding: 1px 8px;
+}
+
+.requirement-group-progress {
+  height: 4px;
+  background: var(--border);
+}
+
+.requirement-group-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 0 2px 2px 0;
+  transition: width 0.3s ease;
+}
+
+.requirement-course-filter {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 0.82rem;
+  background: var(--surface);
+  color: var(--text);
+}

@@ -10,21 +10,50 @@ interface RequirementsPanelProps {
   onClearTrack: () => void;
 }
 
+interface GroupView {
+  group: RequirementGroup;
+  name: string;
+  parentPath: string;
+  plannedCount: number;
+  earnedCredits: number;
+  isMandatory: boolean;
+}
+
+function splitLabel(label: string): { name: string; parentPath: string } {
+  const parts = label.split(' / ').map((part) => part.trim()).filter(Boolean);
+  if (parts.length <= 1) return { name: label, parentPath: '' };
+  return { name: parts[parts.length - 1], parentPath: parts.slice(0, -1).join(' › ') };
+}
+
+const MANDATORY_HINT = /חובה|mandatory/i;
+
 function RequirementsPanel({ trackLabel, groups, courseMap, plannerCourses, onAddCourse, onClearTrack }: RequirementsPanelProps) {
   const [openGroupId, setOpenGroupId] = useState<string | null>(null);
+  const [courseFilter, setCourseFilter] = useState('');
 
-  const plannedIds = useMemo(() => new Set(plannerCourses.map((course) => course.id)), [plannerCourses]);
+  const plannedById = useMemo(() => new Map(plannerCourses.map((course) => [course.id, course])), [plannerCourses]);
 
-  const groupStats = useMemo(() => {
-    return groups.map((group) => {
-      const planned = group.courses.filter((id) => plannedIds.has(id));
-      const earnedCredits = planned.reduce((sum, id) => {
-        const course = plannerCourses.find((item) => item.id === id);
-        return sum + (course?.credits ?? 0);
-      }, 0);
-      return { group, plannedCount: planned.length, earnedCredits };
+  const groupViews = useMemo<GroupView[]>(() => {
+    const views = groups.map((group) => {
+      const planned = group.courses.filter((id) => plannedById.has(id));
+      const earnedCredits = planned.reduce((sum, id) => sum + (plannedById.get(id)?.credits ?? 0), 0);
+      return {
+        group,
+        ...splitLabel(group.label),
+        plannedCount: planned.length,
+        earnedCredits,
+        isMandatory: MANDATORY_HINT.test(group.label)
+      };
     });
-  }, [groups, plannedIds, plannerCourses]);
+    // mandatory groups first, then by how much of the group is already planned, big generic pools last
+    return views.sort((a, b) => {
+      if (a.isMandatory !== b.isMandatory) return a.isMandatory ? -1 : 1;
+      const aRatio = a.plannedCount / a.group.courses.length;
+      const bRatio = b.plannedCount / b.group.courses.length;
+      if (aRatio !== bRatio) return bRatio - aRatio;
+      return a.group.courses.length - b.group.courses.length;
+    });
+  }, [groups, plannedById]);
 
   if (!groups.length) return null;
 
@@ -41,26 +70,56 @@ function RequirementsPanel({ trackLabel, groups, courseMap, plannerCourses, onAd
       </div>
 
       <div className="requirements-groups">
-        {groupStats.map(({ group, plannedCount, earnedCredits }) => {
+        {groupViews.map(({ group, name, parentPath, plannedCount, earnedCredits, isMandatory }) => {
           const isOpen = openGroupId === group.id;
+          const progress = group.courses.length ? Math.min(1, plannedCount / group.courses.length) : 0;
+          const visibleCourses = isOpen
+            ? group.courses.filter((courseId) => {
+                if (!courseFilter.trim()) return true;
+                const course = courseMap.get(courseId);
+                const haystack = `${course?.name ?? ''} ${courseId}`;
+                return haystack.includes(courseFilter.trim());
+              })
+            : [];
           return (
             <div key={group.id} className={`requirement-group${isOpen ? ' open' : ''}`}>
               <button
                 type="button"
                 className="requirement-group-toggle"
-                onClick={() => setOpenGroupId(isOpen ? null : group.id)}
+                aria-expanded={isOpen}
+                onClick={() => {
+                  setOpenGroupId(isOpen ? null : group.id);
+                  setCourseFilter('');
+                }}
               >
-                <span className="requirement-group-label">{group.label}</span>
+                <span className="requirement-group-titles">
+                  {parentPath ? <span className="requirement-group-path">{parentPath}</span> : null}
+                  <span className="requirement-group-label">
+                    {name}
+                    {isMandatory ? <span className="pill mandatory-pill">חובה</span> : null}
+                  </span>
+                </span>
                 <span className="requirement-group-meta">
-                  {plannedCount}/{group.courses.length} קורסים
+                  {plannedCount}/{group.courses.length}
                   {earnedCredits > 0 ? ` • ${earnedCredits} נק'` : ''}
                 </span>
               </button>
+              <div className="requirement-group-progress" aria-hidden="true">
+                <div className="requirement-group-progress-fill" style={{ width: `${progress * 100}%` }} />
+              </div>
               {isOpen ? (
                 <div className="requirement-group-courses">
-                  {group.courses.map((courseId) => {
+                  {group.courses.length > 8 ? (
+                    <input
+                      className="requirement-course-filter"
+                      value={courseFilter}
+                      onChange={(event) => setCourseFilter(event.target.value)}
+                      placeholder="סנן לפי שם או קוד"
+                    />
+                  ) : null}
+                  {visibleCourses.map((courseId) => {
                     const course = courseMap.get(courseId);
-                    const inPlan = plannedIds.has(courseId);
+                    const inPlan = plannedById.has(courseId);
                     return (
                       <div key={courseId} className="requirement-course-row">
                         <span className="requirement-course-name">
@@ -79,6 +138,7 @@ function RequirementsPanel({ trackLabel, groups, courseMap, plannerCourses, onAd
                       </div>
                     );
                   })}
+                  {visibleCourses.length === 0 ? <p className="requirement-course-missing">אין קורסים תואמים.</p> : null}
                 </div>
               ) : null}
             </div>

@@ -6,7 +6,7 @@ import TrackSelector from './components/TrackSelector';
 import StatsBar from './components/StatsBar';
 import CourseDetailModal from './components/CourseDetailModal';
 import RequirementsPanel from './components/RequirementsPanel';
-import type { Course, PlannerCourse, PrereqMeta, TrackOption } from './types';
+import type { Course, MissingPrereq, PlannerCourse, PrereqMeta, TrackOption } from './types';
 import courseCatalog from './data/courseCatalog.json';
 import { analyzePrerequisites, normalizeId } from './utils/prerequisite';
 import { createMergedTrackLoader, getTrackRequirementGroups } from './services/trackService';
@@ -105,21 +105,30 @@ function App() {
         return Boolean(prereqCourse && (prereqCourse.completed || prereqCourse.semester < course.semester));
       };
 
+      // Human-readable message: course names, capped, instead of the raw prereq expression
+      const describeMissing = (items: MissingPrereq[]) => {
+        if (!items.length) return null;
+        const names = items.map((item) => item.name);
+        const shown = names.slice(0, 2).join(', ');
+        return names.length > 2 ? `חסר: ${shown} ועוד ${names.length - 2}` : `חסר: ${shown}`;
+      };
+
       if (course.prereqString && course.prereqString.trim()) {
         const analysis = analyzePrerequisites(course.prereqString, course.semester, courses);
         const missingIds = analysis.isSatisfied
           ? []
           : getPrereqIds(course.prereqString).filter((id) => !isCourseSatisfied(id));
+        const missingPrereqs = buildMissing(missingIds);
         return {
-          error: analysis.isSatisfied ? null : `חסר: ${analysis.logicString}`,
-          missingPrereqs: buildMissing(missingIds)
+          error: analysis.isSatisfied ? null : describeMissing(missingPrereqs) ?? `חסר: ${analysis.logicString}`,
+          missingPrereqs
         };
       }
 
-      const missing = course.prereqs.filter((id) => !isCourseSatisfied(id));
+      const missingPrereqs = buildMissing(course.prereqs.filter((id) => !isCourseSatisfied(id)));
       return {
-        error: missing.length ? `חסר: ${missing.join(', ')}` : null,
-        missingPrereqs: buildMissing(missing)
+        error: describeMissing(missingPrereqs),
+        missingPrereqs
       };
     },
     [courses, courseMap]
