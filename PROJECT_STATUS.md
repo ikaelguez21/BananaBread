@@ -106,6 +106,20 @@ Refresh commands (no args needed):
   python3 fetch_tracks_sap.py --undergrad-only          # all faculties, ~1-2h, resumable
   python3 build_tracks_latest.py --sap src/data/tracks-sap-latest.json
 
+## Session 3 progress (2026-07-04)
+
+- courseCatalog.json refreshed from maltsev's published JSON via NEW update_course_catalog.py
+  (merges 4 recent semesters, Hebrew prereq syntax "ו-"/"או" -> "&&"/"||"; 2312 courses,
+  100% coverage of current plan courses). Dead PDF pipeline deleted (parse_catalog_pdfs.py,
+  tracks_to_json.py, merge_track_data.py, schema_validator.py).
+- npm scripts: fetch-tracks / build-tracks / update-catalog / refresh-data (full overnight chain).
+- Full undergrad tree fetch was resumed (cache data/sap-track-cache/, 192 programs). If
+  incomplete, just rerun `npm run fetch-tracks` — resumable. Then `npm run build-tracks`
+  (hours: ~4-5k Partof calls, also resumable via period-keyed partof cache).
+- Year-fallback added earlier: programs with no current version walk back up to 6 years;
+  deterministic OData errors (old periods) fail fast without retry storm. Some legacy SCs
+  (e.g. SC00001443) have no fetchable tree at all — likely phased out; verify against UI.
+
 ## Next steps (in order)
 
 1. **Full fetch run** for 2024/200 undergrad (user can run it themselves — no session credits).

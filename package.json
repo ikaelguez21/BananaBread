@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "fetch-tracks": "python3 fetch_tracks_sap.py --undergrad-only --output src/data/tracks-sap-latest.json",
     "build-tracks": "python3 build_tracks_latest.py --sap src/data/tracks-sap-latest.json",
-    "update-catalog": "python3 update_course_catalog.py"
+    "update-catalog": "python3 update_course_catalog.py",
+    "refresh-data": "npm run update-catalog && npm run fetch-tracks && npm run build-tracks"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
