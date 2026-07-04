@@ -43,6 +43,12 @@ export interface TrackLoadResult {
   infoFetcherResult: InfoFetcherResult;
 }
 
+export interface RequirementGroup {
+  id: string;
+  label: string;
+  courses: string[];
+}
+
 export interface TrackEntry {
   track_name: string;
   semester: number;

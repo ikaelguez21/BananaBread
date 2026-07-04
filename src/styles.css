@@ -763,3 +763,96 @@ button {
     border-color: rgba(148, 163, 184, 0.25);
   }
 }
+
+/* Requirements panel (electives) */
+.requirements-panel .requirements-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.requirements-track-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.requirements-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.requirement-group {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-soft);
+  overflow: hidden;  flex-shrink: 0;
+}
+
+.requirement-group-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--text);
+  text-align: start;
+}
+
+.requirement-group.open .requirement-group-toggle {
+  background: var(--surface-strong);
+}
+
+.requirement-group-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.requirement-group-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.requirement-group-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.requirement-course-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.requirement-course-id {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.requirement-course-missing {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.button.small {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+}

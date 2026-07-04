@@ -1,6 +1,6 @@
 import trackCatalog from '../data/trackCatalog.json';
 import mergedTrackJson from '../data/tracks-latest.json';
-import type { TrackEntry, TrackOption, RecommendedSchedule, TrackLoadResult, InfoFetcherResult } from '../types';
+import type { TrackEntry, TrackOption, RecommendedSchedule, TrackLoadResult, InfoFetcherResult, RequirementGroup } from '../types';
 import { translateTrackName } from './trackTranslation';
 
 const trackEntries = trackCatalog as TrackEntry[];
@@ -122,6 +122,54 @@ function buildMergedTrackOptions(source: Record<string, unknown>): TrackOption[]
   });
 
   return options.sort((left, right) => left.label.localeCompare(right.label, 'he'));
+}
+
+function buildRequirementGroupsMap(source: Record<string, unknown>): Map<string, RequirementGroup[]> {
+  const map = new Map<string, RequirementGroup[]>();
+  const faculties = Array.isArray(source.faculties) ? source.faculties : [];
+
+  faculties.forEach((facultyRaw) => {
+    if (typeof facultyRaw !== 'object' || facultyRaw === null) return;
+    const faculty = facultyRaw as Record<string, unknown>;
+    const facultyId = normalizeTrackId(faculty.id as string | undefined);
+    const programs = Array.isArray(faculty.programs) ? faculty.programs : [];
+
+    programs.forEach((programRaw) => {
+      if (typeof programRaw !== 'object' || programRaw === null) return;
+      const program = programRaw as Record<string, unknown>;
+      const programId = normalizeTrackId(program.id as string | undefined);
+      const specializations = Array.isArray(program.specializations) ? program.specializations : [];
+
+      specializations.forEach((specRaw) => {
+        if (typeof specRaw !== 'object' || specRaw === null) return;
+        const specialization = specRaw as Record<string, unknown>;
+        const specializationId = normalizeTrackId(specialization.id as string | undefined);
+        const trackId = `${facultyId}:${programId}:${specializationId}`;
+        const groupsRaw = Array.isArray(specialization.requirementGroups) ? specialization.requirementGroups : [];
+
+        const groups: RequirementGroup[] = [];
+        groupsRaw.forEach((groupRaw) => {
+          if (typeof groupRaw !== 'object' || groupRaw === null) return;
+          const group = groupRaw as Record<string, unknown>;
+          const id = typeof group.id === 'string' ? group.id : '';
+          const label = typeof group.label === 'string' ? group.label : '';
+          const courses = Array.isArray(group.courses) ? group.courses.filter((c): c is string => typeof c === 'string') : [];
+          if (id && courses.length) {
+            groups.push({ id, label: label || id, courses });
+          }
+        });
+        if (groups.length) map.set(trackId, groups);
+      });
+    });
+  });
+
+  return map;
+}
+
+const requirementGroupsByTrack = buildRequirementGroupsMap(mergedTrackData);
+
+export function getTrackRequirementGroups(trackId: string): RequirementGroup[] {
+  return requirementGroupsByTrack.get(trackId) ?? [];
 }
 
 interface TrackLoader {

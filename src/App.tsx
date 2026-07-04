@@ -5,14 +5,16 @@ import SemesterColumn from './components/SemesterColumn';
 import TrackSelector from './components/TrackSelector';
 import StatsBar from './components/StatsBar';
 import CourseDetailModal from './components/CourseDetailModal';
+import RequirementsPanel from './components/RequirementsPanel';
 import type { Course, PlannerCourse, PrereqMeta, TrackOption } from './types';
 import courseCatalog from './data/courseCatalog.json';
 import { analyzePrerequisites, normalizeId } from './utils/prerequisite';
-import { createMergedTrackLoader } from './services/trackService';
+import { createMergedTrackLoader, getTrackRequirementGroups } from './services/trackService';
 
 const SEMESTER_COUNT = 8;
 const MAX_SEMESTER_CREDITS = 30;
 const STORAGE_KEY = 'banana-bread-vite-state';
+const TRACK_STORAGE_KEY = 'banana-bread-active-track';
 const catalog = (courseCatalog as Course[]).filter((course) => !course.name.startsWith('השלמות'));
 const trackLoader = createMergedTrackLoader();
 
@@ -23,6 +25,15 @@ function App() {
   const [isTrackOpen, setIsTrackOpen] = useState(false);
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
   const [activeDragId, setActiveDragId] = useState<string | null>(null);
+  const [activeTrackId, setActiveTrackId] = useState<string | null>(() => localStorage.getItem(TRACK_STORAGE_KEY));
+
+  useEffect(() => {
+    if (activeTrackId) {
+      localStorage.setItem(TRACK_STORAGE_KEY, activeTrackId);
+    } else {
+      localStorage.removeItem(TRACK_STORAGE_KEY);
+    }
+  }, [activeTrackId]);
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -179,9 +190,31 @@ function App() {
         .filter((course) => !course.name.startsWith('השלמות'))
         .sort((left, right) => left.semester - right.semester);
       setCourses(loaded);
+      setActiveTrackId(trackId);
       setIsTrackOpen(false);
     },
     [courseMap, createPlannerCourse]
+  );
+
+  const activeTrackGroups = useMemo(
+    () => (activeTrackId ? getTrackRequirementGroups(activeTrackId) : []),
+    [activeTrackId]
+  );
+
+  const activeTrackLabel = useMemo(
+    () => trackOptions.find((track) => track.id === activeTrackId)?.label ?? '',
+    [trackOptions, activeTrackId]
+  );
+
+  const addCourseToLightestSemester = useCallback(
+    (course: Course) => {
+      const creditsPerSemester = Array.from({ length: SEMESTER_COUNT }, (_, index) =>
+        courses.filter((item) => item.semester === index + 1).reduce((sum, item) => sum + item.credits, 0)
+      );
+      const target = creditsPerSemester.indexOf(Math.min(...creditsPerSemester)) + 1;
+      addCourse(course, target);
+    },
+    [courses, addCourse]
   );
 
   const sensors = useSensors(
@@ -304,6 +337,17 @@ function App() {
           </div>
           {trackOptions.length > 10 ? <p style={{ marginTop: 12, color: '#64748b' }}>השתמש בחיפוש במסך בוחר המסלולים כדי למצוא עוד.</p> : null}
         </section>
+
+        {activeTrackGroups.length > 0 ? (
+          <RequirementsPanel
+            trackLabel={activeTrackLabel}
+            groups={activeTrackGroups}
+            courseMap={courseMap}
+            plannerCourses={courses}
+            onAddCourse={addCourseToLightestSemester}
+            onClearTrack={() => setActiveTrackId(null)}
+          />
+        ) : null}
       </div>
 
       <div className="panel">
