@@ -120,6 +120,22 @@ Refresh commands (no args needed):
   deterministic OData errors (old periods) fail fast without retry storm. Some legacy SCs
   (e.g. SC00001443) have no fetchable tree at all — likely phased out; verify against UI.
 
+## Session 3 final (2026-07-04): FULL DATASET LIVE + E2E VERIFIED
+
+- Full undergrad fetch + enrichment DONE: 97 tree tracks -> 75 loadable tracks, 19 faculties,
+  1006 unique courses enriched, 328 plan courses (100% catalog coverage), 1284 requirementGroups
+  emitted in tracks-latest.json (app ignores them until the electives UI exists).
+- E2E verified with Playwright against the dev server: picker shows all SAP tracks with clean
+  labels, loading aerospace populates the board with real courses + prereq validation, zero
+  console errors. (Playwright chromium installed at user level; drive script pattern: launch
+  vite in background — it picks port 4174 when 4173 busy — then playwright goto/click/screenshot.)
+- QA notes: the 95 skipped programs are mostly education/international/continuing-ed; real gaps
+  worth revisiting: הנדסת סביבה, דו-חוגי הנדסת נתונים pair, כלכלה וניהול, הנ. מערכות מידע (תעו"נ)
+  — their SC trees are stubs/absent in SAP (verified live); bottom-up Partof assembly is the
+  fallback if needed. 25 fetched-but-empty stub versions are auto-dropped by the build step.
+- data/sap-track-cache is now gitignored (20MB, regenerable, resumable).
+- trackService fix: missing specialization name renders as nothing (was "unknown").
+
 ## Next steps (in order)
 
 1. **Full fetch run** for 2024/200 undergrad (user can run it themselves — no session credits).
