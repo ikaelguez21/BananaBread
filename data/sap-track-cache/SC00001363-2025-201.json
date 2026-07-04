@@ -1,0 +1,22 @@
+{
+ "id": "SC00001363",
+ "name": "הנדסת חומרים-כימיה",
+ "facultyId": "00002040",
+ "facultyName": "הפקולטה למדע והנדסה של חומרים",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008773",
+   "name": "גרסה 2018 B.Sc בהנדסת חומרים - כימיה",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "id": "SC00001629",
+ "name": "חוג לאחר תואר - הוראת מתמטיקה",
+ "facultyId": "00002220",
+ "facultyName": "חינוך למדע וטכנולוגיה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008824",
+   "name": "חוג לאחר תואר - הוראת המתמטיקה",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

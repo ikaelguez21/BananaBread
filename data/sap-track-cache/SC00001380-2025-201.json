@@ -1,0 +1,22 @@
+{
+ "id": "SC00001380",
+ "name": "כלכלה וניהול(תכנית 3 שנתית)",
+ "facultyId": "00002190",
+ "facultyName": "הפקולטה למדעי הנתונים וההחלטות",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008830",
+   "name": "כלכלה וניהול",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

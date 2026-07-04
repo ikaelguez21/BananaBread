@@ -1,0 +1,22 @@
+{
+ "id": "SC00001631",
+ "name": "חוג לאחר תואר - הוראת כימיה",
+ "facultyId": "00002220",
+ "facultyName": "חינוך למדע וטכנולוגיה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008738",
+   "name": "גרסה 2018 חוג לאחר תואר- הוראת הכימיה",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

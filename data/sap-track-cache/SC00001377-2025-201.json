@@ -1,0 +1,128 @@
+{
+ "id": "SC00001377",
+ "name": "רפואה",
+ "facultyId": "00002270",
+ "facultyName": "הפקולטה לרפואה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00010411",
+   "name": "קליני - גרסא 2025",
+   "structure": [
+    {
+     "otjid": "CG00010412",
+     "type": "CG",
+     "name": "מבנה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00010413",
+       "type": "CG",
+       "name": "סבבי בחירה",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00010414",
+       "type": "CG",
+       "name": "מקצועות חובה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00000321",
+         "type": "CG",
+         "name": "סבבי חובה - ליבה",
+         "category": null,
+         "credits": null
+        },
+        {
+         "otjid": "CG00008144",
+         "type": "CG",
+         "name": "רשימת מקצועות חובה",
+         "category": null,
+         "credits": null
+        },
+        {
+         "otjid": "CG00010776",
+         "type": "CG",
+         "name": "בחירה חובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "CG00010777",
+           "type": "CG",
+           "name": "אופציה 1",
+           "category": null,
+           "credits": null
+          },
+          {
+           "otjid": "CG00010778",
+           "type": "CG",
+           "name": "אופציה 2",
+           "category": null,
+           "credits": null
+          }
+         ]
+        },
+        {
+         "otjid": "CG00006381",
+         "type": "CG",
+         "name": "סבבי חובה",
+         "category": null,
+         "credits": null
+        },
+        {
+         "otjid": "CG00010415",
+         "type": "CG",
+         "name": "סבבי חובה קצרים",
+         "category": null,
+         "credits": null
+        }
+       ]
+      },
+      {
+       "otjid": "CG00010416",
+       "type": "CG",
+       "name": "סבבי חובה עם אפשרות בחירה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00010417",
+         "type": "CG",
+         "name": "על פנימית",
+         "category": null,
+         "credits": null
+        },
+        {
+         "otjid": "CG00010418",
+         "type": "CG",
+         "name": "על כירורגיה",
+         "category": null,
+         "credits": null
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000282",
+       "type": "CG",
+       "name": "מבחני גמר",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000326",
+       "type": "CG",
+       "name": "בחירה חופשית קלינית",
+       "category": null,
+       "credits": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

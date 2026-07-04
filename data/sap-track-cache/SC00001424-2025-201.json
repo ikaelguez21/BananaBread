@@ -1,0 +1,678 @@
+{
+ "id": "SC00001424",
+ "name": "אדריכלות נוף",
+ "facultyId": "00002020",
+ "facultyName": "הפקולטה לארכיטקטורה ובינוי ערים",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00007972",
+   "name": "אדריכלות נוף קטלוג 2024",
+   "structure": [
+    {
+     "otjid": "CG00000178",
+     "type": "CG",
+     "name": "ארכיטקטורת בחירה של כל טכניון",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00000174",
+       "type": "CG",
+       "name": "מקהלה / תזמורת",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940582",
+         "type": "SM",
+         "name": "תזמורת",
+         "category": null,
+         "credits": null,
+         "courseId": "03940582"
+        },
+        {
+         "otjid": "SM03940587",
+         "type": "SM",
+         "name": "מקהלה אורטורית",
+         "category": null,
+         "credits": null,
+         "courseId": "03940587"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000551",
+       "type": "CG",
+       "name": "תוכנית קהילתית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000175",
+       "type": "CG",
+       "name": "בחירה חופשית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000172",
+       "type": "CG",
+       "name": "קורסי ספורט",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940800",
+         "type": "SM",
+         "name": "חינוך גופני - כושר בנים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940800"
+        },
+        {
+         "otjid": "SM03940801",
+         "type": "SM",
+         "name": "חינוך גופני - התעמלות כללית בנות",
+         "category": null,
+         "credits": null,
+         "courseId": "03940801"
+        },
+        {
+         "otjid": "SM03940802",
+         "type": "SM",
+         "name": "חינוך גופני - שחיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940802"
+        },
+        {
+         "otjid": "SM03940803",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי כדור",
+         "category": null,
+         "credits": null,
+         "courseId": "03940803"
+        },
+        {
+         "otjid": "SM03940804",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי מחבט",
+         "category": null,
+         "credits": null,
+         "courseId": "03940804"
+        },
+        {
+         "otjid": "SM03940805",
+         "type": "SM",
+         "name": "חינוך גופני - אתלטיקה קלה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940805"
+        },
+        {
+         "otjid": "SM03940806",
+         "type": "SM",
+         "name": "חינוך גופני - הגנה עצמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03940806"
+        },
+        {
+         "otjid": "SM03940807",
+         "type": "SM",
+         "name": "חינוך גופני מעורב",
+         "category": null,
+         "credits": null,
+         "courseId": "03940807"
+        },
+        {
+         "otjid": "SM03940808",
+         "type": "SM",
+         "name": "חינוך גופני-מיועד לסטודנטים חדשים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940808"
+        },
+        {
+         "otjid": "SM03940820",
+         "type": "SM",
+         "name": "חינוך גופני - תנועה ומחול",
+         "category": null,
+         "credits": null,
+         "courseId": "03940820"
+        },
+        {
+         "otjid": "CG00000173",
+         "type": "CG",
+         "name": "קבוצות ספורט",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM03940902",
+           "type": "SM",
+           "name": "נבחרות ספורט",
+           "category": null,
+           "credits": null,
+           "courseId": "03940902"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "otjid": "CG00010119",
+     "type": "CG",
+     "name": "דרישות אנגלית",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "SM03240033",
+       "type": "SM",
+       "name": "אנגלית טכנית-מתקדמים ב'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240033"
+      },
+      {
+       "otjid": "SM03240032",
+       "type": "SM",
+       "name": "אנגלית למתקדמים א'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240032"
+      }
+     ]
+    },
+    {
+     "otjid": "CG00007973",
+     "type": "CG",
+     "name": "מבנה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00005840",
+       "type": "CG",
+       "name": "מקצועות בחירה פקולטית",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM02050886",
+         "type": "SM",
+         "name": "עיצוב בסיסי 2 א'",
+         "category": null,
+         "credits": null,
+         "courseId": "02050886"
+        },
+        {
+         "otjid": "SM02040152",
+         "type": "SM",
+         "name": "הכרת נופים",
+         "category": null,
+         "credits": null,
+         "courseId": "02040152"
+        },
+        {
+         "otjid": "SM02050071",
+         "type": "SM",
+         "name": "מורפולוגיה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "02050071"
+        },
+        {
+         "otjid": "SM02050111",
+         "type": "SM",
+         "name": "נושאים נבחרים בארכיטקטורה מודרנית",
+         "category": null,
+         "credits": null,
+         "courseId": "02050111"
+        },
+        {
+         "otjid": "SM02050255",
+         "type": "SM",
+         "name": "רקמות אורבניות בישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "02050255"
+        },
+        {
+         "otjid": "SM02050621",
+         "type": "SM",
+         "name": "פרויקט מיוחד 3ב'",
+         "category": null,
+         "credits": null,
+         "courseId": "02050621"
+        },
+        {
+         "otjid": "SM02050638",
+         "type": "SM",
+         "name": "פרויקט מיוחד 3ד'",
+         "category": null,
+         "credits": null,
+         "courseId": "02050638"
+        },
+        {
+         "otjid": "SM02050692",
+         "type": "SM",
+         "name": "נושאים מיוחדים בארכי' 1ג'",
+         "category": null,
+         "credits": null,
+         "courseId": "02050692"
+        },
+        {
+         "otjid": "SM02050723",
+         "type": "SM",
+         "name": "נושאים מיוחדים בארכיטקטורה 3ה",
+         "category": null,
+         "credits": null,
+         "courseId": "02050723"
+        },
+        {
+         "otjid": "SM02050827",
+         "type": "SM",
+         "name": "סדנאות מדיה 2ד'",
+         "category": null,
+         "credits": null,
+         "courseId": "02050827"
+        },
+        {
+         "otjid": "SM02050873",
+         "type": "SM",
+         "name": "עיצוב בסיסי 4",
+         "category": null,
+         "credits": null,
+         "courseId": "02050873"
+        },
+        {
+         "otjid": "SM02050877",
+         "type": "SM",
+         "name": "עיצוב בסיסי 5",
+         "category": null,
+         "credits": null,
+         "courseId": "02050877"
+        },
+        {
+         "otjid": "SM02060007",
+         "type": "SM",
+         "name": "נושאים נבחרים בארכיטקטורה - אדריכלות ירוקה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "02060007"
+        },
+        {
+         "otjid": "SM02060073",
+         "type": "SM",
+         "name": "נושאים נבחרים בארכיטקטורה 7",
+         "category": null,
+         "credits": null,
+         "courseId": "02060073"
+        },
+        {
+         "otjid": "SM02060561",
+         "type": "SM",
+         "name": "תאורה בארכיטקטורה",
+         "category": null,
+         "credits": null,
+         "courseId": "02060561"
+        },
+        {
+         "otjid": "SM02060566",
+         "type": "SM",
+         "name": "מיקרו אקלים בעיר בעזרת צמחייה",
+         "category": null,
+         "credits": null,
+         "courseId": "02060566"
+        },
+        {
+         "otjid": "SM02060574",
+         "type": "SM",
+         "name": "שימוש מחדש במבנים קיימים",
+         "category": null,
+         "credits": null,
+         "courseId": "02060574"
+        },
+        {
+         "otjid": "SM02060821",
+         "type": "SM",
+         "name": "נושאים נבחרים בעיצוב תעשייתי 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02060821"
+        },
+        {
+         "otjid": "SM02060831",
+         "type": "SM",
+         "name": "נושאים נבחרים בעיצוב תעשייתי 5",
+         "category": null,
+         "credits": null,
+         "courseId": "02060831"
+        },
+        {
+         "otjid": "SM02060916",
+         "type": "SM",
+         "name": "נושאים נבחרים בארכיטקטורה 4",
+         "category": null,
+         "credits": null,
+         "courseId": "02060916"
+        },
+        {
+         "otjid": "SM02060923",
+         "type": "SM",
+         "name": "נ.נ. בהיסטוריה של ארכ' ומדעי הרוח",
+         "category": null,
+         "credits": null,
+         "courseId": "02060923"
+        },
+        {
+         "otjid": "SM02060924",
+         "type": "SM",
+         "name": "אדריכלות ותרבות בעידן הגרעיני",
+         "category": null,
+         "credits": null,
+         "courseId": "02060924"
+        },
+        {
+         "otjid": "SM02060946",
+         "type": "SM",
+         "name": "תרבות, חומר וטכנולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02060946"
+        },
+        {
+         "otjid": "SM02060952",
+         "type": "SM",
+         "name": "ההיסטוריה של המגורים",
+         "category": null,
+         "credits": null,
+         "courseId": "02060952"
+        },
+        {
+         "otjid": "SM02060955",
+         "type": "SM",
+         "name": "הארכיון והאתר",
+         "category": null,
+         "credits": null,
+         "courseId": "02060955"
+        },
+        {
+         "otjid": "SM02060971",
+         "type": "SM",
+         "name": "הבעה גרפית 2: שיטות ייצוג מתקדמות",
+         "category": null,
+         "credits": null,
+         "courseId": "02060971"
+        },
+        {
+         "otjid": "SM02070002",
+         "type": "SM",
+         "name": "תכנון חברתי",
+         "category": null,
+         "credits": null,
+         "courseId": "02070002"
+        },
+        {
+         "otjid": "SM02070020",
+         "type": "SM",
+         "name": "מבוא לממ\"ג למתכננים",
+         "category": null,
+         "credits": null,
+         "courseId": "02070020"
+        },
+        {
+         "otjid": "SM02070021",
+         "type": "SM",
+         "name": "שימושי הממ\"ג לשמירת טבע וקבלת החלטות סביבתיות",
+         "category": null,
+         "credits": null,
+         "courseId": "02070021"
+        },
+        {
+         "otjid": "SM02070023",
+         "type": "SM",
+         "name": "מערכות מידע גיאוגרפי 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02070023"
+        },
+        {
+         "otjid": "SM02070342",
+         "type": "SM",
+         "name": "גיאוגרפיה עירונית ואזורית",
+         "category": null,
+         "credits": null,
+         "courseId": "02070342"
+        },
+        {
+         "otjid": "SM02070407",
+         "type": "SM",
+         "name": "מדיניות סביבתית",
+         "category": null,
+         "credits": null,
+         "courseId": "02070407"
+        },
+        {
+         "otjid": "SM02070457",
+         "type": "SM",
+         "name": "היבטים תמטיים וכרונולוגיים באדריכלות נוף בישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "02070457"
+        },
+        {
+         "otjid": "SM02070465",
+         "type": "SM",
+         "name": "נושאים נבחרים באדריכלות נוף 4",
+         "category": null,
+         "credits": null,
+         "courseId": "02070465"
+        },
+        {
+         "otjid": "SM02070600",
+         "type": "SM",
+         "name": "תכנון תחבורה מוטה אנשים",
+         "category": null,
+         "credits": null,
+         "courseId": "02070600"
+        },
+        {
+         "otjid": "SM02070902",
+         "type": "SM",
+         "name": "נוש מתקדמים בתכנון ערים ואזורים 3",
+         "category": null,
+         "credits": null,
+         "courseId": "02070902"
+        },
+        {
+         "otjid": "SM02070945",
+         "type": "SM",
+         "name": "תכנון וקיימות",
+         "category": null,
+         "credits": null,
+         "courseId": "02070945"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00005839",
+       "type": "CG",
+       "name": "קורסי חברה",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00009583",
+       "type": "CG",
+       "name": "רשימת קורסי עברית",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03240053",
+         "type": "SM",
+         "name": "עברית 4",
+         "category": null,
+         "credits": null,
+         "courseId": "03240053"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00007974",
+       "type": "CG",
+       "name": "מקצועות חובה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM01140014",
+         "type": "SM",
+         "name": "מכניקה וגלים",
+         "category": null,
+         "credits": null,
+         "courseId": "01140014"
+        },
+        {
+         "otjid": "SM02040060",
+         "type": "SM",
+         "name": "תכנון נוף 10",
+         "category": null,
+         "credits": null,
+         "courseId": "02040060"
+        },
+        {
+         "otjid": "SM02050818",
+         "type": "SM",
+         "name": "סדנאות מדיה 1ב'",
+         "category": null,
+         "credits": null,
+         "courseId": "02050818"
+        },
+        {
+         "otjid": "SM02050819",
+         "type": "SM",
+         "name": "סדנאות מדיה 1ג'",
+         "category": null,
+         "credits": null,
+         "courseId": "02050819"
+        },
+        {
+         "otjid": "SM02050886",
+         "type": "SM",
+         "name": "עיצוב בסיסי 2 א'",
+         "category": null,
+         "credits": null,
+         "courseId": "02050886"
+        },
+        {
+         "otjid": "CG00005838",
+         "type": "CG",
+         "name": "מקצועות בחירה בחובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM02070457",
+           "type": "SM",
+           "name": "היבטים תמטיים וכרונולוגיים באדריכלות נוף בישראל",
+           "category": null,
+           "credits": null,
+           "courseId": "02070457"
+          }
+         ]
+        },
+        {
+         "otjid": "SM02040004",
+         "type": "SM",
+         "name": "מבוא למבנה ופרטי גן",
+         "category": null,
+         "credits": null,
+         "courseId": "02040004"
+        },
+        {
+         "otjid": "SM02040006",
+         "type": "SM",
+         "name": "צמחיה בנוף 1",
+         "category": null,
+         "credits": null,
+         "courseId": "02040006"
+        },
+        {
+         "otjid": "SM02040064",
+         "type": "SM",
+         "name": "תכנון נוף 50",
+         "category": null,
+         "credits": null,
+         "courseId": "02040064"
+        },
+        {
+         "otjid": "SM02040066",
+         "type": "SM",
+         "name": "תכנון נוף 70",
+         "category": null,
+         "credits": null,
+         "courseId": "02040066"
+        },
+        {
+         "otjid": "SM02040094",
+         "type": "SM",
+         "name": "תולדות אדריכלות נוף 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02040094"
+        },
+        {
+         "otjid": "SM02040150",
+         "type": "SM",
+         "name": "מבוא לאקולוגיה של הנוף",
+         "category": null,
+         "credits": null,
+         "courseId": "02040150"
+        },
+        {
+         "otjid": "SM02040202",
+         "type": "SM",
+         "name": "צמחיה בנוף 2:יסודות תכנון בצמחיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02040202"
+        },
+        {
+         "otjid": "SM02040401",
+         "type": "SM",
+         "name": "מבנה ופרטי גנים 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02040401"
+        },
+        {
+         "otjid": "SM02040406",
+         "type": "SM",
+         "name": "תורת המבנה לאדריכלי נוף",
+         "category": null,
+         "credits": null,
+         "courseId": "02040406"
+        },
+        {
+         "otjid": "SM02070457",
+         "type": "SM",
+         "name": "היבטים תמטיים וכרונולוגיים באדריכלות נוף בישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "02070457"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

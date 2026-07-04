@@ -7,3 +7,4 @@ __pycache__
 data/catalog-cache/
 src/data/tracks-sap-*.json
 src/data/tracks-pdf-*.json
+data/sap-track-cache/

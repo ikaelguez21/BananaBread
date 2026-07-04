@@ -1,0 +1,518 @@
+{
+ "id": "SC00001373",
+ "name": "מדעי הרפואה - מגמת רפואה",
+ "facultyId": "00002270",
+ "facultyName": "הפקולטה לרפואה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00010419",
+   "name": "בוגר למדעים במדעי הרפואה קטלוג 2025",
+   "structure": [
+    {
+     "otjid": "CG00010142",
+     "type": "CG",
+     "name": "דרישות אנגלית",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "SM03240033",
+       "type": "SM",
+       "name": "אנגלית טכנית-מתקדמים ב'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240033"
+      },
+      {
+       "otjid": "SM03240032",
+       "type": "SM",
+       "name": "אנגלית למתקדמים א'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240032"
+      }
+     ]
+    },
+    {
+     "otjid": "CG00010420",
+     "type": "CG",
+     "name": "מבנה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00009939",
+       "type": "CG",
+       "name": "רשימת קורסי עברית",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03240053",
+         "type": "SM",
+         "name": "עברית 4",
+         "category": null,
+         "credits": null,
+         "courseId": "03240053"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00010421",
+       "type": "CG",
+       "name": "מקצועות חובה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM01140249",
+         "type": "SM",
+         "name": "פיסיקה 2 ר",
+         "category": null,
+         "credits": null,
+         "courseId": "01140249"
+        },
+        {
+         "otjid": "SM01250803",
+         "type": "SM",
+         "name": "כימיה אורגנית לרפואה",
+         "category": null,
+         "credits": null,
+         "courseId": "01250803"
+        },
+        {
+         "otjid": "SM02740143",
+         "type": "SM",
+         "name": "שלישי קליני - להיות רופא 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02740143"
+        },
+        {
+         "otjid": "SM02740165",
+         "type": "SM",
+         "name": "גנטיקה כללית לרפואנים",
+         "category": null,
+         "credits": null,
+         "courseId": "02740165"
+        },
+        {
+         "otjid": "SM02740166",
+         "type": "SM",
+         "name": "שיטות כמותיות במדעי הרפואה ב'",
+         "category": null,
+         "credits": null,
+         "courseId": "02740166"
+        },
+        {
+         "otjid": "SM02740235",
+         "type": "SM",
+         "name": "להיות רופא-חשיפה למקצוע הרפואה 4",
+         "category": null,
+         "credits": null,
+         "courseId": "02740235"
+        },
+        {
+         "otjid": "SM02740246",
+         "type": "SM",
+         "name": "הבסיס המולקולרי של מחלת הסרטן",
+         "category": null,
+         "credits": null,
+         "courseId": "02740246"
+        },
+        {
+         "otjid": "SM02740251",
+         "type": "SM",
+         "name": "אבולוציה",
+         "category": null,
+         "credits": null,
+         "courseId": "02740251"
+        },
+        {
+         "otjid": "SM02740252",
+         "type": "SM",
+         "name": "פתוגנים אאוקריוטים",
+         "category": null,
+         "credits": null,
+         "courseId": "02740252"
+        },
+        {
+         "otjid": "SM02740253",
+         "type": "SM",
+         "name": "פיזיולוגיה תאית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740253"
+        },
+        {
+         "otjid": "SM02740261",
+         "type": "SM",
+         "name": "אימונולוגיה בסיסית וקלינית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740261"
+        },
+        {
+         "otjid": "SM02740262",
+         "type": "SM",
+         "name": "אמבריולוגיה בסיסית ורפואית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740262"
+        },
+        {
+         "otjid": "SM02740265",
+         "type": "SM",
+         "name": "התנסות במחקר בסיסי וקליני",
+         "category": null,
+         "credits": null,
+         "courseId": "02740265"
+        },
+        {
+         "otjid": "SM02740266",
+         "type": "SM",
+         "name": "אנטומיה ב'",
+         "category": null,
+         "credits": null,
+         "courseId": "02740266"
+        },
+        {
+         "otjid": "SM02740267",
+         "type": "SM",
+         "name": "פתולוגיה כללית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740267"
+        },
+        {
+         "otjid": "SM02740268",
+         "type": "SM",
+         "name": "ביוכימיה קלינית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740268"
+        },
+        {
+         "otjid": "SM02740318",
+         "type": "SM",
+         "name": "אפידמיולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02740318"
+        },
+        {
+         "otjid": "SM02740319",
+         "type": "SM",
+         "name": "וירולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02740319"
+        },
+        {
+         "otjid": "SM02740320",
+         "type": "SM",
+         "name": "אתיקה ומשפט רפואי",
+         "category": null,
+         "credits": null,
+         "courseId": "02740320"
+        },
+        {
+         "otjid": "SM02740327",
+         "type": "SM",
+         "name": "להיות רופא-סוגיות תרבותיות ואתיות ברפואה (6)",
+         "category": null,
+         "credits": null,
+         "courseId": "02740327"
+        },
+        {
+         "otjid": "SM02740328",
+         "type": "SM",
+         "name": "אנדוקרינולוגיה פיסיולוגיה ופתופיזיולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02740328"
+        },
+        {
+         "otjid": "SM02740352",
+         "type": "SM",
+         "name": "מבוא לתזונה קלינית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740352"
+        },
+        {
+         "otjid": "SM02740367",
+         "type": "SM",
+         "name": "פרמקולוגיה בסיסית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740367"
+        },
+        {
+         "otjid": "SM02740369",
+         "type": "SM",
+         "name": "המטולוגיה,ממדע בסיסי למיטת החולה",
+         "category": null,
+         "credits": null,
+         "courseId": "02740369"
+        },
+        {
+         "otjid": "SM02740376",
+         "type": "SM",
+         "name": "פתולוגיה מערכתית 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02740376"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00010422",
+       "type": "CG",
+       "name": "מקצועות בחירה פקולטיים",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM02750110",
+         "type": "SM",
+         "name": "רוח חדשה לחסרי מעמד 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02750110"
+        },
+        {
+         "otjid": "SM02750112",
+         "type": "SM",
+         "name": "אבולוציה של האדם",
+         "category": null,
+         "credits": null,
+         "courseId": "02750112"
+        },
+        {
+         "otjid": "SM02750218",
+         "type": "SM",
+         "name": "רפואת צמחים ממחקר לקליניקה",
+         "category": null,
+         "credits": null,
+         "courseId": "02750218"
+        },
+        {
+         "otjid": "CG00010504",
+         "type": "CG",
+         "name": "יש לקחת לכל היותר קורס 1",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM02760201",
+           "type": "SM",
+           "name": "חוג הסרטן - מגנום לתרופה",
+           "category": null,
+           "credits": null,
+           "courseId": "02760201"
+          }
+         ]
+        },
+        {
+         "otjid": "SM02750113",
+         "type": "SM",
+         "name": "עולם התלת ממד בתחום הרפואה",
+         "category": null,
+         "credits": null,
+         "courseId": "02750113"
+        },
+        {
+         "otjid": "SM02750216",
+         "type": "SM",
+         "name": "יסודות המחקר והכתיבה המדעית",
+         "category": null,
+         "credits": null,
+         "courseId": "02750216"
+        },
+        {
+         "otjid": "SM02750217",
+         "type": "SM",
+         "name": "פרויקט מחקר בסיסי:בדרך לרופא-חוקר",
+         "category": null,
+         "credits": null,
+         "courseId": "02750217"
+        },
+        {
+         "otjid": "SM02750219",
+         "type": "SM",
+         "name": "מבוא לחשיבה קלינית",
+         "category": null,
+         "credits": null,
+         "courseId": "02750219"
+        },
+        {
+         "otjid": "SM02750325",
+         "type": "SM",
+         "name": "אתיקה במעגל חיים",
+         "category": null,
+         "credits": null,
+         "courseId": "02750325"
+        },
+        {
+         "otjid": "SM02770300",
+         "type": "SM",
+         "name": "נוירואנטומיה פונקציונאלית",
+         "category": null,
+         "credits": null,
+         "courseId": "02770300"
+        },
+        {
+         "otjid": "SM02780301",
+         "type": "SM",
+         "name": "עבודה סמינריונית בפיסיולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02780301"
+        },
+        {
+         "otjid": "SM03240621",
+         "type": "SM",
+         "name": "רוסית למתחילים 1",
+         "category": null,
+         "credits": null,
+         "courseId": "03240621"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "otjid": "CG00000232",
+     "type": "CG",
+     "name": "בחירה כלל טכניונית - רפואה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00000551",
+       "type": "CG",
+       "name": "תוכנית קהילתית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000172",
+       "type": "CG",
+       "name": "קורסי ספורט",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940800",
+         "type": "SM",
+         "name": "חינוך גופני - כושר בנים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940800"
+        },
+        {
+         "otjid": "SM03940801",
+         "type": "SM",
+         "name": "חינוך גופני - התעמלות כללית בנות",
+         "category": null,
+         "credits": null,
+         "courseId": "03940801"
+        },
+        {
+         "otjid": "SM03940802",
+         "type": "SM",
+         "name": "חינוך גופני - שחיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940802"
+        },
+        {
+         "otjid": "SM03940803",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי כדור",
+         "category": null,
+         "credits": null,
+         "courseId": "03940803"
+        },
+        {
+         "otjid": "SM03940804",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי מחבט",
+         "category": null,
+         "credits": null,
+         "courseId": "03940804"
+        },
+        {
+         "otjid": "SM03940805",
+         "type": "SM",
+         "name": "חינוך גופני - אתלטיקה קלה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940805"
+        },
+        {
+         "otjid": "SM03940806",
+         "type": "SM",
+         "name": "חינוך גופני - הגנה עצמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03940806"
+        },
+        {
+         "otjid": "SM03940807",
+         "type": "SM",
+         "name": "חינוך גופני מעורב",
+         "category": null,
+         "credits": null,
+         "courseId": "03940807"
+        },
+        {
+         "otjid": "SM03940808",
+         "type": "SM",
+         "name": "חינוך גופני-מיועד לסטודנטים חדשים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940808"
+        },
+        {
+         "otjid": "SM03940820",
+         "type": "SM",
+         "name": "חינוך גופני - תנועה ומחול",
+         "category": null,
+         "credits": null,
+         "courseId": "03940820"
+        },
+        {
+         "otjid": "CG00000173",
+         "type": "CG",
+         "name": "קבוצות ספורט",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM03940902",
+           "type": "SM",
+           "name": "נבחרות ספורט",
+           "category": null,
+           "credits": null,
+           "courseId": "03940902"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000175",
+       "type": "CG",
+       "name": "בחירה חופשית",
+       "category": null,
+       "credits": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

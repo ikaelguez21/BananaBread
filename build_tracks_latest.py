@@ -78,6 +78,27 @@ def specializations_of(version: dict) -> list[dict]:
     return [{"otjid": version["otjid"], "name": None, "children": structure}]
 
 
+def build_requirement_groups(nodes, path=()) -> list[dict]:
+    """Flatten CG nodes into groups with their direct course lists.
+
+    Nested group names are joined with ' / ' so the hierarchy stays readable."""
+    groups = []
+    for node in nodes:
+        if node.get("type") != "CG":
+            continue
+        name_path = (*path, node.get("name") or "")
+        direct = [c["courseId"] for c in node.get("children", [])
+                  if c.get("type") == "SM" and c.get("courseId")]
+        if direct:
+            groups.append({
+                "id": node["otjid"],
+                "label": " / ".join(p for p in name_path if p),
+                "courses": sorted(direct),
+            })
+        groups.extend(build_requirement_groups(node.get("children", []), name_path))
+    return groups
+
+
 def build_recommended_plan(spec_courses: set[str], partof_by_course: dict, version_cg: str) -> list[dict]:
     by_semester: dict[int, list[str]] = {}
     for course_id in spec_courses:
@@ -153,6 +174,7 @@ def main() -> int:
                     "id": spec["otjid"],
                     "name": spec_name,
                     "recommendedPlan": plan,
+                    "requirementGroups": build_requirement_groups(spec.get("children", [])),
                 })
             if program["specializations"]:
                 faculty["programs"].append(program)

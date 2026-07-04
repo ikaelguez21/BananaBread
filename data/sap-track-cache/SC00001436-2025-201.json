@@ -1,0 +1,22 @@
+{
+ "id": "SC00001436",
+ "name": "הנדסה ביו-רפואית-פיזיקה (פיזיקה)",
+ "facultyId": "00002090",
+ "facultyName": "הפקולטה לפיזיקה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008831",
+   "name": "פיזיקה - הנדסה ביו רפואית",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

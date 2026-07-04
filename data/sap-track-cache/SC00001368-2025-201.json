@@ -1,0 +1,22 @@
+{
+ "id": "SC00001368",
+ "name": "הנ. ביו-רפואית-מדעי הרפואה",
+ "facultyId": "00002270",
+ "facultyName": "הפקולטה לרפואה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008774",
+   "name": "גרסה 2018 B.Sc בהנ. ביו-רפואית-מדעי הרפו",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

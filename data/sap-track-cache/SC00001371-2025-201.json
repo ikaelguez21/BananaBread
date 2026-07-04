@@ -1,0 +1,298 @@
+{
+ "id": "SC00001371",
+ "name": "מדעי הרפואה - מגמה מדעית",
+ "facultyId": "00002270",
+ "facultyName": "הפקולטה לרפואה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00006508",
+   "name": "גרסה 2023 B.Sc במדעי הרפואה ומגמה מדעית",
+   "structure": [
+    {
+     "otjid": "CG00010216",
+     "type": "CG",
+     "name": "דרישות אנגלית",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "SM03240033",
+       "type": "SM",
+       "name": "אנגלית טכנית-מתקדמים ב'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240033"
+      },
+      {
+       "otjid": "SM03240032",
+       "type": "SM",
+       "name": "אנגלית למתקדמים א'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240032"
+      }
+     ]
+    },
+    {
+     "otjid": "CG00006509",
+     "type": "CG",
+     "name": "מבנה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00006513",
+       "type": "CG",
+       "name": "מקצועות בחירה פקולטיים",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM02770300",
+         "type": "SM",
+         "name": "נוירואנטומיה פונקציונאלית",
+         "category": null,
+         "credits": null,
+         "courseId": "02770300"
+        },
+        {
+         "otjid": "SM02780301",
+         "type": "SM",
+         "name": "עבודה סמינריונית בפיסיולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02780301"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006514",
+       "type": "CG",
+       "name": "בחירה מפקולטות אחרות",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03240621",
+         "type": "SM",
+         "name": "רוסית למתחילים 1",
+         "category": null,
+         "credits": null,
+         "courseId": "03240621"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00009944",
+       "type": "CG",
+       "name": "רשימת קורסי עברית",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03240053",
+         "type": "SM",
+         "name": "עברית 4",
+         "category": null,
+         "credits": null,
+         "courseId": "03240053"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006510",
+       "type": "CG",
+       "name": "מקצועות חובה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00006485",
+         "type": "CG",
+         "name": "אפשרויות בחירה בחובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01140051",
+           "type": "SM",
+           "name": "פיסיקה 1",
+           "category": null,
+           "credits": null,
+           "courseId": "01140051"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00006488",
+         "type": "CG",
+         "name": "אפשרויות בחירה בחובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01140052",
+           "type": "SM",
+           "name": "פיסיקה 2",
+           "category": null,
+           "credits": null,
+           "courseId": "01140052"
+          },
+          {
+           "otjid": "SM01140078",
+           "type": "SM",
+           "name": "פיסיקה 2ל",
+           "category": null,
+           "credits": null,
+           "courseId": "01140078"
+          },
+          {
+           "otjid": "SM01140249",
+           "type": "SM",
+           "name": "פיסיקה 2 ר",
+           "category": null,
+           "credits": null,
+           "courseId": "01140249"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00006490",
+         "type": "CG",
+         "name": "אפשרויות בחירה בחובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01340020",
+           "type": "SM",
+           "name": "גנטיקה כללית",
+           "category": null,
+           "credits": null,
+           "courseId": "01340020"
+          },
+          {
+           "otjid": "SM02740165",
+           "type": "SM",
+           "name": "גנטיקה כללית לרפואנים",
+           "category": null,
+           "credits": null,
+           "courseId": "02740165"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00006511",
+         "type": "CG",
+         "name": "אפשרויות בחירה בחובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01240118",
+           "type": "SM",
+           "name": "יסודות הכימיה ב'",
+           "category": null,
+           "credits": null,
+           "courseId": "01240118"
+          },
+          {
+           "otjid": "SM01250001",
+           "type": "SM",
+           "name": "כימיה כללית",
+           "category": null,
+           "credits": null,
+           "courseId": "01250001"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00006512",
+         "type": "CG",
+         "name": "אפשרויות בחירה בחובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01250801",
+           "type": "SM",
+           "name": "כימיה אורגנית",
+           "category": null,
+           "credits": null,
+           "courseId": "01250801"
+          }
+         ]
+        },
+        {
+         "otjid": "SM02740166",
+         "type": "SM",
+         "name": "שיטות כמותיות במדעי הרפואה ב'",
+         "category": null,
+         "credits": null,
+         "courseId": "02740166"
+        },
+        {
+         "otjid": "SM02740246",
+         "type": "SM",
+         "name": "הבסיס המולקולרי של מחלת הסרטן",
+         "category": null,
+         "credits": null,
+         "courseId": "02740246"
+        },
+        {
+         "otjid": "SM02740251",
+         "type": "SM",
+         "name": "אבולוציה",
+         "category": null,
+         "credits": null,
+         "courseId": "02740251"
+        },
+        {
+         "otjid": "SM02740253",
+         "type": "SM",
+         "name": "פיזיולוגיה תאית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740253"
+        },
+        {
+         "otjid": "SM02740261",
+         "type": "SM",
+         "name": "אימונולוגיה בסיסית וקלינית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740261"
+        },
+        {
+         "otjid": "SM02740262",
+         "type": "SM",
+         "name": "אמבריולוגיה בסיסית ורפואית",
+         "category": null,
+         "credits": null,
+         "courseId": "02740262"
+        },
+        {
+         "otjid": "SM02740319",
+         "type": "SM",
+         "name": "וירולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02740319"
+        },
+        {
+         "otjid": "SM02740328",
+         "type": "SM",
+         "name": "אנדוקרינולוגיה פיסיולוגיה ופתופיזיולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "02740328"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

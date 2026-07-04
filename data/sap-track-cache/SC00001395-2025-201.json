@@ -1,0 +1,22 @@
+{
+ "id": "SC00001395",
+ "name": "הנדסת חשמל - פיזיקה",
+ "facultyId": "00002050",
+ "facultyName": "הפקולטה להנדסת חשמל ומחשבים",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008828",
+   "name": "גרסה 2018 B.Sc הנדסת חשמל - פיזיקה",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

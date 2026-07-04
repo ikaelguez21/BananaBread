@@ -1,0 +1,1245 @@
+{
+ "id": "SC00001358",
+ "name": "הנדסת חומרים - כימיה",
+ "facultyId": "00002040",
+ "facultyName": "הפקולטה למדע והנדסה של חומרים",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00010505",
+   "name": "גרסה 2025 B.Sc כימיה של חומרים",
+   "structure": [
+    {
+     "otjid": "CG00000170",
+     "type": "CG",
+     "name": "בחירה כלל טכניונית",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00000551",
+       "type": "CG",
+       "name": "תוכנית קהילתית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000175",
+       "type": "CG",
+       "name": "בחירה חופשית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00010092",
+       "type": "CG",
+       "name": "קורסי מל\"ג",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM02140120",
+         "type": "SM",
+         "name": "יסודות למידה והוראה",
+         "category": null,
+         "credits": null,
+         "courseId": "02140120"
+        },
+        {
+         "otjid": "SM02750112",
+         "type": "SM",
+         "name": "אבולוציה של האדם",
+         "category": null,
+         "credits": null,
+         "courseId": "02750112"
+        },
+        {
+         "otjid": "SM03240265",
+         "type": "SM",
+         "name": "אקו-פילוסופיה:חשיבה סביבתית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240265"
+        },
+        {
+         "otjid": "SM03240266",
+         "type": "SM",
+         "name": "מדע וביקורות המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240266"
+        },
+        {
+         "otjid": "SM03240267",
+         "type": "SM",
+         "name": "יחסי גוף נפש:מאפלטון ועד מדעי המח",
+         "category": null,
+         "credits": null,
+         "courseId": "03240267"
+        },
+        {
+         "otjid": "SM03240282",
+         "type": "SM",
+         "name": "פוליטיקה של זהויות בישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240282"
+        },
+        {
+         "otjid": "SM03240283",
+         "type": "SM",
+         "name": "כלכלה וחברה: מבט בין-תרבותי",
+         "category": null,
+         "credits": null,
+         "courseId": "03240283"
+        },
+        {
+         "otjid": "SM03240288",
+         "type": "SM",
+         "name": "מוסיקה טכנולוגית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240288"
+        },
+        {
+         "otjid": "SM03240292",
+         "type": "SM",
+         "name": "משפט שוויון וצדק חברתי",
+         "category": null,
+         "credits": null,
+         "courseId": "03240292"
+        },
+        {
+         "otjid": "SM03240299",
+         "type": "SM",
+         "name": "טרור, ג'יהד ותגובה מדינית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240299"
+        },
+        {
+         "otjid": "SM03240305",
+         "type": "SM",
+         "name": "היסטוריה של המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240305"
+        },
+        {
+         "otjid": "SM03240436",
+         "type": "SM",
+         "name": "עולמות מוסיקליים",
+         "category": null,
+         "credits": null,
+         "courseId": "03240436"
+        },
+        {
+         "otjid": "SM03240439",
+         "type": "SM",
+         "name": "יסודות באמנות יפן",
+         "category": null,
+         "credits": null,
+         "courseId": "03240439"
+        },
+        {
+         "otjid": "SM03240442",
+         "type": "SM",
+         "name": "משפט העבודה בישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240442"
+        },
+        {
+         "otjid": "SM03240445",
+         "type": "SM",
+         "name": "הסתגלות למצבי לחץ",
+         "category": null,
+         "credits": null,
+         "courseId": "03240445"
+        },
+        {
+         "otjid": "SM03240454",
+         "type": "SM",
+         "name": "מבוא לפילוסופיה של המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240454"
+        },
+        {
+         "otjid": "SM03240463",
+         "type": "SM",
+         "name": "היסטוריה של המזרח התיכון",
+         "category": null,
+         "credits": null,
+         "courseId": "03240463"
+        },
+        {
+         "otjid": "SM03240518",
+         "type": "SM",
+         "name": "חדשנות, יצירתיות ואושר",
+         "category": null,
+         "credits": null,
+         "courseId": "03240518"
+        },
+        {
+         "otjid": "SM03240521",
+         "type": "SM",
+         "name": "יזמות בארגונים-התפתחויות ומגמות",
+         "category": null,
+         "credits": null,
+         "courseId": "03240521"
+        },
+        {
+         "otjid": "SM03240527",
+         "type": "SM",
+         "name": "יסודות היזמות",
+         "category": null,
+         "credits": null,
+         "courseId": "03240527"
+        },
+        {
+         "otjid": "SM03240528",
+         "type": "SM",
+         "name": "מנהיגות יזמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240528"
+        },
+        {
+         "otjid": "SM03240539",
+         "type": "SM",
+         "name": "מחקרי שוק",
+         "category": null,
+         "credits": null,
+         "courseId": "03240539"
+        },
+        {
+         "otjid": "SM03240540",
+         "type": "SM",
+         "name": "היבטים משפטיים ביזמות עסקית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240540"
+        },
+        {
+         "otjid": "SM03240541",
+         "type": "SM",
+         "name": "גיוס המערכת האקולוגית העסקית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240541"
+        },
+        {
+         "otjid": "SM03240879",
+         "type": "SM",
+         "name": "סוגיות נבחרות בחברה הישראלית-מרכז בינ\"ל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240879"
+        },
+        {
+         "otjid": "SM03250001",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 1",
+         "category": null,
+         "credits": null,
+         "courseId": "03250001"
+        },
+        {
+         "otjid": "SM03250006",
+         "type": "SM",
+         "name": "מבוא לארכיאולוגיה במאה ה-21",
+         "category": null,
+         "credits": null,
+         "courseId": "03250006"
+        },
+        {
+         "otjid": "SM03250010",
+         "type": "SM",
+         "name": "מדע דת ופילוסופיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03250010"
+        },
+        {
+         "otjid": "SM03250016",
+         "type": "SM",
+         "name": "נושאים נבחרים בהיסטוריה 2",
+         "category": null,
+         "credits": null,
+         "courseId": "03250016"
+        },
+        {
+         "otjid": "SM03250025",
+         "type": "SM",
+         "name": "מבוא להאזנה מודרכת:מוסיקה ווקאלית",
+         "category": null,
+         "credits": null,
+         "courseId": "03250025"
+        },
+        {
+         "otjid": "SM03260001",
+         "type": "SM",
+         "name": "סוגיות נבח. בהיסט. ופילו. של המדע: על מנגנונים ושימוש",
+         "category": null,
+         "credits": null,
+         "courseId": "03260001"
+        },
+        {
+         "otjid": "SM03260005",
+         "type": "SM",
+         "name": "פריצות דרך בתולדות החשיבה המתמטית",
+         "category": null,
+         "credits": null,
+         "courseId": "03260005"
+        },
+        {
+         "otjid": "SM03260006",
+         "type": "SM",
+         "name": "תורת הקוואנטים: מבט פילוסופי",
+         "category": null,
+         "credits": null,
+         "courseId": "03260006"
+        },
+        {
+         "otjid": "SM00360709",
+         "type": "SM",
+         "name": "בקרת תהליכי דגימה",
+         "category": null,
+         "credits": null,
+         "courseId": "00360709"
+        },
+        {
+         "otjid": "SM03240236",
+         "type": "SM",
+         "name": "תזמורת נשיפה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240236"
+        },
+        {
+         "otjid": "SM03240250",
+         "type": "SM",
+         "name": "עיצוב גרפי ותקשורת חזותית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240250"
+        },
+        {
+         "otjid": "SM03240473",
+         "type": "SM",
+         "name": "מבנה חדשנות מדעית ושינוי פרדיגמה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240473"
+        },
+        {
+         "otjid": "SM03240675",
+         "type": "SM",
+         "name": "ספרדית למתחילים",
+         "category": null,
+         "credits": null,
+         "courseId": "03240675"
+        },
+        {
+         "otjid": "SM03240697",
+         "type": "SM",
+         "name": "עקרונות מעשיים לעיבוד תמונה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240697"
+        },
+        {
+         "otjid": "SM03250005",
+         "type": "SM",
+         "name": "יזמות מפי היזמים",
+         "category": null,
+         "credits": null,
+         "courseId": "03250005"
+        },
+        {
+         "otjid": "SM03250013",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 5",
+         "category": null,
+         "credits": null,
+         "courseId": "03250013"
+        },
+        {
+         "otjid": "SM03250036",
+         "type": "SM",
+         "name": "היסטוריה ופילוסופיה של הרפואה המודרנית",
+         "category": null,
+         "credits": null,
+         "courseId": "03250036"
+        },
+        {
+         "otjid": "SM03250039",
+         "type": "SM",
+         "name": "הפילוסופיה של ייצוגים מנטאליים",
+         "category": null,
+         "credits": null,
+         "courseId": "03250039"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000172",
+       "type": "CG",
+       "name": "קורסי ספורט",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940800",
+         "type": "SM",
+         "name": "חינוך גופני - כושר בנים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940800"
+        },
+        {
+         "otjid": "SM03940801",
+         "type": "SM",
+         "name": "חינוך גופני - התעמלות כללית בנות",
+         "category": null,
+         "credits": null,
+         "courseId": "03940801"
+        },
+        {
+         "otjid": "SM03940802",
+         "type": "SM",
+         "name": "חינוך גופני - שחיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940802"
+        },
+        {
+         "otjid": "SM03940803",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי כדור",
+         "category": null,
+         "credits": null,
+         "courseId": "03940803"
+        },
+        {
+         "otjid": "SM03940804",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי מחבט",
+         "category": null,
+         "credits": null,
+         "courseId": "03940804"
+        },
+        {
+         "otjid": "SM03940805",
+         "type": "SM",
+         "name": "חינוך גופני - אתלטיקה קלה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940805"
+        },
+        {
+         "otjid": "SM03940806",
+         "type": "SM",
+         "name": "חינוך גופני - הגנה עצמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03940806"
+        },
+        {
+         "otjid": "SM03940807",
+         "type": "SM",
+         "name": "חינוך גופני מעורב",
+         "category": null,
+         "credits": null,
+         "courseId": "03940807"
+        },
+        {
+         "otjid": "SM03940808",
+         "type": "SM",
+         "name": "חינוך גופני-מיועד לסטודנטים חדשים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940808"
+        },
+        {
+         "otjid": "SM03940820",
+         "type": "SM",
+         "name": "חינוך גופני - תנועה ומחול",
+         "category": null,
+         "credits": null,
+         "courseId": "03940820"
+        },
+        {
+         "otjid": "CG00000173",
+         "type": "CG",
+         "name": "קבוצות ספורט",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM03940902",
+           "type": "SM",
+           "name": "נבחרות ספורט",
+           "category": null,
+           "credits": null,
+           "courseId": "03940902"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000174",
+       "type": "CG",
+       "name": "מקהלה / תזמורת",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940582",
+         "type": "SM",
+         "name": "תזמורת",
+         "category": null,
+         "credits": null,
+         "courseId": "03940582"
+        },
+        {
+         "otjid": "SM03940587",
+         "type": "SM",
+         "name": "מקהלה אורטורית",
+         "category": null,
+         "credits": null,
+         "courseId": "03940587"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "otjid": "CG00006531",
+     "type": "CG",
+     "name": "מבנה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00001295",
+       "type": "CG",
+       "name": "קורסי בחירה בכימיה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00001296",
+         "type": "CG",
+         "name": "רשימה 2.1 - מעבדות בכימיה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01260302",
+           "type": "SM",
+           "name": "מעבדה אנליטית מתקדמת בניטור סביבתי",
+           "category": null,
+           "credits": null,
+           "courseId": "01260302"
+          },
+          {
+           "otjid": "SM01260303",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה אי-אורגנית ואורגנומתכתית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260303"
+          },
+          {
+           "otjid": "SM01260600",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה פיסיקלית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260600"
+          },
+          {
+           "otjid": "SM01260901",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה אורגנית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260901"
+          },
+          {
+           "otjid": "SM01260902",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה אורגנית פיסיקלית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260902"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00001297",
+         "type": "CG",
+         "name": "רשימה 2.2 - בחירה בכימיה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01260603",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה חישובית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260603"
+          },
+          {
+           "otjid": "CG00001298",
+           "type": "CG",
+           "name": "אפשרויות בחירה",
+           "category": null,
+           "credits": null,
+           "children": [
+            {
+             "otjid": "CG00001299",
+             "type": "CG",
+             "name": "אפשרויות בחירה בחובה",
+             "category": null,
+             "credits": null,
+             "children": [
+              {
+               "otjid": "SM01240353",
+               "type": "SM",
+               "name": "פרויקט מחקר בכימיה",
+               "category": null,
+               "credits": null,
+               "courseId": "01240353"
+              },
+              {
+               "otjid": "SM01240355",
+               "type": "SM",
+               "name": "פרוייקט מחקר מיוחד בכימיה",
+               "category": null,
+               "credits": null,
+               "courseId": "01240355"
+              }
+             ]
+            },
+            {
+             "otjid": "SM01260200",
+             "type": "SM",
+             "name": "כימיה אי אורגנית מתקדמת 2",
+             "category": null,
+             "credits": null,
+             "courseId": "01260200"
+            },
+            {
+             "otjid": "SM01260700",
+             "type": "SM",
+             "name": "כימיה אורגנית מתקדמת",
+             "category": null,
+             "credits": null,
+             "courseId": "01260700"
+            }
+           ]
+          },
+          {
+           "otjid": "SM01260302",
+           "type": "SM",
+           "name": "מעבדה אנליטית מתקדמת בניטור סביבתי",
+           "category": null,
+           "credits": null,
+           "courseId": "01260302"
+          },
+          {
+           "otjid": "SM01260303",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה אי-אורגנית ואורגנומתכתית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260303"
+          },
+          {
+           "otjid": "SM01260600",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה פיסיקלית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260600"
+          },
+          {
+           "otjid": "SM01260901",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה אורגנית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260901"
+          },
+          {
+           "otjid": "SM01260902",
+           "type": "SM",
+           "name": "מעבדה מתקדמת בכימיה אורגנית פיסיקלית",
+           "category": null,
+           "credits": null,
+           "courseId": "01260902"
+          },
+          {
+           "otjid": "SM01270206",
+           "type": "SM",
+           "name": "כימיה אנליטית באמצעות לייזרים",
+           "category": null,
+           "credits": null,
+           "courseId": "01270206"
+          },
+          {
+           "otjid": "SM01270403",
+           "type": "SM",
+           "name": "כימיה פיסיקלית של השטח",
+           "category": null,
+           "credits": null,
+           "courseId": "01270403"
+          },
+          {
+           "otjid": "SM01270443",
+           "type": "SM",
+           "name": "אלקטרוניקה מולקולרית",
+           "category": null,
+           "credits": null,
+           "courseId": "01270443"
+          },
+          {
+           "otjid": "SM01270724",
+           "type": "SM",
+           "name": "מבוא לכימיה של פולימרים",
+           "category": null,
+           "credits": null,
+           "courseId": "01270724"
+          },
+          {
+           "otjid": "SM01270735",
+           "type": "SM",
+           "name": "נושאים נבחרים בקטליזה הומוגנית",
+           "category": null,
+           "credits": null,
+           "courseId": "01270735"
+          },
+          {
+           "otjid": "SM01270740",
+           "type": "SM",
+           "name": "פולימרים: מסינתזה לארכיטקטורות",
+           "category": null,
+           "credits": null,
+           "courseId": "01270740"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "otjid": "CG00001294",
+       "type": "CG",
+       "name": "רשימה 1 - בחירה הנדסית בחומרים",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03140016",
+         "type": "SM",
+         "name": "גרפיקה ממוחשבת להנדסת חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03140016"
+        },
+        {
+         "otjid": "SM03140309",
+         "type": "SM",
+         "name": "תהליכי ייצור ועיבוד חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03140309"
+        },
+        {
+         "otjid": "SM03140316",
+         "type": "SM",
+         "name": "תהליכי חיבור של חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03140316"
+        },
+        {
+         "otjid": "SM03150012",
+         "type": "SM",
+         "name": "בחירת חומרים מתקדמת",
+         "category": null,
+         "credits": null,
+         "courseId": "03150012"
+        },
+        {
+         "otjid": "SM03150016",
+         "type": "SM",
+         "name": "התקני מוליכים למחצה להנדסת חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150016"
+        },
+        {
+         "otjid": "SM03150017",
+         "type": "SM",
+         "name": "תהליכי גימור וציפויים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150017"
+        },
+        {
+         "otjid": "SM03150035",
+         "type": "SM",
+         "name": "פרויקט בחירה בהנדסת חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150035"
+        },
+        {
+         "otjid": "SM03150042",
+         "type": "SM",
+         "name": "מבוא לננומדע וננוטכנולוגיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03150042"
+        },
+        {
+         "otjid": "SM03150045",
+         "type": "SM",
+         "name": "תהליכי יצור במיקרואלקטרוניקה",
+         "category": null,
+         "credits": null,
+         "courseId": "03150045"
+        },
+        {
+         "otjid": "SM03150053",
+         "type": "SM",
+         "name": "הנדסה של פולימרים ביו-רפואיים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150053"
+        },
+        {
+         "otjid": "SM03150057",
+         "type": "SM",
+         "name": "מבוא למדע חישובי של חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150057"
+        },
+        {
+         "otjid": "SM03150058",
+         "type": "SM",
+         "name": "שיטות לניתוח חומרים באמצעות מחשב",
+         "category": null,
+         "credits": null,
+         "courseId": "03150058"
+        },
+        {
+         "otjid": "SM03150059",
+         "type": "SM",
+         "name": "חומרים פונקציונלים-תכונות והתקנים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150059"
+        },
+        {
+         "otjid": "SM03150060",
+         "type": "SM",
+         "name": "יסודות האפיטקסיה: מבנה פני השטח",
+         "category": null,
+         "credits": null,
+         "courseId": "03150060"
+        },
+        {
+         "otjid": "SM03150200",
+         "type": "SM",
+         "name": "מכנ. רשתות פולימר.בחומרים ביולוג'",
+         "category": null,
+         "credits": null,
+         "courseId": "03150200"
+        },
+        {
+         "otjid": "SM03150242",
+         "type": "SM",
+         "name": "הנדסת חומרים מרוכבים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150242"
+        },
+        {
+         "otjid": "SM03160240",
+         "type": "SM",
+         "name": "יסודות הקריסטלוגרפיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03160240"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00001293",
+       "type": "CG",
+       "name": "מקצועות חובה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00940481",
+         "type": "SM",
+         "name": "מבוא להסתברות וסטטיסטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "00940481"
+        },
+        {
+         "otjid": "SM01040019",
+         "type": "SM",
+         "name": "אלגברה ליניארית מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040019"
+        },
+        {
+         "otjid": "SM01040041",
+         "type": "SM",
+         "name": "חשבון דיפרנציאלי ואינטגרלי 1מ1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040041"
+        },
+        {
+         "otjid": "SM01040043",
+         "type": "SM",
+         "name": "חשבון דיפרנציאלי ואינטגרלי 2מ1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040043"
+        },
+        {
+         "otjid": "SM01040228",
+         "type": "SM",
+         "name": "משוואות דיפרנציאליות חלקיות מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040228"
+        },
+        {
+         "otjid": "SM01140051",
+         "type": "SM",
+         "name": "פיסיקה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01140051"
+        },
+        {
+         "otjid": "SM01140052",
+         "type": "SM",
+         "name": "פיסיקה 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01140052"
+        },
+        {
+         "otjid": "SM01140081",
+         "type": "SM",
+         "name": "מעבדה לפיסיקה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01140081"
+        },
+        {
+         "otjid": "SM01240118",
+         "type": "SM",
+         "name": "יסודות הכימיה ב'",
+         "category": null,
+         "credits": null,
+         "courseId": "01240118"
+        },
+        {
+         "otjid": "SM01240213",
+         "type": "SM",
+         "name": "כימיה אנליטית 2 (מורחב)",
+         "category": null,
+         "credits": null,
+         "courseId": "01240213"
+        },
+        {
+         "otjid": "SM01240214",
+         "type": "SM",
+         "name": "מעבדה בכימיה אנליטית 2 מורחב",
+         "category": null,
+         "credits": null,
+         "courseId": "01240214"
+        },
+        {
+         "otjid": "SM01240220",
+         "type": "SM",
+         "name": "כימיה אנליטית 1 (מורחב)",
+         "category": null,
+         "credits": null,
+         "courseId": "01240220"
+        },
+        {
+         "otjid": "SM01240413",
+         "type": "SM",
+         "name": "תרמודינמיקה סטטיסטית",
+         "category": null,
+         "credits": null,
+         "courseId": "01240413"
+        },
+        {
+         "otjid": "SM01240414",
+         "type": "SM",
+         "name": "כימיה פיסיקלית-קינטיקה כימית",
+         "category": null,
+         "credits": null,
+         "courseId": "01240414"
+        },
+        {
+         "otjid": "SM01240417",
+         "type": "SM",
+         "name": "כימיה פיס-ספקטרוסקופיה מולקולרית",
+         "category": null,
+         "credits": null,
+         "courseId": "01240417"
+        },
+        {
+         "otjid": "SM01240618",
+         "type": "SM",
+         "name": "מע. בכימיה פיסיקלית להנ. חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "01240618"
+        },
+        {
+         "otjid": "SM01240708",
+         "type": "SM",
+         "name": "כימיה אורגנית מורחב 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01240708"
+        },
+        {
+         "otjid": "SM01240711",
+         "type": "SM",
+         "name": "כימיה אורגנית 2מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "01240711"
+        },
+        {
+         "otjid": "SM01240911",
+         "type": "SM",
+         "name": "מעבדה כימיה אורגנית 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01240911"
+        },
+        {
+         "otjid": "SM02340128",
+         "type": "SM",
+         "name": "מבוא למחשב שפת פייתון",
+         "category": null,
+         "credits": null,
+         "courseId": "02340128"
+        },
+        {
+         "otjid": "SM03140003",
+         "type": "SM",
+         "name": "מבוא למכניקת המוצקים",
+         "category": null,
+         "credits": null,
+         "courseId": "03140003"
+        },
+        {
+         "otjid": "SM03140011",
+         "type": "SM",
+         "name": "מבנה ותכונות של חומרים הנדסיים",
+         "category": null,
+         "credits": null,
+         "courseId": "03140011"
+        },
+        {
+         "otjid": "SM03140311",
+         "type": "SM",
+         "name": "חומרים קרמיים ורפרקטורים",
+         "category": null,
+         "credits": null,
+         "courseId": "03140311"
+        },
+        {
+         "otjid": "SM03140312",
+         "type": "SM",
+         "name": "מבוא לחומרים פולימריים",
+         "category": null,
+         "credits": null,
+         "courseId": "03140312"
+        },
+        {
+         "otjid": "SM03150002",
+         "type": "SM",
+         "name": "מעבדת חומרים מתקדמת 2ח'",
+         "category": null,
+         "credits": null,
+         "courseId": "03150002"
+        },
+        {
+         "otjid": "SM03150003",
+         "type": "SM",
+         "name": "תרמודינמיקה של חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150003"
+        },
+        {
+         "otjid": "SM03150008",
+         "type": "SM",
+         "name": "התנהגות מכנית של חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150008"
+        },
+        {
+         "otjid": "SM03150014",
+         "type": "SM",
+         "name": "פרויקט מתקדם בחומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150014"
+        },
+        {
+         "otjid": "SM03150030",
+         "type": "SM",
+         "name": "תכונות חומרים אלקטרונים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150030"
+        },
+        {
+         "otjid": "SM03150039",
+         "type": "SM",
+         "name": "מעבר תנע, חום ומסה להנדסת חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150039"
+        },
+        {
+         "otjid": "SM03150051",
+         "type": "SM",
+         "name": "דיפוזיה במוצקים",
+         "category": null,
+         "credits": null,
+         "courseId": "03150051"
+        },
+        {
+         "otjid": "SM01040131",
+         "type": "SM",
+         "name": "משוואות דיפרנציאליות רגילות/ח",
+         "category": null,
+         "credits": null,
+         "courseId": "01040131"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00006532",
+       "type": "CG",
+       "name": "בחירה מפקולטות אחרות",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM00540369",
+         "type": "SM",
+         "name": "מעבדה להנדסת פולימרים",
+         "category": null,
+         "credits": null,
+         "courseId": "00540369"
+        },
+        {
+         "otjid": "SM00560391",
+         "type": "SM",
+         "name": "חיישנים מבוססי ננו-(ביו) חומרים",
+         "category": null,
+         "credits": null,
+         "courseId": "00560391"
+        },
+        {
+         "otjid": "SM00940591",
+         "type": "SM",
+         "name": "מבוא לכלכלה",
+         "category": null,
+         "credits": null,
+         "courseId": "00940591"
+        },
+        {
+         "otjid": "SM01140054",
+         "type": "SM",
+         "name": "פיסיקה 3",
+         "category": null,
+         "credits": null,
+         "courseId": "01140054"
+        },
+        {
+         "otjid": "SM01340058",
+         "type": "SM",
+         "name": "ביולוגיה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01340058"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00009692",
+       "type": "CG",
+       "name": "רשימת קורסי עברית",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03240053",
+         "type": "SM",
+         "name": "עברית 4",
+         "category": null,
+         "credits": null,
+         "courseId": "03240053"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "otjid": "CG00010194",
+     "type": "CG",
+     "name": "דרישות אנגלית",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "SM03240033",
+       "type": "SM",
+       "name": "אנגלית טכנית-מתקדמים ב'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240033"
+      },
+      {
+       "otjid": "SM03240032",
+       "type": "SM",
+       "name": "אנגלית למתקדמים א'",
+       "category": null,
+       "credits": null,
+       "courseId": "03240032"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

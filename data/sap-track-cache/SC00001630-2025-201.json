@@ -1,0 +1,22 @@
+{
+ "id": "SC00001630",
+ "name": "חוג לאחר תואר - הוראת פיזיקה",
+ "facultyId": "00002220",
+ "facultyName": "חינוך למדע וטכנולוגיה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008826",
+   "name": "חוג לאחר תואר הוראת הפיזיקה",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

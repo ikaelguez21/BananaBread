@@ -1,0 +1,22 @@
+{
+ "id": "SC00001340",
+ "name": "מדעי המחשב - ביואינפורמטיקה",
+ "facultyId": "00002120",
+ "facultyName": "הפקולטה למדעי המחשב",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008775",
+   "name": "גרסה 2018 B.Sc במדעי המחשב - ביואינפורמט",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

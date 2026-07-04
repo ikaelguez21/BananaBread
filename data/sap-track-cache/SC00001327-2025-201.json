@@ -1,0 +1,22 @@
+{
+ "id": "SC00001327",
+ "name": "חינוך למדע וטכ-ביול ומ.הסב",
+ "facultyId": "00002220",
+ "facultyName": "חינוך למדע וטכנולוגיה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008817",
+   "name": "חינוך למדע וטכנ' - ביולוגיה ומדעי הסב.",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

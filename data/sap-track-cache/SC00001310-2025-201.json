@@ -1,0 +1,22 @@
+{
+ "id": "SC00001310",
+ "name": "חינוך למדע וטכ'-מכונות-חוג",
+ "facultyId": "00002220",
+ "facultyName": "חינוך למדע וטכנולוגיה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008822",
+   "name": "חוג לאחר תואר- חינוך למדע וטכ' הנ.מכונות",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

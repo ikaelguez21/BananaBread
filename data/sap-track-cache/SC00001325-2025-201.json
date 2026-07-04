@@ -1,0 +1,22 @@
+{
+ "id": "SC00001325",
+ "name": "חינוך למדע וטכ'-פיזיקה-חוג",
+ "facultyId": "00002220",
+ "facultyName": "חינוך למדע וטכנולוגיה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008819",
+   "name": "חוג לאחר תואר- חינוך למדע וטכ' פיזיקה",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "id": "SC00001316",
+ "name": "הנ.מערכות מידע (מדעי המחשב)",
+ "facultyId": "00002120",
+ "facultyName": "הפקולטה למדעי המחשב",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008833",
+   "name": "הנדסת מערכות מידע",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}

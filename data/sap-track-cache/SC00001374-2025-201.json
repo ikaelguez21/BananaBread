@@ -1,0 +1,77 @@
+{
+ "id": "SC00001374",
+ "name": "רפואה - תכנית אמריקאית",
+ "facultyId": "00002270",
+ "facultyName": "הפקולטה לרפואה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00000393",
+   "name": "גרסה 2022 רפואה תוכנית אמריקאית",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    },
+    {
+     "otjid": "CG00000394",
+     "type": "CG",
+     "name": "מבנה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00000395",
+       "type": "CG",
+       "name": "טרום קליני",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00000396",
+         "type": "CG",
+         "name": "מקצועות חובה",
+         "category": null,
+         "credits": null
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000290",
+       "type": "CG",
+       "name": "קליני",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00000291",
+         "type": "CG",
+         "name": "מקצועות חובה",
+         "category": null,
+         "credits": null
+        },
+        {
+         "otjid": "CG00000292",
+         "type": "CG",
+         "name": "שלב מינימלי לבחירה",
+         "category": null,
+         "credits": null
+        },
+        {
+         "otjid": "CG00000293",
+         "type": "CG",
+         "name": "רפואה פנימית וניתוחים",
+         "category": null,
+         "credits": null
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

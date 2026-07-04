@@ -1,0 +1,1789 @@
+{
+ "id": "SC00001565",
+ "name": "מתמטיקה עם מדעי המחשב-3 סין",
+ "facultyId": "00050350",
+ "facultyName": "טכניון סין",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00010539",
+   "name": "מתמטיקה ומדמ\"ח 3 שנתי סין - קטלוג 2025",
+   "structure": [
+    {
+     "otjid": "CG00000170",
+     "type": "CG",
+     "name": "בחירה כלל טכניונית",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00000551",
+       "type": "CG",
+       "name": "תוכנית קהילתית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00000175",
+       "type": "CG",
+       "name": "בחירה חופשית",
+       "category": null,
+       "credits": null
+      },
+      {
+       "otjid": "CG00010092",
+       "type": "CG",
+       "name": "קורסי מל\"ג",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM02140120",
+         "type": "SM",
+         "name": "יסודות למידה והוראה",
+         "category": null,
+         "credits": null,
+         "courseId": "02140120"
+        },
+        {
+         "otjid": "SM02750112",
+         "type": "SM",
+         "name": "אבולוציה של האדם",
+         "category": null,
+         "credits": null,
+         "courseId": "02750112"
+        },
+        {
+         "otjid": "SM03240265",
+         "type": "SM",
+         "name": "אקו-פילוסופיה:חשיבה סביבתית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240265"
+        },
+        {
+         "otjid": "SM03240266",
+         "type": "SM",
+         "name": "מדע וביקורות המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240266"
+        },
+        {
+         "otjid": "SM03240267",
+         "type": "SM",
+         "name": "יחסי גוף נפש:מאפלטון ועד מדעי המח",
+         "category": null,
+         "credits": null,
+         "courseId": "03240267"
+        },
+        {
+         "otjid": "SM03240282",
+         "type": "SM",
+         "name": "פוליטיקה של זהויות בישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240282"
+        },
+        {
+         "otjid": "SM03240283",
+         "type": "SM",
+         "name": "כלכלה וחברה: מבט בין-תרבותי",
+         "category": null,
+         "credits": null,
+         "courseId": "03240283"
+        },
+        {
+         "otjid": "SM03240288",
+         "type": "SM",
+         "name": "מוסיקה טכנולוגית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240288"
+        },
+        {
+         "otjid": "SM03240292",
+         "type": "SM",
+         "name": "משפט שוויון וצדק חברתי",
+         "category": null,
+         "credits": null,
+         "courseId": "03240292"
+        },
+        {
+         "otjid": "SM03240299",
+         "type": "SM",
+         "name": "טרור, ג'יהד ותגובה מדינית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240299"
+        },
+        {
+         "otjid": "SM03240305",
+         "type": "SM",
+         "name": "היסטוריה של המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240305"
+        },
+        {
+         "otjid": "SM03240436",
+         "type": "SM",
+         "name": "עולמות מוסיקליים",
+         "category": null,
+         "credits": null,
+         "courseId": "03240436"
+        },
+        {
+         "otjid": "SM03240439",
+         "type": "SM",
+         "name": "יסודות באמנות יפן",
+         "category": null,
+         "credits": null,
+         "courseId": "03240439"
+        },
+        {
+         "otjid": "SM03240442",
+         "type": "SM",
+         "name": "משפט העבודה בישראל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240442"
+        },
+        {
+         "otjid": "SM03240445",
+         "type": "SM",
+         "name": "הסתגלות למצבי לחץ",
+         "category": null,
+         "credits": null,
+         "courseId": "03240445"
+        },
+        {
+         "otjid": "SM03240454",
+         "type": "SM",
+         "name": "מבוא לפילוסופיה של המדע",
+         "category": null,
+         "credits": null,
+         "courseId": "03240454"
+        },
+        {
+         "otjid": "SM03240463",
+         "type": "SM",
+         "name": "היסטוריה של המזרח התיכון",
+         "category": null,
+         "credits": null,
+         "courseId": "03240463"
+        },
+        {
+         "otjid": "SM03240518",
+         "type": "SM",
+         "name": "חדשנות, יצירתיות ואושר",
+         "category": null,
+         "credits": null,
+         "courseId": "03240518"
+        },
+        {
+         "otjid": "SM03240521",
+         "type": "SM",
+         "name": "יזמות בארגונים-התפתחויות ומגמות",
+         "category": null,
+         "credits": null,
+         "courseId": "03240521"
+        },
+        {
+         "otjid": "SM03240527",
+         "type": "SM",
+         "name": "יסודות היזמות",
+         "category": null,
+         "credits": null,
+         "courseId": "03240527"
+        },
+        {
+         "otjid": "SM03240528",
+         "type": "SM",
+         "name": "מנהיגות יזמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240528"
+        },
+        {
+         "otjid": "SM03240539",
+         "type": "SM",
+         "name": "מחקרי שוק",
+         "category": null,
+         "credits": null,
+         "courseId": "03240539"
+        },
+        {
+         "otjid": "SM03240540",
+         "type": "SM",
+         "name": "היבטים משפטיים ביזמות עסקית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240540"
+        },
+        {
+         "otjid": "SM03240541",
+         "type": "SM",
+         "name": "גיוס המערכת האקולוגית העסקית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240541"
+        },
+        {
+         "otjid": "SM03240879",
+         "type": "SM",
+         "name": "סוגיות נבחרות בחברה הישראלית-מרכז בינ\"ל",
+         "category": null,
+         "credits": null,
+         "courseId": "03240879"
+        },
+        {
+         "otjid": "SM03250001",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 1",
+         "category": null,
+         "credits": null,
+         "courseId": "03250001"
+        },
+        {
+         "otjid": "SM03250006",
+         "type": "SM",
+         "name": "מבוא לארכיאולוגיה במאה ה-21",
+         "category": null,
+         "credits": null,
+         "courseId": "03250006"
+        },
+        {
+         "otjid": "SM03250010",
+         "type": "SM",
+         "name": "מדע דת ופילוסופיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03250010"
+        },
+        {
+         "otjid": "SM03250016",
+         "type": "SM",
+         "name": "נושאים נבחרים בהיסטוריה 2",
+         "category": null,
+         "credits": null,
+         "courseId": "03250016"
+        },
+        {
+         "otjid": "SM03250025",
+         "type": "SM",
+         "name": "מבוא להאזנה מודרכת:מוסיקה ווקאלית",
+         "category": null,
+         "credits": null,
+         "courseId": "03250025"
+        },
+        {
+         "otjid": "SM03260001",
+         "type": "SM",
+         "name": "סוגיות נבח. בהיסט. ופילו. של המדע: על מנגנונים ושימוש",
+         "category": null,
+         "credits": null,
+         "courseId": "03260001"
+        },
+        {
+         "otjid": "SM03260005",
+         "type": "SM",
+         "name": "פריצות דרך בתולדות החשיבה המתמטית",
+         "category": null,
+         "credits": null,
+         "courseId": "03260005"
+        },
+        {
+         "otjid": "SM03260006",
+         "type": "SM",
+         "name": "תורת הקוואנטים: מבט פילוסופי",
+         "category": null,
+         "credits": null,
+         "courseId": "03260006"
+        },
+        {
+         "otjid": "SM00360709",
+         "type": "SM",
+         "name": "בקרת תהליכי דגימה",
+         "category": null,
+         "credits": null,
+         "courseId": "00360709"
+        },
+        {
+         "otjid": "SM03240236",
+         "type": "SM",
+         "name": "תזמורת נשיפה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240236"
+        },
+        {
+         "otjid": "SM03240250",
+         "type": "SM",
+         "name": "עיצוב גרפי ותקשורת חזותית",
+         "category": null,
+         "credits": null,
+         "courseId": "03240250"
+        },
+        {
+         "otjid": "SM03240473",
+         "type": "SM",
+         "name": "מבנה חדשנות מדעית ושינוי פרדיגמה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240473"
+        },
+        {
+         "otjid": "SM03240675",
+         "type": "SM",
+         "name": "ספרדית למתחילים",
+         "category": null,
+         "credits": null,
+         "courseId": "03240675"
+        },
+        {
+         "otjid": "SM03240697",
+         "type": "SM",
+         "name": "עקרונות מעשיים לעיבוד תמונה",
+         "category": null,
+         "credits": null,
+         "courseId": "03240697"
+        },
+        {
+         "otjid": "SM03250005",
+         "type": "SM",
+         "name": "יזמות מפי היזמים",
+         "category": null,
+         "credits": null,
+         "courseId": "03250005"
+        },
+        {
+         "otjid": "SM03250013",
+         "type": "SM",
+         "name": "סטודיו אומן בקמפוס 5",
+         "category": null,
+         "credits": null,
+         "courseId": "03250013"
+        },
+        {
+         "otjid": "SM03250036",
+         "type": "SM",
+         "name": "היסטוריה ופילוסופיה של הרפואה המודרנית",
+         "category": null,
+         "credits": null,
+         "courseId": "03250036"
+        },
+        {
+         "otjid": "SM03250039",
+         "type": "SM",
+         "name": "הפילוסופיה של ייצוגים מנטאליים",
+         "category": null,
+         "credits": null,
+         "courseId": "03250039"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000172",
+       "type": "CG",
+       "name": "קורסי ספורט",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940800",
+         "type": "SM",
+         "name": "חינוך גופני - כושר בנים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940800"
+        },
+        {
+         "otjid": "SM03940801",
+         "type": "SM",
+         "name": "חינוך גופני - התעמלות כללית בנות",
+         "category": null,
+         "credits": null,
+         "courseId": "03940801"
+        },
+        {
+         "otjid": "SM03940802",
+         "type": "SM",
+         "name": "חינוך גופני - שחיה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940802"
+        },
+        {
+         "otjid": "SM03940803",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי כדור",
+         "category": null,
+         "credits": null,
+         "courseId": "03940803"
+        },
+        {
+         "otjid": "SM03940804",
+         "type": "SM",
+         "name": "חינוך גופני - משחקי מחבט",
+         "category": null,
+         "credits": null,
+         "courseId": "03940804"
+        },
+        {
+         "otjid": "SM03940805",
+         "type": "SM",
+         "name": "חינוך גופני - אתלטיקה קלה",
+         "category": null,
+         "credits": null,
+         "courseId": "03940805"
+        },
+        {
+         "otjid": "SM03940806",
+         "type": "SM",
+         "name": "חינוך גופני - הגנה עצמית",
+         "category": null,
+         "credits": null,
+         "courseId": "03940806"
+        },
+        {
+         "otjid": "SM03940807",
+         "type": "SM",
+         "name": "חינוך גופני מעורב",
+         "category": null,
+         "credits": null,
+         "courseId": "03940807"
+        },
+        {
+         "otjid": "SM03940808",
+         "type": "SM",
+         "name": "חינוך גופני-מיועד לסטודנטים חדשים",
+         "category": null,
+         "credits": null,
+         "courseId": "03940808"
+        },
+        {
+         "otjid": "SM03940820",
+         "type": "SM",
+         "name": "חינוך גופני - תנועה ומחול",
+         "category": null,
+         "credits": null,
+         "courseId": "03940820"
+        },
+        {
+         "otjid": "CG00000173",
+         "type": "CG",
+         "name": "קבוצות ספורט",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM03940902",
+           "type": "SM",
+           "name": "נבחרות ספורט",
+           "category": null,
+           "credits": null,
+           "courseId": "03940902"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "otjid": "CG00000174",
+       "type": "CG",
+       "name": "מקהלה / תזמורת",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03940582",
+         "type": "SM",
+         "name": "תזמורת",
+         "category": null,
+         "credits": null,
+         "courseId": "03940582"
+        },
+        {
+         "otjid": "SM03940587",
+         "type": "SM",
+         "name": "מקהלה אורטורית",
+         "category": null,
+         "credits": null,
+         "courseId": "03940587"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "otjid": "CG00010540",
+     "type": "CG",
+     "name": "מבנה",
+     "category": null,
+     "credits": null,
+     "children": [
+      {
+       "otjid": "CG00008887",
+       "type": "CG",
+       "name": "מקצועות פקולטה - מדעי מחשב",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM02360330",
+         "type": "SM",
+         "name": "מבוא לאופטימיזציה",
+         "category": null,
+         "credits": null,
+         "courseId": "02360330"
+        },
+        {
+         "otjid": "SM02360873",
+         "type": "SM",
+         "name": "ראיה ממוחשבת",
+         "category": null,
+         "credits": null,
+         "courseId": "02360873"
+        },
+        {
+         "otjid": "SM02360366",
+         "type": "SM",
+         "name": "פרויקט במערכות הפעלה מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "02360366"
+        },
+        {
+         "otjid": "SM02360624",
+         "type": "SM",
+         "name": "נושאים מתקדמים בשיטות אימות פורמליות ה'",
+         "category": null,
+         "credits": null,
+         "courseId": "02360624"
+        },
+        {
+         "otjid": "SM02340290",
+         "type": "SM",
+         "name": "פרויקט 1 במדעי המחשב",
+         "category": null,
+         "credits": null,
+         "courseId": "02340290"
+        },
+        {
+         "otjid": "SM02340302",
+         "type": "SM",
+         "name": "פרויקט בקומפילציה ה'",
+         "category": null,
+         "credits": null,
+         "courseId": "02340302"
+        },
+        {
+         "otjid": "SM02340303",
+         "type": "SM",
+         "name": "פרויקט במערכות הפעלה ה'",
+         "category": null,
+         "credits": null,
+         "courseId": "02340303"
+        },
+        {
+         "otjid": "SM02340313",
+         "type": "SM",
+         "name": "פרויקט תעשייתי",
+         "category": null,
+         "credits": null,
+         "courseId": "02340313"
+        },
+        {
+         "otjid": "SM02340326",
+         "type": "SM",
+         "name": "פרויקט בגרפיקה ממוחשבת ה'",
+         "category": null,
+         "credits": null,
+         "courseId": "02340326"
+        },
+        {
+         "otjid": "SM02340329",
+         "type": "SM",
+         "name": "פרויקט בעיבוד וניתוח תמונות",
+         "category": null,
+         "credits": null,
+         "courseId": "02340329"
+        },
+        {
+         "otjid": "SM02340901",
+         "type": "SM",
+         "name": "סדנה בתכנות תחרותי",
+         "category": null,
+         "credits": null,
+         "courseId": "02340901"
+        },
+        {
+         "otjid": "SM02360025",
+         "type": "SM",
+         "name": "אוטומטים, לוגיקה ומשחקים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360025"
+        },
+        {
+         "otjid": "SM02360271",
+         "type": "SM",
+         "name": "פיתוח מבוסס אנדרואיד",
+         "category": null,
+         "credits": null,
+         "courseId": "02360271"
+        },
+        {
+         "otjid": "SM02360272",
+         "type": "SM",
+         "name": "פרויקט פיתוח מבוסס אנדרואיד",
+         "category": null,
+         "credits": null,
+         "courseId": "02360272"
+        },
+        {
+         "otjid": "SM02360319",
+         "type": "SM",
+         "name": "שפות תכנות",
+         "category": null,
+         "credits": null,
+         "courseId": "02360319"
+        },
+        {
+         "otjid": "SM02360332",
+         "type": "SM",
+         "name": "האינטרנט של הדברים - טכנולוגיות ויישומים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360332"
+        },
+        {
+         "otjid": "SM02360333",
+         "type": "SM",
+         "name": "פרויקט באינטרנט של הדברים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360333"
+        },
+        {
+         "otjid": "SM02360340",
+         "type": "SM",
+         "name": "פרויקט בתקשורת מחשבים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360340"
+        },
+        {
+         "otjid": "SM02360341",
+         "type": "SM",
+         "name": "תקשורת באינטרנט",
+         "category": null,
+         "credits": null,
+         "courseId": "02360341"
+        },
+        {
+         "otjid": "SM02360349",
+         "type": "SM",
+         "name": "פרויקט באבטחת מידע",
+         "category": null,
+         "credits": null,
+         "courseId": "02360349"
+        },
+        {
+         "otjid": "SM02360350",
+         "type": "SM",
+         "name": "הגנה ברשתות",
+         "category": null,
+         "credits": null,
+         "courseId": "02360350"
+        },
+        {
+         "otjid": "SM02360363",
+         "type": "SM",
+         "name": "מסדי נתונים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360363"
+        },
+        {
+         "otjid": "SM02360371",
+         "type": "SM",
+         "name": "פרויקט בתכנות מקבילי ומבוזר",
+         "category": null,
+         "credits": null,
+         "courseId": "02360371"
+        },
+        {
+         "otjid": "SM02360377",
+         "type": "SM",
+         "name": "אלגוריתמים מבוזרים בגרפים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360377"
+        },
+        {
+         "otjid": "SM02360388",
+         "type": "SM",
+         "name": "פרויקט במערכות אחסון",
+         "category": null,
+         "credits": null,
+         "courseId": "02360388"
+        },
+        {
+         "otjid": "SM02360496",
+         "type": "SM",
+         "name": "הנדסה לאחור",
+         "category": null,
+         "credits": null,
+         "courseId": "02360496"
+        },
+        {
+         "otjid": "SM02360501",
+         "type": "SM",
+         "name": "מבוא לבינה מלאכותית",
+         "category": null,
+         "credits": null,
+         "courseId": "02360501"
+        },
+        {
+         "otjid": "SM02360502",
+         "type": "SM",
+         "name": "פרויקט בבינה מלאכותית",
+         "category": null,
+         "credits": null,
+         "courseId": "02360502"
+        },
+        {
+         "otjid": "SM02360503",
+         "type": "SM",
+         "name": "פרויקט תכנות מתקדם במדעי המחשב 1",
+         "category": null,
+         "credits": null,
+         "courseId": "02360503"
+        },
+        {
+         "otjid": "SM02360504",
+         "type": "SM",
+         "name": "פרויקט המשך בתוכנה",
+         "category": null,
+         "credits": null,
+         "courseId": "02360504"
+        },
+        {
+         "otjid": "SM02360509",
+         "type": "SM",
+         "name": "נושאים מתקדמים במבנה מחשבים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360509"
+        },
+        {
+         "otjid": "SM02360518",
+         "type": "SM",
+         "name": "סיבוכיות תקשורת",
+         "category": null,
+         "credits": null,
+         "courseId": "02360518"
+        },
+        {
+         "otjid": "SM02360520",
+         "type": "SM",
+         "name": "קידוד במערכות אחסון-מידע",
+         "category": null,
+         "credits": null,
+         "courseId": "02360520"
+        },
+        {
+         "otjid": "SM02360526",
+         "type": "SM",
+         "name": "פרויקט תכנות מתקדם במדעי המחשב 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02360526"
+        },
+        {
+         "otjid": "SM02360602",
+         "type": "SM",
+         "name": "נושאים מתקדמים במדעי המחשב 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02360602"
+        },
+        {
+         "otjid": "SM02360603",
+         "type": "SM",
+         "name": "נושאים מתקדמים במדעי המחשב 3",
+         "category": null,
+         "credits": null,
+         "courseId": "02360603"
+        },
+        {
+         "otjid": "SM02360605",
+         "type": "SM",
+         "name": "נושאים מתקדמים במדעי המחשב 5",
+         "category": null,
+         "credits": null,
+         "courseId": "02360605"
+        },
+        {
+         "otjid": "SM02360606",
+         "type": "SM",
+         "name": "נושאים מתקדמים במדעי המחשב 6",
+         "category": null,
+         "credits": null,
+         "courseId": "02360606"
+        },
+        {
+         "otjid": "SM02360628",
+         "type": "SM",
+         "name": "נושאים מתקדמים בגרפיקה ממוחשבת ה'",
+         "category": null,
+         "credits": null,
+         "courseId": "02360628"
+        },
+        {
+         "otjid": "SM02360629",
+         "type": "SM",
+         "name": "נושאים מתקדמים בגרפיקה ממוחשבת ה'+ת'",
+         "category": null,
+         "credits": null,
+         "courseId": "02360629"
+        },
+        {
+         "otjid": "SM02360640",
+         "type": "SM",
+         "name": "נושאים מתקדמים באינפורמציה קוונטית ה'",
+         "category": null,
+         "credits": null,
+         "courseId": "02360640"
+        },
+        {
+         "otjid": "SM02360641",
+         "type": "SM",
+         "name": "נושאים מתקדמים באינפורמציה קוונטית ה'+ת'",
+         "category": null,
+         "credits": null,
+         "courseId": "02360641"
+        },
+        {
+         "otjid": "SM02360754",
+         "type": "SM",
+         "name": "פרויקט במערכות נבונות",
+         "category": null,
+         "credits": null,
+         "courseId": "02360754"
+        },
+        {
+         "otjid": "SM02360755",
+         "type": "SM",
+         "name": "אלגוריתמים מבוזרים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360755"
+        },
+        {
+         "otjid": "SM02360801",
+         "type": "SM",
+         "name": "סמינר במדעי המחשב 1",
+         "category": null,
+         "credits": null,
+         "courseId": "02360801"
+        },
+        {
+         "otjid": "SM02360802",
+         "type": "SM",
+         "name": "סמינר במדעי המחשב 2",
+         "category": null,
+         "credits": null,
+         "courseId": "02360802"
+        },
+        {
+         "otjid": "SM02360803",
+         "type": "SM",
+         "name": "סמינר במדעי המחשב 3",
+         "category": null,
+         "credits": null,
+         "courseId": "02360803"
+        },
+        {
+         "otjid": "SM02360804",
+         "type": "SM",
+         "name": "סמינר במדעי המחשב 4",
+         "category": null,
+         "credits": null,
+         "courseId": "02360804"
+        },
+        {
+         "otjid": "SM02360805",
+         "type": "SM",
+         "name": "סמינר במדעי המחשב 5",
+         "category": null,
+         "credits": null,
+         "courseId": "02360805"
+        },
+        {
+         "otjid": "SM02360806",
+         "type": "SM",
+         "name": "סמינר במדעי המחשב 6",
+         "category": null,
+         "credits": null,
+         "courseId": "02360806"
+        },
+        {
+         "otjid": "SM02360807",
+         "type": "SM",
+         "name": "סמינר במדעי מחשב 7",
+         "category": null,
+         "credits": null,
+         "courseId": "02360807"
+        },
+        {
+         "otjid": "SM02360808",
+         "type": "SM",
+         "name": "סמינר במדעי מחשב 8",
+         "category": null,
+         "credits": null,
+         "courseId": "02360808"
+        },
+        {
+         "otjid": "SM02360813",
+         "type": "SM",
+         "name": "סמינר באלגוריתמים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360813"
+        },
+        {
+         "otjid": "SM02360828",
+         "type": "SM",
+         "name": "פרויקט במערכות מחשבים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360828"
+        },
+        {
+         "otjid": "SM02360832",
+         "type": "SM",
+         "name": "סמינר בתכנות מקבילי",
+         "category": null,
+         "credits": null,
+         "courseId": "02360832"
+        },
+        {
+         "otjid": "SM02360874",
+         "type": "SM",
+         "name": "פרויקט בראיה ממוחשבת",
+         "category": null,
+         "credits": null,
+         "courseId": "02360874"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00008914",
+       "type": "CG",
+       "name": "מקצועות בחירה פקולטית",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM01040030",
+         "type": "SM",
+         "name": "מבוא למשוואות דיפרנציאליות חלקיות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040030"
+        },
+        {
+         "otjid": "SM01040112",
+         "type": "SM",
+         "name": "גיאומטריה וסימטריה",
+         "category": null,
+         "credits": null,
+         "courseId": "01040112"
+        },
+        {
+         "otjid": "SM01040114",
+         "type": "SM",
+         "name": "יסודות הגאומטריה",
+         "category": null,
+         "credits": null,
+         "courseId": "01040114"
+        },
+        {
+         "otjid": "SM01040142",
+         "type": "SM",
+         "name": "מבוא למרחבים מטריים וטופולוגיים",
+         "category": null,
+         "credits": null,
+         "courseId": "01040142"
+        },
+        {
+         "otjid": "SM01040165",
+         "type": "SM",
+         "name": "פונקציות ממשיות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040165"
+        },
+        {
+         "otjid": "SM01040181",
+         "type": "SM",
+         "name": "סמינר באנליזה להסמכה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040181"
+        },
+        {
+         "otjid": "SM01040183",
+         "type": "SM",
+         "name": "סמינר באלגברה להסמכה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040183"
+        },
+        {
+         "otjid": "SM01040184",
+         "type": "SM",
+         "name": "סמינר באלגברה להסמכה 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01040184"
+        },
+        {
+         "otjid": "SM01040192",
+         "type": "SM",
+         "name": "מבוא למתמטיקה שמושית",
+         "category": null,
+         "credits": null,
+         "courseId": "01040192"
+        },
+        {
+         "otjid": "SM01040193",
+         "type": "SM",
+         "name": "תורת האופטימיזציה",
+         "category": null,
+         "credits": null,
+         "courseId": "01040193"
+        },
+        {
+         "otjid": "SM01040274",
+         "type": "SM",
+         "name": "תורת השדות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040274"
+        },
+        {
+         "otjid": "SM01040279",
+         "type": "SM",
+         "name": "מבוא לחוגים ושדות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040279"
+        },
+        {
+         "otjid": "SM01040280",
+         "type": "SM",
+         "name": "מודולים, חוגים וחבורות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040280"
+        },
+        {
+         "otjid": "SM01040286",
+         "type": "SM",
+         "name": "קומבינטוריקה",
+         "category": null,
+         "credits": null,
+         "courseId": "01040286"
+        },
+        {
+         "otjid": "SM01040291",
+         "type": "SM",
+         "name": "אלגוריתמים קומבינטוריים",
+         "category": null,
+         "credits": null,
+         "courseId": "01040291"
+        },
+        {
+         "otjid": "SM01060011",
+         "type": "SM",
+         "name": "פרויקטים מחקריים 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01060011"
+        },
+        {
+         "otjid": "SM01060061",
+         "type": "SM",
+         "name": "יסודות מתמטיים של למידת מכונה",
+         "category": null,
+         "credits": null,
+         "courseId": "01060061"
+        },
+        {
+         "otjid": "SM01060101",
+         "type": "SM",
+         "name": "מבוא למכניקת זורמים",
+         "category": null,
+         "credits": null,
+         "courseId": "01060101"
+        },
+        {
+         "otjid": "SM01060156",
+         "type": "SM",
+         "name": "לוגיקה מתמטית",
+         "category": null,
+         "credits": null,
+         "courseId": "01060156"
+        },
+        {
+         "otjid": "SM01060306",
+         "type": "SM",
+         "name": "אלגבראות לי",
+         "category": null,
+         "credits": null,
+         "courseId": "01060306"
+        },
+        {
+         "otjid": "SM01060381",
+         "type": "SM",
+         "name": "אלגברה מודרנית 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01060381"
+        },
+        {
+         "otjid": "SM01060383",
+         "type": "SM",
+         "name": "טופולוגיה אלגברית",
+         "category": null,
+         "credits": null,
+         "courseId": "01060383"
+        },
+        {
+         "otjid": "SM01060395",
+         "type": "SM",
+         "name": "תורת הפונקציות 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01060395"
+        },
+        {
+         "otjid": "SM01060404",
+         "type": "SM",
+         "name": "סמינר באלגברה 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01060404"
+        },
+        {
+         "otjid": "SM01060413",
+         "type": "SM",
+         "name": "משוואות דיפרנציאליות חלקיות",
+         "category": null,
+         "credits": null,
+         "courseId": "01060413"
+        },
+        {
+         "otjid": "SM01060429",
+         "type": "SM",
+         "name": "תהליכים סטוכסטיים",
+         "category": null,
+         "credits": null,
+         "courseId": "01060429"
+        },
+        {
+         "otjid": "SM01060433",
+         "type": "SM",
+         "name": "נושאים באנליזה פונקציונלית",
+         "category": null,
+         "credits": null,
+         "courseId": "01060433"
+        },
+        {
+         "otjid": "SM01060702",
+         "type": "SM",
+         "name": "פרקים נבחרים באלגברה",
+         "category": null,
+         "credits": null,
+         "courseId": "01060702"
+        },
+        {
+         "otjid": "SM01060716",
+         "type": "SM",
+         "name": "פרקים נבחרים בקומבינטוריקה",
+         "category": null,
+         "credits": null,
+         "courseId": "01060716"
+        },
+        {
+         "otjid": "SM01060723",
+         "type": "SM",
+         "name": "יריעות דיפרנציביאליות",
+         "category": null,
+         "credits": null,
+         "courseId": "01060723"
+        },
+        {
+         "otjid": "SM01060800",
+         "type": "SM",
+         "name": "נושאים בתורה הארגודית",
+         "category": null,
+         "credits": null,
+         "courseId": "01060800"
+        },
+        {
+         "otjid": "SM01060802",
+         "type": "SM",
+         "name": "נושאים בתורת ההצגות",
+         "category": null,
+         "credits": null,
+         "courseId": "01060802"
+        },
+        {
+         "otjid": "SM01060929",
+         "type": "SM",
+         "name": "נושאים נבחרים באנליזה 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01060929"
+        },
+        {
+         "otjid": "SM01060941",
+         "type": "SM",
+         "name": "סמינר באנליזה",
+         "category": null,
+         "credits": null,
+         "courseId": "01060941"
+        },
+        {
+         "otjid": "SM01060942",
+         "type": "SM",
+         "name": "אנליזה פונקציונלית",
+         "category": null,
+         "credits": null,
+         "courseId": "01060942"
+        },
+        {
+         "otjid": "SM01960012",
+         "type": "SM",
+         "name": "שיטות אנליטיות במיש. דיפ.",
+         "category": null,
+         "credits": null,
+         "courseId": "01960012"
+        },
+        {
+         "otjid": "SM01960014",
+         "type": "SM",
+         "name": "למידה עמוקה ותורת הקירובים",
+         "category": null,
+         "credits": null,
+         "courseId": "01960014"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00008913",
+       "type": "CG",
+       "name": "רשימה ג",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM02360267",
+         "type": "SM",
+         "name": "מבנה מחשבים",
+         "category": null,
+         "credits": null,
+         "courseId": "02360267"
+        },
+        {
+         "otjid": "SM02360343",
+         "type": "SM",
+         "name": "תורת החישוביות",
+         "category": null,
+         "credits": null,
+         "courseId": "02360343"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00008911",
+       "type": "CG",
+       "name": "מקצועות חובה",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "SM03240033",
+         "type": "SM",
+         "name": "אנגלית טכנית-מתקדמים ב'",
+         "category": null,
+         "credits": null,
+         "courseId": "03240033"
+        },
+        {
+         "otjid": "CG00008912",
+         "type": "CG",
+         "name": "אפשרויות בחירה בחובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01140052",
+           "type": "SM",
+           "name": "פיסיקה 2",
+           "category": null,
+           "credits": null,
+           "courseId": "01140052"
+          },
+          {
+           "otjid": "SM01140054",
+           "type": "SM",
+           "name": "פיסיקה 3",
+           "category": null,
+           "credits": null,
+           "courseId": "01140054"
+          },
+          {
+           "otjid": "SM01140073",
+           "type": "SM",
+           "name": "פיזיקה קוונטית להנדסה",
+           "category": null,
+           "credits": null,
+           "courseId": "01140073"
+          },
+          {
+           "otjid": "SM01140075",
+           "type": "SM",
+           "name": "פיסיקה 2ממ",
+           "category": null,
+           "credits": null,
+           "courseId": "01140075"
+          },
+          {
+           "otjid": "SM01140246",
+           "type": "SM",
+           "name": "אלקטרומגנטיות ואלקטרודינמיקה",
+           "category": null,
+           "credits": null,
+           "courseId": "01140246"
+          },
+          {
+           "otjid": "SM01240801",
+           "type": "SM",
+           "name": "כימיה אורגנית 1ב",
+           "category": null,
+           "credits": null,
+           "courseId": "01240801"
+          },
+          {
+           "otjid": "SM01250001",
+           "type": "SM",
+           "name": "כימיה כללית",
+           "category": null,
+           "credits": null,
+           "courseId": "01250001"
+          },
+          {
+           "otjid": "SM01250801",
+           "type": "SM",
+           "name": "כימיה אורגנית",
+           "category": null,
+           "credits": null,
+           "courseId": "01250801"
+          },
+          {
+           "otjid": "SM01340020",
+           "type": "SM",
+           "name": "גנטיקה כללית",
+           "category": null,
+           "credits": null,
+           "courseId": "01340020"
+          },
+          {
+           "otjid": "SM01340058",
+           "type": "SM",
+           "name": "ביולוגיה 1",
+           "category": null,
+           "credits": null,
+           "courseId": "01340058"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00010632",
+         "type": "CG",
+         "name": "בחירה חובה",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01040066",
+           "type": "SM",
+           "name": "אלגברה א'",
+           "category": null,
+           "credits": null,
+           "courseId": "01040066"
+          },
+          {
+           "otjid": "SM01040166",
+           "type": "SM",
+           "name": "אלגברה אמ'",
+           "category": null,
+           "credits": null,
+           "courseId": "01040166"
+          }
+         ]
+        },
+        {
+         "otjid": "SM00440252",
+         "type": "SM",
+         "name": "מערכות ספרתיות ומבנה המחשב",
+         "category": null,
+         "credits": null,
+         "courseId": "00440252"
+        },
+        {
+         "otjid": "SM01040002",
+         "type": "SM",
+         "name": "מושגי יסוד במתמטיקה",
+         "category": null,
+         "credits": null,
+         "courseId": "01040002"
+        },
+        {
+         "otjid": "SM01040122",
+         "type": "SM",
+         "name": "תורת הפונקציות 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040122"
+        },
+        {
+         "otjid": "SM01040158",
+         "type": "SM",
+         "name": "מבוא לחבורות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040158"
+        },
+        {
+         "otjid": "SM01040168",
+         "type": "SM",
+         "name": "אלגברה  ב",
+         "category": null,
+         "credits": null,
+         "courseId": "01040168"
+        },
+        {
+         "otjid": "SM01040177",
+         "type": "SM",
+         "name": "גיאומטריה דיפרנציאלית",
+         "category": null,
+         "credits": null,
+         "courseId": "01040177"
+        },
+        {
+         "otjid": "SM01040192",
+         "type": "SM",
+         "name": "מבוא למתמטיקה שמושית",
+         "category": null,
+         "credits": null,
+         "courseId": "01040192"
+        },
+        {
+         "otjid": "SM01040195",
+         "type": "SM",
+         "name": "חשבון אינפיניטסימלי 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040195"
+        },
+        {
+         "otjid": "SM01040222",
+         "type": "SM",
+         "name": "תורת ההסתברות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040222"
+        },
+        {
+         "otjid": "SM01040274",
+         "type": "SM",
+         "name": "תורת השדות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040274"
+        },
+        {
+         "otjid": "SM01040281",
+         "type": "SM",
+         "name": "חשבון אינפי 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01040281"
+        },
+        {
+         "otjid": "SM01040285",
+         "type": "SM",
+         "name": "משוואות דיפרנציאליות רגילות א'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040285"
+        },
+        {
+         "otjid": "SM01040286",
+         "type": "SM",
+         "name": "קומבינטוריקה",
+         "category": null,
+         "credits": null,
+         "courseId": "01040286"
+        },
+        {
+         "otjid": "SM01040291",
+         "type": "SM",
+         "name": "אלגוריתמים קומבינטוריים",
+         "category": null,
+         "credits": null,
+         "courseId": "01040291"
+        },
+        {
+         "otjid": "SM01040293",
+         "type": "SM",
+         "name": "תורת הקבוצות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040293"
+        },
+        {
+         "otjid": "SM01040294",
+         "type": "SM",
+         "name": "מבוא לאנליזה נומרית",
+         "category": null,
+         "credits": null,
+         "courseId": "01040294"
+        },
+        {
+         "otjid": "SM01040295",
+         "type": "SM",
+         "name": "חשבון אינפיניטסימלי 3",
+         "category": null,
+         "credits": null,
+         "courseId": "01040295"
+        },
+        {
+         "otjid": "SM01040814",
+         "type": "SM",
+         "name": "מבוא למדעי המחשב מ'",
+         "category": null,
+         "credits": null,
+         "courseId": "01040814"
+        },
+        {
+         "otjid": "SM01040818",
+         "type": "SM",
+         "name": "ארגון ותכנות המחשב",
+         "category": null,
+         "credits": null,
+         "courseId": "01040818"
+        },
+        {
+         "otjid": "SM01040823",
+         "type": "SM",
+         "name": "מערכות הפעלה",
+         "category": null,
+         "credits": null,
+         "courseId": "01040823"
+        },
+        {
+         "otjid": "SM01040824",
+         "type": "SM",
+         "name": "מבוא לתכנות מערכות",
+         "category": null,
+         "credits": null,
+         "courseId": "01040824"
+        },
+        {
+         "otjid": "SM01040918",
+         "type": "SM",
+         "name": "מבני נתונים 1",
+         "category": null,
+         "credits": null,
+         "courseId": "01040918"
+        },
+        {
+         "otjid": "SM01040952",
+         "type": "SM",
+         "name": "מערכות ספרתיות ומבנה המחשב",
+         "category": null,
+         "credits": null,
+         "courseId": "01040952"
+        },
+        {
+         "otjid": "SM01140052",
+         "type": "SM",
+         "name": "פיסיקה 2",
+         "category": null,
+         "credits": null,
+         "courseId": "01140052"
+        },
+        {
+         "otjid": "SM01140071",
+         "type": "SM",
+         "name": "פיסיקה 1מ",
+         "category": null,
+         "credits": null,
+         "courseId": "01140071"
+        }
+       ]
+      },
+      {
+       "otjid": "CG00010541",
+       "type": "CG",
+       "name": "רשימה א+ב+ד",
+       "category": null,
+       "credits": null,
+       "children": [
+        {
+         "otjid": "CG00008895",
+         "type": "CG",
+         "name": "רשימה א",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01040142",
+           "type": "SM",
+           "name": "מבוא למרחבים מטריים וטופולוגיים",
+           "category": null,
+           "credits": null,
+           "courseId": "01040142"
+          },
+          {
+           "otjid": "SM01040279",
+           "type": "SM",
+           "name": "מבוא לחוגים ושדות",
+           "category": null,
+           "credits": null,
+           "courseId": "01040279"
+          },
+          {
+           "otjid": "SM01060156",
+           "type": "SM",
+           "name": "לוגיקה מתמטית",
+           "category": null,
+           "credits": null,
+           "courseId": "01060156"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00008916",
+         "type": "CG",
+         "name": "רשימה ב",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM01040030",
+           "type": "SM",
+           "name": "מבוא למשוואות דיפרנציאליות חלקיות",
+           "category": null,
+           "credits": null,
+           "courseId": "01040030"
+          },
+          {
+           "otjid": "SM01040165",
+           "type": "SM",
+           "name": "פונקציות ממשיות",
+           "category": null,
+           "credits": null,
+           "courseId": "01040165"
+          },
+          {
+           "otjid": "SM01040177",
+           "type": "SM",
+           "name": "גיאומטריה דיפרנציאלית",
+           "category": null,
+           "credits": null,
+           "courseId": "01040177"
+          },
+          {
+           "otjid": "SM01040273",
+           "type": "SM",
+           "name": "מבוא לאנליזה פונק. ואנליזת פורייה",
+           "category": null,
+           "credits": null,
+           "courseId": "01040273"
+          },
+          {
+           "otjid": "SM01040274",
+           "type": "SM",
+           "name": "תורת השדות",
+           "category": null,
+           "credits": null,
+           "courseId": "01040274"
+          },
+          {
+           "otjid": "SM01040280",
+           "type": "SM",
+           "name": "מודולים, חוגים וחבורות",
+           "category": null,
+           "credits": null,
+           "courseId": "01040280"
+          }
+         ]
+        },
+        {
+         "otjid": "CG00010542",
+         "type": "CG",
+         "name": "רשימה ד",
+         "category": null,
+         "credits": null,
+         "children": [
+          {
+           "otjid": "SM00940423",
+           "type": "SM",
+           "name": "מבוא לסטטיסטיקה",
+           "category": null,
+           "credits": null,
+           "courseId": "00940423"
+          },
+          {
+           "otjid": "SM01040193",
+           "type": "SM",
+           "name": "תורת האופטימיזציה",
+           "category": null,
+           "credits": null,
+           "courseId": "01040193"
+          },
+          {
+           "otjid": "SM01060061",
+           "type": "SM",
+           "name": "יסודות מתמטיים של למידת מכונה",
+           "category": null,
+           "credits": null,
+           "courseId": "01060061"
+          },
+          {
+           "otjid": "SM01960014",
+           "type": "SM",
+           "name": "למידה עמוקה ותורת הקירובים",
+           "category": null,
+           "credits": null,
+           "courseId": "01960014"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

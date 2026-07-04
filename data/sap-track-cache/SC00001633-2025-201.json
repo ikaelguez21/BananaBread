@@ -1,0 +1,22 @@
+{
+ "id": "SC00001633",
+ "name": "חוג לאחר תואר - הוראת מדעי המחשב",
+ "facultyId": "00002220",
+ "facultyName": "חינוך למדע וטכנולוגיה",
+ "academicLevel": "לימודי הסמכה",
+ "versions": [
+  {
+   "otjid": "CG00008740",
+   "name": "גרסה 2018 חוג לאחר תואר- הוראת המדמ\"ח",
+   "structure": [
+    {
+     "otjid": "CG00000175",
+     "type": "CG",
+     "name": "בחירה חופשית",
+     "category": null,
+     "credits": null
+    }
+   ]
+  }
+ ]
+}
