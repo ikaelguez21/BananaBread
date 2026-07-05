@@ -939,3 +939,25 @@ button {
   color: var(--muted);
   font-size: 0.78rem;
 }
+
+/* Requirement group kind pills */
+.kind-pill {
+  font-size: 0.68rem;
+  padding: 1px 8px;
+}
+
+.kind-pill.kind-mandatory {
+  background: var(--primary);
+  color: #fff;
+}
+
+.kind-pill.kind-mandatory_elective {
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+}
+
+.kind-pill.kind-elective {
+  background: var(--surface-strong);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}

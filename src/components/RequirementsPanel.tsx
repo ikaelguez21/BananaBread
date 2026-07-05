@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import type { Course, PlannerCourse, RequirementGroup } from '../types';
+import type { Course, PlannerCourse, RequirementGroup, RequirementGroupKind } from '../types';
 
 interface RequirementsPanelProps {
   trackLabel: string;
@@ -16,16 +16,21 @@ interface GroupView {
   parentPath: string;
   plannedCount: number;
   earnedCredits: number;
-  isMandatory: boolean;
+  kind: RequirementGroupKind;
 }
+
+const KIND_ORDER: Record<RequirementGroupKind, number> = { mandatory: 0, mandatory_elective: 1, elective: 2 };
+const KIND_LABEL: Record<RequirementGroupKind, string> = {
+  mandatory: 'חובה',
+  mandatory_elective: 'חובת בחירה',
+  elective: 'בחירה'
+};
 
 function splitLabel(label: string): { name: string; parentPath: string } {
   const parts = label.split(' / ').map((part) => part.trim()).filter(Boolean);
   if (parts.length <= 1) return { name: label, parentPath: '' };
   return { name: parts[parts.length - 1], parentPath: parts.slice(0, -1).join(' › ') };
 }
-
-const MANDATORY_HINT = /חובה|mandatory/i;
 
 function RequirementsPanel({ trackLabel, groups, courseMap, plannerCourses, onAddCourse, onClearTrack }: RequirementsPanelProps) {
   const [openGroupId, setOpenGroupId] = useState<string | null>(null);
@@ -42,12 +47,13 @@ function RequirementsPanel({ trackLabel, groups, courseMap, plannerCourses, onAd
         ...splitLabel(group.label),
         plannedCount: planned.length,
         earnedCredits,
-        isMandatory: MANDATORY_HINT.test(group.label)
+        kind: group.kind ?? 'elective'
       };
     });
-    // mandatory groups first, then by how much of the group is already planned, big generic pools last
+    // mandatory first, then pick-from-list requirements, free electives last;
+    // within a kind: groups you've started first, big generic pools last
     return views.sort((a, b) => {
-      if (a.isMandatory !== b.isMandatory) return a.isMandatory ? -1 : 1;
+      if (a.kind !== b.kind) return KIND_ORDER[a.kind] - KIND_ORDER[b.kind];
       const aRatio = a.plannedCount / a.group.courses.length;
       const bRatio = b.plannedCount / b.group.courses.length;
       if (aRatio !== bRatio) return bRatio - aRatio;
@@ -70,7 +76,7 @@ function RequirementsPanel({ trackLabel, groups, courseMap, plannerCourses, onAd
       </div>
 
       <div className="requirements-groups">
-        {groupViews.map(({ group, name, parentPath, plannedCount, earnedCredits, isMandatory }) => {
+        {groupViews.map(({ group, name, parentPath, plannedCount, earnedCredits, kind }) => {
           const isOpen = openGroupId === group.id;
           const progress = group.courses.length ? Math.min(1, plannedCount / group.courses.length) : 0;
           const visibleCourses = isOpen
@@ -96,7 +102,7 @@ function RequirementsPanel({ trackLabel, groups, courseMap, plannerCourses, onAd
                   {parentPath ? <span className="requirement-group-path">{parentPath}</span> : null}
                   <span className="requirement-group-label">
                     {name}
-                    {isMandatory ? <span className="pill mandatory-pill">חובה</span> : null}
+                    <span className={`pill kind-pill kind-${kind}`}>{KIND_LABEL[kind]}</span>
                   </span>
                 </span>
                 <span className="requirement-group-meta">

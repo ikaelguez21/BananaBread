@@ -43,9 +43,12 @@ export interface TrackLoadResult {
   infoFetcherResult: InfoFetcherResult;
 }
 
+export type RequirementGroupKind = 'mandatory' | 'mandatory_elective' | 'elective';
+
 export interface RequirementGroup {
   id: string;
   label: string;
+  kind?: RequirementGroupKind;
   courses: string[];
 }
 

@@ -81,6 +81,18 @@ def specializations_of(version: dict) -> list[dict]:
     return [{**p, "children": [*p.get("children", []), *shared]} for p in paths]
 
 
+def classify_group(label: str) -> str:
+    """mandatory | mandatory_elective | elective, from the group's Hebrew label."""
+    has_mandatory = bool(re.search(r"חובה|mandatory", label, re.IGNORECASE))
+    has_choice = bool(re.search(r"בחירה|elective", label, re.IGNORECASE))
+    pick_from_list = bool(re.search(r"רשימ|אשכול|אפשרות", label))
+    if has_mandatory and not has_choice:
+        return "mandatory"
+    if pick_from_list or (has_mandatory and has_choice):
+        return "mandatory_elective"
+    return "elective"
+
+
 def build_requirement_groups(nodes, path=()) -> list[dict]:
     """Flatten CG nodes into groups with their direct course lists.
 
@@ -93,9 +105,11 @@ def build_requirement_groups(nodes, path=()) -> list[dict]:
         direct = [c["courseId"] for c in node.get("children", [])
                   if c.get("type") == "SM" and c.get("courseId")]
         if direct:
+            label = " / ".join(p for p in name_path if p)
             groups.append({
                 "id": node["otjid"],
-                "label": " / ".join(p for p in name_path if p),
+                "label": label,
+                "kind": classify_group(label),
                 "courses": sorted(direct),
             })
         groups.extend(build_requirement_groups(node.get("children", []), name_path))
@@ -125,19 +139,51 @@ def prereq_depth(course_id: str, memo: dict, stack: frozenset = frozenset()) -> 
 
 MANDATORY_LABEL = re.compile(r"חובה|mandatory", re.IGNORECASE)
 
+PDF_PLANS_PATH = Path("data/pdf-plans.json")
+
+
+def load_pdf_plans() -> list[dict[str, int]]:
+    """Catalog-PDF plans as course->semester maps (from parse_catalog_plans.py)."""
+    if not PDF_PLANS_PATH.exists():
+        return []
+    raw = json.loads(PDF_PLANS_PATH.read_text(encoding="utf-8"))
+    return [
+        {cid: int(sem) for sem, ids in sems.items() for cid in ids}
+        for sems in raw.values()
+    ]
+
+
+PDF_PLANS: list[dict[str, int]] = []
+
+
+def match_pdf_plan(spec_courses: set[str]) -> dict[str, int] | None:
+    """Best catalog-PDF plan for this track, by course-set overlap."""
+    best, best_score = None, 0
+    for plan in PDF_PLANS:
+        overlap = len(spec_courses & plan.keys())
+        if overlap > best_score:
+            best, best_score = plan, overlap
+    return best if best_score >= 10 else None
+
 
 def build_recommended_plan(
     spec_courses: set[str], partof_by_course: dict, version_cg: str, mandatory_ids: set[str]
 ) -> list[dict]:
     by_semester: dict[int, list[str]] = {}
     depth_memo: dict[str, int] = {}
+    pdf_plan = match_pdf_plan(spec_courses)
     for course_id in spec_courses:
         rows = [r for r in partof_by_course.get(course_id, []) if r["versionCg"] == version_cg]
         # a course belongs in the plan if SAP flags it mandatory OR the tree
         # places it in a mandatory-labeled group (SAP flags are inconsistent)
-        if not any(r["oblig"] for r in rows) and course_id not in mandatory_ids:
+        # OR the official catalog PDF places it in a semester
+        in_pdf = bool(pdf_plan and course_id in pdf_plan)
+        if not any(r["oblig"] for r in rows) and course_id not in mandatory_ids and not in_pdf:
             continue
-        semester = max((r["minSemester"] for r in rows), default=0)
+        # placement priority: catalog PDF > SAP recommended > prerequisite depth
+        semester = pdf_plan.get(course_id, 0) if pdf_plan else 0
+        if semester <= 0:
+            semester = max((r["minSemester"] for r in rows), default=0)
         if semester <= 0:
             semester = min(8, prereq_depth(course_id, depth_memo))
         by_semester.setdefault(semester, []).append(course_id)
@@ -227,6 +273,7 @@ def main() -> int:
             print(f"Warning: Partof failed for {course_id}: {exc}", file=sys.stderr, flush=True)
 
     load_catalog_prereqs()
+    PDF_PLANS.extend(load_pdf_plans())
 
     faculties: dict[str, dict] = {}
     for track in sap["tracks"]:

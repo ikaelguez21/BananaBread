@@ -154,8 +154,9 @@ function buildRequirementGroupsMap(source: Record<string, unknown>): Map<string,
           const id = typeof group.id === 'string' ? group.id : '';
           const label = typeof group.label === 'string' ? group.label : '';
           const courses = Array.isArray(group.courses) ? group.courses.filter((c): c is string => typeof c === 'string') : [];
+          const kind = group.kind === 'mandatory' || group.kind === 'mandatory_elective' || group.kind === 'elective' ? group.kind : undefined;
           if (id && courses.length) {
-            groups.push({ id, label: label || id, courses });
+            groups.push({ id, label: label || id, kind, courses });
           }
         });
         if (groups.length) map.set(trackId, groups);
