@@ -24,7 +24,7 @@ import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 
-from fetch_tracks_sap import latest_version, odata_results, send_request
+from fetch_tracks_sap import build_tree, latest_version, odata_results, send_request
 
 PARTOF_CACHE = Path("data/sap-track-cache/partof")
 
@@ -73,9 +73,12 @@ def specializations_of(version: dict) -> list[dict]:
     (unnamed) specialization."""
     structure = version.get("structure", [])
     paths = [n for n in structure if (n.get("name") or "").startswith("נתיב")]
-    if paths:
-        return paths
-    return [{"otjid": version["otjid"], "name": None, "children": structure}]
+    if not paths:
+        return [{"otjid": version["otjid"], "name": None, "children": structure}]
+    # groups that sit beside the נתיבים (core mandatory, English, free electives)
+    # apply to every specialization
+    shared = [n for n in structure if n not in paths]
+    return [{**p, "children": [*p.get("children", []), *shared]} for p in paths]
 
 
 def build_requirement_groups(nodes, path=()) -> list[dict]:
@@ -99,16 +102,44 @@ def build_requirement_groups(nodes, path=()) -> list[dict]:
     return groups
 
 
-def build_recommended_plan(spec_courses: set[str], partof_by_course: dict, version_cg: str) -> list[dict]:
+CATALOG_PREREQS: dict[str, list[str]] = {}
+
+
+def load_catalog_prereqs() -> None:
+    catalog = json.loads(Path("src/data/courseCatalog.json").read_text(encoding="utf-8"))
+    CATALOG_PREREQS.update({c["id"]: c.get("prereqs", []) for c in catalog})
+
+
+def prereq_depth(course_id: str, memo: dict, stack: frozenset = frozenset()) -> int:
+    """Longest prerequisite chain length; a reasonable default semester when SAP
+    has no recommended placement (e.g. the math faculty leaves it empty)."""
+    if course_id in memo:
+        return memo[course_id]
+    if course_id in stack:
+        return 1
+    prereqs = [p for p in CATALOG_PREREQS.get(course_id, []) if p in CATALOG_PREREQS]
+    depth = 1 + max((prereq_depth(p, memo, stack | {course_id}) for p in prereqs), default=0)
+    memo[course_id] = depth
+    return depth
+
+
+MANDATORY_LABEL = re.compile(r"חובה|mandatory", re.IGNORECASE)
+
+
+def build_recommended_plan(
+    spec_courses: set[str], partof_by_course: dict, version_cg: str, mandatory_ids: set[str]
+) -> list[dict]:
     by_semester: dict[int, list[str]] = {}
+    depth_memo: dict[str, int] = {}
     for course_id in spec_courses:
-        rows = [
-            r for r in partof_by_course.get(course_id, [])
-            if r["versionCg"] == version_cg and r["oblig"] and r["minSemester"] > 0
-        ]
-        if not rows:
+        rows = [r for r in partof_by_course.get(course_id, []) if r["versionCg"] == version_cg]
+        # a course belongs in the plan if SAP flags it mandatory OR the tree
+        # places it in a mandatory-labeled group (SAP flags are inconsistent)
+        if not any(r["oblig"] for r in rows) and course_id not in mandatory_ids:
             continue
-        semester = rows[0]["minSemester"]
+        semester = max((r["minSemester"] for r in rows), default=0)
+        if semester <= 0:
+            semester = min(8, prereq_depth(course_id, depth_memo))
         by_semester.setdefault(semester, []).append(course_id)
     return [
         {"semester": semester, "courses": [{"courseId": cid} for cid in sorted(ids)]}
@@ -150,6 +181,53 @@ def main() -> int:
         if index % 25 == 0:
             print(f"  enriched {index}/{len(all_courses)}", flush=True)
 
+    # ---- upgrade tracks to their true newest catalog version ----
+    # SAP's SC tree sometimes serves an outdated version while Partof rows
+    # reveal a newer one (e.g. math תלת שנתי: tree says 2022, גרסה 2023 exists).
+    # The newer version's tree IS fetchable when rooted at its CG directly.
+    def version_year(text: str) -> int:
+        years = re.findall(r"(?:19|20)\d{2}", text or "")
+        return max(int(y) for y in years) if years else 0
+
+    sc_versions: dict[str, dict[str, str]] = {}
+    for rows in partof_by_course.values():
+        for r in rows:
+            if r.get("scOtjid") and r.get("versionCg"):
+                sc_versions.setdefault(r["scOtjid"], {})[r["versionCg"]] = r.get("versionText", "")
+
+    upgraded = 0
+    for track in sap["tracks"]:
+        current = track["versions"][0]
+        candidates = sc_versions.get(track["id"], {})
+        if not candidates:
+            continue
+        best_cg, best_text = max(candidates.items(), key=lambda kv: version_year(kv[1]))
+        if version_year(best_text) <= version_year(current["name"]):
+            continue
+        try:
+            structure = build_tree(best_cg, year, semester)
+        except RuntimeError:
+            continue
+        if not structure:
+            continue
+        track["versions"] = [{"otjid": best_cg, "name": best_text, "structure": structure}]
+        upgraded += 1
+        print(f"  upgraded {track['name'][:40]}: {current['name'][:30]} -> {best_text[:30]}", flush=True)
+    print(f"Upgraded {upgraded} tracks to newer catalog versions", flush=True)
+
+    # enrich courses that appeared in upgraded trees
+    new_courses: set[str] = set()
+    for track in sap["tracks"]:
+        for version in track["versions"]:
+            walk_courses(version["structure"], new_courses)
+    for course_id in sorted(new_courses - set(partof_by_course)):
+        try:
+            partof_by_course[course_id] = fetch_partof(course_id, year, semester)
+        except RuntimeError as exc:
+            print(f"Warning: Partof failed for {course_id}: {exc}", file=sys.stderr, flush=True)
+
+    load_catalog_prereqs()
+
     faculties: dict[str, dict] = {}
     for track in sap["tracks"]:
         faculty = faculties.setdefault(track["facultyId"], {
@@ -167,14 +245,18 @@ def main() -> int:
                 spec_courses: set[str] = set()
                 walk_courses(spec.get("children", []), spec_courses)
                 spec_name = re.sub(r"^נתיב:\s*", "", spec.get("name") or "") or None
-                plan = build_recommended_plan(spec_courses, partof_by_course, version["otjid"])
+                groups = build_requirement_groups(spec.get("children", []))
+                mandatory_ids = {
+                    cid for g in groups if MANDATORY_LABEL.search(g["label"]) for cid in g["courses"]
+                }
+                plan = build_recommended_plan(spec_courses, partof_by_course, version["otjid"], mandatory_ids)
                 if not plan:
                     continue
                 program["specializations"].append({
                     "id": spec["otjid"],
                     "name": spec_name,
                     "recommendedPlan": plan,
-                    "requirementGroups": build_requirement_groups(spec.get("children", [])),
+                    "requirementGroups": groups,
                 })
             if program["specializations"]:
                 faculty["programs"].append(program)
