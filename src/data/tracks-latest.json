@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-05T10:59:04.577020+00:00",
+ "generatedAt": "2026-07-05T11:17:39.993271+00:00",
  "year": 2025,
  "semester": 201,
  "source": "merged",
@@ -20,49 +20,10 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "00440102"
-          },
-          {
-           "courseId": "00440202"
-          },
-          {
-           "courseId": "00460210"
-          },
-          {
-           "courseId": "01040012"
-          },
-          {
-           "courseId": "01040016"
-          },
-          {
            "courseId": "02340114"
           },
           {
            "courseId": "02340129"
-          },
-          {
-           "courseId": "02340313"
-          },
-          {
-           "courseId": "02340326"
-          },
-          {
-           "courseId": "02360366"
-          },
-          {
-           "courseId": "02360371"
-          },
-          {
-           "courseId": "02360501"
-          },
-          {
-           "courseId": "02360503"
-          },
-          {
-           "courseId": "02360504"
-          },
-          {
-           "courseId": "02360526"
           },
           {
            "courseId": "03240033"
@@ -73,28 +34,13 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "00460206"
-          },
-          {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040136"
-          },
-          {
            "courseId": "01140071"
-          },
-          {
-           "courseId": "01140075"
           },
           {
            "courseId": "02340124"
           },
           {
            "courseId": "02340141"
-          },
-          {
-           "courseId": "02360502"
           },
           {
            "courseId": "03940800"
@@ -105,37 +51,13 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "00440105"
-          },
-          {
-           "courseId": "00440157"
-          },
-          {
            "courseId": "00440252"
-          },
-          {
-           "courseId": "00460209"
-          },
-          {
-           "courseId": "00460267"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
           },
           {
            "courseId": "01040293"
           },
           {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02360333"
           }
          ]
         },
@@ -143,34 +65,16 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00440127"
-          },
-          {
-           "courseId": "00440167"
-          },
-          {
-           "courseId": "00440334"
-          },
-          {
            "courseId": "01040142"
           },
           {
            "courseId": "01040158"
           },
           {
-           "courseId": "01140073"
-          },
-          {
            "courseId": "02340118"
           },
           {
-           "courseId": "02340123"
-          },
-          {
            "courseId": "02340247"
-          },
-          {
-           "courseId": "02360267"
           }
          ]
         },
@@ -178,19 +82,7 @@
          "semester": 5,
          "courses": [
           {
-           "courseId": "00340034"
-          },
-          {
-           "courseId": "00440131"
-          },
-          {
-           "courseId": "00440169"
-          },
-          {
            "courseId": "01040122"
-          },
-          {
-           "courseId": "01040134"
           },
           {
            "courseId": "01040279"
@@ -199,61 +91,7 @@
            "courseId": "02340125"
           },
           {
-           "courseId": "02340302"
-          },
-          {
-           "courseId": "02340303"
-          },
-          {
-           "courseId": "02360340"
-          },
-          {
            "courseId": "02360343"
-          },
-          {
-           "courseId": "02360828"
-          }
-         ]
-        },
-        {
-         "semester": 6,
-         "courses": [
-          {
-           "courseId": "00440137"
-          },
-          {
-           "courseId": "00440191"
-          },
-          {
-           "courseId": "00460200"
-          },
-          {
-           "courseId": "01160031"
-          },
-          {
-           "courseId": "02360349"
-          }
-         ]
-        },
-        {
-         "semester": 7,
-         "courses": [
-          {
-           "courseId": "00460192"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "02340329"
-          },
-          {
-           "courseId": "02360754"
-          },
-          {
-           "courseId": "02360874"
           }
          ]
         }
@@ -961,19 +799,10 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "02340114"
           },
           {
            "courseId": "02340129"
-          },
-          {
-           "courseId": "02360330"
           },
           {
            "courseId": "03240033"
@@ -984,16 +813,7 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "01040032"
-          },
-          {
-           "courseId": "01140052"
-          },
-          {
            "courseId": "01140071"
-          },
-          {
-           "courseId": "01140075"
           },
           {
            "courseId": "02340124"
@@ -1013,28 +833,13 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "00940412"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
            "courseId": "01040293"
           },
           {
            "courseId": "01040295"
           },
           {
-           "courseId": "01140054"
-          },
-          {
-           "courseId": "01250801"
-          },
-          {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
           }
          ]
         },
@@ -1052,9 +857,6 @@
           },
           {
            "courseId": "02340118"
-          },
-          {
-           "courseId": "02340123"
           },
           {
            "courseId": "02340247"
@@ -1075,9 +877,6 @@
           },
           {
            "courseId": "02340125"
-          },
-          {
-           "courseId": "02360267"
           },
           {
            "courseId": "02360343"
@@ -1576,19 +1375,10 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "02340114"
           },
           {
            "courseId": "02340129"
-          },
-          {
-           "courseId": "02360330"
           },
           {
            "courseId": "03240033"
@@ -1598,9 +1388,6 @@
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "01040032"
-          },
           {
            "courseId": "01140071"
           },
@@ -1622,19 +1409,10 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "00940412"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
            "courseId": "01040293"
           },
           {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
           }
          ]
         },
@@ -1649,9 +1427,6 @@
           },
           {
            "courseId": "02340118"
-          },
-          {
-           "courseId": "02340123"
           },
           {
            "courseId": "02340247"
@@ -1674,16 +1449,7 @@
            "courseId": "02340125"
           },
           {
-           "courseId": "02360267"
-          },
-          {
            "courseId": "02360343"
-          },
-          {
-           "courseId": "02360350"
-          },
-          {
-           "courseId": "02360496"
           }
          ]
         }
@@ -2124,12 +1890,6 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "02340114"
           },
           {
@@ -2144,22 +1904,7 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "01040032"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
-           "courseId": "01040174"
-          },
-          {
-           "courseId": "01140052"
-          },
-          {
            "courseId": "01140071"
-          },
-          {
-           "courseId": "01140075"
           },
           {
            "courseId": "02340124"
@@ -2179,19 +1924,7 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "00940412"
-          },
-          {
-           "courseId": "01140054"
-          },
-          {
-           "courseId": "01250801"
-          },
-          {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
           }
          ]
         },
@@ -2202,13 +1935,7 @@
            "courseId": "02340118"
           },
           {
-           "courseId": "02340123"
-          },
-          {
            "courseId": "02340247"
-          },
-          {
-           "courseId": "02360766"
           }
          ]
         },
@@ -2552,15 +2279,6 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
-           "courseId": "01340058"
-          },
-          {
            "courseId": "02340114"
           },
           {
@@ -2575,16 +2293,7 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "01040032"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
            "courseId": "01140071"
-          },
-          {
-           "courseId": "01340020"
           },
           {
            "courseId": "02340124"
@@ -2604,16 +2313,7 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "00940412"
-          },
-          {
-           "courseId": "01340019"
-          },
-          {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
           }
          ]
         },
@@ -2621,13 +2321,7 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00940423"
-          },
-          {
            "courseId": "02340118"
-          },
-          {
-           "courseId": "02340123"
           },
           {
            "courseId": "02340247"
@@ -2883,12 +2577,6 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "02340114"
           },
           {
@@ -2903,19 +2591,7 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "01040032"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
-           "courseId": "01140052"
-          },
-          {
            "courseId": "01140071"
-          },
-          {
-           "courseId": "01140075"
           },
           {
            "courseId": "02340124"
@@ -2935,25 +2611,13 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "00940412"
-          },
-          {
            "courseId": "01040293"
           },
           {
            "courseId": "01040295"
           },
           {
-           "courseId": "01140054"
-          },
-          {
-           "courseId": "01250801"
-          },
-          {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
           }
          ]
         },
@@ -2973,13 +2637,7 @@
            "courseId": "02340118"
           },
           {
-           "courseId": "02340123"
-          },
-          {
            "courseId": "02340247"
-          },
-          {
-           "courseId": "02360267"
           }
          ]
         },
@@ -3369,12 +3027,6 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "02340114"
           },
           {
@@ -3388,15 +3040,6 @@
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "01040032"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
-           "courseId": "01140052"
-          },
           {
            "courseId": "01140071"
           },
@@ -3418,16 +3061,7 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "00940412"
-          },
-          {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
-          },
-          {
-           "courseId": "02360319"
           }
          ]
         },
@@ -3436,9 +3070,6 @@
          "courses": [
           {
            "courseId": "02340118"
-          },
-          {
-           "courseId": "02340123"
           },
           {
            "courseId": "02340247"
@@ -3452,18 +3083,7 @@
            "courseId": "02340125"
           },
           {
-           "courseId": "02360267"
-          },
-          {
            "courseId": "02360343"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "02340312"
           }
          ]
         }
@@ -3696,9 +3316,6 @@
            "courseId": "01040195"
           },
           {
-           "courseId": "01340058"
-          },
-          {
            "courseId": "02340114"
           },
           {
@@ -3719,16 +3336,7 @@
            "courseId": "01040281"
           },
           {
-           "courseId": "01140052"
-          },
-          {
            "courseId": "01140071"
-          },
-          {
-           "courseId": "01140075"
-          },
-          {
-           "courseId": "01340020"
           },
           {
            "courseId": "02340124"
@@ -3757,12 +3365,6 @@
            "courseId": "01040295"
           },
           {
-           "courseId": "01140054"
-          },
-          {
-           "courseId": "01250801"
-          },
-          {
            "courseId": "02340218"
           }
          ]
@@ -3780,16 +3382,10 @@
            "courseId": "01040285"
           },
           {
-           "courseId": "01060156"
-          },
-          {
            "courseId": "02340118"
           },
           {
            "courseId": "02340247"
-          },
-          {
-           "courseId": "02360267"
           }
          ]
         },
@@ -3810,17 +3406,6 @@
           },
           {
            "courseId": "02360343"
-          }
-         ]
-        },
-        {
-         "semester": 6,
-         "courses": [
-          {
-           "courseId": "01040192"
-          },
-          {
-           "courseId": "02340123"
           }
          ]
         }
@@ -4139,15 +3724,6 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "00440102"
-          },
-          {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "02340114"
           },
           {
@@ -4161,12 +3737,6 @@
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "01040032"
-          },
-          {
-           "courseId": "01040135"
-          },
           {
            "courseId": "02340124"
           },
@@ -4185,22 +3755,7 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "00940412"
-          },
-          {
-           "courseId": "01040033"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
-           "courseId": "01140074"
-          },
-          {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
           }
          ]
         },
@@ -4211,16 +3766,7 @@
            "courseId": "01040285"
           },
           {
-           "courseId": "01140020"
-          },
-          {
-           "courseId": "01140076"
-          },
-          {
            "courseId": "02340118"
-          },
-          {
-           "courseId": "02340123"
           },
           {
            "courseId": "02340247"
@@ -4231,50 +3777,13 @@
          "semester": 5,
          "courses": [
           {
-           "courseId": "01040214"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
-          },
-          {
            "courseId": "01040294"
-          },
-          {
-           "courseId": "01140021"
           },
           {
            "courseId": "02340125"
           },
           {
            "courseId": "02360343"
-          }
-         ]
-        },
-        {
-         "semester": 6,
-         "courses": [
-          {
-           "courseId": "01140035"
-          },
-          {
-           "courseId": "01140036"
-          },
-          {
-           "courseId": "01140246"
-          },
-          {
-           "courseId": "01150203"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "01140037"
           }
          ]
         }
@@ -4590,22 +4099,7 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "01040195"
-          },
-          {
-           "courseId": "01140051"
-          },
-          {
-           "courseId": "02140114"
-          },
-          {
-           "courseId": "02160022"
           },
           {
            "courseId": "02340114"
@@ -4619,37 +4113,16 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "00940345"
-          },
-          {
-           "courseId": "01040032"
-          },
-          {
            "courseId": "01040281"
           },
           {
            "courseId": "01040286"
-          },
-          {
-           "courseId": "02140012"
-          },
-          {
-           "courseId": "02160014"
           }
          ]
         },
         {
          "semester": 3,
          "courses": [
-          {
-           "courseId": "00440268"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
-           "courseId": "01040215"
-          },
           {
            "courseId": "01040222"
           },
@@ -4665,19 +4138,10 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00940314"
-          },
-          {
-           "courseId": "01040034"
-          },
-          {
            "courseId": "01040285"
           },
           {
            "courseId": "01040291"
-          },
-          {
-           "courseId": "02140137"
           },
           {
            "courseId": "02340118"
@@ -4688,24 +4152,10 @@
          ]
         },
         {
-         "semester": 5,
-         "courses": [
-          {
-           "courseId": "00940202"
-          }
-         ]
-        },
-        {
          "semester": 6,
          "courses": [
           {
-           "courseId": "00940423"
-          },
-          {
            "courseId": "01040192"
-          },
-          {
-           "courseId": "02140093"
           }
          ]
         }
@@ -7496,13 +6946,7 @@
            "courseId": "01040066"
           },
           {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "01040195"
-          },
-          {
-           "courseId": "01040814"
           }
          ]
         },
@@ -7519,12 +6963,6 @@
            "courseId": "01040286"
           },
           {
-           "courseId": "01040291"
-          },
-          {
-           "courseId": "01040824"
-          },
-          {
            "courseId": "01140071"
           },
           {
@@ -7539,9 +6977,6 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "00440252"
-          },
-          {
            "courseId": "01040158"
           },
           {
@@ -7555,12 +6990,6 @@
           },
           {
            "courseId": "01040295"
-          },
-          {
-           "courseId": "01040918"
-          },
-          {
-           "courseId": "01040952"
           }
          ]
         },
@@ -7571,16 +7000,10 @@
            "courseId": "01040142"
           },
           {
-           "courseId": "01040177"
-          },
-          {
            "courseId": "01040192"
           },
           {
            "courseId": "01040279"
-          },
-          {
-           "courseId": "01040818"
           }
          ]
         },
@@ -7589,45 +7012,6 @@
          "courses": [
           {
            "courseId": "01040122"
-          },
-          {
-           "courseId": "01040274"
-          },
-          {
-           "courseId": "01040294"
-          },
-          {
-           "courseId": "01040823"
-          },
-          {
-           "courseId": "01140052"
-          },
-          {
-           "courseId": "01140054"
-          },
-          {
-           "courseId": "01140073"
-          },
-          {
-           "courseId": "01140075"
-          },
-          {
-           "courseId": "01140246"
-          },
-          {
-           "courseId": "01240801"
-          },
-          {
-           "courseId": "01250001"
-          },
-          {
-           "courseId": "01250801"
-          },
-          {
-           "courseId": "01340020"
-          },
-          {
-           "courseId": "01340058"
           }
          ]
         }
@@ -9098,22 +8482,7 @@
            "courseId": "00440102"
           },
           {
-           "courseId": "01040018"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
            "courseId": "01140020"
-          },
-          {
-           "courseId": "01140071"
-          },
-          {
-           "courseId": "01250001"
-          },
-          {
-           "courseId": "01340058"
           }
          ]
         },
@@ -9121,25 +8490,7 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040038"
-          },
-          {
-           "courseId": "01040135"
-          },
-          {
-           "courseId": "01040136"
-          },
-          {
            "courseId": "01140021"
-          },
-          {
-           "courseId": "01140052"
-          },
-          {
-           "courseId": "01240801"
           },
           {
            "courseId": "03240033"
@@ -9153,18 +8504,6 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "00440105"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
-          },
-          {
-           "courseId": "01340019"
-          },
-          {
            "courseId": "02340128"
           }
          ]
@@ -9173,15 +8512,6 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00440131"
-          },
-          {
-           "courseId": "00940423"
-          },
-          {
-           "courseId": "01040034"
-          },
-          {
            "courseId": "01140035"
           },
           {
@@ -9189,18 +8519,6 @@
           },
           {
            "courseId": "01150203"
-          },
-          {
-           "courseId": "03340023"
-          },
-          {
-           "courseId": "03340222"
-          },
-          {
-           "courseId": "03350005"
-          },
-          {
-           "courseId": "03360537"
           }
          ]
         },
@@ -9209,31 +8527,6 @@
          "courses": [
           {
            "courseId": "01140246"
-          },
-          {
-           "courseId": "03340011"
-          },
-          {
-           "courseId": "03350001"
-          }
-         ]
-        },
-        {
-         "semester": 7,
-         "courses": [
-          {
-           "courseId": "01140037"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "03350003"
-          },
-          {
-           "courseId": "03350015"
           }
          ]
         }
@@ -10643,19 +9936,10 @@
            "courseId": "00440102"
           },
           {
-           "courseId": "01040012"
-          },
-          {
-           "courseId": "01040016"
-          },
-          {
            "courseId": "01140020"
           },
           {
            "courseId": "01140074"
-          },
-          {
-           "courseId": "01250001"
           }
          ]
         },
@@ -10663,19 +9947,10 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040136"
-          },
-          {
            "courseId": "01140021"
           },
           {
            "courseId": "01140076"
-          },
-          {
-           "courseId": "03140011"
           },
           {
            "courseId": "03240033"
@@ -10688,15 +9963,6 @@
         {
          "semester": 3,
          "courses": [
-          {
-           "courseId": "01040034"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
-           "courseId": "01040215"
-          },
           {
            "courseId": "02340128"
           }
@@ -10713,26 +9979,6 @@
           },
           {
            "courseId": "01150203"
-          },
-          {
-           "courseId": "01240414"
-          },
-          {
-           "courseId": "01240801"
-          },
-          {
-           "courseId": "03150003"
-          },
-          {
-           "courseId": "03150051"
-          }
-         ]
-        },
-        {
-         "semester": 5,
-         "courses": [
-          {
-           "courseId": "03140003"
           }
          ]
         },
@@ -10741,37 +9987,6 @@
          "courses": [
           {
            "courseId": "01140246"
-          },
-          {
-           "courseId": "03140311"
-          },
-          {
-           "courseId": "03140312"
-          },
-          {
-           "courseId": "03150008"
-          },
-          {
-           "courseId": "03150030"
-          },
-          {
-           "courseId": "03150039"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "03150002"
-          }
-         ]
-        },
-        {
-         "semester": 9,
-         "courses": [
-          {
-           "courseId": "03150014"
           }
          ]
         }
@@ -11788,12 +11003,6 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "02340114"
           },
           {
@@ -11807,18 +11016,6 @@
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "01040032"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
-           "courseId": "01040135"
-          },
-          {
-           "courseId": "01040174"
-          },
           {
            "courseId": "01140071"
           },
@@ -11840,19 +11037,10 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "00940412"
-          },
-          {
-           "courseId": "01040033"
-          },
-          {
            "courseId": "01040295"
           },
           {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
           }
          ]
         },
@@ -11869,13 +11057,7 @@
            "courseId": "01040285"
           },
           {
-           "courseId": "01140249"
-          },
-          {
            "courseId": "02340118"
-          },
-          {
-           "courseId": "02340123"
           },
           {
            "courseId": "02340247"
@@ -11896,92 +11078,6 @@
           },
           {
            "courseId": "02360343"
-          },
-          {
-           "courseId": "02360501"
-          }
-         ]
-        },
-        {
-         "semester": 6,
-         "courses": [
-          {
-           "courseId": "02360503"
-          },
-          {
-           "courseId": "02740143"
-          },
-          {
-           "courseId": "02740165"
-          },
-          {
-           "courseId": "02740266"
-          }
-         ]
-        },
-        {
-         "semester": 7,
-         "courses": [
-          {
-           "courseId": "02740320"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "02740235"
-          },
-          {
-           "courseId": "02740246"
-          },
-          {
-           "courseId": "02740253"
-          },
-          {
-           "courseId": "02740261"
-          },
-          {
-           "courseId": "02740262"
-          },
-          {
-           "courseId": "02740265"
-          }
-         ]
-        },
-        {
-         "semester": 10,
-         "courses": [
-          {
-           "courseId": "02740251"
-          },
-          {
-           "courseId": "02740252"
-          },
-          {
-           "courseId": "02740318"
-          },
-          {
-           "courseId": "02740319"
-          },
-          {
-           "courseId": "02740327"
-          },
-          {
-           "courseId": "02740328"
-          },
-          {
-           "courseId": "02740352"
-          },
-          {
-           "courseId": "02740367"
-          },
-          {
-           "courseId": "02740369"
-          },
-          {
-           "courseId": "02740376"
           }
          ]
         }
@@ -14334,12 +13430,6 @@
            "courseId": "00440102"
           },
           {
-           "courseId": "01040016"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
            "courseId": "01140020"
           },
           {
@@ -14350,18 +13440,6 @@
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "00840506"
-          },
-          {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040038"
-          },
-          {
-           "courseId": "01040136"
-          },
           {
            "courseId": "01140021"
           },
@@ -14380,18 +13458,6 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "01040034"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
-          },
-          {
-           "courseId": "01140034"
-          },
-          {
            "courseId": "02340128"
           }
          ]
@@ -14400,22 +13466,10 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00840311"
-          },
-          {
-           "courseId": "00840515"
-          },
-          {
-           "courseId": "00840737"
-          },
-          {
            "courseId": "01140035"
           },
           {
            "courseId": "01140036"
-          },
-          {
-           "courseId": "01140037"
           },
           {
            "courseId": "01150203"
@@ -14423,41 +13477,10 @@
          ]
         },
         {
-         "semester": 5,
-         "courses": [
-          {
-           "courseId": "01140250"
-          }
-         ]
-        },
-        {
          "semester": 6,
          "courses": [
           {
-           "courseId": "00440098"
-          },
-          {
-           "courseId": "00840135"
-          },
-          {
-           "courseId": "00850803"
-          },
-          {
-           "courseId": "00850804"
-          },
-          {
-           "courseId": "00850805"
-          },
-          {
            "courseId": "01140246"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "00840630"
           }
          ]
         }
@@ -17045,43 +16068,16 @@
            "courseId": "00440102"
           },
           {
-           "courseId": "00440202"
-          },
-          {
-           "courseId": "01040012"
-          },
-          {
-           "courseId": "01040016"
-          },
-          {
            "courseId": "01140020"
           },
           {
            "courseId": "01140074"
-          },
-          {
-           "courseId": "02340117"
           }
          ]
         },
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "00440252"
-          },
-          {
-           "courseId": "00440268"
-          },
-          {
-           "courseId": "00460733"
-          },
-          {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040136"
-          },
           {
            "courseId": "01140076"
           },
@@ -17094,76 +16090,8 @@
          ]
         },
         {
-         "semester": 3,
-         "courses": [
-          {
-           "courseId": "00440105"
-          },
-          {
-           "courseId": "00440157"
-          },
-          {
-           "courseId": "00460002"
-          },
-          {
-           "courseId": "00460205"
-          },
-          {
-           "courseId": "00460208"
-          },
-          {
-           "courseId": "00460267"
-          },
-          {
-           "courseId": "01040034"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
-          },
-          {
-           "courseId": "01140030"
-          }
-         ]
-        },
-        {
          "semester": 4,
          "courses": [
-          {
-           "courseId": "00440127"
-          },
-          {
-           "courseId": "00440140"
-          },
-          {
-           "courseId": "00440167"
-          },
-          {
-           "courseId": "00450104"
-          },
-          {
-           "courseId": "00450106"
-          },
-          {
-           "courseId": "00450111"
-          },
-          {
-           "courseId": "00450112"
-          },
-          {
-           "courseId": "00450113"
-          },
-          {
-           "courseId": "00450116"
-          },
-          {
-           "courseId": "00450117"
-          },
           {
            "courseId": "01140035"
           },
@@ -17176,118 +16104,10 @@
          ]
         },
         {
-         "semester": 5,
-         "courses": [
-          {
-           "courseId": "00340034"
-          },
-          {
-           "courseId": "00440131"
-          },
-          {
-           "courseId": "00440169"
-          },
-          {
-           "courseId": "00450105"
-          },
-          {
-           "courseId": "00450118"
-          },
-          {
-           "courseId": "01160027"
-          },
-          {
-           "courseId": "01160029"
-          }
-         ]
-        },
-        {
          "semester": 6,
          "courses": [
           {
-           "courseId": "00440137"
-          },
-          {
-           "courseId": "00440148"
-          },
-          {
-           "courseId": "00440158"
-          },
-          {
-           "courseId": "00440191"
-          },
-          {
-           "courseId": "00440198"
-          },
-          {
-           "courseId": "00450103"
-          },
-          {
-           "courseId": "00450109"
-          },
-          {
-           "courseId": "00460200"
-          },
-          {
-           "courseId": "00460243"
-          },
-          {
            "courseId": "01140246"
-          },
-          {
-           "courseId": "01140250"
-          },
-          {
-           "courseId": "01140252"
-          },
-          {
-           "courseId": "01160031"
-          },
-          {
-           "courseId": "03360522"
-          }
-         ]
-        },
-        {
-         "semester": 7,
-         "courses": [
-          {
-           "courseId": "00450100"
-          },
-          {
-           "courseId": "00450101"
-          },
-          {
-           "courseId": "00450102"
-          },
-          {
-           "courseId": "00450107"
-          },
-          {
-           "courseId": "00450108"
-          },
-          {
-           "courseId": "00450110"
-          },
-          {
-           "courseId": "00450119"
-          },
-          {
-           "courseId": "00460203"
-          },
-          {
-           "courseId": "01160004"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "00450115"
-          },
-          {
-           "courseId": "01140037"
           }
          ]
         }
@@ -18644,49 +17464,10 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "00440102"
-          },
-          {
-           "courseId": "00440202"
-          },
-          {
-           "courseId": "00460210"
-          },
-          {
-           "courseId": "01040012"
-          },
-          {
-           "courseId": "01040016"
-          },
-          {
            "courseId": "02340114"
           },
           {
            "courseId": "02340129"
-          },
-          {
-           "courseId": "02340313"
-          },
-          {
-           "courseId": "02340326"
-          },
-          {
-           "courseId": "02360366"
-          },
-          {
-           "courseId": "02360371"
-          },
-          {
-           "courseId": "02360501"
-          },
-          {
-           "courseId": "02360503"
-          },
-          {
-           "courseId": "02360504"
-          },
-          {
-           "courseId": "02360526"
           },
           {
            "courseId": "03240033"
@@ -18697,28 +17478,13 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "00460206"
-          },
-          {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040136"
-          },
-          {
            "courseId": "01140071"
-          },
-          {
-           "courseId": "01140075"
           },
           {
            "courseId": "02340124"
           },
           {
            "courseId": "02340141"
-          },
-          {
-           "courseId": "02360502"
           },
           {
            "courseId": "03940800"
@@ -18729,37 +17495,13 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "00440105"
-          },
-          {
-           "courseId": "00440157"
-          },
-          {
            "courseId": "00440252"
-          },
-          {
-           "courseId": "00460209"
-          },
-          {
-           "courseId": "00460267"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
           },
           {
            "courseId": "01040293"
           },
           {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02360333"
           }
          ]
         },
@@ -18767,37 +17509,16 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00440127"
-          },
-          {
-           "courseId": "00440167"
-          },
-          {
-           "courseId": "00440334"
-          },
-          {
-           "courseId": "01040034"
-          },
-          {
            "courseId": "01040142"
           },
           {
            "courseId": "01040158"
           },
           {
-           "courseId": "01140073"
-          },
-          {
            "courseId": "02340118"
           },
           {
-           "courseId": "02340123"
-          },
-          {
            "courseId": "02340247"
-          },
-          {
-           "courseId": "02360267"
           }
          ]
         },
@@ -18805,19 +17526,7 @@
          "semester": 5,
          "courses": [
           {
-           "courseId": "00340034"
-          },
-          {
-           "courseId": "00440131"
-          },
-          {
-           "courseId": "00440169"
-          },
-          {
            "courseId": "01040122"
-          },
-          {
-           "courseId": "01040134"
           },
           {
            "courseId": "01040279"
@@ -18826,61 +17535,7 @@
            "courseId": "02340125"
           },
           {
-           "courseId": "02340302"
-          },
-          {
-           "courseId": "02340303"
-          },
-          {
-           "courseId": "02360340"
-          },
-          {
            "courseId": "02360343"
-          },
-          {
-           "courseId": "02360828"
-          }
-         ]
-        },
-        {
-         "semester": 6,
-         "courses": [
-          {
-           "courseId": "00440137"
-          },
-          {
-           "courseId": "00440191"
-          },
-          {
-           "courseId": "00460200"
-          },
-          {
-           "courseId": "01160031"
-          },
-          {
-           "courseId": "02360349"
-          }
-         ]
-        },
-        {
-         "semester": 7,
-         "courses": [
-          {
-           "courseId": "00460192"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "02340329"
-          },
-          {
-           "courseId": "02360754"
-          },
-          {
-           "courseId": "02360874"
           }
          ]
         }
@@ -20521,12 +19176,6 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "00440102"
-          },
-          {
-           "courseId": "00440180"
-          },
-          {
            "courseId": "01040002"
           },
           {
@@ -20534,27 +19183,12 @@
           },
           {
            "courseId": "01040195"
-          },
-          {
-           "courseId": "01140032"
-          },
-          {
-           "courseId": "02340117"
           }
          ]
         },
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "00440252"
-          },
-          {
-           "courseId": "00460206"
-          },
-          {
-           "courseId": "00460733"
-          },
           {
            "courseId": "01040168"
           },
@@ -20568,9 +19202,6 @@
            "courseId": "01140071"
           },
           {
-           "courseId": "01140075"
-          },
-          {
            "courseId": "03240033"
           },
           {
@@ -20582,34 +19213,7 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "00440105"
-          },
-          {
-           "courseId": "00440268"
-          },
-          {
-           "courseId": "00460002"
-          },
-          {
-           "courseId": "00460205"
-          },
-          {
-           "courseId": "00460208"
-          },
-          {
-           "courseId": "00460209"
-          },
-          {
-           "courseId": "00460267"
-          },
-          {
            "courseId": "01040158"
-          },
-          {
-           "courseId": "01040165"
-          },
-          {
-           "courseId": "01040214"
           },
           {
            "courseId": "01040222"
@@ -20629,18 +19233,6 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00440131"
-          },
-          {
-           "courseId": "00440140"
-          },
-          {
-           "courseId": "00440157"
-          },
-          {
-           "courseId": "01040030"
-          },
-          {
            "courseId": "01040142"
           },
           {
@@ -20655,65 +19247,7 @@
          "semester": 5,
          "courses": [
           {
-           "courseId": "00340034"
-          },
-          {
-           "courseId": "00440124"
-          },
-          {
-           "courseId": "00440137"
-          },
-          {
-           "courseId": "00440158"
-          },
-          {
-           "courseId": "00440202"
-          },
-          {
            "courseId": "01040122"
-          }
-         ]
-        },
-        {
-         "semester": 6,
-         "courses": [
-          {
-           "courseId": "00440148"
-          },
-          {
-           "courseId": "00440167"
-          },
-          {
-           "courseId": "00440191"
-          },
-          {
-           "courseId": "00440198"
-          },
-          {
-           "courseId": "00460195"
-          },
-          {
-           "courseId": "00460200"
-          },
-          {
-           "courseId": "00460243"
-          },
-          {
-           "courseId": "01160031"
-          },
-          {
-           "courseId": "03360522"
-          }
-         ]
-        },
-        {
-         "semester": 7,
-         "courses": [
-          {
-           "courseId": "00440169"
-          },
-          {
-           "courseId": "00460203"
           }
          ]
         }
@@ -27304,9 +25838,6 @@
            "courseId": "00440102"
           },
           {
-           "courseId": "01040016"
-          },
-          {
            "courseId": "01140020"
           },
           {
@@ -27317,18 +25848,6 @@
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "00840506"
-          },
-          {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040038"
-          },
-          {
-           "courseId": "01040136"
-          },
           {
            "courseId": "01140021"
           },
@@ -27347,21 +25866,6 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "01040034"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
-          },
-          {
-           "courseId": "01140034"
-          },
-          {
            "courseId": "02340128"
           }
          ]
@@ -27370,22 +25874,10 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00840311"
-          },
-          {
-           "courseId": "00840515"
-          },
-          {
-           "courseId": "00840737"
-          },
-          {
            "courseId": "01140035"
           },
           {
            "courseId": "01140036"
-          },
-          {
-           "courseId": "01140037"
           },
           {
            "courseId": "01150203"
@@ -27393,41 +25885,10 @@
          ]
         },
         {
-         "semester": 5,
-         "courses": [
-          {
-           "courseId": "01140250"
-          }
-         ]
-        },
-        {
          "semester": 6,
          "courses": [
           {
-           "courseId": "00440098"
-          },
-          {
-           "courseId": "00840135"
-          },
-          {
-           "courseId": "00850803"
-          },
-          {
-           "courseId": "00850804"
-          },
-          {
-           "courseId": "00850805"
-          },
-          {
            "courseId": "01140246"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "00840630"
           }
          ]
         }
@@ -27681,15 +26142,6 @@
          "semester": 1,
          "courses": [
           {
-           "courseId": "00440102"
-          },
-          {
-           "courseId": "01040031"
-          },
-          {
-           "courseId": "01040166"
-          },
-          {
            "courseId": "02340114"
           },
           {
@@ -27703,12 +26155,6 @@
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "01040032"
-          },
-          {
-           "courseId": "01040135"
-          },
           {
            "courseId": "02340124"
           },
@@ -27724,25 +26170,10 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "00940412"
-          },
-          {
-           "courseId": "01040033"
-          },
-          {
-           "courseId": "01040134"
-          },
-          {
            "courseId": "01040295"
           },
           {
-           "courseId": "01140074"
-          },
-          {
            "courseId": "02340218"
-          },
-          {
-           "courseId": "02340292"
           }
          ]
         },
@@ -27756,19 +26187,7 @@
            "courseId": "01040285"
           },
           {
-           "courseId": "01140020"
-          },
-          {
-           "courseId": "01140036"
-          },
-          {
-           "courseId": "01140076"
-          },
-          {
            "courseId": "02340118"
-          },
-          {
-           "courseId": "02340123"
           },
           {
            "courseId": "02340247"
@@ -27782,44 +26201,16 @@
            "courseId": "01040122"
           },
           {
-           "courseId": "01040215"
-          },
-          {
            "courseId": "01040279"
           },
           {
            "courseId": "01040294"
           },
           {
-           "courseId": "01140021"
-          },
-          {
-           "courseId": "01140246"
-          },
-          {
-           "courseId": "01150203"
-          },
-          {
            "courseId": "02340125"
           },
           {
            "courseId": "02360343"
-          }
-         ]
-        },
-        {
-         "semester": 6,
-         "courses": [
-          {
-           "courseId": "01140035"
-          }
-         ]
-        },
-        {
-         "semester": 8,
-         "courses": [
-          {
-           "courseId": "01140037"
           }
          ]
         }
@@ -28174,12 +26565,6 @@
           },
           {
            "courseId": "01140074"
-          },
-          {
-           "courseId": "01140229"
-          },
-          {
-           "courseId": "01140252"
           }
          ]
         },
@@ -28254,9 +26639,6 @@
          "courses": [
           {
            "courseId": "01040122"
-          },
-          {
-           "courseId": "01140250"
           }
          ]
         },
@@ -28516,9 +26898,6 @@
            "courseId": "00440102"
           },
           {
-           "courseId": "01040012"
-          },
-          {
            "courseId": "01140020"
           },
           {
@@ -28530,19 +26909,7 @@
          "semester": 2,
          "courses": [
           {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040038"
-          },
-          {
-           "courseId": "01040136"
-          },
-          {
            "courseId": "01140021"
-          },
-          {
-           "courseId": "01140034"
           },
           {
            "courseId": "01140076"
@@ -28559,21 +26926,6 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "01040034"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
-          },
-          {
-           "courseId": "01140038"
-          },
-          {
            "courseId": "02340128"
           }
          ]
@@ -28588,18 +26940,7 @@
            "courseId": "01140036"
           },
           {
-           "courseId": "01140037"
-          },
-          {
            "courseId": "01150203"
-          }
-         ]
-        },
-        {
-         "semester": 5,
-         "courses": [
-          {
-           "courseId": "01140250"
           }
          ]
         },
@@ -28812,9 +27153,6 @@
            "courseId": "00440102"
           },
           {
-           "courseId": "01040012"
-          },
-          {
            "courseId": "01140020"
           },
           {
@@ -28825,18 +27163,6 @@
         {
          "semester": 2,
          "courses": [
-          {
-           "courseId": "01040013"
-          },
-          {
-           "courseId": "01040038"
-          },
-          {
-           "courseId": "01040136"
-          },
-          {
-           "courseId": "01140034"
-          },
           {
            "courseId": "01140076"
           },
@@ -28852,21 +27178,6 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "01040034"
-          },
-          {
-           "courseId": "01040214"
-          },
-          {
-           "courseId": "01040215"
-          },
-          {
-           "courseId": "01040220"
-          },
-          {
-           "courseId": "01140038"
-          },
-          {
            "courseId": "02340128"
           }
          ]
@@ -28881,21 +27192,7 @@
            "courseId": "01140036"
           },
           {
-           "courseId": "01140037"
-          },
-          {
            "courseId": "01150203"
-          }
-         ]
-        },
-        {
-         "semester": 5,
-         "courses": [
-          {
-           "courseId": "01140250"
-          },
-          {
-           "courseId": "01140251"
           }
          ]
         },
@@ -28904,17 +27201,6 @@
          "courses": [
           {
            "courseId": "01140246"
-          },
-          {
-           "courseId": "01160004"
-          }
-         ]
-        },
-        {
-         "semester": 7,
-         "courses": [
-          {
-           "courseId": "00460342"
           }
          ]
         }
@@ -29163,15 +27449,6 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "00440252"
-          },
-          {
-           "courseId": "01040142"
-          },
-          {
-           "courseId": "01040165"
-          },
-          {
            "courseId": "01040222"
           },
           {
@@ -29179,9 +27456,6 @@
           },
           {
            "courseId": "01040295"
-          },
-          {
-           "courseId": "01060156"
           },
           {
            "courseId": "02340218"
@@ -29193,9 +27467,6 @@
          "courses": [
           {
            "courseId": "01040158"
-          },
-          {
-           "courseId": "01040279"
           },
           {
            "courseId": "01040285"
@@ -29222,9 +27493,6 @@
           },
           {
            "courseId": "02340123"
-          },
-          {
-           "courseId": "02360343"
           }
          ]
         },
@@ -29501,13 +27769,7 @@
            "courseId": "01040281"
           },
           {
-           "courseId": "01140052"
-          },
-          {
            "courseId": "01140071"
-          },
-          {
-           "courseId": "01140075"
           },
           {
            "courseId": "02340124"
@@ -29527,9 +27789,6 @@
            "courseId": "00440252"
           },
           {
-           "courseId": "01040165"
-          },
-          {
            "courseId": "01040222"
           },
           {
@@ -29537,12 +27796,6 @@
           },
           {
            "courseId": "01040295"
-          },
-          {
-           "courseId": "01060156"
-          },
-          {
-           "courseId": "01140054"
           },
           {
            "courseId": "02340218"
@@ -29554,9 +27807,6 @@
          "courses": [
           {
            "courseId": "01040142"
-          },
-          {
-           "courseId": "01040192"
           },
           {
            "courseId": "01040285"
@@ -29586,14 +27836,6 @@
           },
           {
            "courseId": "02360343"
-          }
-         ]
-        },
-        {
-         "semester": 6,
-         "courses": [
-          {
-           "courseId": "02340123"
           }
          ]
         }
@@ -29944,9 +28186,6 @@
            "courseId": "01040158"
           },
           {
-           "courseId": "01040193"
-          },
-          {
            "courseId": "01040222"
           },
           {
@@ -29961,12 +28200,6 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "00940314"
-          },
-          {
-           "courseId": "00940423"
-          },
-          {
            "courseId": "01040142"
           },
           {
@@ -29980,15 +28213,6 @@
         {
          "semester": 5,
          "courses": [
-          {
-           "courseId": "00960324"
-          },
-          {
-           "courseId": "00960327"
-          },
-          {
-           "courseId": "00960411"
-          },
           {
            "courseId": "01040122"
           }
@@ -30294,9 +28518,6 @@
          "semester": 3,
          "courses": [
           {
-           "courseId": "00440252"
-          },
-          {
            "courseId": "01040222"
           },
           {
@@ -30338,36 +28559,6 @@
           },
           {
            "courseId": "01040294"
-          },
-          {
-           "courseId": "01140052"
-          },
-          {
-           "courseId": "01140054"
-          },
-          {
-           "courseId": "01140073"
-          },
-          {
-           "courseId": "01140075"
-          },
-          {
-           "courseId": "01140246"
-          },
-          {
-           "courseId": "01240801"
-          },
-          {
-           "courseId": "01250001"
-          },
-          {
-           "courseId": "01250801"
-          },
-          {
-           "courseId": "01340020"
-          },
-          {
-           "courseId": "01340058"
           },
           {
            "courseId": "02340123"
@@ -31083,9 +29274,6 @@
            "courseId": "01040158"
           },
           {
-           "courseId": "01040193"
-          },
-          {
            "courseId": "01040222"
           },
           {
@@ -31104,9 +29292,6 @@
           },
           {
            "courseId": "01040279"
-          },
-          {
-           "courseId": "01960012"
           }
          ]
         },
@@ -31641,9 +29826,6 @@
            "courseId": "01040158"
           },
           {
-           "courseId": "01040193"
-          },
-          {
            "courseId": "01040222"
           },
           {
@@ -31661,9 +29843,6 @@
          "semester": 4,
          "courses": [
           {
-           "courseId": "01040030"
-          },
-          {
            "courseId": "01040142"
           },
           {
@@ -31671,9 +29850,6 @@
           },
           {
            "courseId": "01040279"
-          },
-          {
-           "courseId": "01960012"
           }
          ]
         },
@@ -31870,9 +30046,6 @@
            "courseId": "01040195"
           },
           {
-           "courseId": "01040273"
-          },
-          {
            "courseId": "02340128"
           }
          ]
@@ -31888,9 +30061,6 @@
           },
           {
            "courseId": "01040286"
-          },
-          {
-           "courseId": "01040291"
           },
           {
            "courseId": "01140071"
@@ -31910,9 +30080,6 @@
            "courseId": "01040158"
           },
           {
-           "courseId": "01040193"
-          },
-          {
            "courseId": "01040222"
           },
           {
@@ -31920,9 +30087,6 @@
           },
           {
            "courseId": "01040293"
-          },
-          {
-           "courseId": "01040294"
           },
           {
            "courseId": "01040295"

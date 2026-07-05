@@ -172,21 +172,24 @@ def build_recommended_plan(
     by_semester: dict[int, list[str]] = {}
     depth_memo: dict[str, int] = {}
     pdf_plan = match_pdf_plan(spec_courses)
-    for course_id in spec_courses:
-        rows = [r for r in partof_by_course.get(course_id, []) if r["versionCg"] == version_cg]
-        # a course belongs in the plan if SAP flags it mandatory OR the tree
-        # places it in a mandatory-labeled group (SAP flags are inconsistent)
-        # OR the official catalog PDF places it in a semester
-        in_pdf = bool(pdf_plan and course_id in pdf_plan)
-        if not any(r["oblig"] for r in rows) and course_id not in mandatory_ids and not in_pdf:
-            continue
-        # placement priority: catalog PDF > SAP recommended > prerequisite depth
-        semester = pdf_plan.get(course_id, 0) if pdf_plan else 0
-        if semester <= 0:
+    if pdf_plan:
+        # the catalog PDF's semester table IS the track's complete mandatory
+        # list — it is authoritative for both membership and placement.
+        # (SAP oblig flags are inconsistent and over-include electives.)
+        for course_id, semester in pdf_plan.items():
+            if course_id in spec_courses:
+                by_semester.setdefault(semester, []).append(course_id)
+    else:
+        for course_id in spec_courses:
+            rows = [r for r in partof_by_course.get(course_id, []) if r["versionCg"] == version_cg]
+            # a course belongs in the plan if SAP flags it mandatory OR the tree
+            # places it in a mandatory-labeled group (SAP flags are inconsistent)
+            if not any(r["oblig"] for r in rows) and course_id not in mandatory_ids:
+                continue
             semester = max((r["minSemester"] for r in rows), default=0)
-        if semester <= 0:
-            semester = min(8, prereq_depth(course_id, depth_memo))
-        by_semester.setdefault(semester, []).append(course_id)
+            if semester <= 0:
+                semester = min(8, prereq_depth(course_id, depth_memo))
+            by_semester.setdefault(semester, []).append(course_id)
     return [
         {"semester": semester, "courses": [{"courseId": cid} for cid in sorted(ids)]}
         for semester, ids in sorted(by_semester.items())
